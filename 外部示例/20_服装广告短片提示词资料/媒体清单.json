@@ -1,0 +1,178 @@
+[
+  {
+    "url": "https://uc-aigc5.xpccdn.com/prod/0e496e8fcb5750e18cfa45f8dfca7a53/0e496e8fcb5750e18cfa45f8dfca7a53_0.png?UCloudPublicKey=4ZDugY595vA4p3U01xiqAtJ0YT2mLwPuQ&Expires=1783089940&Signature=mpYfgBbRDP92%2Fg%2BImv%2FTDXLslUs%3D",
+    "field": "origin_url",
+    "type": "image",
+    "canvas_ids": [
+      "ea7c51b401144232bc98c5c91130a4e9"
+    ],
+    "signed_url_expired_at_capture": true,
+    "status": "not_requested_expired_signed_url",
+    "reason": "The Expires value supplied by the public page is in the past; original URL retained without altering signature.",
+    "node_ids": [
+      "node_card_c596812acb2d497eb0ea5b53be430f50"
+    ]
+  },
+  {
+    "url": "https://uc-aigc-w5.xpccdn.com/prod/0e496e8fcb5750e18cfa45f8dfca7a53/preview_0e496e8fcb5750e18cfa45f8dfca7a53_0.png?iopstyle=cover_webp_80_800",
+    "field": "preview_image",
+    "type": "image",
+    "canvas_ids": [
+      "ea7c51b401144232bc98c5c91130a4e9"
+    ],
+    "signed_url_expired_at_capture": false,
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "image/webp",
+    "bytes": 19108,
+    "sha256": "d56660db64fbfb2280c695f96d3bbde1dd21db545dadbbe7f0199a477f0e4516",
+    "media_signature": "webp",
+    "local_path": "媒体/c27f3fb37f73815eaca17f96.webp",
+    "width_from_source": 2048,
+    "height_from_source": 1152,
+    "duration_from_source": 0,
+    "quality": "public_preview",
+    "project_relative_path": "../媒体/c27f3fb37f73815eaca17f96.webp",
+    "node_ids": [
+      "node_card_c596812acb2d497eb0ea5b53be430f50"
+    ]
+  },
+  {
+    "url": "https://uc-aigc5.xpccdn.com/prod/8526a40023a95971b1627257c3cc62d0/8526a40023a95971b1627257c3cc62d0_0.png?UCloudPublicKey=4ZDugY595vA4p3U01xiqAtJ0YT2mLwPuQ&Expires=1783075949&Signature=Szn%2F39KtaQYSUcb1Rfxt4XxEbsE%3D",
+    "field": "origin_url",
+    "type": "image",
+    "canvas_ids": [
+      "ea7c51b401144232bc98c5c91130a4e9"
+    ],
+    "signed_url_expired_at_capture": true,
+    "status": "not_requested_expired_signed_url",
+    "reason": "The Expires value supplied by the public page is in the past; original URL retained without altering signature.",
+    "node_ids": [
+      "node_9717b5ccb7934602a536c8097dc7c291_0"
+    ]
+  },
+  {
+    "url": "https://uc-aigc-w5.xpccdn.com/prod/8526a40023a95971b1627257c3cc62d0/preview_8526a40023a95971b1627257c3cc62d0_0.png?iopstyle=cover_webp_80_800",
+    "field": "preview_image",
+    "type": "image",
+    "canvas_ids": [
+      "ea7c51b401144232bc98c5c91130a4e9"
+    ],
+    "signed_url_expired_at_capture": false,
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "image/webp",
+    "bytes": 7186,
+    "sha256": "1fc3b67b2c6055638a4df0bd4a7836dbab8a1ec7408e188e43fab8a56d5883af",
+    "media_signature": "webp",
+    "local_path": "媒体/fdde19ed842e90ec9eea9e03.webp",
+    "width_from_source": 2048,
+    "height_from_source": 2048,
+    "duration_from_source": 0,
+    "quality": "public_preview",
+    "project_relative_path": "../媒体/fdde19ed842e90ec9eea9e03.webp",
+    "node_ids": [
+      "node_9717b5ccb7934602a536c8097dc7c291_0"
+    ]
+  },
+  {
+    "url": "https://uc-aigc5.xpccdn.com/prod/b9d4e207644156769cadb31d726d466b/b9d4e207644156769cadb31d726d466b_0.mp4?UCloudPublicKey=4ZDugY595vA4p3U01xiqAtJ0YT2mLwPuQ&Expires=1783082987&Signature=%2BJUT8lWsO8MvEAQkS2wO8Vu7Hjg%3D",
+    "field": "origin_url",
+    "type": "video",
+    "canvas_ids": [
+      "ea7c51b401144232bc98c5c91130a4e9"
+    ],
+    "signed_url_expired_at_capture": true,
+    "status": "not_requested_expired_signed_url",
+    "reason": "The Expires value supplied by the public page is in the past; original URL retained without altering signature.",
+    "node_ids": [
+      "node_37d2ba0e16864ba1bc4836809a3fc3b6_0"
+    ]
+  },
+  {
+    "url": "https://uc-aigc-w5.xpccdn.com/prod/b9d4e207644156769cadb31d726d466b/snapshot_b9d4e207644156769cadb31d726d466b_0.jpg?iopstyle=cover_webp_80_800",
+    "field": "preview_image",
+    "type": "video",
+    "canvas_ids": [
+      "ea7c51b401144232bc98c5c91130a4e9"
+    ],
+    "signed_url_expired_at_capture": false,
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "image/webp",
+    "bytes": 14004,
+    "sha256": "9755235b40f03d01310786042406ba818f14fb7c402772d4642257f98a7e3313",
+    "media_signature": "webp",
+    "local_path": "媒体/8632167bba31f9e8d8c8ba69.webp",
+    "width_from_source": 1080,
+    "height_from_source": 1920,
+    "duration_from_source": 15.04,
+    "quality": "public_preview",
+    "project_relative_path": "../媒体/8632167bba31f9e8d8c8ba69.webp",
+    "node_ids": [
+      "node_37d2ba0e16864ba1bc4836809a3fc3b6_0"
+    ]
+  },
+  {
+    "url": "http://ai-image-video.cn-bj.ufileos.com/prod/b9d4e207644156769cadb31d726d466b/preview_b9d4e207644156769cadb31d726d466b_0.mp4",
+    "field": "preview_video",
+    "type": "video",
+    "canvas_ids": [
+      "ea7c51b401144232bc98c5c91130a4e9"
+    ],
+    "signed_url_expired_at_capture": false,
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "application/octet-stream",
+    "bytes": 2047123,
+    "sha256": "16fa38dbbbad4ae7a42e696d1515aac7fb94fd5a14aba499a857ab783e911660",
+    "media_signature": "mp4",
+    "local_path": "媒体/7a16515d4b9ad3b2c5ab3c15.mp4",
+    "width_from_source": 1080,
+    "height_from_source": 1920,
+    "duration_from_source": 15.04,
+    "quality": "public_preview",
+    "project_relative_path": "../媒体/7a16515d4b9ad3b2c5ab3c15.mp4",
+    "node_ids": [
+      "node_37d2ba0e16864ba1bc4836809a3fc3b6_0"
+    ]
+  },
+  {
+    "url": "https://uc-aigc5.xpccdn.com/prod/5c73c96aaa27507188a31f693c7ff27b/5c73c96aaa27507188a31f693c7ff27b_0.png?UCloudPublicKey=4ZDugY595vA4p3U01xiqAtJ0YT2mLwPuQ&Expires=1783012927&Signature=wYvyxgC0UTNJGPqInZDfGb0RzDs%3D",
+    "field": "origin_url",
+    "type": "image",
+    "canvas_ids": [
+      "ea7c51b401144232bc98c5c91130a4e9"
+    ],
+    "signed_url_expired_at_capture": true,
+    "status": "not_requested_expired_signed_url",
+    "reason": "The Expires value supplied by the public page is in the past; original URL retained without altering signature.",
+    "node_ids": [
+      "node_d037b11d882142269d5e863a995b2052_0"
+    ]
+  },
+  {
+    "url": "https://uc-aigc-w5.xpccdn.com/prod/5c73c96aaa27507188a31f693c7ff27b/preview_5c73c96aaa27507188a31f693c7ff27b_0.png?iopstyle=cover_webp_80_800",
+    "field": "preview_image",
+    "type": "image",
+    "canvas_ids": [
+      "ea7c51b401144232bc98c5c91130a4e9"
+    ],
+    "signed_url_expired_at_capture": false,
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "image/webp",
+    "bytes": 21046,
+    "sha256": "93cb1ce0be91164beef013895772ba6de93dff98ee3baa5c2f8d0a9f1e043384",
+    "media_signature": "webp",
+    "local_path": "媒体/bbbe0f59d7af7be5e665f41f.webp",
+    "width_from_source": 1152,
+    "height_from_source": 2048,
+    "duration_from_source": 0,
+    "quality": "public_preview",
+    "project_relative_path": "../媒体/bbbe0f59d7af7be5e665f41f.webp",
+    "node_ids": [
+      "node_d037b11d882142269d5e863a995b2052_0"
+    ]
+  }
+]

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SD2.5视频提示词优化 Skill</title><style>
+:root{color-scheme:light;--ink:#182a27;--muted:#60716b;--line:#dce5df;--accent:#245e48;--paper:#fbfcf9}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}a{color:var(--accent);text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}header,main,footer{max-width:1080px;margin:auto;padding:28px 24px}header{padding-top:44px;padding-bottom:20px}h1{font-size:clamp(26px,4vw,40px);line-height:1.35;margin:.3em 0}h2,h3,h4,h5,h6{line-height:1.5;margin:1.5em 0 .5em}h2{font-size:26px}h3{font-size:22px}h4{font-size:19px}p{margin:.8em 0}.muted,.meta{color:var(--muted);font-size:14px}.meta{display:flex;flex-wrap:wrap;gap:8px 20px}.notice{background:#eef4ef;border:1px solid var(--line);border-radius:12px;padding:14px 18px}.warning{background:#fff7e7;border:1px solid #ead8a7;border-radius:8px;padding:10px 14px}.tools{display:flex;gap:12px;margin:22px 0}input,select{font:inherit;background:white;color:var(--ink);border:1px solid #bccdc2;border-radius:9px;padding:11px 13px}input{flex:1;min-width:0}select{max-width:200px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:16px}.card{background:white;border:1px solid var(--line);border-radius:13px;padding:20px}.card h2{font-size:20px;margin:8px 0}.card p{font-size:14px;color:var(--muted);margin:8px 0}.tag{font-size:12px;color:var(--accent);background:#edf4ec;padding:3px 8px;border-radius:20px}.cardlinks{display:flex;flex-wrap:wrap;gap:14px;font-size:14px}article{background:white;border:1px solid var(--line);border-radius:14px;padding:clamp(18px,4vw,44px);overflow-wrap:anywhere}article> :first-child{margin-top:0}.block{white-space:pre-wrap;word-break:break-word}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px}.grid-column{min-width:0}pre{background:#f1f4ef;border:1px solid #dce4da;border-radius:9px;padding:18px;overflow:auto;white-space:pre-wrap;word-break:break-word;font:14px/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}figure{margin:24px 0}img{display:block;max-width:100%;height:auto;border-radius:6px}figcaption{font-size:13px;color:var(--muted);margin-top:7px}video,audio{max-width:100%;width:100%}.asset{background:#f4f6f1;border:1px solid var(--line);border-radius:8px;padding:14px;margin:14px 0}.asset small{display:block;color:var(--muted)}blockquote{border-left:4px solid #b0c8b5;padding:8px 18px;margin:18px 0;background:#f3f7f0}.list-item{display:flex;gap:10px;margin:.6em 0}.list-item .marker{flex:0 0 1.8em;color:#60716b}.list-body{flex:1;min-width:0}.table-wrap{overflow:auto}table{border-collapse:collapse;min-width:70%;margin:18px 0}td,th{border:1px solid #ccd8ce;padding:8px 12px;vertical-align:top}hr{border:0;border-top:1px solid var(--line);margin:28px 0}summary{cursor:pointer}footer{font-size:13px;color:var(--muted)}[hidden]{display:none!important}@media(max-width:600px){header,main,footer{padding:22px 16px}.tools{flex-direction:column}select{max-width:none}article{border-radius:9px}}
+</style></head><body><header><p><a href="../../index.html">← 全部资料</a></p><h1>SD2.5视频提示词优化 Skill</h1><p class="meta">正文 6,748 字符 · 附件 1 · 图片 3 · 视频 0 · 音频 0</p><p class="meta"><a href="https://ei5ttplwuwy.feishu.cn/wiki/NdcJw96uKizh77kWcubcN5DsnZb">查看飞书原文</a> · <a href="教程.md">Markdown 版本</a></p></header><main><article><span id="SvYIdu0dDo7fx2xOpcNcV2C5nDd"></span><h1 class="block">第一步：提示词skill优化</h1><span id="MjiSdysaEoBPjkxlqTIc0MICnrb"></span><div class="container"><span id="UvCNd2AtQoe5VDxXREFcYfxInPh"></span><div class="asset"><a href="../../%E8%B5%84%E6%BA%90/15-SD2.5%E8%A7%86%E9%A2%91%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%BC%98%E5%8C%96%20Skill/001-SD2.5%E8%A7%86%E9%A2%91%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%BC%98%E5%8C%96%20Skill.rar">附件：SD2.5视频提示词优化 Skill.rar</a><small>4.5 KB · <a href="https://ei5ttplwuwy.feishu.cn/wiki/NdcJw96uKizh77kWcubcN5DsnZb">来源页面</a></small></div></div><span id="GY73d9TYPo40L0xVXPEcsGzWncd"></span><figure><img loading="lazy" src="../../%E8%B5%84%E6%BA%90/15-SD2.5%E8%A7%86%E9%A2%91%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%BC%98%E5%8C%96%20Skill/002-image.png" alt="image.png"><figcaption>image.png · 158.8 KB</figcaption></figure><span id="ObMhd2HmioAluTxCuYJcEwoLnUh"></span><p class="block">把skill解压后发给agent（codex也可以），然后让他读取skill并优化我们提供的提示词：</p><span id="VeG0ddSoRoXgPpxKnxAcieuznMb"></span><pre><code>15秒，16:9，4K，高规格 3D Anime CG 动作电影，AAA 游戏 cinematic cutscene 质感，stylized realistic 3D anime character，动漫化精致五官结合真实三维材质，PBR rendering，电影级全局光照，强烈冷色电影调色，青蓝、银白、深黑为主色，超高反差，体积雾，真实镜面反射，浅景深，极精细头发丝束与皮肤材质。
+
+巨大黑暗未来竞技场 / 科幻工业大厅内部，空间空旷辽阔，黑色金属地面湿润光滑，能够清晰反射人物与能量光芒，远处被黑暗与薄雾吞没。
+
+主角是一名年轻女性战士，精致的东亚动漫化面孔，冷白皮肤，短至中长度的黑蓝色不对称头发，凌乱发丝自然垂落在脸侧，明亮发光的冰蓝色瞳孔，眼型锐利，神情极度专注冷静。她穿黑色无袖贴身战斗服、黑色战术长裤、长款黑色护臂与轻型装备，服装带极少量青蓝发光细节。手持一把巨大的长柄重型剑刃，剑体被半透明冰白色能量与高压蓝白电流包裹，能量像液态光芒一样沿刀刃流动，不断逸散电弧和白色粒子。
+
+远处后方站着一名高大的男性敌人，肌肉感明显，深色战斗装备，双拳装备大型机械拳套，拳套内部散发橙红色炽热光芒，与女主冰蓝色能量形成冷暖对比。
+
+0–2秒：武器与人物压迫感建立。
+
+极低机位大特写，摄影机贴近女主身体和巨大剑刃，剑刃占据画面前景，透视极度夸张。蓝白能量在剑刃表面疯狂流动，细小闪电不断跳动，女主保持低伏蓄力姿态。背景极度虚化，只有远处敌人的橙红拳套隐约发光。摄影机非常缓慢向人物推进。
+
+2–4.5秒：连续脸部微距特写。
+
+切入女主面部近景，随后继续推进至双眼极近特写。黑蓝色发丝掠过面部，冰蓝色虹膜内部具有复杂高光和微弱能量光泽，瞳孔锁定前方敌人。她轻微收紧眉峰，几乎没有多余表情，表现出即将爆发前的极度克制。85mm–100mm 微距电影镜头，极浅景深，眼睛极清晰，鼻梁与发丝逐渐虚化。
+
+4.5–5.5秒：握剑蓄力。
+
+切换到手部大特写，戴黑色露指手套的右手突然收紧巨大剑柄，手指发力，剑柄发生轻微震动。剑身电流瞬间暴涨，蓝白闪电沿武器向外炸开，空气中大量细碎发光粒子和水汽被能量吹散。低频震动感越来越强。
+
+5.5–6.3秒：瞬间发动攻击。
+
+切回半身近景，女主猛然旋转腰肩，双手带动巨大重剑完成一次极具重量感的水平斩击。动作不是轻盈挥舞，而是具有明显蓄力、惯性、肩胯联动和巨大武器重量。后方男性敌人同时向前冲刺，橙红拳套爆发炽热光芒。
+
+女主剑刃掠过镜头的一瞬间，摄影机高速 whip pan，人物与背景产生强烈方向性运动模糊。
+
+攻击命中的瞬间插入极短黑白 impact frame：纯黑白高反差画面，放射状漫画速度线从中心猛烈炸开，持续仅数帧。
+
+6.3–10.5秒：超大范围能量斩爆发。
+
+瞬间切换为超广角低机位远景，摄影机贴近黑色镜面金属地面高速横向追踪。
+
+一道巨大的冰蓝白色剑气贴着地面以极高速度横穿整座竞技场，像一条低矮的白色风暴墙向前疯狂推进。
+
+剑气经过的位置连续爆发高达数米甚至十余米的蓝白色闪电柱。闪电不是同时出现，而是沿着剑气运动方向依次爆裂：
+
+第一道雷柱轰击地面 → 第二道迅速跟随 → 第三道向远处延伸 → 大量分叉电弧连接天花板与地面。
+
+能量冲击将地面积水、白色雾气和碎屑同时掀起，在地面形成高速推进的白色气浪。蓝白电光完整倒映在黑色湿润地面上。
+
+摄影机高速侧向 tracking shot 跟随能量斩移动，画面带强烈速度拖影与镜头震动，偶尔被雷光完全照白。
+
+10.5–12秒：能量达到峰值。
+
+巨大雷暴墙填满整个远处空间，无数蓝白电弧像玻璃裂纹一样横跨黑暗背景，地面被翻滚的白色雾浪覆盖。短暂出现强曝光和白色闪光，随后能量开始迅速衰减。
+
+12–15秒：英雄背影收尾。
+
+切到超宽幅静态远景。
+
+女主背对摄影机站在巨大黑色竞技场中央，身体形成清晰剪影，双腿稳定分开，巨剑自然垂向身体一侧，剑尖接近地面。一块黑色长布、披肩或衣摆受到残余气流影响缓慢向左侧飘动。
+
+她没有多余动作，只安静地看着前方。
+
+远处整面空间仍残留巨大的冰蓝白色闪电裂纹和翻滚白雾，随后雷光一道一道熄灭，雾浪逐渐落下，竞技场重新回归黑暗。最后只剩冷蓝色轮廓光勾勒人物身体和剑刃。
+
+整个结尾保持极强的胜利后静默感与压迫感。
+
+摄影语言： extreme close-up、macro eye shot、weapon foreground perspective、slow dolly-in、shallow depth of field、whip pan、impact frame、speed ramp、ultra-wide low-angle tracking shot、volumetric lightning、reflective floor、hero silhouette ending。
+
+动作与视觉重点： 巨剑必须具有真实重量和惯性；人物动作具有完整腰肩发力逻辑；能量斩贴地高速移动；雷电必须沿攻击轨迹连续爆发；湿润金属地面对蓝白电光产生清晰电影级反射；高速爆发与最后完全静止形成强烈节奏反差。
+
+无对白，无字幕，以剑刃蓄能声、电流噼啪声、重剑破风声、瞬间爆炸冲击声、持续雷鸣与最后逐渐消散的低频余响构成声音设计。</code></pre><span id="PpqHdjITUoRDeJxR9sucYXBmnNb"></span><p class="block">&#8203;</p><span id="P6F4drjXyoPlB6xDYyicTOZXndf"></span><p class="block">&#8203;</p><span id="JtktduX51o0CnexOuA3cJsmAnue"></span><h1 class="block">第二步：</h1><span id="EaqMducYyojVy6xc6yucRVXDnyf"></span><figure><img loading="lazy" src="../../%E8%B5%84%E6%BA%90/15-SD2.5%E8%A7%86%E9%A2%91%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%BC%98%E5%8C%96%20Skill/003-image.png" alt="image.png"><figcaption>image.png · 83.9 KB</figcaption></figure><span id="WCQUd4QGBolvcVx1DCtcEGt3nYb"></span><p class="block">复制优化后的提示词直接生成，模型选择SD2.5</p><span id="N0LrdL8auoDm55xvXbccKhffnZb"></span><pre><code>【一、生成任务】
+生成一段 15秒、4K 的视频。
+
+视频类型： 高规格3D Anime CG动作电影 / AAA游戏 cinematic cutscene 核心事件： 年轻女性战士在黑暗未来竞技场内，以巨大能量重剑发动压制性冰蓝电流斩击，将整座竞技场覆盖于雷暴之中，最终以英雄背影静止收尾。 表现方式： 多镜头切换，从极近微距到超广角远景，节奏由静→爆发→静默，形成强烈张力对比。 镜头结构： extreme close-up蓄力 → macro eye shot → 手部大特写 → 半身斩击+whip pan+impact frame → 超广角贴地tracking能量斩 → 雷暴峰值 → 超宽幅英雄背影 核心观感： 压迫感、蓄力爆发、电影级重量感、胜利后极致静默
+
+【二、主要主体】
+主体A — 女主战士
+身份： 年轻女性战士，主角 年龄/性别： 约20-24岁，女性 外貌： 精致东亚动漫化面孔，冷白皮肤；短至中长度黑蓝色不对称发型，凌乱发丝自然垂落脸侧；明亮发光冰蓝色瞳孔，眼型锐利；神情极度专注冷静，眉峰轻微收紧，几乎无多余表情 服装： 黑色无袖贴身战斗服、黑色战术长裤、长款黑色护臂与轻型装备，服装带极少量青蓝发光细节；黑色露指手套 装备： 巨大长柄重型剑刃，剑体被半透明冰白色能量与高压蓝白电流包裹，能量像液态光芒沿刀刃流动，不断逸散电弧和白色粒子；黑色长布/衣摆可受气流飘动 动作特点： 低伏蓄力、腰肩联动重剑水平斩击，动作具有明显蓄力、惯性和巨大武器重量感，不轻盈，不飘逸 当前状态： 蓄力→爆发→胜利后静止
+
+主体B — 男性敌人
+身份： 对立战士，配角 年龄/性别： 成年男性，高大 外貌： 肌肉感明显，深色战斗装备 装备： 双拳大型机械拳套，拳套内部散发橙红色炽热光芒，与女主冰蓝色能量形成强烈冷暖对比 动作特点： 后方远距站立 → 向前冲刺爆发 当前状态： 站于后方远处 → 冲刺爆发 → 被能量斩覆盖
+
+核心道具 — 重型能量剑
+造型： 巨大长柄重型剑刃，比例夸张，具有明显重量感 材质： 深色金属剑体，表面覆盖半透明冰白色能量场与高压蓝白电流 运动方式： 随女主腰肩联动进行水平重斩，剑气贴地横穿竞技场 关键功能： 蓄力时电流流动；斩击时剑气爆发；剑气经过位置依次爆裂蓝白雷柱
+
+【三、场景与环境状态】
+时间： 未来/无时间感，黑夜感 地点： 巨大黑暗未来竞技场 / 科幻工业大厅内部 天气： 室内，无自然天气；体积雾弥漫 光线： 主光源为冰蓝色能量光（女主武器）与橙红色炽热光（男性敌人拳套）；环境光极暗，接近全黑；冷蓝轮廓光勾勒人物；雷暴爆发时蓝白闪光照亮整个空间
+
+空间结构：
+
+前景：女主与巨剑，黑色湿润金属地面
+中景：空旷辽阔的黑色金属地面，体积雾弥漫低处
+后景：黑暗与薄雾吞没的远处，高处隐约可见工业顶棚结构
+固定空间锚点：
+
+中央区域黑色湿润金属地面镜面反射区（全片地面反射基准）
+远处黑暗雾墙（后景深度感基准）
+高处隐约可见工业顶棚/天花板结构（闪电柱连接参考点）
+环境互动：
+
+地面积水受能量冲击掀起白色气浪
+白色雾气被能量爆发吹散后翻滚
+蓝白电光完整倒映于黑色湿润金属地面
+残余气流使女主衣摆缓慢向左飘动
+主体位置关系：
+
+女主：画面前景/中心，低伏蓄力
+男性敌人：女主正后方远处，橙红光点
+摄影机：从极低机位贴近前景，多次切换景别与机位
+【四、情绪目标】
+整体情绪： 压迫感蓄积 → 极度克制的爆发前张力 → 瞬间爆发 → 摧毁性力量释放 → 胜利后极致静默
+
+情绪递进： 【武器压迫感/蓄力静默】→【极度克制/即将爆发】→【握剑蓄力/震动感上升】→【瞬间爆发/冲击】→【摧毁性能量扩散】→【雷暴峰值/压倒性力量】→【胜利后静默/孤独压迫感】
+
+人物表演重点：
+
+眼神：冰蓝色瞳孔锁定前方，不动摇，不闪躲
+呼吸：几乎不可见，极度控制
+嘴角：无表情，极度克制
+动作力度：蓄力时重心下沉，斩击时腰肩联动爆发，具有明显惯性和武器重量
+身体重心：低伏蓄力→爆发斩击→最终直立背影
+【五、摄影参数及视觉风格】
+整体风格： 高规格3D Anime CG动作电影，AAA游戏cinematic cutscene质感，stylized realistic 3D anime character，动漫化精致五官结合真实三维材质，PBR rendering，电影级全局光照，强烈冷色电影调色
+
+摄影语言模拟：
+
+摄影机：虚拟电影摄影机，多机位切换
+镜头：超广角（14-24mm）极近前景 → 标准（85-100mm）微距人脸 → 超广角（14-21mm）贴地追踪
+焦段：随镜头切换变化
+光圈：大光圈，极浅景深
+滤镜：冷色电影调色，青蓝/银白/深黑主色调，超高反差
+帧率/快门：标准电影帧率，斩击瞬间speed ramp，impact frame数帧黑白
+画面质感：
+
+调色：强烈冷色，青蓝、银白、深黑为主色，超高反差，偶尔雷光照白全画面
+光线：冰蓝能量光主光，橙红炽热光对比，极暗环境光，冷蓝轮廓光
+材质：PBR材质，极精细头发丝束与皮肤材质，黑色湿润金属地面真实镜面反射，武器能量半透明发光材质
+镜头运动：
+
+slow dolly-in（0-2s）
+推进至macro eye shot（2-4.5s）
+固定微震（4.5-5.5s）
+whip pan（5.5-6.3s）
+高速侧向tracking shot贴地（6.3-10.5s）
+静态宽景（10.5-15s）
+景深与焦点： 极浅景深贯穿全片；微距眼部特写时眼睛极清晰，鼻梁与发丝逐渐虚化；超广角贴地追踪时前景地面虚化，能量斩为焦点；结尾背影轮廓清晰，远处雾光虚化。
+
+【六、分段镜头脚本】
+0–2s｜武器与人物压迫感建立
+景别/焦段： Extreme close-up，14-24mm超广角，透视极度夸张 摄影机起点： 极低机位，贴近地面，镜头朝向女主与巨剑 摄影机运动： Slow dolly-in，非常缓慢向人物推进 主体动作： 女主保持低伏蓄力姿态，重心下沉，双手握巨剑；剑刃占据画面前景超过1/2；蓝白能量在剑刃表面疯狂流动，细小闪电不断跳动 环境互动： 背景极度虚化，只有远处男性敌人的橙红拳套隐约发光；体积雾弥漫低处；地面反射蓝白光芒 焦点变化： 焦点在剑刃前景，女主身体中度虚化，背景极度虚化 镜头结束位置： 摄影机略微推近，女主与剑刃充满画面
+
+2–4.5s｜连续脸部微距特写
+景别/焦段： Face close-up → macro eye shot，85mm-100mm微距电影镜头 摄影机起点： 正面/略侧面，女主面部高度 摄影机运动： 缓慢推进，从面部近景推至双眼极近特写 主体动作： 黑蓝色发丝掠过面部；冰蓝色虹膜内部具有复杂高光和微弱能量光泽；瞳孔锁定前方敌人；轻微收紧眉峰，几乎没有多余表情，极度克制 环境互动： 远处橙红光在虹膜中隐约反射 焦点变化： 面部近景时眼睛/鼻梁清晰；推进至极近特写后眼睛极清晰，鼻梁与发丝逐渐虚化 镜头结束位置： 双眼极近特写，虹膜填满大部分画面
+
+4.5–5.5s｜握剑蓄力
+景别/焦段： Extreme close-up手部，50-85mm 摄影机起点： 侧面/斜下方，对准右手握剑处 摄影机运动： 固定，轻微震动 主体动作： 戴黑色露指手套的右手突然收紧巨大剑柄，手指发力，剑柄发生轻微震动；剑身电流瞬间暴涨，蓝白闪电沿武器向外炸开；空气中大量细碎发光粒子和水汽被能量吹散 环境互动： 水汽和粒子被能量吹散飞离；地面反射蓝白闪电光芒暴涨 焦点变化： 焦点在手部与剑柄，剑身前段略微虚化 镜头结束位置： 手部握紧剑柄，蓝白电流暴涨充满画面
+
+5.5–6.3s｜瞬间发动攻击
+景别/焦段： 半身近景，35-50mm 摄影机起点： 正面略低机位，女主半身高度 摄影机运动： 剑刃掠过镜头瞬间高速whip pan，画面产生强烈方向性运动模糊；speed ramp节奏 主体动作： 女主猛然旋转腰肩，双手带动巨大重剑完成一次极具重量感的水平斩击；动作具有明显蓄力、惯性、肩胯联动和巨大武器重量；后方男性敌人同时向前冲刺，橙红拳套爆发炽热光芒 环境互动： 斩击产生的气流冲击地面，水汽飞散；whip pan产生强烈方向性运动模糊 特殊效果： 攻击命中瞬间插入极短impact frame：纯黑白高反差画面，放射状漫画速度线从中心猛烈炸开，持续仅数帧（约3-5帧） 焦点变化： 运动模糊期间焦点跟随运动方向拖曳 镜头结束位置： Impact frame后切换至下一镜头
+
+6.3–10.5s｜超大范围能量斩爆发
+景别/焦段： Ultra-wide low-angle远景，14-21mm超广角贴地 摄影机起点： 极低机位贴近黑色镜面金属地面，侧面对准能量斩方向 摄影机运动： 高速侧向tracking shot，跟随能量斩横向高速移动；画面带强烈速度拖影与镜头震动；偶尔被雷光完全照白 主体动作： 一道巨大冰蓝白色剑气贴着地面以极高速度横穿整座竞技场，像一条低矮白色风暴墙向前疯狂推进 环境互动：
+
+剑气经过位置连续爆发高达数米至十余米的蓝白色闪电柱，依次爆裂：第一道雷柱轰击地面 → 第二道迅速跟随 → 第三道向远处延伸 → 大量分叉电弧连接天花板与地面
+能量冲击将地面积水、白色雾气和碎屑同时掀起，形成高速推进的白色气浪
+蓝白电光完整倒映在黑色湿润地面上 焦点变化： 能量斩为主焦点，地面前景虚化，远处雾墙虚化 镜头结束位置： 能量斩横穿至画面远处，雷暴覆盖整个空间
+10.5–12s｜能量达到峰值
+景别/焦段： Wide远景，24-35mm 摄影机起点： 低机位，正面/略侧面对准竞技场空间 摄影机运动： 静态或极缓慢推出 主体动作： 无主体特写，展示整体空间能量状态 环境互动： 巨大雷暴墙填满整个远处空间；无数蓝白电弧像玻璃裂纹一样横跨黑暗背景；地面被翻滚的白色雾浪覆盖；短暂出现强曝光和白色闪光；随后能量开始迅速衰减，画面由极亮转向逐渐暗下 焦点变化： 全景深，空间整体清晰 镜头结束位置： 能量开始衰减，画面逐渐变暗
+
+12–15s｜英雄背影收尾
+景别/焦段： Ultra-wide静态远景，超宽幅构图，14-21mm 摄影机起点： 女主身后，略低机位，静态 摄影机运动： 完全静止，不移动 主体动作： 女主背对摄影机站在巨大黑色竞技场中央，身体形成清晰剪影，双腿稳定分开，巨剑自然垂向身体一侧，剑尖接近地面；黑色长布/衣摆受残余气流影响缓慢向左侧飘动；她没有多余动作，只安静地看着前方 环境互动： 远处整面空间仍残留巨大冰蓝白色闪电裂纹和翻滚白雾；随后雷光一道一道熄灭；雾浪逐渐落下；竞技场重新回归黑暗；最后只剩冷蓝色轮廓光勾勒人物身体和剑刃 焦点变化： 女主背影清晰，远处闪电/雾光虚化 镜头结束位置： 竞技场回归黑暗，只剩冷蓝色轮廓光勾勒人物与剑刃
+
+时间总和： 2 + 2.5 + 1 + 0.8 + 4.2 + 1.5 + 3 = 15.0s ✓
+
+【七、声音设计】
+环境声： 竞技场空旷低频混响；体积雾中的细微气流声；全程低频震动底噪 动作声： 剑刃蓄能声（持续上升的电磁嗡鸣）；重剑破风声（低频厚重气流切割声）；剑气贴地推进声（高速低频风暴墙推进声） 机械/特效声： 电流噼啪声（剑刃表面持续）；蓝白闪电柱爆裂声（依次轰击，每道雷柱独立爆炸音）；分叉电弧持续噼啪声；瞬间爆炸冲击声（斩击命中瞬间）；持续雷鸣（6.3-12s） 音乐： 无背景音乐，纯音效声音设计 对白： 无对白，无字幕
+
+声音随剧情变化：
+
+0-5.5s：低频蓄能嗡鸣持续上升，电流噼啪声逐渐密集，低频震动感越来越强
+5.5-6.3s：破风声+冲击爆炸声+impact frame瞬间静音数帧后冲击音爆
+6.3-10.5s：高速风暴推进声+依次爆裂的雷柱轰击声+持续雷鸣，声音达到峰值
+10.5-12s：持续雷鸣峰值后逐渐衰减，低频余响
+12-15s：低频余响逐渐消散，最后接近完全静默，只剩极微弱的电弧余音</code></pre><span id="MFNPdr4MzoGDwGxc12acYjU6nuf"></span><p class="block">&#8203;</p><span id="H1rXdJSbMoyWRtxdvvMcLdHZnDc"></span><h1 class="block">第三步：片段重拍</h1><span id="AkAcdhfTsoeWaAxbRUTcjnJnn5f"></span><figure><img loading="lazy" src="../../%E8%B5%84%E6%BA%90/15-SD2.5%E8%A7%86%E9%A2%91%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%BC%98%E5%8C%96%20Skill/004-image.png" alt="image.png"><figcaption>image.png · 2.0 MB</figcaption></figure><span id="By5ddzLtToqlPlxFD7Bc2vzPnvg"></span><p class="block">哪些画面不满意直接选中然后重新提交即可，这样不用重复大量抽卡！</p></article></main><footer>正文按抓取到的内容块顺序转写；图片、附件和媒体按资源清单引用。安装包未执行或安装。</footer></body></html>

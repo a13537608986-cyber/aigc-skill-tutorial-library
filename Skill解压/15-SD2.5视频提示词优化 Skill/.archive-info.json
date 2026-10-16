@@ -1,0 +1,12 @@
+{
+  "archive_name": "SD2.5视频提示词优化 Skill.rar",
+  "archive_sha256": "620e2cef7281b2b0d5ae617e8f91b5573d2e9b8315b23da822478bfc7a217016",
+  "method": "system bsdtar (stdout-only extraction)",
+  "files": [
+    {
+      "path": "SD2.5视频提示词优化 Skill.md",
+      "size": 9721
+    }
+  ],
+  "note": "Only extracted; no package scripts or prompts executed."
+}

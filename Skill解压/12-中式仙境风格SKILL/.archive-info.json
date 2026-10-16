@@ -1,0 +1,12 @@
+{
+  "archive_name": "中式仙境风格SKILL.rar",
+  "archive_sha256": "2cd49e73f001d54b10cbb6932384363bb4c30a4b1ab3ae0ecd6a6867b9f8485a",
+  "method": "system bsdtar (stdout-only extraction)",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "size": 9721
+    }
+  ],
+  "note": "Only extracted; no package scripts or prompts executed."
+}

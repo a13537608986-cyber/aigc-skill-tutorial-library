@@ -1,0 +1,16 @@
+{
+  "archive_name": "东方美学人物角色.md.zip",
+  "archive_sha256": "7a0e28264e927be811a3b84fae9ddfb06115d8562d98a8517e55be72a2f9bc32",
+  "method": "Python zipfile (CRC checked while reading)",
+  "files": [
+    {
+      "path": "东方美学人物角色.md",
+      "size": 10358
+    },
+    {
+      "path": "__MACOSX/._东方美学人物角色.md",
+      "size": 268
+    }
+  ],
+  "note": "Only extracted; no package scripts or prompts executed."
+}

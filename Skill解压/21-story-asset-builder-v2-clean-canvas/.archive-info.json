@@ -1,0 +1,116 @@
+{
+  "archive_name": "story-asset-builder-v2-clean-canvas.zip",
+  "archive_sha256": "f47f0b09a2de07265e73bcb518de0add84b64cb660d31ebfc2075830eb305c08",
+  "method": "Python zipfile (CRC checked while reading)",
+  "files": [
+    {
+      "path": "story-asset-builder/templates/character_sheet.md",
+      "size": 4097
+    },
+    {
+      "path": "story-asset-builder/templates/creature_sheet.md",
+      "size": 3050
+    },
+    {
+      "path": "story-asset-builder/templates/prop_sheet.md",
+      "size": 1910
+    },
+    {
+      "path": "story-asset-builder/templates/vehicle_sheet.md",
+      "size": 1882
+    },
+    {
+      "path": "story-asset-builder/templates/environment_sheet.md",
+      "size": 1758
+    },
+    {
+      "path": "story-asset-builder/templates/color_palette.md",
+      "size": 1551
+    },
+    {
+      "path": "story-asset-builder/templates/storyboard_grid.md",
+      "size": 2128
+    },
+    {
+      "path": "story-asset-builder/templates/video_prompt.md",
+      "size": 1107
+    },
+    {
+      "path": "story-asset-builder/profiles/wansheng.yaml",
+      "size": 1708
+    },
+    {
+      "path": "story-asset-builder/profiles/default_cinematic.yaml",
+      "size": 973
+    },
+    {
+      "path": "story-asset-builder/profiles/ancient_drama.yaml",
+      "size": 1046
+    },
+    {
+      "path": "story-asset-builder/profiles/apocalypse_thriller.yaml",
+      "size": 1006
+    },
+    {
+      "path": "story-asset-builder/profiles/cyber_city.yaml",
+      "size": 974
+    },
+    {
+      "path": "story-asset-builder/rules/asset_extraction.md",
+      "size": 2309
+    },
+    {
+      "path": "story-asset-builder/rules/prompt_compiler.md",
+      "size": 1506
+    },
+    {
+      "path": "story-asset-builder/rules/libtv_canvas_rules.md",
+      "size": 5718
+    },
+    {
+      "path": "story-asset-builder/rules/qa_loop.md",
+      "size": 985
+    },
+    {
+      "path": "story-asset-builder/examples/demo_request.md",
+      "size": 1287
+    },
+    {
+      "path": "story-asset-builder/quick_prompts/01_create_new_project_canvas.txt",
+      "size": 680
+    },
+    {
+      "path": "story-asset-builder/quick_prompts/02_use_wansheng_profile.txt",
+      "size": 562
+    },
+    {
+      "path": "story-asset-builder/quick_prompts/03_retry_canvas_nodes.txt",
+      "size": 249
+    },
+    {
+      "path": "story-asset-builder/quick_prompts/04_create_clean_canvas.txt",
+      "size": 940
+    },
+    {
+      "path": "story-asset-builder/quick_prompts/05_reorganize_existing_canvas.txt",
+      "size": 654
+    },
+    {
+      "path": "story-asset-builder/SKILL.md",
+      "size": 8630
+    },
+    {
+      "path": "story-asset-builder/README.md",
+      "size": 1364
+    },
+    {
+      "path": "story-asset-builder/manifest.json",
+      "size": 693
+    },
+    {
+      "path": "story-asset-builder/CHANGELOG.md",
+      "size": 650
+    }
+  ],
+  "note": "Only extracted; no package scripts or prompts executed."
+}

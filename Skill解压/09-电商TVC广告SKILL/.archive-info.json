@@ -1,0 +1,12 @@
+{
+  "archive_name": "电商TVC广告SKILL.rar",
+  "archive_sha256": "6850726defd7952c59a287b02e9e58da400fc0cfc2beffae9cba347eac19813f",
+  "method": "system bsdtar (stdout-only extraction)",
+  "files": [
+    {
+      "path": "电商TVC广告SKILL.md",
+      "size": 7859
+    }
+  ],
+  "note": "Only extracted; no package scripts or prompts executed."
+}

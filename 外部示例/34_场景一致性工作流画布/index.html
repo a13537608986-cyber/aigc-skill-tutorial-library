@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>场景一致性</title><style>
+:root{color-scheme:light;--ink:#182a27;--muted:#60716b;--line:#dce5df;--accent:#245e48;--paper:#fbfcf9}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}a{color:var(--accent);text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}header,main,footer{max-width:1080px;margin:auto;padding:28px 24px}header{padding-top:44px;padding-bottom:20px}h1{font-size:clamp(26px,4vw,40px);line-height:1.35;margin:.3em 0}h2,h3,h4,h5,h6{line-height:1.5;margin:1.5em 0 .5em}h2{font-size:26px}h3{font-size:22px}h4{font-size:19px}p{margin:.8em 0}.muted,.meta{color:var(--muted);font-size:14px}.meta{display:flex;flex-wrap:wrap;gap:8px 20px}.notice{background:#eef4ef;border:1px solid var(--line);border-radius:12px;padding:14px 18px}.warning{background:#fff7e7;border:1px solid #ead8a7;border-radius:8px;padding:10px 14px}.tools{display:flex;gap:12px;margin:22px 0}input,select{font:inherit;background:white;color:var(--ink);border:1px solid #bccdc2;border-radius:9px;padding:11px 13px}input{flex:1;min-width:0}select{max-width:200px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:16px}.card{background:white;border:1px solid var(--line);border-radius:13px;padding:20px}.card h2{font-size:20px;margin:8px 0}.card p{font-size:14px;color:var(--muted);margin:8px 0}.tag{font-size:12px;color:var(--accent);background:#edf4ec;padding:3px 8px;border-radius:20px}.cardlinks{display:flex;flex-wrap:wrap;gap:14px;font-size:14px}article{background:white;border:1px solid var(--line);border-radius:14px;padding:clamp(18px,4vw,44px);overflow-wrap:anywhere}article> :first-child{margin-top:0}.block{white-space:pre-wrap;word-break:break-word}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px}.grid-column{min-width:0}pre{background:#f1f4ef;border:1px solid #dce4da;border-radius:9px;padding:18px;overflow:auto;white-space:pre-wrap;word-break:break-word;font:14px/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}figure{margin:24px 0}img{display:block;max-width:100%;height:auto;border-radius:6px}figcaption{font-size:13px;color:var(--muted);margin-top:7px}video,audio{max-width:100%;width:100%}.asset{background:#f4f6f1;border:1px solid var(--line);border-radius:8px;padding:14px;margin:14px 0}.asset small{display:block;color:var(--muted)}blockquote{border-left:4px solid #b0c8b5;padding:8px 18px;margin:18px 0;background:#f3f7f0}.list-item{display:flex;gap:10px;margin:.6em 0}.list-item .marker{flex:0 0 1.8em;color:#60716b}.list-body{flex:1;min-width:0}.table-wrap{overflow:auto}table{border-collapse:collapse;min-width:70%;margin:18px 0}td,th{border:1px solid #ccd8ce;padding:8px 12px;vertical-align:top}hr{border:0;border-top:1px solid var(--line);margin:28px 0}summary{cursor:pointer}footer{font-size:13px;color:var(--muted)}[hidden]{display:none!important}@media(max-width:600px){header,main,footer{padding:22px 16px}.tools{flex-direction:column}select{max-width:none}article{border-radius:9px}}
+
+.nav{display:flex;flex-wrap:wrap;gap:9px 20px;margin:18px 0}.source-text{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.8;margin:0}.source-section{padding:18px 0;border-bottom:1px solid var(--line)}.source-section h2,.source-section h3{margin:.3em 0 .7em}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px}.media-card{border:1px solid var(--line);border-radius:10px;background:white;padding:12px;min-width:0}.media-card figure{margin:0}.media-card img{width:100%;max-height:320px;object-fit:contain;background:#f0f3ed}.media-card video{width:100%;max-height:320px;background:#152620}.media-card p{font-size:13px;margin:8px 0}.media-card .meta{font-size:12px}.scroll-table{overflow:auto}td{min-width:110px}details{border:1px solid var(--line);border-radius:9px;padding:14px;margin:15px 0}details>summary{font-weight:600}details>.source-text{margin-top:16px}button{font:inherit;border:1px solid #bdcdc0;background:white;border-radius:8px;padding:8px 14px;color:var(--accent);cursor:pointer}.searchbox{width:100%;margin:10px 0 24px}.mini{font-size:13px;color:var(--muted)}
+</style></head><body><header><p><a href="../index.html">← 外部画布示例</a></p><h1>场景一致性</h1><p class="meta">来源：第 34 篇「场景一致性工作流画布」 · 本地媒体 58 份</p><nav class="nav"><a href="../../%E6%95%99%E7%A8%8B/34-%E5%9C%BA%E6%99%AF%E4%B8%80%E8%87%B4%E6%80%A7%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%94%BB%E5%B8%83/%E6%95%99%E7%A8%8B.html">来源教程</a><a href="https://kol.liblib.tv/canvas/share?shareId=diH6ZSrLe">在线画布</a><a href="%E8%AF%B4%E6%98%8E.md">说明 Markdown</a><a href="%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%8E%E6%96%87%E6%9C%AC.md">提示词 Markdown</a></nav></header><main><nav class="nav"><a href="#description">说明</a><a href="#prompts">提示词与文本</a><a href="#media">本地媒体</a><a href="#data">画布与原始数据</a></nav><article><section id="description" class="source-section"><h2>说明</h2><h2>场景一致性</h2><div class="source-text">
+来源教程：场景一致性工作流画布
+
+画布链接：<a href="https://kol.liblib.tv/canvas/share?shareId=diH6ZSrLe">https://kol.liblib.tv/canvas/share?shareId=diH6ZSrLe</a>
+
+已保存 72 个节点、43 条连线、32 个提示词或文本节点；本项目关联 58 个本地媒体文件。
+
+另有 0 个已过期的签名 URL；原文保存在画布数据和媒体清单中，未将这些 URL 计为已下载文件。
+
+<a href="%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%8E%E6%96%87%E6%9C%AC.md">提示词与文本</a> · <a href="%E7%94%BB%E5%B8%83%E6%95%B0%E6%8D%AE.json">画布数据</a> · <a href="%E5%AA%92%E4%BD%93%E6%B8%85%E5%8D%95.json">媒体清单</a>
+
+公开可用素材包含画布预览图和视频预览。文件记录中的 `quality` 标明可识别的预览来源，不能统一视为原始素材。</div></section><section id="prompts" class="source-section"><h2>提示词与文本</h2><h2>场景一致性</h2><div class="source-text">
+来源：<a href="https://kol.liblib.tv/canvas/share?shareId=diH6ZSrLe">https://kol.liblib.tv/canvas/share?shareId=diH6ZSrLe</a>
+</div><h3>1 剧本拆解</h3><div class="source-text">
+完整镜头拆解 (Shot Breakdown)
+
+&amp;nbsp;
+
+00:00.000 - 00:05.500
+
+开场片段。 特写镜头显示一个浑身污泥的丧尸女孩踉跄走向泳池，随后镜头切换为远景，丧尸跳入泳池的瞬间被击中，伴随着巨大的水花和散落的钞票。阳光明媚，背景是现代风格的海滨豪宅。
+
+&amp;nbsp;
+
+00:05.500 - 00:10.500
+
+角色介绍。 中景低角度镜头。AI清道夫出现在镜头前，帅气地转动并平举他的多管银色左轮手枪。背景是热带植物和现代建筑。镜头平稳，展现出角色的冷静。
+
+&amp;nbsp;
+
+00:10.500 - 00:16.000
+
+标题序列。 航拍大远景，显示一座矗立在悬崖边的未来感豪宅，俯瞰着阳光下的海滩。屏幕上出现巨大的红色标题“ZOMBIE SCAVENGER”。镜头缓慢向前推，确立了地理位置。
+
+&amp;nbsp;
+
+00:16.000 - 00:26.500
+
+清道夫日常节拍。 剪辑组合。清道夫在泳池边像扔垃圾一样抛掷丧尸尸体；随后他随着复古音乐在尸体堆中跳舞。镜头角度多变，包含俯拍和手持感的跟拍，节奏欢快。
+
+&amp;nbsp;
+
+00:26.500 - 00:37.000
+
+环境巡视。 中景镜头。机器人悠闲地行走在满地狼藉的室内，阳光透过巨大的圆弧形落地窗洒下。他时而整理帽子，时而在尸体间旋转，展现出极端的乐观。镜头采用平缓的横向移动。
+
+&amp;nbsp;
+
+00:37.000 - 00:51.500
+
+喜剧转折。 机器人来到吧台前，显示屏变为伤心的黄色表情。镜头反转显示一只巨大的鸵鸟正在吧台上喝洒。机器人与鸵鸟对视，表情变为疑惑。特写镜头捕捉鸵鸟伸长舌头的滑稽样子。
+
+&amp;nbsp;
+
+00:51.500 - 01:01.000
+
+行动开始。 机器人骑在鸵鸟背上，撞碎巨大的玻璃幕墙飞跃而出。镜头采用快速的低角度跟拍，展现冲击力。背景是碧海蓝天和沙滩上的丧尸群。
+
+&amp;nbsp;
+
+01:01.000 - 01:15.000
+
+鸵鸟骑行序列。 一组动感十足的远景镜头。机器人驾驭鸵鸟在沙滩上飞驰，身后跟着一群追赶的丧尸。随后进入废弃的现代城市街道，两旁停满了60年代的经典轿车。摄像机伴随鸵鸟侧向移动。
+
+&amp;nbsp;
+
+01:15.000 - 01:21.500
+
+主观视角战斗。 近景手持镜头，紧贴机器人的背部。他一边驾驭鸵鸟，一边高举某种动力电池设备。镜头剧烈晃动，增加了紧张感和速度感。
+
+&amp;nbsp;
+
+01:21.500 - 01:33.000
+
+战斗蒙太奇。 快速剪辑的战斗画面。机器人跳下鸵鸟，在街道上使用格斗术和左轮手枪近距离处决丧尸。其面部表情变为红色的愤怒模式。镜头包含快速的推近和环绕运动。
+
+&amp;nbsp;
+
+01:33.000 - 01:48.000
+
+进入市区。 机器人在鸵鸟背上脱帽致意。镜头拉远显示整个荒废但阳光充足的街道。画面中出现“1969 U.S. WEST COAST”字样。鸵鸟在空旷的马路上狂奔。
+
+&amp;nbsp;
+
+01:48.000 - 02:00.000
+
+事故节拍。 远景镜头显示街道中心横卧着一棵巨大的棕榈树。机器人和鸵鸟避让不及撞了上去。特写显示机器人的帽子飞掉，他狼狈地在地面滑行，表情变为尴尬。
+
+&amp;nbsp;
+
+02:00.000 - 02:09.500
+
+恢复状态。 机器人捡起帽子，面部变为沮丧。他走到一家名为“Turt&#x27;s”的时装店门口，推门而入。镜头平视，跟随着他的脚步进入昏暗的室内。
+
+&amp;nbsp;
+
+02:09.500 - 02:20.500
+
+核心偶遇。 机器人在店内看到一个聚光灯下的红色裙子假人。面部表情瞬间切换为粉色的爱心模式。镜头通过假人的肩后视角望向机器人，建立起两者之间的视觉关联。
+
+&amp;nbsp;
+
+02:20.500 - 02:34.000
+
+约会蒙太奇1。 快速场景切换。他们在快餐店并排坐着，背后是拍打窗户的丧尸；他们在阳光下合影，机器人拿着老式拍立得相机。镜头多为静态构图，类似老照片。
+
+&amp;nbsp;
+
+02:34.000 - 02:49.500
+
+约会蒙太奇2。 浪漫活动。在破旧的电影院并排坐着，机器人试图搂住假人的肩膀；在游戏机房，机器人砸碎玻璃为她拿取泰迪熊。镜头运动变得柔和且温情。
+
+&amp;nbsp;
+
+02:49.500 - 03:00.000
+
+生活片段。 他们一起坐过山车；在理发店并坐（即使中间隔着一个真丧尸）；最后在夕阳下的长椅上背对镜头并坐，机器人开枪射杀从侧面袭来的丧尸。构图平衡，极具美感。
+
+&amp;nbsp;
+
+03:00.000 - 03:12.000
+
+离去节拍。 夕阳西下，机器人带着假人走向楼顶的球形飞船。远景镜头展示了未来主义城市的轮廓。机器人登机前向地球告别。
+
+&amp;nbsp;
+
+03:12.000 - 03:34.000
+
+终章。 飞船升空飞向宇宙。特写显示机器人在船舱内亲吻假人的手。最后一个镜头是两人并坐在飞船窗前，望着远方的地球，飞船渐渐远去。屏幕出现“END”字样。
+</div><h3>2 丧尸清道夫 (ZOMBIE SCAVENGER)</h3><div class="source-text">
+[
+  {
+    &quot;shotNumber&quot;: 1,
+    &quot;durationSeconds&quot;: 5.5,
+    &quot;plotDescription&quot;: &quot;开场确立世界观。展示丧尸在极度反差的豪华环境中被突兀击杀，奠定黑色幽默基调。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;丧尸女孩&quot;,
+        &quot;characterDescription&quot;: &quot;[丧尸女孩: 浑身沾满污泥，衣衫褴褛，步履蹒跚的年轻女性丧尸，面部带有恐怖的腐烂特征，毫无生机]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 0,
+      &quot;endTime&quot;: 5.5,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;特写转大远景&quot;,
+    &quot;characterAction&quot;: &quot;丧尸踉跄前行，突然被击中，后仰掉入泳池。&quot;,
+    &quot;emotion&quot;: &quot;荒诞、突兀&quot;,
+    &quot;sceneTags&quot;: &quot;海滨豪宅, 泳池, 白天&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;明亮热烈的加州阳光，高对比度光影&quot;,
+    &quot;audioEffects&quot;: &quot;沉重的脚步声，突如其来的巨大枪响，巨大的落水声，钞票飞舞的沙沙声&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：由面部特写急速拉远至全景] [丧尸女孩: 浑身沾满污泥，衣衫褴褛，步履蹒跚的年轻女性丧尸，面部带有恐怖的腐烂特征，毫无生机] 处于画面视觉中心，身体正在向后倾倒。[主体空间关系：丧尸身体悬空于湛蓝清澈的泳池水面之上，周围散落着漫天飞舞的美元钞票] [场景环境：背景为极具现代几何风格的加州海滨豪宅，天空碧蓝无云] [光影几何：刺眼的直射阳光在水面形成强烈的焦散波纹反射] [视觉风格：高饱和度色彩，波普艺术风格的废土质感] [技术参数：24mm广角镜头，f/8光圈，高速快门凝固水花]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：机位从特写开始，伴随枪击瞬间急速向后拉远并轻微向上抬升展现全景] [主体动作：丧尸头部爆出特效血雾，身体受冲击力猛烈向后翻倒砸入泳池] [环境动态：水面爆开巨大的水花，波浪震荡，漫天飘落的钞票被冲击波气流卷起飞舞，阳光在水珠上闪烁] [音效：震耳欲聋的枪响转为沉闷的落水声] [时长：5.5秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;secLxJNNAe&quot;,
+    &quot;id&quot;: &quot;secLxJNNAe&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 2,
+    &quot;durationSeconds&quot;: 5,
+    &quot;plotDescription&quot;: &quot;主角隆重登场，展现其标志性的武器和冷酷中带有表演性质的姿态。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 5.5,
+      &quot;endTime&quot;: 10.5,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;中景，低角度&quot;,
+    &quot;characterAction&quot;: &quot;主角在镜头前帅气地转动多管银色左轮手枪并平举瞄准。&quot;,
+    &quot;emotion&quot;: &quot;冷酷、自信&quot;,
+    &quot;sceneTags&quot;: &quot;热带植物, 现代建筑外部&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;顶光，背景带有阳光透射树叶的丁达尔效应&quot;,
+    &quot;audioEffects&quot;: &quot;清脆的金属转枪声，机械关节转动的伺服电机声&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：低角度仰视中景，突出主体高大形象] [AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质] 占据画面中心。[主体空间关系：清道夫右手平举一把巨大的多管银色左轮手枪直指镜头前方，风衣下摆微微飘起] [具体细节：屏幕面罩上显示着毫无波澜的黄色线条表情] [场景环境：前景有热带棕榈叶失焦虚化，背景为现代主义建筑的白色外墙] [光影几何：强烈的轮廓光勾勒出机械金属的边缘质感] [视觉风格：赛博朋克与西部片混合质感] [技术参数：50mm镜头，f/2.8光圈，浅景深]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：机位保持极度平稳的低角度，缓慢向前推进极小距离] [主体动作：清道夫的手指灵活地拨动巨大的左轮手枪，枪械在指尖快速旋转三圈后，瞬间在胸前定格平举，枪口直指镜头] [环境动态：背景的热带植物叶片随微风轻轻摇曳，风衣边缘有轻微的物理布料飘动] [音效：咔哒咔哒的机械清脆声与风吹树叶的白噪音] [时长：5.0秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;uC04gVCMO2&quot;,
+    &quot;id&quot;: &quot;uC04gVCMO2&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 3,
+    &quot;durationSeconds&quot;: 5.5,
+    &quot;plotDescription&quot;: &quot;展示电影化标题序列与宏观环境地理位置。&quot;,
+    &quot;characters&quot;: [],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 10.5,
+      &quot;endTime&quot;: 16,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;大远景&quot;,
+    &quot;characterAction&quot;: &quot;无&quot;,
+    &quot;emotion&quot;: &quot;宏大、史诗感&quot;,
+    &quot;sceneTags&quot;: &quot;悬崖, 海滩, 未来感豪宅&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;日间阳光，海面波光粼粼&quot;,
+    &quot;audioEffects&quot;: &quot;激昂的开场复古合成器音乐响起，海浪拍岸声&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：上帝视角大远景，三分法则构图] 宏大的自然景观与人造建筑形成对比。[主体空间关系：一座极具未来主义几何美感的巨大白色豪宅矗立在险峻的悬崖边缘，悬崖下方是绵延的金色沙滩和深蓝色的广阔海洋] [具体细节：画面正中央上方悬浮着巨大的血红色立体粗体文字“ZOMBIE SCAVENGER”，文字带有做旧的划痕纹理] [场景环境：广阔的天际线与海岸线交汇，沙滩上有微小的黑点（丧尸群）] [光影几何：全局漫反射光照，海洋表面折射出钻石般的闪光] [视觉风格：大片级开场，好莱坞质感] [技术参数：14mm超广角镜头，f/11光圈，大景深]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：无人机视角的平稳航拍，匀速且缓慢地向着悬崖上的豪宅方向平行推进] [环境动态：海面的波浪有节奏地向沙滩拍打形成白色浪花，云层投下的阴影在海面上缓缓移动，红色的标题大字在空中保持相对固定但带有极轻微的3D悬浮感] [音效：宏大的风声与海浪声交织] [时长：5.5秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;9OBxbxdpUQ&quot;,
+    &quot;id&quot;: &quot;9OBxbxdpUQ&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 4,
+    &quot;durationSeconds&quot;: 10.5,
+    &quot;plotDescription&quot;: &quot;展现清道夫荒诞的工作日常，将血腥的清理工作转化为欢快的舞蹈。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 16,
+      &quot;endTime&quot;: 26.5,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;全景至中景剪辑组合&quot;,
+    &quot;characterAction&quot;: &quot;抛掷丧尸尸体，随后在尸体堆中伴随音乐跳舞。&quot;,
+    &quot;emotion&quot;: &quot;欢快、怪诞&quot;,
+    &quot;sceneTags&quot;: &quot;泳池边, 尸体堆&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;明亮的日光，带有派对气氛的色彩点缀&quot;,
+    &quot;audioEffects&quot;: &quot;节奏欢快的复古迪斯科音乐，尸体落地的闷响&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：略带俯视的动感全景] [AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（此刻为大笑的黄色表情），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质] 在画面中央摆出极其夸张的迪斯科舞蹈姿势。[主体空间关系：清道夫脚下四周堆积着几具模糊的丧尸躯体，像是一个舞池的背景装饰] [具体细节：清道夫一只手指向天空，风衣随着动作剧烈摆动] [场景环境：泳池甲板边缘，地面有凌乱的血迹与拖拽痕迹] [光影几何：强烈的侧光拉长了清道夫跳舞的影子] [视觉风格：黑色喜剧音乐录影带质感] [技术参数：35mm镜头，f/4光圈，手持感]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：采用手持摄影风格，镜头随着音乐节拍剧烈晃动、快速推近和拉远，围绕主体进行不规则的摇摄] [主体动作：清道夫像扔破烂一样单手将一具丧尸扔出画面边缘，随即无缝衔接一段节奏感极强的复古迪斯科舞蹈，脚步滑步轻盈，完全无视周围的血腥] [环境动态：被抛出的丧尸带起地面的灰尘，清道夫的金属关节在阳光下闪烁，风衣下摆疯狂旋转] [音效：强劲的迪斯科鼓点，机械关节灵活运转的嗖嗖声] [时长：10.5秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;SLlU7aYnCc&quot;,
+    &quot;id&quot;: &quot;SLlU7aYnCc&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 5,
+    &quot;durationSeconds&quot;: 10.5,
+    &quot;plotDescription&quot;: &quot;清道夫巡视狼藉的豪宅室内，表现出与末日环境格格不入的优雅与乐观。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 26.5,
+      &quot;endTime&quot;: 37,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;中景&quot;,
+    &quot;characterAction&quot;: &quot;悠闲行走，整理帽子，偶尔在尸体间优雅旋转。&quot;,
+    &quot;emotion&quot;: &quot;从容、乐观&quot;,
+    &quot;sceneTags&quot;: &quot;豪宅室内, 圆弧落地窗&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;阳光透过落地窗形成强烈的明暗交界线&quot;,
+    &quot;audioEffects&quot;: &quot;悠扬的口哨声（由机器合成器发出），清脆的脚步声&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：平视的中景横向构图] [AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（此时为轻松的黄色笑脸），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质] 正在画面中央行走。[主体空间关系：清道夫行走在画面中，右手正优雅地捏住帽檐调整角度，脚下是不规则散落的破碎家具与倒塌的杂物] [场景环境：宽敞豪华的现代室内空间，背景是巨大的圆弧形全景落地窗，窗外隐约可见蓝天] [光影几何：刺眼的阳光穿过落地窗结构，在地面和清道夫身上切割出平行排列的百叶窗式阴影带] [视觉风格：极其唯美的构图与废墟的对比反差] [技术参数：50mm镜头，f/5.6光圈，电影级高宽容度]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：机位安装在轨道上，伴随清道夫的行走步伐，进行平缓且匀速的横向水平移动跟拍] [主体动作：清道夫迈着轻松如同散步般的步态穿梭于狼藉之中，中途停顿一秒整理帽子边缘，随后像花样滑冰一样轻盈地在原地旋转了一圈避开地面的障碍物] [环境动态：空气中漂浮着清晰可见的尘埃颗粒，在阳光光束中翻滚舞蹈] [音效：空旷室内的回音脚步声，平缓的环境风声] [时长：10.5秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;2uCnqsfp1u&quot;,
+    &quot;id&quot;: &quot;2uCnqsfp1u&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 6,
+    &quot;durationSeconds&quot;: 14.5,
+    &quot;plotDescription&quot;: &quot;喜剧转折点。发现吧台的异常并遇见鸵鸟，情绪由伤心转为疑惑。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      },
+      {
+        &quot;characterName&quot;: &quot;巨大鸵鸟&quot;,
+        &quot;characterDescription&quot;: &quot;[巨大鸵鸟: 一只体型异常庞大的变异鸵鸟，羽毛蓬松略显凌乱，眼神呆滞又带点滑稽，伸长舌头时充满喜剧色彩，可以被当作坐骑]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 37,
+      &quot;endTime&quot;: 51.5,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;中景反转转特写&quot;,
+    &quot;characterAction&quot;: &quot;走到吧台，表情先伤心后疑惑，与正在喝酒的鸵鸟对视。&quot;,
+    &quot;emotion&quot;: &quot;滑稽、疑惑&quot;,
+    &quot;sceneTags&quot;: &quot;室内吧台&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;吧台区域略暗的暖色调氛围灯&quot;,
+    &quot;audioEffects&quot;: &quot;酒水吸溜声，机器短促的滴滴疑问声&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：过肩镜头的特写对峙构图] 左侧前景是 [AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（此时屏幕上显示着一个巨大的黄色问号），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质] 的侧背面。右侧视觉中心是 [巨大鸵鸟: 一只体型异常庞大的变异鸵鸟，羽毛蓬松略显凌乱，眼神呆滞又带点滑稽，伸长舌头时充满喜剧色彩，可以被当作坐骑]。[主体空间关系：鸵鸟的脖子弯曲在奢华的大理石吧台上，巨大的喙正插在一个玻璃酒杯里，两只生物大眼瞪小眼] [场景环境：一片狼藉的木质高档吧台，后方酒架散落着空酒瓶] [光影几何：顶部的暖黄色吧台吊灯打在鸵鸟的杂乱羽毛和机器人的金属屏幕上] [视觉风格：荒诞喜剧色彩] [技术参数：85mm镜头，f/1.8大光圈，极其模糊的背景]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：机位先对准机器人的正面（展示伤心表情变为问号），随后快速180度反摇（Whip Pan）展现吧台上的鸵鸟，接着缓慢推近鸵鸟面部的特写] [主体动作：机器人起初面罩低垂表现沮丧，猛然抬头发觉异样；鸵鸟正极其滑稽地伸出长长的舌头舔舐高脚杯里的残酒，听到动静后呆滞地转过头与机器人对视，舌头还挂在嘴外] [环境动态：鸵鸟蓬松的羽毛随着呼吸微微颤动，吧台上的几滴酒液顺着杯壁流下] [音效：滑稽的咕噜喝水声，快速摇摄的嗖嗖声，类似老动画的眨眼音效] [时长：14.5秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;hljDHUvYW4&quot;,
+    &quot;id&quot;: &quot;hljDHUvYW4&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 7,
+    &quot;durationSeconds&quot;: 9.5,
+    &quot;plotDescription&quot;: &quot;高潮起点的爆裂行动。清道夫骑乘鸵鸟破窗而出。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      },
+      {
+        &quot;characterName&quot;: &quot;巨大鸵鸟&quot;,
+        &quot;characterDescription&quot;: &quot;[巨大鸵鸟: 一只体型异常庞大的变异鸵鸟，羽毛蓬松略显凌乱，眼神呆滞又带点滑稽，伸长舌头时充满喜剧色彩，可以被当作坐骑]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 51.5,
+      &quot;endTime&quot;: 61,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;全景跟拍&quot;,
+    &quot;characterAction&quot;: &quot;清道夫驾驭鸵鸟狂奔，撞碎巨大的玻璃幕墙。&quot;,
+    &quot;emotion&quot;: &quot;极其震撼、狂野&quot;,
+    &quot;sceneTags&quot;: &quot;碎玻璃, 碧海蓝天&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;室内阴影到室外强光的瞬间曝光变化&quot;,
+    &quot;audioEffects&quot;: &quot;巨大的玻璃碎裂声，鸵鸟粗犷的鸣叫声&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：充满张力的低角度冲击构图] [巨大鸵鸟: 一只体型异常庞大的变异鸵鸟，羽毛蓬松略显凌乱，眼神呆滞又带点滑稽，伸长舌头时充满喜剧色彩，可以被当作坐骑] 处于画面正中央的腾空状态，背上骑着 [AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]。[主体空间关系：鸵鸟粗壮的双腿向前跨跃，清道夫单手紧抓鸵鸟脖子上的缰绳，另一只手高举帽子，周围环绕着呈爆炸状飞散的无数反光玻璃碎片] [场景环境：背后是破碎的落地窗边缘，前方是广阔的碧海蓝天和远处沙滩上密集的丧尸群] [光影几何：阳光在漫天飞舞的每一块碎玻璃上产生耀眼的星芒折射] [视觉风格：充满动感的美式漫画超级英雄登场质感] [技术参数：24mm镜头，f/5.6光圈，极高速快门定格瞬间]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：机位采用极低的角度，伴随鸵鸟冲刺的轨迹快速向后方跟退并剧烈震动，强化视觉冲击力] [主体动作：鸵鸟迈着极不协调但速度极快的步伐狂奔，一头撞碎整面玻璃墙飞跃至半空。机器人在鸟背上如同牛仔般单手压低帽檐，身体随惯性前倾] [环境动态：成千上万的玻璃碎片如同慢动作般向镜头方向飞溅折射阳光，鸵鸟落地时激起大量烟尘] [音效：震耳欲聋的玻璃爆裂声转为高频的碎玻璃落地声，鸵鸟踩踏地板的重击声] [时长：9.5秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;YdeOs97b2P&quot;,
+    &quot;id&quot;: &quot;YdeOs97b2P&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 8,
+    &quot;durationSeconds&quot;: 14,
+    &quot;plotDescription&quot;: &quot;充满动感与荒诞感的公路追逐战，从沙滩延伸至废弃现代城市。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      },
+      {
+        &quot;characterName&quot;: &quot;巨大鸵鸟&quot;,
+        &quot;characterDescription&quot;: &quot;[巨大鸵鸟: 一只体型异常庞大的变异鸵鸟，羽毛蓬松略显凌乱，眼神呆滞又带点滑稽，伸长舌头时充满喜剧色彩，可以被当作坐骑]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 61,
+      &quot;endTime&quot;: 75,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;远景侧面跟拍&quot;,
+    &quot;characterAction&quot;: &quot;驾驭鸵鸟飞驰，甩开身后的丧尸群。&quot;,
+    &quot;emotion&quot;: &quot;疯狂、爽快&quot;,
+    &quot;sceneTags&quot;: &quot;沙滩, 废弃城市街道, 经典轿车&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;明朗的日光，沙尘飞扬的朦胧感&quot;,
+    &quot;audioEffects&quot;: &quot;节奏加快的摇滚乐，沙沙的脚步声与丧尸嘶吼&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：大景深的侧面平行视角全景] 画面左侧是狂奔的 [巨大鸵鸟: 一只体型异常庞大的变异鸵鸟，羽毛蓬松略显凌乱，眼神呆滞又带点滑稽，伸长舌头时充满喜剧色彩，可以被当作坐骑] 及其背上的 [AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]。[主体空间关系：一人一鸟在画面左侧高速移动，画面右侧后方跟随着黑压压一片疯狂追赶的丧尸群，距离正在拉开] [场景环境：环境由金色的沙滩过渡到废弃的城市宽阔街道，两旁停放着生锈的60年代经典复古轿车] [光影几何：阳光从侧后方打来，拉长了所有奔跑者的影子，空气中弥漫着被扬起的沙尘] [视觉风格：具有末日废土公路片标志性风格] [技术参数：35mm镜头，f/8光圈，背景带有强烈的动态模糊（Motion Blur）]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：车载摇臂摄影机风格，与鸵鸟保持等速的侧向高速平移跟拍（Tracking Shot），镜头偶尔因地面的颠簸产生微小的上下浮动] [主体动作：鸵鸟的双腿化为模糊的车轮状残影，脑袋随着奔跑前后剧烈晃动；清道夫在鸟背上保持着极其稳定的战术蹲姿，风衣下摆在狂风中拉成笔直的一条线] [环境动态：地面的沙土被鸵鸟巨爪猛烈向后踢飞，路边废弃轿车的车门因强烈的气流而震动，丧尸群在后方张牙舞爪] [音效：疾风呼啸的白噪音，连续且沉重的鸟类奔跑踢踏声，远处混杂的丧尸尖叫] [时长：14.0秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;flqiHdayo8&quot;,
+    &quot;id&quot;: &quot;flqiHdayo8&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 9,
+    &quot;durationSeconds&quot;: 6.5,
+    &quot;plotDescription&quot;: &quot;第一人称沉浸视角的骑行，强化速度感与危险逼近的紧张感。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 75,
+      &quot;endTime&quot;: 81.5,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;近景，主观手持&quot;,
+    &quot;characterAction&quot;: &quot;高举动力设备，在颠簸中准备迎击。&quot;,
+    &quot;emotion&quot;: &quot;紧张、颠簸&quot;,
+    &quot;sceneTags&quot;: &quot;街道背景快速后退&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;交替闪过的建筑物阴影与阳光&quot;,
+    &quot;audioEffects&quot;: &quot;机器沉重的呼吸音效（风箱声），设备充能的高频蜂鸣声&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：紧贴主角背后的第三人称/准第一人称越肩近景构图] 画面前方是被严重虚化的鸵鸟脖颈，视线紧紧跟随 [AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质] 的金属背部与肩膀。[主体空间关系：清道夫的金属右手高高举起一个散发着蓝色电弧的圆柱形动力电池设备，左手紧勒缰绳] [场景环境：两侧的城市建筑、废弃路灯和树木因极速运动而拉成模糊的线条（重度径向模糊）] [光影几何：随着移动，街道建筑投下的阴影与明亮的日光在清道夫的金属身体上形成极高频率的明暗交替闪烁] [视觉风格：充满电子游戏感的高速动作视角] [技术参数：20mm超广角镜头，f/4光圈，强烈动态模糊]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：采用极具压迫感的主观手持跟拍模式，镜头紧贴清道夫的背部，随着骑行的步伐产生剧烈的、毫无规律的上下左右颠簸晃动，视场角（FOV）伴随加速略微拉伸] [主体动作：清道夫的机械肩膀随颠簸频繁发力调整重心，其高举的动力电池设备开始展开机械叶片并闪烁强光，准备进行某种打击] [环境动态：狂风将清道夫风衣的衣领狠狠向后吹打在镜头上，两侧街景化作极速倒退的残影，空气中闪烁着细小的蓝色静电火花] [音效：狂风疯狂拍打麦克风的轰鸣声，机械装置的高频充能音效] [时长：6.5秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;SazuBwM0GR&quot;,
+    &quot;id&quot;: &quot;SazuBwM0GR&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 10,
+    &quot;durationSeconds&quot;: 11.5,
+    &quot;plotDescription&quot;: &quot;核心战斗序列。展示清道夫高效、残酷且带有红眼暴走状态的近战能力。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 81.5,
+      &quot;endTime&quot;: 93,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;特写与全景的快速剪辑蒙太奇&quot;,
+    &quot;characterAction&quot;: &quot;跳下鸵鸟，近距离施展格斗术与枪斗术处决丧尸。&quot;,
+    &quot;emotion&quot;: &quot;狂暴、酷炫&quot;,
+    &quot;sceneTags&quot;: &quot;城市街道, 战斗场面&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;屏幕散发的红光照亮周围环境&quot;,
+    &quot;audioEffects&quot;: &quot;密集的枪声，拳肉相交的重击声，电子狂暴音效&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：极具视觉冲击力的近景特写] [AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（此刻面罩变为极具攻击性的纯红色发光底色，显示着黑色愤怒的恶魔眼符号），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质] 占据画面核心。[主体空间关系：清道夫正处于一个极具张力的回旋踢姿势，手中的银色左轮手枪正从刁钻的角度顶住画面边缘一只丧尸的下颚] [场景环境：城市街道中央，四周有数具正在倒下的丧尸残骸] [光影几何：面罩散发的刺眼红色LED光芒反打在清道夫的金属下巴和风衣衣领上，形成冷酷的红黑色调反差] [视觉风格：极度风格化的Cult电影暴力美学] [技术参数：35mm镜头，f/2.8光圈，高反差照明]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：围绕主角进行极其快速的360度环绕轨道推移（Matrix-style子弹时间感），伴随每次开枪都有瞬间的推进（Push-in）和停顿震动] [主体动作：清道夫以极快的非人类速度行云流水般施展近身格斗，金属腿部踢碎丧尸的膝盖，随后顺势转身，左轮手枪在极近距离连续开火处决敌人，面部的红色屏幕随着每次开火闪烁高亮] [环境动态：丧尸的体液化作黑色的喷射物在空中呈慢动作散开，枪口喷吐出巨大的橘红色火焰照亮四周，弹壳翻滚着弹射出画面] [音效：震耳欲聋且有节奏的左轮开火声，清脆的金属撞击声] [时长：11.5秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;HsQqZRU8gE&quot;,
+    &quot;id&quot;: &quot;HsQqZRU8gE&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 11,
+    &quot;durationSeconds&quot;: 15,
+    &quot;plotDescription&quot;: &quot;战斗结束后的转场，提供时间与地点的文字交代，节奏放缓。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      },
+      {
+        &quot;characterName&quot;: &quot;巨大鸵鸟&quot;,
+        &quot;characterDescription&quot;: &quot;[巨大鸵鸟: 一只体型异常庞大的变异鸵鸟，羽毛蓬松略显凌乱，眼神呆滞又带点滑稽，伸长舌头时充满喜剧色彩，可以被当作坐骑]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 93,
+      &quot;endTime&quot;: 108,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;大远景&quot;,
+    &quot;characterAction&quot;: &quot;在鸵鸟背上脱帽向空旷的街道致意。&quot;,
+    &quot;emotion&quot;: &quot;荒凉、悠然&quot;,
+    &quot;sceneTags&quot;: &quot;荒废街道, 西海岸阳光&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;温暖灿烂的加州正午阳光，极其通透无云&quot;,
+    &quot;audioEffects&quot;: &quot;悠扬缓慢的乡村吉他背景乐，风卷过街道的沙沙声&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：经典的西部片长街远景对称构图] 画面中央是一条笔直延伸至地平线的荒芜城市大道。中景处是 [巨大鸵鸟: 一只体型异常庞大的变异鸵鸟，羽毛蓬松略显凌乱，眼神呆滞又带点滑稽，伸长舌头时充满喜剧色彩，可以被当作坐骑] 载着 [AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]。[主体空间关系：清道夫正优雅地摘下头上的宽檐帽在胸前致意。画面的天空中央以巨大的黄色复古字体悬浮显示“1969 U.S. WEST COAST”] [场景环境：破败但极具60年代色彩的商店招牌，路面开裂长出杂草] [光影几何：顶光照射下，建筑在道路两侧投下笔直的阴影] [视觉风格：色彩鲜明的复古明信片质感] [技术参数：50mm标准镜头，f/8光圈，无限远对焦]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：机位在街道远端保持固定，镜头焦距随着一人一鸟的靠近极其缓慢地向后拉伸（轻微的滑动变焦效果Zolly）] [主体动作：鸵鸟的步伐由之前的狂奔变为轻快悠闲的小步慢跑，清道夫十分绅士地单手脱帽，向空无一人的死寂街道做了一个夸张的致敬动作] [环境动态：一阵微风卷着一团枯草（风滚草）从宽阔的马路横向穿过，字幕在画面中保持静止数秒后如烟雾般消散] [音效：清脆的马蹄般鸵鸟脚步声，空旷街道特有的风声回音] [时长：15.0秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;8i3HcLKjNT&quot;,
+    &quot;id&quot;: &quot;8i3HcLKjNT&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 12,
+    &quot;durationSeconds&quot;: 12,
+    &quot;plotDescription&quot;: &quot;突发的滑稽事故，打破刚刚建立的帅气形象。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      },
+      {
+        &quot;characterName&quot;: &quot;巨大鸵鸟&quot;,
+        &quot;characterDescription&quot;: &quot;[巨大鸵鸟: 一只体型异常庞大的变异鸵鸟，羽毛蓬松略显凌乱，眼神呆滞又带点滑稽，伸长舌头时充满喜剧色彩，可以被当作坐骑]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 108,
+      &quot;endTime&quot;: 120,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;远景转特写&quot;,
+    &quot;characterAction&quot;: &quot;撞上横卧的棕榈树，飞出并在地面狼狈滑行。&quot;,
+    &quot;emotion&quot;: &quot;尴尬、滑稽&quot;,
+    &quot;sceneTags&quot;: &quot;街道中心, 倒塌的棕榈树&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;阳光刺眼，扬起大量沙土&quot;,
+    &quot;audioEffects&quot;: &quot;极其清脆的撞击“咚”声，长长的刹车滑行声&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：低角度特写构图] [AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（此刻面罩上显示着极其尴尬的蓝色汗滴和螺旋状晕眩眼），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质] 正贴着地面狼狈滑行。[主体空间关系：清道夫脸部朝地向前摩擦，风衣被掀起，宽檐帽正脱离头部飞在半空中；后方虚化背景中是翻倒的巨大鸵鸟和一棵横穿马路的巨大干枯棕榈树干] [场景环境：满是裂纹和碎石的柏油马路] [光影几何：强光下扬起的浓重沙尘形成了一道逆光的光晕屏障] [视觉风格：卡通化的物理碰撞表现] [技术参数：85mm中长焦，f/4光圈，聚焦于主角面部屏幕]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：机位先保持全景记录撞击瞬间，随后切至低角度特写，镜头伴随主角在地面滑行的轨迹同速向后平移跟拍，最后静止] [主体动作：远景中鸵鸟直接绊倒在粗大的树干上翻滚，清道夫如同炮弹般被甩飞。特写中，清道夫面朝下在粗糙的路面上滑行摩擦数米，金属躯体擦出大量火花，帽子脱手飞出画面边缘，屏幕上的表情瞬间从正常变为蓝色的尴尬晕眩状态] [环境动态：撞击瞬间棕榈树干上的枯叶纷纷震落，滑行轨迹上扬起一道浓烈的尘土尾迹，火花四溅] [音效：卡通般的“Boing”撞击声，金属剧烈摩擦柏油路面的刺耳声，最后是一声沉闷的停顿落地音] [时长：12.0秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;Mz6Jo2qS5s&quot;,
+    &quot;id&quot;: &quot;Mz6Jo2qS5s&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 13,
+    &quot;durationSeconds&quot;: 9.5,
+    &quot;plotDescription&quot;: &quot;清道夫恢复状态，情绪沮丧地进入一家时装店。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 120,
+      &quot;endTime&quot;: 129.5,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;全景跟拍转室内&quot;,
+    &quot;characterAction&quot;: &quot;捡起帽子拍土，推开带有Turt&#x27;s字样的店门走入阴暗处。&quot;,
+    &quot;emotion&quot;: &quot;沮丧、落寞&quot;,
+    &quot;sceneTags&quot;: &quot;时装店大门, Turt&#x27;s招牌&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;室外强光与室内昏暗的强烈对比&quot;,
+    &quot;audioEffects&quot;: &quot;拍打灰尘的声音，老旧门铰链的吱呀声，店内的老式背景音乐隐约传出&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：平视后方跟拍视角的全景] [AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（屏幕上显示一条下垂的沮丧单线），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质] 位于画面偏左侧。[主体空间关系：清道夫背对镜头，头部低垂，正伸手推开一扇破旧玻璃门。门上挂着摇摇欲坠的复古霓虹灯招牌“Turt&#x27;s”] [场景环境：建筑外墙布满涂鸦与风化的斑驳痕迹，透过玻璃门可以看见店内一片昏暗幽深，仅有微弱的光束穿透] [光影几何：室外强烈的加州日光打在清道夫后背，而面前的室内则是深邃的暗调阴影，形成强烈的明暗轮廓交界] [视觉风格：荒凉落寞的废土探索感] [技术参数：35mm镜头，f/5.6光圈]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：机位如同尾随者一般，平稳且缓慢地跟在主角身后向前推进，随着门被推开，镜头顺势越过门槛进入昏暗的室内] [主体动作：清道夫从地上捡起变了形的帽子，动作迟缓地在腿上拍了拍灰尘，重新戴在头上（姿态显得有些颓废）。随后他走向店门，用力推开沉重且布满灰尘的玻璃门跨入阴影中] [环境动态：拍打帽子时扬起细微的灰尘颗粒，推门时门框上的灰尘簌簌落下，室外强光随着门开射入室内形成光柱] [音效：衣服摩擦的拍打声，极其尖锐沉长的开门吱嘎声，进入室内后脚步声变得发闷] [时长：9.5秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;Fglqh3QSVv&quot;,
+    &quot;id&quot;: &quot;Fglqh3QSVv&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 14,
+    &quot;durationSeconds&quot;: 11,
+    &quot;plotDescription&quot;: &quot;浪漫爱情线的起点。清道夫对红裙假人一见钟情。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      },
+      {
+        &quot;characterName&quot;: &quot;红裙假人&quot;,
+        &quot;characterDescription&quot;: &quot;[红裙假人: 一个商场里的女性塑料模特假人，面部特征定格为经典的微笑，身穿一件鲜艳的红色复古连衣裙，姿态僵硬但被赋予了浪漫的拟人化氛围]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 129.5,
+      &quot;endTime&quot;: 140.5,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;过肩主观视角的特写&quot;,
+    &quot;characterAction&quot;: &quot;看到假人，面部表情瞬间切换为粉红色的爱心模式。&quot;,
+    &quot;emotion&quot;: &quot;心动、浪漫&quot;,
+    &quot;sceneTags&quot;: &quot;时装店内部, 聚光灯&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;漆黑环境中唯美的一束顶光源直射假人&quot;,
+    &quot;audioEffects&quot;: &quot;瞬间安静，心跳音效，轻柔浪漫的弦乐突然响起&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：透过前景物体过肩视角的浪漫对视构图] 画面极近前景（左下角）是 [红裙假人: 一个商场里的女性塑料模特假人，面部特征定格为经典的微笑，身穿一件鲜艳的红色复古连衣裙，姿态僵硬但被赋予了浪漫的拟人化氛围] 虚化的肩膀与一缕假发。视觉中心对焦于几米外的 [AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（此时整个屏幕爆发般亮起极其醒目的粉色底光，中心跳动着两颗巨大的红色爱心符号），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]。[主体空间关系：清道夫像被施了定身法一样呆立在昏暗的过道中，正痴痴地凝视着假人] [场景环境：店内漆黑破败，背景有隐约的衣架轮廓] [光影几何：一束如同剧院舞台般的唯美顶光（God Ray）穿透破损屋顶恰好打在假人身上，假人的红裙在黑暗中极为耀眼，反射的粉红光照亮了清道夫的面罩] [视觉风格：复古浪漫爱情片的一见钟情瞬间] [技术参数：85mm长焦镜头，f/1.4极浅景深，将背景完全虚化为散景光斑]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：机位起初在假人身后，随后进行极度缓慢且平滑的向前推轨（Push-in），拉近与清道夫面部的距离，营造时间静止的浪漫错觉] [主体动作：清道夫原本低垂颓废的头部在看到假人的瞬间猛然抬起，身体僵直，原本显示沮丧线条的屏幕如同通电般发出轻微爆响，瞬间切换为高亮的粉红色背景和疯狂跳动的爱心动画，机械手臂不自觉地微微抬起] [环境动态：顶部的聚光灯光束中有细密的灰尘像星光般缓缓飘落，营造出绝对静谧的氛围] [音效：环境杂音瞬间被抽离，伴随一声清脆的“叮”音效，响起极其抒情复古的萨克斯风旋律] [时长：11.0秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;JMncFEwLuT&quot;,
+    &quot;id&quot;: &quot;JMncFEwLuT&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 15,
+    &quot;durationSeconds&quot;: 13.5,
+    &quot;plotDescription&quot;: &quot;约会蒙太奇第一部分。展现跨越生死的荒诞浪漫，静态构图如同相册翻页。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      },
+      {
+        &quot;characterName&quot;: &quot;红裙假人&quot;,
+        &quot;characterDescription&quot;: &quot;[红裙假人: 一个商场里的女性塑料模特假人，面部特征定格为经典的微笑，身穿一件鲜艳的红色复古连衣裙，姿态僵硬但被赋予了浪漫的拟人化氛围]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 140.5,
+      &quot;endTime&quot;: 154,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;中景，静态对称构图组合&quot;,
+    &quot;characterAction&quot;: &quot;在快餐店并排坐着，在阳光下用拍立得自拍合影。&quot;,
+    &quot;emotion&quot;: &quot;温馨、怪诞的甜蜜&quot;,
+    &quot;sceneTags&quot;: &quot;快餐店窗边, 阳光下的废墟&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;明亮且带有一层老旧褪色滤镜的阳光&quot;,
+    &quot;audioEffects&quot;: &quot;老式相机的快门咔嚓声，相纸吐出的声音&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：韦斯·安德森风格的极度对称、平视静态中景构图] [AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（显示着两眼弯弯的粉色笑脸），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质] 与 [红裙假人: 一个商场里的女性塑料模特假人，面部特征定格为经典的微笑，身穿一件鲜艳的红色复古连衣裙，姿态僵硬但被赋予了浪漫的拟人化氛围] 并排端坐在老式快餐店的红色皮质卡座上。[主体空间关系：清道夫用机械手臂极其温柔地揽着假人僵硬的肩膀，另一只手举着一台老式拍立得相机对准镜头方向自拍] [场景环境：快餐店的玻璃窗外挤满了面目狰狞、正疯狂拍打玻璃的丧尸群，但玻璃内的两人岁月静好] [光影几何：明亮的阳光透过布满血手印的玻璃照射进来，在两人身上形成柔和的漫反射] [视觉风格：宝丽来老照片质感，强烈的黑白对比与荒诞感] [技术参数：35mm镜头，f/5.6光圈，固定机位]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：机位如同放置在三脚架上一般绝对静止不动（Lock-off shot），通过画面内的动作变换完成蒙太奇跳剪] [主体动作：场景一切换至快餐店，清道夫正举着相机，屏幕上闪烁着开心的符号，他按下了拍立得的快门；假人全程保持僵硬且完美的微笑姿态。快门闪光灯闪烁一次，随后相机底端缓缓吐出一张相纸] [环境动态：快餐店窗外的丧尸群像背景板一样疯狂且无声地拍打、啃咬着玻璃，玻璃因为挤压产生轻微的形变与震颤，但毫无破裂迹象] [音效：伴随浪漫音乐，突出的老式相机“咔嚓——嗡嗡嗡”吐纸声，窗外丧尸的嘶吼声被极度弱化处理] [时长：13.5秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;vBFcBoNLdR&quot;,
+    &quot;id&quot;: &quot;vBFcBoNLdR&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 16,
+    &quot;durationSeconds&quot;: 15.5,
+    &quot;plotDescription&quot;: &quot;约会蒙太奇第二部分。深入展示机器人的拟人化温柔动作。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      },
+      {
+        &quot;characterName&quot;: &quot;红裙假人&quot;,
+        &quot;characterDescription&quot;: &quot;[红裙假人: 一个商场里的女性塑料模特假人，面部特征定格为经典的微笑，身穿一件鲜艳的红色复古连衣裙，姿态僵硬但被赋予了浪漫的拟人化氛围]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 154,
+      &quot;endTime&quot;: 169.5,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;近景转特写&quot;,
+    &quot;characterAction&quot;: &quot;在电影院试图搂肩膀，在游戏机房砸碎玻璃拿泰迪熊。&quot;,
+    &quot;emotion&quot;: &quot;羞涩、宠溺&quot;,
+    &quot;sceneTags&quot;: &quot;破旧电影院, 废弃游戏机房&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;电影院内银幕反光的冷色调；游戏厅霓虹灯的彩色光斑&quot;,
+    &quot;audioEffects&quot;: &quot;老电影放映机的哒哒声，玻璃碎裂声&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：双人并排的近景特写构图] [AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（显示着带有粉色晕影的害羞表情），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质] 和 [红裙假人: 一个商场里的女性塑料模特假人，面部特征定格为经典的微笑，身穿一件鲜艳的红色复古连衣裙，姿态僵硬但被赋予了浪漫的拟人化氛围] 坐在破旧的电影院红色折叠椅上。[主体空间关系：清道夫的金属右臂正悄悄地、极度生硬且缓慢地从假人背后绕过，试图搭在假人的右肩上，假人端正地直视前方] [场景环境：电影院内部布满灰尘，周围的座椅上散落着爆米花和骷髅骨架] [光影几何：唯一的冷白色光源来自于正前方（银幕的反光），将两人的面部照亮，周围被深沉的黑暗包裹] [视觉风格：经典的80年代青春片约会桥段再现，高反差电影光] [技术参数：50mm镜头，f/2.0光圈，暗光环境拍摄]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：机位在两人正前方偏下角度极其缓慢地向左平移（微弱的Dolly left），捕捉机器人小动作的细节过程] [主体动作：在电影院场景中，机器人的机械手臂像一个紧张的毛头小子，一顿一顿地悬空移动，最终轻轻地落在了假人的肩膀上，面罩上的表情迅速变成一个跳跃的开心音符。随后跳剪至游戏机房：机器人直接挥动坚硬的金属拳头一拳干碎了抓娃娃机的玻璃面板，从里面硬拽出一只满是灰尘的棕色泰迪熊，单手递到假人面前] [环境动态：电影院银幕投射的光线在两人脸上产生有节奏的忽明忽暗闪烁；游戏机房碎玻璃落地溅起尘土，抓娃娃机顶部的破损霓虹灯滋滋作响地闪烁] [音效：机械关节因为“紧张”而发出的生涩嘎吱声，干脆利落的砸玻璃闷响] [时长：15.5秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;nRYCM4u51n&quot;,
+    &quot;id&quot;: &quot;nRYCM4u51n&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 17,
+    &quot;durationSeconds&quot;: 10.5,
+    &quot;plotDescription&quot;: &quot;约会蒙太奇终段与生活片段融合。极其唯美的构图中暗藏杀机。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      },
+      {
+        &quot;characterName&quot;: &quot;红裙假人&quot;,
+        &quot;characterDescription&quot;: &quot;[红裙假人: 一个商场里的女性塑料模特假人，面部特征定格为经典的微笑，身穿一件鲜艳的红色复古连衣裙，姿态僵硬但被赋予了浪漫的拟人化氛围]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 169.5,
+      &quot;endTime&quot;: 180,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;全景背影&quot;,
+    &quot;characterAction&quot;: &quot;在夕阳下并坐在长椅上，清道夫一边欣赏日落，一边单手开枪击毙侧面袭来的丧尸。&quot;,
+    &quot;emotion&quot;: &quot;宁静、从容不迫的暴力&quot;,
+    &quot;sceneTags&quot;: &quot;夕阳, 公园长椅, 悬崖边&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;绝美的落日余晖，暖金色的逆光（Golden Hour）&quot;,
+    &quot;audioEffects&quot;: &quot;悠扬抒情的音乐达到高潮，突兀的一声枪响，随后恢复宁静&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：极具美感的黄金分割全景背影构图] 画面下方三分之一处，[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（此刻面罩在背光中隐约可见），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质] 与 [红裙假人: 一个商场里的女性塑料模特假人，面部特征定格为经典的微笑，身穿一件鲜艳的红色复古连衣裙，姿态僵硬但被赋予了浪漫的拟人化氛围] 并排坐在悬崖边的一张破旧木长椅上，背对镜头。[主体空间关系：清道夫的左臂搂着假人，两人静静面对着壮丽的夕阳海景。同时，清道夫的右手极其随意地向画面右侧伸直，手中握着的左轮手枪正抵着一个从画面外扑进来的丧尸的额头] [场景环境：悬崖高处的开阔地带，前景是荒草，远景是逐渐沉入海平面的巨大落日] [光影几何：夕阳在海面上铺开一条金色的光柱，强烈的逆光将长椅、主角与丧尸全都剪影化（Silhouette），仅在边缘有极细的金色轮廓光] [视觉风格：极度浪漫与极度暴力的荒诞并置，明信片级绝美风景] [技术参数：85mm镜头，f/4光圈，强逆光测光]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：机位在两人背后的远端保持绝对静止，镜头如同一幅画框般锁定这宁静绝美的瞬间] [主体动作：清道夫与假人依偎在一起一动不动，正欣赏日落。突然，画面右侧边缘冲出一只张牙舞爪的丧尸扑向他们。清道夫看都没看一眼，头也不转，极其随意地抬起右臂，枪口准确指向右侧并扣动扳机。丧尸被击中后向后倒飞出画面，清道夫随即收起枪，继续保持搂着假人的静止姿态] [环境动态：海风吹拂着假人的红裙下摆与清道夫的风衣，悬崖边的枯草随风轻轻摇曳，落日的光辉在海面上缓缓波荡，枪口喷出短暂而明亮的枪焰] [音效：呼啸的微风和海浪白噪音，突发的一声极具穿透力的左轮枪响，随后迅速归于悠扬的音乐声] [时长：10.5秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;tWx6a9vLFW&quot;,
+    &quot;id&quot;: &quot;tWx6a9vLFW&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 18,
+    &quot;durationSeconds&quot;: 12,
+    &quot;plotDescription&quot;: &quot;离去节拍。结束了地球上的清理与游荡，准备带着“爱人”离开。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      },
+      {
+        &quot;characterName&quot;: &quot;红裙假人&quot;,
+        &quot;characterDescription&quot;: &quot;[红裙假人: 一个商场里的女性塑料模特假人，面部特征定格为经典的微笑，身穿一件鲜艳的红色复古连衣裙，姿态僵硬但被赋予了浪漫的拟人化氛围]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 180,
+      &quot;endTime&quot;: 192,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;超大远景&quot;,
+    &quot;characterAction&quot;: &quot;清道夫单臂抱着假人，走向停在楼顶的球形飞船。&quot;,
+    &quot;emotion&quot;: &quot;告别、宏伟&quot;,
+    &quot;sceneTags&quot;: &quot;城市废墟楼顶, 球形飞船, 暮色暮光&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;日落后的深蓝紫色暮光（Blue Hour），飞船底部的幽蓝色推进器光芒&quot;,
+    &quot;audioEffects&quot;: &quot;飞船引擎低沉的轰鸣声，音乐转为太空史诗感&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：从高处俯拍的宏大超大全景（Wide Establishing Shot）] 广阔的楼顶平台上，渺小的 [AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质] 正以公主抱的姿势抱着 [红裙假人: 一个商场里的女性塑料模特假人，面部特征定格为经典的微笑，身穿一件鲜艳的红色复古连衣裙，姿态僵硬但被赋予了浪漫的拟人化氛围] 走向画面中央的庞然大物。[主体空间关系：在巨大的停机坪中央，停泊着一艘充满复古未来感（如同50年代科幻画报）的银色球形飞船，登机坡道已经降下，主角正走向坡道] [场景环境：四周是连绵不绝的废弃未来主义城市摩天大楼的黑色剪影，天空呈现出从橙红到深蓝的绝美渐变] [光影几何：飞船底部喷射出的幽蓝色等离子光照亮了楼顶地面的网格纹理，将主角的影子长长地拖在地上] [视觉风格：复古科幻史诗感（Retro-futurism Epic）] [技术参数：14mm超广角，f/8光圈，强调空间浩瀚感]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：机位悬浮在极高的空中，伴随主角前进的步伐，极其缓慢且平稳地向上方攀升（Crane Up），进一步展现城市的浩瀚与主角的渺小] [主体动作：清道夫抱着毫无生命的假人，步伐稳健地踏上飞船散发着光芒的金属登机坡道，在走到舱门前时，他停下脚步，转过身面向满目疮痍的地球城市，用空出的手轻轻将帽子摘下放在胸前，做了一个长长的谢幕鞠躬] [环境动态：飞船引擎预热产生的热浪让登机口周围的空气产生强烈的扭曲折射（Heat Distortion），高空的强风吹拂着清道夫的风衣，天空中的几颗星辰已经开始闪烁] [音效：持续且低沉的飞船引擎共振轰鸣声，呼啸的高空风声] [时长：12.0秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;9od4BNvElf&quot;,
+    &quot;id&quot;: &quot;9od4BNvElf&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 19,
+    &quot;durationSeconds&quot;: 22,
+    &quot;plotDescription&quot;: &quot;终章。飞向宇宙的终极浪漫，留下开放式的美好结局。&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;AI清道夫&quot;,
+        &quot;characterDescription&quot;: &quot;[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（可切换黄色笑脸、红色愤怒、粉色爱心等），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      },
+      {
+        &quot;characterName&quot;: &quot;红裙假人&quot;,
+        &quot;characterDescription&quot;: &quot;[红裙假人: 一个商场里的女性塑料模特假人，面部特征定格为经典的微笑，身穿一件鲜艳的红色复古连衣裙，姿态僵硬但被赋予了浪漫的拟人化氛围]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;videoReference&quot;: {
+      &quot;startTime&quot;: 192,
+      &quot;endTime&quot;: 214,
+      &quot;referenceFrameImage&quot;: &quot;placeholder_url&quot;
+    },
+    &quot;shotSize&quot;: &quot;特写转飞船外部远景&quot;,
+    &quot;characterAction&quot;: &quot;在舱内亲吻假人的手，随后两人并肩坐在舷窗前望着远去的地球。&quot;,
+    &quot;emotion&quot;: &quot;极其浪漫、余音绕梁&quot;,
+    &quot;sceneTags&quot;: &quot;太空舱内部, 宇宙, 舷窗外的地球&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;舱内微弱的仪表盘荧光，舷窗外明亮的蓝色地球反光&quot;,
+    &quot;audioEffects&quot;: &quot;空灵的太空环境音，音乐渐渐淡出&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：从舱内向外看的对称中景构图，极具画框感] 飞船内部昏暗的金属驾驶舱内，[AI清道夫: 一台具有复古未来主义风格的人形机器人，头部配有可显示表情的电子屏幕面罩（屏幕散发着柔和的粉红色光芒，显示闭眼的微笑符号），身穿带有些许污渍的战术风衣，头戴一顶复古宽檐帽，机械肢体灵活且带有金属磨损质感，整体透出一种黑色幽默与极端的乐观主义气质] 正低下头，将金属嘴部轻轻贴在 [红裙假人: 一个商场里的女性塑料模特假人，面部特征定格为经典的微笑，身穿一件鲜艳的红色复古连衣裙，姿态僵硬但被赋予了浪漫的拟人化氛围] 冰冷的塑料手背上。[主体空间关系：两人并排坐在巨大的圆形透明舷窗前，构成剪影。舷窗外是一颗巨大的、蔚蓝色的地球，占据了窗外绝大部分视野] [场景环境：复古的舱内布满闪烁的机械仪表和拨动开关，周围是漆黑深邃的宇宙空间与点点星光] [光影几何：地球反射的强光作为主要光源，勾勒出两人相依偎的背影轮廓，舱内的指示灯提供色彩点缀] [视觉风格：充满温情的科幻童话结局。画面最后淡出显示白色的“END”字样] [技术参数：35mm镜头，f/2.8光圈，绝美的背光剪影]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机运镜：机位固定在舱内后方，镜头极其缓慢地向着两人背影和舷窗外的地球推进（极慢的Push-in），最终在屏幕中央浮现字样并逐渐黑屏] [主体动作：特写中，清道夫极其绅士且温柔地抬起假人的塑料手，低头做出亲吻的动作。随后画面切至背影，清道夫的手搭在假人的肩上，两人静静地注视着窗外的母星] [环境动态：舱外的蔚蓝地球在视野中极其缓慢地旋转并逐渐变小，暗示飞船正在高速驶向深空，几颗耀眼的流星从深邃的黑色宇宙背景中划过。最终纯白色的“END”字样从屏幕中央淡入] [音效：完全没有机械噪音，只有深沉空灵的宇宙环境低频声与最后一丝逐渐飘散的浪漫管弦乐余音] [时长：22.0秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;r8zQZuMvi1&quot;,
+    &quot;id&quot;: &quot;r8zQZuMvi1&quot;
+  }
+]
+</div><h3>3 多机位九宫格</h3><div class="source-text">
+/
+</div><h3>4 视觉风格与叙事结构分析</h3><div class="source-text">
+视觉风格与叙事结构分析
+
+1. 视觉风格 (Visual Style):鲜明的“复古未来主义”(Retro-futurism) 风格，将1960年代的美国西海岸风情与高度先进的AI机器人技术相结合。画面色彩浓郁，阳光感强烈，类似于高饱和度的电影胶片质感。尽管背景是丧尸末日后的断壁残垣，但通过明亮的调色和干净的机器人设计，营造出一种荒诞且浪漫的氛围。
+2. 叙事结构 (Narrative Structure):视频采用非传统的线性叙事，分为三个主要阶段：
+
+第一阶段：清道夫日常。 介绍AI清道夫在豪宅和城市废墟中清理丧尸的工作，基调欢快而怪异。
+
+第二阶段：动感冒险。 机器人骑着鸵鸟在城市中飞驰并战斗，展现了极高的行动力和趣味性。
+
+第三阶段：荒诞爱情。 机器人在废墟商店中偶遇一个红色波点裙的假人模特，并与其展开了一段跨越现实与幻想的“末日恋情”，最终共同离开地球。
+
+3. 节奏与音频 (Pacing &amp;amp; Audio):
+
+音乐： 配乐为1960年代风格的快节奏复古流行/摇滚乐（如《Miss Lindy》），曲风欢快，与末日景象形成强烈对比。
+
+节奏： 视频剪辑精准卡点，视觉切换与音乐的鼓点和节奏变化高度同步。动作戏部分剪辑迅速，慢节奏的“约会”部分则使用长镜头和缓慢的推拉镜头。
+</div><h3>5 多机位九宫格</h3><div class="source-text">
+/
+</div><h3>6 720°全景图</h3><div class="source-text">
+{{Panorama720}}
+</div><h3>7 角色脸部三视图</h3><div class="source-text">
+/
+</div><h3>8 核心角色描述</h3><div class="source-text">
+[
+  &quot;AI 清道夫 (The AI Scavenger)\n\n脸部与头部： 白色球形机器人头部，带有银色耳部组件。面部是一个黑色数字屏幕，通过绿色、红色、黄色或粉色的LED像素显示各种表情符号（笑脸、愤怒、伤心、爱心）。戴着一顶磨损的棕色宽沿牛仔帽。\n\n上身： 穿着一件深褐色皮革夹克，内衬白色T恤，脖子上围着一条鲜红色的牛仔方巾。右臂带有明显的机械关节和黄色电缆细节。\n\n下身： 纯白色机械腿部，带有金色装饰块和黑色关节连接件。腰间挂着宽大的皮带和枪套。\n\n配饰： 手持一把巨大的银色多管转轮手枪。有时佩戴手套，手指为黑色机械结构。\n\n最佳参考时间点： 00:06.500 (正面近景), 01:16.000 (动作展示), 02:09.500 (表情切换)。\n\n假人模特 (The Mannequin)\n\n发型： 1960年代风格的金黄色复古盘发，发丝纹理清晰。\n\n脸部： 标准的塑料假人面孔，妆容精致，通常戴着一副黑框墨镜。\n\n上身： 穿着一件鲜艳的红色无袖连衣裙，布满白色波点，收腰设计。\n\n最佳参考时间点： 02:11.000 (全景展示), 02:25.000 (特写)。&quot;
+]
+</div><h3>9 剧情推演四宫格</h3><div class="source-text">
+/
+</div><h3>10 720°全景图</h3><div class="source-text">
+{{Panorama720}}
+</div><h3>11 宫格分镜 3-1</h3><div class="source-text">
+单独生成【第3行第1列】的分镜图像
+</div><h3>12 宫格分镜 3-2</h3><div class="source-text">
+单独生成【第3行第2列】的分镜图像
+</div><h3>13 宫格分镜 1-1</h3><div class="source-text">
+单独生成【第1行第1列】的分镜图像
+</div><h3>14 宫格分镜 2-1</h3><div class="source-text">
+单独生成【第2行第1列】的分镜图像
+</div><h3>15 宫格分镜 2-2</h3><div class="source-text">
+单独生成【第2行第2列】的分镜图像
+</div><h3>16 宫格分镜 2-3</h3><div class="source-text">
+单独生成【第2行第3列】的分镜图像
+</div><h3>17 宫格分镜 2-2</h3><div class="source-text">
+单独生成【第2行第2列】的分镜图像
+</div><h3>18 宫格分镜 3-2</h3><div class="source-text">
+单独生成【第3行第2列】的分镜图像
+</div><h3>19 宫格分镜 1-2</h3><div class="source-text">
+单独生成【第1行第2列】的分镜图像
+</div><h3>20 宫格分镜 3-3</h3><div class="source-text">
+单独生成【第3行第3列】的分镜图像
+</div><h3>21 宫格分镜 1-2</h3><div class="source-text">
+单独生成【第1行第2列】的分镜图像
+</div><h3>22 宫格分镜 2-1</h3><div class="source-text">
+单独生成【第2行第1列】的分镜图像
+</div><h3>23 宫格分镜 2-2</h3><div class="source-text">
+单独生成【第2行第2列】的分镜图像
+</div><h3>24 宫格分镜 1-3</h3><div class="source-text">
+单独生成【第1行第3列】的分镜图像
+</div><h3>25 宫格分镜 3-3</h3><div class="source-text">
+单独生成【第3行第3列】的分镜图像
+</div><h3>26 宫格分镜 3-3</h3><div class="source-text">
+单独生成【第3行第3列】的分镜图像
+</div><h3>27 宫格分镜 2-1</h3><div class="source-text">
+单独生成【第2行第1列】的分镜图像
+</div><h3>28 宫格分镜 2-3</h3><div class="source-text">
+单独生成【第2行第3列】的分镜图像
+</div><h3>29 宫格分镜 1-1</h3><div class="source-text">
+单独生成【第1行第1列】的分镜图像
+</div><h3>30 宫格分镜 2-1</h3><div class="source-text">
+单独生成【第2行第1列】的分镜图像
+</div><h3>31 宫格分镜 1-1</h3><div class="source-text">
+单独生成【第1行第1列】的分镜图像
+</div><h3>32 宫格分镜 1-1</h3><div class="source-text">
+单独生成【第1行第1列】的分镜图像
+</div><h3>33 宫格分镜 2-3</h3><div class="source-text">
+单独生成【第2行第3列】的分镜图像</div></section><section id="data" class="source-section"><h2>画布与原始数据</h2><p class="meta">画布节点 72 · 连线 43 · 提示词或文本节点 32</p><nav class="nav"><a href="%E7%94%BB%E5%B8%83%E6%95%B0%E6%8D%AE.json">打开画布 JSON</a><a href="%E7%94%BB%E5%B8%83%E6%95%B0%E6%8D%AE.json" download>下载画布 JSON</a><a href="%E5%AA%92%E4%BD%93%E6%B8%85%E5%8D%95.json">媒体清单 JSON</a><a href="%E6%9C%AC%E5%9C%B0%E5%AA%92%E4%BD%93%E7%B4%A2%E5%BC%95.md">本地媒体索引 Markdown</a></nav><p class="mini">画布 JSON 保留节点、连线和原始字段，供复查或后续整理；页面中的媒体来自已保存的本地文件。</p></section></article><section id="media"><h2>本地媒体索引</h2><p>本地媒体 58 份：jpeg 10、png 48。<a href="%E6%9C%AC%E5%9C%B0%E5%AA%92%E4%BD%93%E7%B4%A2%E5%BC%95.md">Markdown 媒体索引</a></p><input class="searchbox" id="media-search" type="search" placeholder="筛选媒体名称、类型、节点 ID…" aria-label="筛选媒体"><div class="gallery"><section class="media-card" data-search="1 943429、宫格分镜 3-1、宫格分镜 3-2 png 来源文件 4kaj2nrvjp 25hkhvmu7f 3brtc6wjpx 3rbmzwsqny 7dchxjsmz6 dqgtrsf2bp eiq06thbpv jjhczafjnz kpsvz9nobz ojscqvbijn"><a href="../%E5%AA%92%E4%BD%93/802962895ca1e1e025a103ae.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/802962895ca1e1e025a103ae.png" alt="943429、宫格分镜 3-1、宫格分镜 3-2"></a><p><strong>1 · 943429、宫格分镜 3-1、宫格分镜 3-2</strong></p><p class="meta">png · 来源文件 · 4.0 MB</p><p><a href="../%E5%AA%92%E4%BD%93/802962895ca1e1e025a103ae.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/e9ba571a2a6eb52bdf6d14f74d2023385cf86178.jpg">在线来源</a></p></section><section class="media-card" data-search="2 2f060eed-40dd-40e2-bbd1-cd2f06e607cf (1) jpeg 来源文件 6fevmq6mbo"><a href="../%E5%AA%92%E4%BD%93/4de20395e1b451f6bbb4841d.jpg"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/4de20395e1b451f6bbb4841d.jpg" alt="2f060eed-40dd-40e2-bbd1-cd2f06e607cf (1)"></a><p><strong>2 · 2f060eed-40dd-40e2-bbd1-cd2f06e607cf (1)</strong></p><p class="meta">jpeg · 来源文件 · 301.1 KB</p><p><a href="../%E5%AA%92%E4%BD%93/4de20395e1b451f6bbb4841d.jpg">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/766517b494c6db34af3136fb9e890e55bac1389f.jpg">在线来源</a></p></section><section class="media-card" data-search="3 abb3ceeb-f015-4286-9951-2546021226c1 png 来源文件 92azrtfg1k"><a href="../%E5%AA%92%E4%BD%93/3c691dcc5ff5985c6be3203c.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/3c691dcc5ff5985c6be3203c.png" alt="abb3ceeb-f015-4286-9951-2546021226c1"></a><p><strong>3 · abb3ceeb-f015-4286-9951-2546021226c1</strong></p><p class="meta">png · 来源文件 · 2.7 MB</p><p><a href="../%E5%AA%92%E4%BD%93/3c691dcc5ff5985c6be3203c.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/601ec767293eafee53365f2159d9ac2713fe414c.png">在线来源</a></p></section><section class="media-card" data-search="4 多机位九宫格、宫格分镜 2-3、宫格分镜 2-2 png 来源文件 9ap6wb8sbz 7znyuaguw9 8ehfgbc5v5 kszfcu5ltd sk3lcskgjq t0vsubencq"><a href="../%E5%AA%92%E4%BD%93/c869c529a946fb7f6d202fcd.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/c869c529a946fb7f6d202fcd.png" alt="多机位九宫格、宫格分镜 2-3、宫格分镜 2-2"></a><p><strong>4 · 多机位九宫格、宫格分镜 2-3、宫格分镜 2-2</strong></p><p class="meta">png · 来源文件 · 6.4 MB</p><p><a href="../%E5%AA%92%E4%BD%93/c869c529a946fb7f6d202fcd.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/b2395718f8267611fc74c088d193b60b43d8569e5fe1286c674b256fda833555.png">在线来源</a></p></section><section class="media-card" data-search="5 多机位九宫格、720°全景图、多角度 jpeg 来源文件 9ap6wb8sbz g2htapnq4y vtr2nndggy w3v6f4pn6u"><a href="../%E5%AA%92%E4%BD%93/40ec298f1ab65dce2a9293a6.jpg"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/40ec298f1ab65dce2a9293a6.jpg" alt="多机位九宫格、720°全景图、多角度"></a><p><strong>5 · 多机位九宫格、720°全景图、多角度</strong></p><p class="meta">jpeg · 来源文件 · 527.2 KB</p><p><a href="../%E5%AA%92%E4%BD%93/40ec298f1ab65dce2a9293a6.jpg">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/3b641b3991ebe93de4e149ae608a2611ca99e85d.jpg">在线来源</a></p></section><section class="media-card" data-search="6 941421、角色三视图生成 png 来源文件 bwugrqcwrm ijwddlb92v"><a href="../%E5%AA%92%E4%BD%93/f4bc687e48cc3431dae7efc3.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/f4bc687e48cc3431dae7efc3.png" alt="941421、角色三视图生成"></a><p><strong>6 · 941421、角色三视图生成</strong></p><p class="meta">png · 来源文件 · 7.0 MB</p><p><a href="../%E5%AA%92%E4%BD%93/f4bc687e48cc3431dae7efc3.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/fb610c8da10c8ddd4014537a2ffb60177f3c0a23.jpg">在线来源</a></p></section><section class="media-card" data-search="7 chatgpt image 2026年5月14日 12_19_42、角色脸部三视图 png 来源文件 epk7n3bxks moriekamft"><a href="../%E5%AA%92%E4%BD%93/9ab1ee6fe4d3ad167f429cff.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/9ab1ee6fe4d3ad167f429cff.png" alt="ChatGPT Image 2026年5月14日 12_19_42、角色脸部三视图"></a><p><strong>7 · ChatGPT Image 2026年5月14日 12_19_42、角色脸部三视图</strong></p><p class="meta">png · 来源文件 · 1.9 MB</p><p><a href="../%E5%AA%92%E4%BD%93/9ab1ee6fe4d3ad167f429cff.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/e0b3d392d989f003c9285eca82e5e4fb7375a0c8.png">在线来源</a></p></section><section class="media-card" data-search="8 多机位九宫格、宫格分镜 3-2、宫格分镜 3-3 png 来源文件 fucpblmmew berhsu5bi5 mv6znseycf notbrex9id qjhehpcjbq uuphqaq9cr"><a href="../%E5%AA%92%E4%BD%93/0858732700f2a77a9b035d9f.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/0858732700f2a77a9b035d9f.png" alt="多机位九宫格、宫格分镜 3-2、宫格分镜 3-3"></a><p><strong>8 · 多机位九宫格、宫格分镜 3-2、宫格分镜 3-3</strong></p><p class="meta">png · 来源文件 · 6.7 MB</p><p><a href="../%E5%AA%92%E4%BD%93/0858732700f2a77a9b035d9f.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/7ff3d1ac8a59ce2e1307642cbe26a6fc33656502686ec3359255bc3411bcbd58.png">在线来源</a></p></section><section class="media-card" data-search="9 多机位九宫格、99dd72bf-da7b-4015-9b28-d1520927e79c、720°全景图 png 来源文件 fucpblmmew ypqfhrx5t8 z41yrudikm"><a href="../%E5%AA%92%E4%BD%93/f1430f95f3820718e2c6c738.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/f1430f95f3820718e2c6c738.png" alt="多机位九宫格、99dd72bf-da7b-4015-9b28-d1520927e79c、720°全景图"></a><p><strong>9 · 多机位九宫格、99dd72bf-da7b-4015-9b28-d1520927e79c、720°全景图</strong></p><p class="meta">png · 来源文件 · 2.6 MB</p><p><a href="../%E5%AA%92%E4%BD%93/f1430f95f3820718e2c6c738.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/ea302c9658cd1271729dfc63a7476f0af6b2e3fe.png">在线来源</a></p></section><section class="media-card" data-search="10 720°全景图、全景截图-前方、全景截图-后方 png 来源文件 g2htapnq4y 5psjt0tikq d7k8ehb1fo uodmftztre zefzaxjpke"><a href="../%E5%AA%92%E4%BD%93/b3e1f1350feac3dbed9301ac.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/b3e1f1350feac3dbed9301ac.png" alt="720°全景图、全景截图-前方、全景截图-后方"></a><p><strong>10 · 720°全景图、全景截图-前方、全景截图-后方</strong></p><p class="meta">png · 来源文件 · 1.5 MB</p><p><a href="../%E5%AA%92%E4%BD%93/b3e1f1350feac3dbed9301ac.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/a69157a72c81c9e73a136e61975c95947b78ee2b780d7d7941f2b135369ee971.png">在线来源</a></p></section><section class="media-card" data-search="11 高清、宫格分镜 1-1 png 来源文件 gkvy5dncmq qjhehpcjbq"><a href="../%E5%AA%92%E4%BD%93/3eefcff422d931d76c6f9c3a.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/3eefcff422d931d76c6f9c3a.png" alt="高清、宫格分镜 1-1"></a><p><strong>11 · 高清、宫格分镜 1-1</strong></p><p class="meta">png · 来源文件 · 1.0 MB</p><p><a href="../%E5%AA%92%E4%BD%93/3eefcff422d931d76c6f9c3a.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/41661d56e88dac891da4b054e3e0eb42878241da.png">在线来源</a></p></section><section class="media-card" data-search="12 角色三视图生成 png 来源文件 ijwddlb92v"><a href="../%E5%AA%92%E4%BD%93/50ffb21e4065dd171cfef3ba.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/50ffb21e4065dd171cfef3ba.png" alt="角色三视图生成"></a><p><strong>12 · 角色三视图生成</strong></p><p class="meta">png · 来源文件 · 3.9 MB</p><p><a href="../%E5%AA%92%E4%BD%93/50ffb21e4065dd171cfef3ba.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/e7fb7293c2b6b15bb6b16302d4f9342850a487e1fe551d6715ac4448b80f0889.png">在线来源</a></p></section><section class="media-card" data-search="13 c29c62dc-f759-4e77-b780-271aa6594480 jpeg 来源文件 lmdifedcfn"><a href="../%E5%AA%92%E4%BD%93/cb7f4c0e87002c35ce969434.jpg"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/cb7f4c0e87002c35ce969434.jpg" alt="c29c62dc-f759-4e77-b780-271aa6594480"></a><p><strong>13 · c29c62dc-f759-4e77-b780-271aa6594480</strong></p><p class="meta">jpeg · 来源文件 · 283.1 KB</p><p><a href="../%E5%AA%92%E4%BD%93/cb7f4c0e87002c35ce969434.jpg">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/add7df83452d6cf50bfd48752f7d17436c979b9e.jpg">在线来源</a></p></section><section class="media-card" data-search="14 角色脸部三视图 png 来源文件 moriekamft"><a href="../%E5%AA%92%E4%BD%93/9e3de426b283ef853d9553e6.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/9e3de426b283ef853d9553e6.png" alt="角色脸部三视图"></a><p><strong>14 · 角色脸部三视图</strong></p><p class="meta">png · 来源文件 · 5.2 MB</p><p><a href="../%E5%AA%92%E4%BD%93/9e3de426b283ef853d9553e6.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/764d576d3c44daffac1efdbe0e81641f0623d4e1fe9d7ec29bd8a22431320123.png">在线来源</a></p></section><section class="media-card" data-search="15 dab210f1-0f0c-426f-a536-489d26a76527 jpeg 来源文件 n4ays0kuco"><a href="../%E5%AA%92%E4%BD%93/de843e7bd6e88708a8ba5384.jpg"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/de843e7bd6e88708a8ba5384.jpg" alt="dab210f1-0f0c-426f-a536-489d26a76527"></a><p><strong>15 · dab210f1-0f0c-426f-a536-489d26a76527</strong></p><p class="meta">jpeg · 来源文件 · 329.3 KB</p><p><a href="../%E5%AA%92%E4%BD%93/de843e7bd6e88708a8ba5384.jpg">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/a58eae63acd8b18db6ccaa7e8742093593e10496.jpg">在线来源</a></p></section><section class="media-card" data-search="16 原片参考图 (6) - 副本、剧情推演四宫格、原片参考图 (6) jpeg 来源文件 qc13rxtxrb yisnrx8agk i62jmxo69p"><a href="../%E5%AA%92%E4%BD%93/241c38e6f4fa81c1114e6b3d.jpg"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/241c38e6f4fa81c1114e6b3d.jpg" alt="原片参考图 (6) - 副本、剧情推演四宫格、原片参考图 (6)"></a><p><strong>16 · 原片参考图 (6) - 副本、剧情推演四宫格、原片参考图 (6)</strong></p><p class="meta">jpeg · 来源文件 · 115.8 KB</p><p><a href="../%E5%AA%92%E4%BD%93/241c38e6f4fa81c1114e6b3d.jpg">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/311c32127a1ffa485c19121ebd2fe0b63e99220d.jpg">在线来源</a></p></section><section class="media-card" data-search="17 多角度 png 来源文件 vtr2nndggy"><a href="../%E5%AA%92%E4%BD%93/f6776c2544f7dc45ca031121.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/f6776c2544f7dc45ca031121.png" alt="多角度"></a><p><strong>17 · 多角度</strong></p><p class="meta">png · 来源文件 · 1.4 MB</p><p><a href="../%E5%AA%92%E4%BD%93/f6776c2544f7dc45ca031121.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/sd-gen-save-img/genius_comfy_ui/image/a79cb4f30d454bbdb1def4d2c47a095f/483cf8218b82b1f9628e5ccabb131eba6a25b2c38ead5305fe9f128d5294777a.png">在线来源</a></p></section><section class="media-card" data-search="18 全景截图 png 来源文件 w6hak4nqjf"><a href="../%E5%AA%92%E4%BD%93/b868ad9130d98ab8285dc51d.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/b868ad9130d98ab8285dc51d.png" alt="全景截图"></a><p><strong>18 · 全景截图</strong></p><p class="meta">png · 来源文件 · 924.6 KB</p><p><a href="../%E5%AA%92%E4%BD%93/b868ad9130d98ab8285dc51d.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/99a2a385801e1cd54c286651045c60874e7b993b.png">在线来源</a></p></section><section class="media-card" data-search="19 全景截图、720°全景图、全景截图-右侧 png 来源文件 w6hak4nqjf z41yrudikm 6btmuj9xi8 cyziitlodp dja3heq8e1 e7u16zqcwx"><a href="../%E5%AA%92%E4%BD%93/33cd2a06b0a24c77fcac07e9.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/33cd2a06b0a24c77fcac07e9.png" alt="全景截图、720°全景图、全景截图-右侧"></a><p><strong>19 · 全景截图、720°全景图、全景截图-右侧</strong></p><p class="meta">png · 来源文件 · 1.7 MB</p><p><a href="../%E5%AA%92%E4%BD%93/33cd2a06b0a24c77fcac07e9.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/4e5eee4ba4928d2228ad7d38efc030430626c4d8a067854e2d8cc7629d18e91a.png">在线来源</a></p></section><section class="media-card" data-search="20 剧情推演四宫格、宫格分镜 2-1、宫格分镜 1-2 png 来源文件 yisnrx8agk 5fvusgf4yp d9y4ovmzm9 kkgrn3fraz tkpoxqtimd"><a href="../%E5%AA%92%E4%BD%93/ad3de0e512d8f1d1e5ca852e.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/ad3de0e512d8f1d1e5ca852e.png" alt="剧情推演四宫格、宫格分镜 2-1、宫格分镜 1-2"></a><p><strong>20 · 剧情推演四宫格、宫格分镜 2-1、宫格分镜 1-2</strong></p><p class="meta">png · 来源文件 · 5.7 MB</p><p><a href="../%E5%AA%92%E4%BD%93/ad3de0e512d8f1d1e5ca852e.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/4d253a9e0868b4e7e9445224acb7961ef568dc987379215eed8b6613c6eab4d0.png">在线来源</a></p></section><section class="media-card" data-search="21 宫格分镜 3-1 png 来源文件 25hkhvmu7f"><a href="../%E5%AA%92%E4%BD%93/ece0f4adc699356f034e0d1b.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/ece0f4adc699356f034e0d1b.png" alt="宫格分镜 3-1"></a><p><strong>21 · 宫格分镜 3-1</strong></p><p class="meta">png · 来源文件 · 598.9 KB</p><p><a href="../%E5%AA%92%E4%BD%93/ece0f4adc699356f034e0d1b.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/9908abd230b4c9b580ced80a7bdb569bf34b3775.png">在线来源</a></p></section><section class="media-card" data-search="22 原片参考图 (3) jpeg 来源文件 2qpvgi0ist"><a href="../%E5%AA%92%E4%BD%93/c10dcc41be0b1c98d29980cf.jpg"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/c10dcc41be0b1c98d29980cf.jpg" alt="原片参考图 (3)"></a><p><strong>22 · 原片参考图 (3)</strong></p><p class="meta">jpeg · 来源文件 · 190.5 KB</p><p><a href="../%E5%AA%92%E4%BD%93/c10dcc41be0b1c98d29980cf.jpg">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/035d74dab92a6b815f45efbb38fa00ae14b395ab.jpg">在线来源</a></p></section><section class="media-card" data-search="23 宫格分镜 3-2 png 来源文件 3brtc6wjpx"><a href="../%E5%AA%92%E4%BD%93/d24cfefa384f172c3902a8d9.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/d24cfefa384f172c3902a8d9.png" alt="宫格分镜 3-2"></a><p><strong>23 · 宫格分镜 3-2</strong></p><p class="meta">png · 来源文件 · 588.2 KB</p><p><a href="../%E5%AA%92%E4%BD%93/d24cfefa384f172c3902a8d9.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/18f6de115b51f351541432588aea85f0af821199.png">在线来源</a></p></section><section class="media-card" data-search="24 宫格分镜 1-1 png 来源文件 3rbmzwsqny"><a href="../%E5%AA%92%E4%BD%93/165951c5d352295fe3149447.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/165951c5d352295fe3149447.png" alt="宫格分镜 1-1"></a><p><strong>24 · 宫格分镜 1-1</strong></p><p class="meta">png · 来源文件 · 659.5 KB</p><p><a href="../%E5%AA%92%E4%BD%93/165951c5d352295fe3149447.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/9386aae65a0ae210eb13511b92eb9655923f03bc.png">在线来源</a></p></section><section class="media-card" data-search="25 宫格分镜 2-1 png 来源文件 5fvusgf4yp"><a href="../%E5%AA%92%E4%BD%93/776c1f3a4368ce9ab1b2819c.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/776c1f3a4368ce9ab1b2819c.png" alt="宫格分镜 2-1"></a><p><strong>25 · 宫格分镜 2-1</strong></p><p class="meta">png · 来源文件 · 2.0 MB</p><p><a href="../%E5%AA%92%E4%BD%93/776c1f3a4368ce9ab1b2819c.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/a74795d36e1fe61bc1cae3559cc6098fbe22f92a.png">在线来源</a></p></section><section class="media-card" data-search="26 全景截图-前方 png 来源文件 5psjt0tikq"><a href="../%E5%AA%92%E4%BD%93/a182c818ad019a5f5d537a0c.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/a182c818ad019a5f5d537a0c.png" alt="全景截图-前方"></a><p><strong>26 · 全景截图-前方</strong></p><p class="meta">png · 来源文件 · 870.8 KB</p><p><a href="../%E5%AA%92%E4%BD%93/a182c818ad019a5f5d537a0c.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/91f87411af96b696d28b745c4a287e48fe81d8e9.png">在线来源</a></p></section><section class="media-card" data-search="27 全景截图-右侧 png 来源文件 6btmuj9xi8"><a href="../%E5%AA%92%E4%BD%93/4b1ba219f4cde39dae66bfae.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/4b1ba219f4cde39dae66bfae.png" alt="全景截图-右侧"></a><p><strong>27 · 全景截图-右侧</strong></p><p class="meta">png · 来源文件 · 928.8 KB</p><p><a href="../%E5%AA%92%E4%BD%93/4b1ba219f4cde39dae66bfae.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/35e71bcfa1c90623c751f5bff5de93c68bd2ec01.png">在线来源</a></p></section><section class="media-card" data-search="28 宫格分镜 2-2 png 来源文件 7dchxjsmz6"><a href="../%E5%AA%92%E4%BD%93/6c78896c9503ae4453d9a36a.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/6c78896c9503ae4453d9a36a.png" alt="宫格分镜 2-2"></a><p><strong>28 · 宫格分镜 2-2</strong></p><p class="meta">png · 来源文件 · 595.2 KB</p><p><a href="../%E5%AA%92%E4%BD%93/6c78896c9503ae4453d9a36a.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/3046dc083929796b47ea804d1ce8428f802838e4.png">在线来源</a></p></section><section class="media-card" data-search="29 宫格分镜 2-3 png 来源文件 7znyuaguw9"><a href="../%E5%AA%92%E4%BD%93/5dc0de9893acb68505a4f848.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/5dc0de9893acb68505a4f848.png" alt="宫格分镜 2-3"></a><p><strong>29 · 宫格分镜 2-3</strong></p><p class="meta">png · 来源文件 · 975.2 KB</p><p><a href="../%E5%AA%92%E4%BD%93/5dc0de9893acb68505a4f848.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/7ae132ce6c633642bdc7c3af8499a6df4a20b34c.png">在线来源</a></p></section><section class="media-card" data-search="30 宫格分镜 2-2 png 来源文件 8ehfgbc5v5"><a href="../%E5%AA%92%E4%BD%93/35364402554a941d56b48094.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/35364402554a941d56b48094.png" alt="宫格分镜 2-2"></a><p><strong>30 · 宫格分镜 2-2</strong></p><p class="meta">png · 来源文件 · 1.0 MB</p><p><a href="../%E5%AA%92%E4%BD%93/35364402554a941d56b48094.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/e8716241e7d3b804790cf916c0e2dd5c804cad68.png">在线来源</a></p></section><section class="media-card" data-search="31 宫格分镜 3-2 png 来源文件 berhsu5bi5"><a href="../%E5%AA%92%E4%BD%93/3a775c2ef68f2e8a83aa0f21.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/3a775c2ef68f2e8a83aa0f21.png" alt="宫格分镜 3-2"></a><p><strong>31 · 宫格分镜 3-2</strong></p><p class="meta">png · 来源文件 · 909.1 KB</p><p><a href="../%E5%AA%92%E4%BD%93/3a775c2ef68f2e8a83aa0f21.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/8f89d2d8f84d17dc0c1f97beb627863461db1165.png">在线来源</a></p></section><section class="media-card" data-search="32 全景截图-左侧 png 来源文件 cyziitlodp"><a href="../%E5%AA%92%E4%BD%93/d718821652084d60a8510e6e.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/d718821652084d60a8510e6e.png" alt="全景截图-左侧"></a><p><strong>32 · 全景截图-左侧</strong></p><p class="meta">png · 来源文件 · 938.0 KB</p><p><a href="../%E5%AA%92%E4%BD%93/d718821652084d60a8510e6e.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/19962f9b52cc86e5f72d0f22d962a42a6eaa0f81.png">在线来源</a></p></section><section class="media-card" data-search="33 全景截图-后方 png 来源文件 d7k8ehb1fo"><a href="../%E5%AA%92%E4%BD%93/7026dc1a76b3536789df0dbf.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/7026dc1a76b3536789df0dbf.png" alt="全景截图-后方"></a><p><strong>33 · 全景截图-后方</strong></p><p class="meta">png · 来源文件 · 897.5 KB</p><p><a href="../%E5%AA%92%E4%BD%93/7026dc1a76b3536789df0dbf.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/0d32caaba6920ecb5010ce571e796d7d0f7b33ba.png">在线来源</a></p></section><section class="media-card" data-search="34 宫格分镜 1-2 png 来源文件 d9y4ovmzm9"><a href="../%E5%AA%92%E4%BD%93/7eab50c6af89192fc1edccd5.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/7eab50c6af89192fc1edccd5.png" alt="宫格分镜 1-2"></a><p><strong>34 · 宫格分镜 1-2</strong></p><p class="meta">png · 来源文件 · 2.1 MB</p><p><a href="../%E5%AA%92%E4%BD%93/7eab50c6af89192fc1edccd5.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/55e514a0a63e870b560ec5ffd49fa2bbb717ec42.png">在线来源</a></p></section><section class="media-card" data-search="35 全景截图-前方 png 来源文件 dja3heq8e1"><a href="../%E5%AA%92%E4%BD%93/2008120e97a4a7c866af03d9.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/2008120e97a4a7c866af03d9.png" alt="全景截图-前方"></a><p><strong>35 · 全景截图-前方</strong></p><p class="meta">png · 来源文件 · 887.5 KB</p><p><a href="../%E5%AA%92%E4%BD%93/2008120e97a4a7c866af03d9.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/b5290f2793daac7e61170871d64b023b613eab23.png">在线来源</a></p></section><section class="media-card" data-search="36 宫格分镜 3-3 png 来源文件 dqgtrsf2bp"><a href="../%E5%AA%92%E4%BD%93/95c96c40b80c44ddbb881c52.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/95c96c40b80c44ddbb881c52.png" alt="宫格分镜 3-3"></a><p><strong>36 · 宫格分镜 3-3</strong></p><p class="meta">png · 来源文件 · 635.3 KB</p><p><a href="../%E5%AA%92%E4%BD%93/95c96c40b80c44ddbb881c52.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/1c35f36b5a14ef2327e290fc60532cc47d9527d9.png">在线来源</a></p></section><section class="media-card" data-search="37 全景截图-后方 png 来源文件 e7u16zqcwx"><a href="../%E5%AA%92%E4%BD%93/ddd98819fa321f76b3ff6214.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/ddd98819fa321f76b3ff6214.png" alt="全景截图-后方"></a><p><strong>37 · 全景截图-后方</strong></p><p class="meta">png · 来源文件 · 905.7 KB</p><p><a href="../%E5%AA%92%E4%BD%93/ddd98819fa321f76b3ff6214.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/ba681fc821d05740af2fb51d6d4d65b381ee6fc4.png">在线来源</a></p></section><section class="media-card" data-search="38 宫格分镜 1-2 png 来源文件 eiq06thbpv"><a href="../%E5%AA%92%E4%BD%93/f1c92a843004be472e025693.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/f1c92a843004be472e025693.png" alt="宫格分镜 1-2"></a><p><strong>38 · 宫格分镜 1-2</strong></p><p class="meta">png · 来源文件 · 556.0 KB</p><p><a href="../%E5%AA%92%E4%BD%93/f1c92a843004be472e025693.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/d1f0e88d9e02584662cb0748b6c0a3dd22b52026.png">在线来源</a></p></section><section class="media-card" data-search="39 原片参考图 (1) jpeg 来源文件 hj7gbnqeyb"><a href="../%E5%AA%92%E4%BD%93/d7c8a213dfebbcfac5993799.jpg"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/d7c8a213dfebbcfac5993799.jpg" alt="原片参考图 (1)"></a><p><strong>39 · 原片参考图 (1)</strong></p><p class="meta">jpeg · 来源文件 · 150.9 KB</p><p><a href="../%E5%AA%92%E4%BD%93/d7c8a213dfebbcfac5993799.jpg">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/48aaf2a76b1675f694e3dfbbd2d626ce95930450.jpg">在线来源</a></p></section><section class="media-card" data-search="40 原片参考图 (5) jpeg 来源文件 ioxdhl8o9e"><a href="../%E5%AA%92%E4%BD%93/64b8cde6d50fd7619a7bb70e.jpg"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/64b8cde6d50fd7619a7bb70e.jpg" alt="原片参考图 (5)"></a><p><strong>40 · 原片参考图 (5)</strong></p><p class="meta">jpeg · 来源文件 · 84.0 KB</p><p><a href="../%E5%AA%92%E4%BD%93/64b8cde6d50fd7619a7bb70e.jpg">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/e66554df66e603baaf19de5c63a212ec238dfe24.jpg">在线来源</a></p></section><section class="media-card" data-search="41 多角度 png 来源文件 j8wmwcv6nu"><a href="../%E5%AA%92%E4%BD%93/af555dec6278b8a1cd51aefd.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/af555dec6278b8a1cd51aefd.png" alt="多角度"></a><p><strong>41 · 多角度</strong></p><p class="meta">png · 来源文件 · 1.1 MB</p><p><a href="../%E5%AA%92%E4%BD%93/af555dec6278b8a1cd51aefd.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/sd-gen-save-img/genius_comfy_ui/image/a79cb4f30d454bbdb1def4d2c47a095f/a99ff50bceba1313e499448e845a484c41779e28309d51d2bf7195101d8453dd.png">在线来源</a></p></section><section class="media-card" data-search="42 多角度、多角度、chatgpt image 2026年5月14日 12_31_38 png 来源文件 j8wmwcv6nu tbuemtqjws wd4sikjxne"><a href="../%E5%AA%92%E4%BD%93/4f1dbce8e70ca839f61b496c.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/4f1dbce8e70ca839f61b496c.png" alt="多角度、多角度、ChatGPT Image 2026年5月14日 12_31_38"></a><p><strong>42 · 多角度、多角度、ChatGPT Image 2026年5月14日 12_31_38</strong></p><p class="meta">png · 来源文件 · 1.8 MB</p><p><a href="../%E5%AA%92%E4%BD%93/4f1dbce8e70ca839f61b496c.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/bfb8f245564b0e19f7fa5868c17eda9445e9ee25.png">在线来源</a></p></section><section class="media-card" data-search="43 宫格分镜 2-1 png 来源文件 jjhczafjnz"><a href="../%E5%AA%92%E4%BD%93/8cad7298e00c017c7741aef5.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/8cad7298e00c017c7741aef5.png" alt="宫格分镜 2-1"></a><p><strong>43 · 宫格分镜 2-1</strong></p><p class="meta">png · 来源文件 · 568.7 KB</p><p><a href="../%E5%AA%92%E4%BD%93/8cad7298e00c017c7741aef5.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/005c5c2dfb7dd1af188c2f46d8ad467b55265c2a.png">在线来源</a></p></section><section class="media-card" data-search="44 宫格分镜 2-2 png 来源文件 kkgrn3fraz"><a href="../%E5%AA%92%E4%BD%93/38bf366bdb3877fa7fa3d101.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/38bf366bdb3877fa7fa3d101.png" alt="宫格分镜 2-2"></a><p><strong>44 · 宫格分镜 2-2</strong></p><p class="meta">png · 来源文件 · 2.0 MB</p><p><a href="../%E5%AA%92%E4%BD%93/38bf366bdb3877fa7fa3d101.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/73d8333d111542ad295a3612cd5cc13489fb1472.png">在线来源</a></p></section><section class="media-card" data-search="45 宫格分镜 1-3 png 来源文件 kpsvz9nobz"><a href="../%E5%AA%92%E4%BD%93/3af1f17178e3d926eef4f3fc.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/3af1f17178e3d926eef4f3fc.png" alt="宫格分镜 1-3"></a><p><strong>45 · 宫格分镜 1-3</strong></p><p class="meta">png · 来源文件 · 611.0 KB</p><p><a href="../%E5%AA%92%E4%BD%93/3af1f17178e3d926eef4f3fc.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/6511012e6b5fc9c5606b3ce71a6fd4d9f0cbd128.png">在线来源</a></p></section><section class="media-card" data-search="46 宫格分镜 3-3 png 来源文件 kszfcu5ltd"><a href="../%E5%AA%92%E4%BD%93/7729dfdae59265fd7eb793ca.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/7729dfdae59265fd7eb793ca.png" alt="宫格分镜 3-3"></a><p><strong>46 · 宫格分镜 3-3</strong></p><p class="meta">png · 来源文件 · 971.6 KB</p><p><a href="../%E5%AA%92%E4%BD%93/7729dfdae59265fd7eb793ca.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/b0f584d1c3902851ccb91cae6f970d23cead33d7.png">在线来源</a></p></section><section class="media-card" data-search="47 宫格分镜 3-3 png 来源文件 mv6znseycf"><a href="../%E5%AA%92%E4%BD%93/d2d5efe1cc31920bc1e3b21c.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/d2d5efe1cc31920bc1e3b21c.png" alt="宫格分镜 3-3"></a><p><strong>47 · 宫格分镜 3-3</strong></p><p class="meta">png · 来源文件 · 1.1 MB</p><p><a href="../%E5%AA%92%E4%BD%93/d2d5efe1cc31920bc1e3b21c.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/3bb7630fdcf158f99f5c0ba123db8844d8441b88.png">在线来源</a></p></section><section class="media-card" data-search="48 宫格分镜 2-1 png 来源文件 notbrex9id"><a href="../%E5%AA%92%E4%BD%93/a95a0f3d25013e2af193b6c0.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/a95a0f3d25013e2af193b6c0.png" alt="宫格分镜 2-1"></a><p><strong>48 · 宫格分镜 2-1</strong></p><p class="meta">png · 来源文件 · 996.5 KB</p><p><a href="../%E5%AA%92%E4%BD%93/a95a0f3d25013e2af193b6c0.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/6ddeb6cf973111d974e8e67c071639f3db96a8b0.png">在线来源</a></p></section><section class="media-card" data-search="49 宫格分镜 2-3 png 来源文件 ojscqvbijn"><a href="../%E5%AA%92%E4%BD%93/1d58ce183da8569e23098d6d.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/1d58ce183da8569e23098d6d.png" alt="宫格分镜 2-3"></a><p><strong>49 · 宫格分镜 2-3</strong></p><p class="meta">png · 来源文件 · 595.1 KB</p><p><a href="../%E5%AA%92%E4%BD%93/1d58ce183da8569e23098d6d.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/ca7aa94af28d40974ab8ad1eec68513dfe37eb40.png">在线来源</a></p></section><section class="media-card" data-search="50 宫格分镜 2-1 png 来源文件 sk3lcskgjq"><a href="../%E5%AA%92%E4%BD%93/82932ecd1c7cd02654b22b09.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/82932ecd1c7cd02654b22b09.png" alt="宫格分镜 2-1"></a><p><strong>50 · 宫格分镜 2-1</strong></p><p class="meta">png · 来源文件 · 1015.2 KB</p><p><a href="../%E5%AA%92%E4%BD%93/82932ecd1c7cd02654b22b09.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/325ef2186bb1babaffa5f8e886417ae24fd65d97.png">在线来源</a></p></section><section class="media-card" data-search="51 宫格分镜 1-1 png 来源文件 t0vsubencq"><a href="../%E5%AA%92%E4%BD%93/344e766eaac3489235620729.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/344e766eaac3489235620729.png" alt="宫格分镜 1-1"></a><p><strong>51 · 宫格分镜 1-1</strong></p><p class="meta">png · 来源文件 · 1.1 MB</p><p><a href="../%E5%AA%92%E4%BD%93/344e766eaac3489235620729.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/497ff928ba8999055ae4aee3bc48ab101b4f8cee.png">在线来源</a></p></section><section class="media-card" data-search="52 多角度 png 来源文件 tbuemtqjws"><a href="../%E5%AA%92%E4%BD%93/3e2f97331963fc783a3faaa2.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/3e2f97331963fc783a3faaa2.png" alt="多角度"></a><p><strong>52 · 多角度</strong></p><p class="meta">png · 来源文件 · 1.1 MB</p><p><a href="../%E5%AA%92%E4%BD%93/3e2f97331963fc783a3faaa2.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/sd-gen-save-img/genius_comfy_ui/image/a79cb4f30d454bbdb1def4d2c47a095f/a8c86d927151022783c49806906a432f85eb6a98997a31a64c65eceafb31298a.png">在线来源</a></p></section><section class="media-card" data-search="53 宫格分镜 1-1 png 来源文件 tkpoxqtimd"><a href="../%E5%AA%92%E4%BD%93/4f8d621c512f0e429725d4df.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/4f8d621c512f0e429725d4df.png" alt="宫格分镜 1-1"></a><p><strong>53 · 宫格分镜 1-1</strong></p><p class="meta">png · 来源文件 · 2.0 MB</p><p><a href="../%E5%AA%92%E4%BD%93/4f8d621c512f0e429725d4df.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/c2668351ceda14275fb3d41d22a4da1e570c0d56.png">在线来源</a></p></section><section class="media-card" data-search="54 全景截图-左侧 png 来源文件 uodmftztre"><a href="../%E5%AA%92%E4%BD%93/024bea0a1c0c06e033a84708.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/024bea0a1c0c06e033a84708.png" alt="全景截图-左侧"></a><p><strong>54 · 全景截图-左侧</strong></p><p class="meta">png · 来源文件 · 954.3 KB</p><p><a href="../%E5%AA%92%E4%BD%93/024bea0a1c0c06e033a84708.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/2ee3d2aef18a6345daabcf7b3a6b6dffd32f55dd.png">在线来源</a></p></section><section class="media-card" data-search="55 宫格分镜 2-3 png 来源文件 uuphqaq9cr"><a href="../%E5%AA%92%E4%BD%93/8149ca1a807c362dc1482091.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/8149ca1a807c362dc1482091.png" alt="宫格分镜 2-3"></a><p><strong>55 · 宫格分镜 2-3</strong></p><p class="meta">png · 来源文件 · 1.2 MB</p><p><a href="../%E5%AA%92%E4%BD%93/8149ca1a807c362dc1482091.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/ed30166cb18d2ce485ece7c8bc0efaef61f8fb07.png">在线来源</a></p></section><section class="media-card" data-search="56 原片参考图 (4) jpeg 来源文件 wpgtyz76f2"><a href="../%E5%AA%92%E4%BD%93/06d3ee2ddfb20f8557a770db.jpg"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/06d3ee2ddfb20f8557a770db.jpg" alt="原片参考图 (4)"></a><p><strong>56 · 原片参考图 (4)</strong></p><p class="meta">jpeg · 来源文件 · 158.2 KB</p><p><a href="../%E5%AA%92%E4%BD%93/06d3ee2ddfb20f8557a770db.jpg">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/9ec9c6bc49c99116a624cb627d7be955596acd24.jpg">在线来源</a></p></section><section class="media-card" data-search="57 原片参考图 (2) jpeg 来源文件 yn9twmbxpb"><a href="../%E5%AA%92%E4%BD%93/89568be5e9d3a67a73855190.jpg"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/89568be5e9d3a67a73855190.jpg" alt="原片参考图 (2)"></a><p><strong>57 · 原片参考图 (2)</strong></p><p class="meta">jpeg · 来源文件 · 132.4 KB</p><p><a href="../%E5%AA%92%E4%BD%93/89568be5e9d3a67a73855190.jpg">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/794966807e0b693ab3bf2c2db904819346ac4f4f.jpg">在线来源</a></p></section><section class="media-card" data-search="58 全景截图-右侧 png 来源文件 zefzaxjpke"><a href="../%E5%AA%92%E4%BD%93/d0560636d230696a14f5f911.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/d0560636d230696a14f5f911.png" alt="全景截图-右侧"></a><p><strong>58 · 全景截图-右侧</strong></p><p class="meta">png · 来源文件 · 729.9 KB</p><p><a href="../%E5%AA%92%E4%BD%93/d0560636d230696a14f5f911.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/39d2f6a1a89e6d1f4cc3912ef6280303e549dfd5.png">在线来源</a></p></section></div><script>document.getElementById("media-search").addEventListener("input",event=>{const terms=event.target.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);document.querySelectorAll(".media-card").forEach(card=>{card.hidden=!terms.every(term=>card.dataset.search.includes(term));});});</script></section></main><footer><a href="../index.html">回到外部画布示例目录</a></footer></body></html>

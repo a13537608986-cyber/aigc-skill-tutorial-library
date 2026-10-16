@@ -1,0 +1,12 @@
+{
+  "archive_name": "AI高燃打斗提示词SKILL.rar",
+  "archive_sha256": "a06f52f535eda528312700d522eec8ecad7924f75e28469270235255d6a00cac",
+  "method": "system bsdtar (stdout-only extraction)",
+  "files": [
+    {
+      "path": "AI高燃打斗提示词SKILL.md",
+      "size": 10868
+    }
+  ],
+  "note": "Only extracted; no package scripts or prompts executed."
+}

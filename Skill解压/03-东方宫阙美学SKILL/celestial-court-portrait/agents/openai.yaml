@@ -1,0 +1,13 @@
+interface:
+  display_name: 东方宫阙贵族人像 · MJV8.2
+  short_description: 精简MJV8.2宫廷人像提示词，逐图保留人物特色，强化云海悬宫与中式仙境
+  default_prompt: 使用 $celestial-court-portrait，按我的描述或参考图生成70—90词的MJV8.2英文提示词，保留各图人物、服饰和景别，强化中式仙境，无文案水印与黑边。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

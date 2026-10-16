@@ -1,0 +1,24 @@
+{
+  "archive_name": "中式园林美学SKILL.zip",
+  "archive_sha256": "61f612c6592de7391de2dd68ca2f45289651c3a2d6a1d86465e7e42fbad620b1",
+  "method": "Python zipfile (CRC checked while reading)",
+  "files": [
+    {
+      "path": "chinese-garden-cinematic-portrait/SKILL.md",
+      "size": 6920
+    },
+    {
+      "path": "chinese-garden-cinematic-portrait/agents/openai.yaml",
+      "size": 493
+    },
+    {
+      "path": "chinese-garden-cinematic-portrait/assets/icon.svg",
+      "size": 1210
+    },
+    {
+      "path": "chinese-garden-cinematic-portrait/references/prompt-baselines.md",
+      "size": 4481
+    }
+  ],
+  "note": "Only extracted; no package scripts or prompts executed."
+}

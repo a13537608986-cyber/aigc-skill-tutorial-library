@@ -1,0 +1,16 @@
+{
+  "archive_name": "character-forge-libtv-skill(5).zip",
+  "archive_sha256": "ab680a6f5e6abf89219b7ea1d180568989fc93c99ea965b0ff8366ed5d1f8251",
+  "method": "Python zipfile (CRC checked while reading)",
+  "files": [
+    {
+      "path": "character-forge-libtv/SKILL.md",
+      "size": 24640
+    },
+    {
+      "path": "character-forge-libtv/README.md",
+      "size": 5632
+    }
+  ],
+  "note": "Only extracted; no package scripts or prompts executed."
+}

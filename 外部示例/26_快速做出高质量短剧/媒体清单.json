@@ -1,0 +1,318 @@
+[
+  {
+    "url": "https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/764814179_a0517361d06146bf82b6f922c7ba68fa.png",
+    "field": "data.assets.characters[0].thumbnailUrl",
+    "type": "image",
+    "canvas_ids": [
+      "libtv-page26"
+    ],
+    "signed_url_expired_at_capture": false,
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "bytes": 3376104,
+    "sha256": "be63cb893663346dcd9b085ccfae0bb1e15babe2402f128c2532e14ebc4911c4",
+    "media_signature": "png",
+    "local_path": "媒体/f1ac220474a7a0ba3441fa66.png",
+    "width_from_source": null,
+    "height_from_source": null,
+    "duration_from_source": null,
+    "quality": "source_url",
+    "project_relative_path": "../媒体/f1ac220474a7a0ba3441fa66.png",
+    "node_ids": [
+      "b-0w6vXcFdVn",
+      "i-acqY7Frc9A",
+      "v-CuHqzUzsyw"
+    ]
+  },
+  {
+    "url": "https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/764233815_ffa95d68a18c439abc8864ac3b77edf5.png",
+    "field": "data.assets.characters[1].thumbnailUrl",
+    "type": "image",
+    "canvas_ids": [
+      "libtv-page26"
+    ],
+    "signed_url_expired_at_capture": false,
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "bytes": 3408249,
+    "sha256": "2e471850e2c42125ce085dc2bb2598a70fc51342772a85f7474ca777363b99a6",
+    "media_signature": "png",
+    "local_path": "媒体/6b8697c69fffa8c83421cb4f.png",
+    "width_from_source": null,
+    "height_from_source": null,
+    "duration_from_source": null,
+    "quality": "source_url",
+    "project_relative_path": "../媒体/6b8697c69fffa8c83421cb4f.png",
+    "node_ids": [
+      "b-0w6vXcFdVn",
+      "b-7KlxPe89O5",
+      "i-GwGTJ0mQs3",
+      "v-2CXFv8NHh3",
+      "v-4OUzp4p1uD",
+      "v-6dOwDGRLVr",
+      "v-6Vx20eqSzO",
+      "v-cJH9Sr8OvZ",
+      "v-CuHqzUzsyw",
+      "v-DwLV3bqCE3",
+      "v-Hup8wzJSnh",
+      "v-I9YelOR5hs",
+      "v-iHffHUARCB",
+      "v-m0qXNJf8QN",
+      "v-nAUZLn8Y6k",
+      "v-PM2M4ITYHc",
+      "v-Qb0FgISyBd",
+      "v-r5tGEqpbRz",
+      "v-sM2hrbpITS",
+      "v-SUAuO0WEeB",
+      "v-uNWJ4MCeOR",
+      "v-uW9z3TOkpT"
+    ]
+  },
+  {
+    "url": "https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/764813759_ce982ab2cc2549b6aef0f895b37854e1.png",
+    "field": "data.assets.characters[2].thumbnailUrl",
+    "type": "image",
+    "canvas_ids": [
+      "libtv-page26"
+    ],
+    "signed_url_expired_at_capture": false,
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "bytes": 3498700,
+    "sha256": "75fd32678c168d9f657989a485114a506d2619b972b5b793ff921544a890efc6",
+    "media_signature": "png",
+    "local_path": "媒体/8a0c523cc1d7d36cd6b1ea81.png",
+    "width_from_source": null,
+    "height_from_source": null,
+    "duration_from_source": null,
+    "quality": "source_url",
+    "project_relative_path": "../媒体/8a0c523cc1d7d36cd6b1ea81.png",
+    "node_ids": [
+      "b-0w6vXcFdVn",
+      "i-uvUSLPr9vK",
+      "v-CuHqzUzsyw"
+    ]
+  },
+  {
+    "url": "https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/764805065_4f38ab32a078485bac6a642be1006432.png",
+    "field": "data.assets.characters[3].thumbnailUrl",
+    "type": "image",
+    "canvas_ids": [
+      "libtv-page26"
+    ],
+    "signed_url_expired_at_capture": false,
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "bytes": 3160312,
+    "sha256": "a3af8435eccc2b4d84edb14a9ce6f8dd11ee252d9b485ebb0be86a6d35140e64",
+    "media_signature": "png",
+    "local_path": "媒体/476b186c9803e40e05a10c78.png",
+    "width_from_source": null,
+    "height_from_source": null,
+    "duration_from_source": null,
+    "quality": "source_url",
+    "project_relative_path": "../媒体/476b186c9803e40e05a10c78.png",
+    "node_ids": [
+      "b-0w6vXcFdVn",
+      "b-7KlxPe89O5",
+      "i-yuAXCmwneY",
+      "v-CuHqzUzsyw"
+    ]
+  },
+  {
+    "url": "https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/764257486_853fe809aa49427f8ba15b0c72a3c8bc.png",
+    "field": "data.assets.scenes[0].thumbnailUrl",
+    "type": "image",
+    "canvas_ids": [
+      "libtv-page26"
+    ],
+    "signed_url_expired_at_capture": false,
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "bytes": 4174100,
+    "sha256": "4e75f6c5e0ac5fff0d49a4b3a154364a3a0d8e1d3e31f4fee405199a2e20477c",
+    "media_signature": "png",
+    "local_path": "媒体/49284e4bc54e9ea12dde9806.png",
+    "width_from_source": null,
+    "height_from_source": null,
+    "duration_from_source": null,
+    "quality": "source_url",
+    "project_relative_path": "../媒体/49284e4bc54e9ea12dde9806.png",
+    "node_ids": [
+      "b-0w6vXcFdVn",
+      "b-7KlxPe89O5",
+      "i-CggCt2HogQ",
+      "v-2CXFv8NHh3",
+      "v-3xlFfontrs",
+      "v-4OUzp4p1uD",
+      "v-6dOwDGRLVr",
+      "v-6Vx20eqSzO",
+      "v-cJH9Sr8OvZ",
+      "v-CuHqzUzsyw",
+      "v-DwLV3bqCE3",
+      "v-Hup8wzJSnh",
+      "v-I9YelOR5hs",
+      "v-iHffHUARCB",
+      "v-jEZoPF5t9u",
+      "v-m0qXNJf8QN",
+      "v-nAUZLn8Y6k",
+      "v-nT9mW9TToI",
+      "v-PM2M4ITYHc",
+      "v-Qb0FgISyBd",
+      "v-r5tGEqpbRz",
+      "v-R9WDFG9diT",
+      "v-sM2hrbpITS",
+      "v-SUAuO0WEeB",
+      "v-uNWJ4MCeOR",
+      "v-uW9z3TOkpT"
+    ]
+  },
+  {
+    "url": "https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/764247755_e49a806ba7a64a5aad9addd3b7e4cef2.png",
+    "field": "data.assets.props[0].thumbnailUrl",
+    "type": "image",
+    "canvas_ids": [
+      "libtv-page26"
+    ],
+    "signed_url_expired_at_capture": false,
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "bytes": 1468046,
+    "sha256": "30522ed544325fe093a56bdfd5146ab22a6f34bc09b08bd7d54fa3e3630c9023",
+    "media_signature": "png",
+    "local_path": "媒体/a6981b7231408e15dc92f8c2.png",
+    "width_from_source": null,
+    "height_from_source": null,
+    "duration_from_source": null,
+    "quality": "source_url",
+    "project_relative_path": "../媒体/a6981b7231408e15dc92f8c2.png",
+    "node_ids": [
+      "b-0w6vXcFdVn",
+      "b-7KlxPe89O5",
+      "i-I70JN4QOzV",
+      "v-4OUzp4p1uD",
+      "v-6Vx20eqSzO",
+      "v-cJH9Sr8OvZ",
+      "v-CuHqzUzsyw",
+      "v-DwLV3bqCE3",
+      "v-Hup8wzJSnh",
+      "v-I9YelOR5hs",
+      "v-jEZoPF5t9u",
+      "v-m0qXNJf8QN",
+      "v-nT9mW9TToI",
+      "v-PM2M4ITYHc",
+      "v-r5tGEqpbRz",
+      "v-R9WDFG9diT",
+      "v-sM2hrbpITS",
+      "v-SUAuO0WEeB",
+      "v-uNWJ4MCeOR",
+      "v-uW9z3TOkpT"
+    ]
+  },
+  {
+    "url": "https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/764221511_08c6f77270db4581a720bc4a93fa633d.png",
+    "field": "data.params.imageList[0].url",
+    "type": "image",
+    "canvas_ids": [
+      "libtv-page26"
+    ],
+    "signed_url_expired_at_capture": false,
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "bytes": 3174428,
+    "sha256": "c42c2d202f787c5b1a99f802628b65d62bf5b2abf912f273b1f397a5fc037976",
+    "media_signature": "png",
+    "local_path": "媒体/a6e152b401c474705a1d2c94.png",
+    "width_from_source": null,
+    "height_from_source": null,
+    "duration_from_source": null,
+    "quality": "source_url",
+    "project_relative_path": "../媒体/a6e152b401c474705a1d2c94.png",
+    "node_ids": [
+      "i-acqY7Frc9A",
+      "i-GwGTJ0mQs3",
+      "i-NbWrUwVog4"
+    ]
+  },
+  {
+    "url": "https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/764783264_f9b26ea1756844fb9f63ab448641d946.png",
+    "field": "data.url[0]",
+    "type": "image",
+    "canvas_ids": [
+      "libtv-page26"
+    ],
+    "signed_url_expired_at_capture": false,
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "bytes": 3308885,
+    "sha256": "69a7ad5ee7ef10587612d2d78186d43e6e014caecee8c0907f81b8584b3790da",
+    "media_signature": "png",
+    "local_path": "媒体/e7e773988d623d516e3c0b5d.png",
+    "width_from_source": 350,
+    "height_from_source": 622,
+    "duration_from_source": null,
+    "quality": "source_url",
+    "project_relative_path": "../媒体/e7e773988d623d516e3c0b5d.png",
+    "node_ids": [
+      "i-d4n7puiifD",
+      "i-uvUSLPr9vK",
+      "i-yuAXCmwneY"
+    ]
+  },
+  {
+    "url": "https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/video/a79cb4f30d454bbdb1def4d2c47a095f/a277af2be6087c97e7622e6e794cca4195d4c4d06ba8b6af37528a48a3415a5e.mp4",
+    "field": "data.url[0]",
+    "type": "video",
+    "canvas_ids": [
+      "libtv-page26"
+    ],
+    "signed_url_expired_at_capture": false,
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "bytes": 6965314,
+    "sha256": "a277af2be6087c97e7622e6e794cca4195d4c4d06ba8b6af37528a48a3415a5e",
+    "media_signature": "mp4",
+    "local_path": "媒体/d7b0ee2fa51cc6eba3addb12.mp4",
+    "width_from_source": 350,
+    "height_from_source": 622,
+    "duration_from_source": null,
+    "quality": "source_url",
+    "project_relative_path": "../媒体/d7b0ee2fa51cc6eba3addb12.mp4",
+    "node_ids": [
+      "v-CuHqzUzsyw"
+    ]
+  },
+  {
+    "url": "https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/video/a79cb4f30d454bbdb1def4d2c47a095f/f80043f98e858da4381f19ee877178dd0adf3e6a68699fae8b62d1399f1f0d54.mp4",
+    "field": "data.url[0]",
+    "type": "video",
+    "canvas_ids": [
+      "libtv-page26"
+    ],
+    "signed_url_expired_at_capture": false,
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "bytes": 2628625,
+    "sha256": "f80043f98e858da4381f19ee877178dd0adf3e6a68699fae8b62d1399f1f0d54",
+    "media_signature": "mp4",
+    "local_path": "媒体/c1a76b85431711346f2a0d0f.mp4",
+    "width_from_source": 350,
+    "height_from_source": 622,
+    "duration_from_source": null,
+    "quality": "source_url",
+    "project_relative_path": "../媒体/c1a76b85431711346f2a0d0f.mp4",
+    "node_ids": [
+      "v-PM2M4ITYHc"
+    ]
+  }
+]

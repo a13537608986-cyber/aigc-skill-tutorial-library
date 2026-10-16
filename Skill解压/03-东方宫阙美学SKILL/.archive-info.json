@@ -1,0 +1,32 @@
+{
+  "archive_name": "东方宫阙美学SKILL.zip",
+  "archive_sha256": "5e51a09c231d9ddbb7734ce02fed63e3fe9089c6f17f9c317f7cf089eda92b3f",
+  "method": "Python zipfile (CRC checked while reading)",
+  "files": [
+    {
+      "path": "celestial-court-portrait/SKILL.md",
+      "size": 7779
+    },
+    {
+      "path": "celestial-court-portrait/agents/openai.yaml",
+      "size": 545
+    },
+    {
+      "path": "celestial-court-portrait/assets/icon.svg",
+      "size": 1210
+    },
+    {
+      "path": "celestial-court-portrait/references/reference-guide.md",
+      "size": 4503
+    },
+    {
+      "path": "celestial-court-portrait/references/repair-guide.md",
+      "size": 3643
+    },
+    {
+      "path": "celestial-court-portrait/references/style-guide.md",
+      "size": 3620
+    }
+  ],
+  "note": "Only extracted; no package scripts or prompts executed."
+}

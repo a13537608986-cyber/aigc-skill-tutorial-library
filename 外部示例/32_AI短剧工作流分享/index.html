@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI短剧工作流</title><style>
+:root{color-scheme:light;--ink:#182a27;--muted:#60716b;--line:#dce5df;--accent:#245e48;--paper:#fbfcf9}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}a{color:var(--accent);text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}header,main,footer{max-width:1080px;margin:auto;padding:28px 24px}header{padding-top:44px;padding-bottom:20px}h1{font-size:clamp(26px,4vw,40px);line-height:1.35;margin:.3em 0}h2,h3,h4,h5,h6{line-height:1.5;margin:1.5em 0 .5em}h2{font-size:26px}h3{font-size:22px}h4{font-size:19px}p{margin:.8em 0}.muted,.meta{color:var(--muted);font-size:14px}.meta{display:flex;flex-wrap:wrap;gap:8px 20px}.notice{background:#eef4ef;border:1px solid var(--line);border-radius:12px;padding:14px 18px}.warning{background:#fff7e7;border:1px solid #ead8a7;border-radius:8px;padding:10px 14px}.tools{display:flex;gap:12px;margin:22px 0}input,select{font:inherit;background:white;color:var(--ink);border:1px solid #bccdc2;border-radius:9px;padding:11px 13px}input{flex:1;min-width:0}select{max-width:200px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:16px}.card{background:white;border:1px solid var(--line);border-radius:13px;padding:20px}.card h2{font-size:20px;margin:8px 0}.card p{font-size:14px;color:var(--muted);margin:8px 0}.tag{font-size:12px;color:var(--accent);background:#edf4ec;padding:3px 8px;border-radius:20px}.cardlinks{display:flex;flex-wrap:wrap;gap:14px;font-size:14px}article{background:white;border:1px solid var(--line);border-radius:14px;padding:clamp(18px,4vw,44px);overflow-wrap:anywhere}article> :first-child{margin-top:0}.block{white-space:pre-wrap;word-break:break-word}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px}.grid-column{min-width:0}pre{background:#f1f4ef;border:1px solid #dce4da;border-radius:9px;padding:18px;overflow:auto;white-space:pre-wrap;word-break:break-word;font:14px/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}figure{margin:24px 0}img{display:block;max-width:100%;height:auto;border-radius:6px}figcaption{font-size:13px;color:var(--muted);margin-top:7px}video,audio{max-width:100%;width:100%}.asset{background:#f4f6f1;border:1px solid var(--line);border-radius:8px;padding:14px;margin:14px 0}.asset small{display:block;color:var(--muted)}blockquote{border-left:4px solid #b0c8b5;padding:8px 18px;margin:18px 0;background:#f3f7f0}.list-item{display:flex;gap:10px;margin:.6em 0}.list-item .marker{flex:0 0 1.8em;color:#60716b}.list-body{flex:1;min-width:0}.table-wrap{overflow:auto}table{border-collapse:collapse;min-width:70%;margin:18px 0}td,th{border:1px solid #ccd8ce;padding:8px 12px;vertical-align:top}hr{border:0;border-top:1px solid var(--line);margin:28px 0}summary{cursor:pointer}footer{font-size:13px;color:var(--muted)}[hidden]{display:none!important}@media(max-width:600px){header,main,footer{padding:22px 16px}.tools{flex-direction:column}select{max-width:none}article{border-radius:9px}}
+
+.nav{display:flex;flex-wrap:wrap;gap:9px 20px;margin:18px 0}.source-text{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.8;margin:0}.source-section{padding:18px 0;border-bottom:1px solid var(--line)}.source-section h2,.source-section h3{margin:.3em 0 .7em}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px}.media-card{border:1px solid var(--line);border-radius:10px;background:white;padding:12px;min-width:0}.media-card figure{margin:0}.media-card img{width:100%;max-height:320px;object-fit:contain;background:#f0f3ed}.media-card video{width:100%;max-height:320px;background:#152620}.media-card p{font-size:13px;margin:8px 0}.media-card .meta{font-size:12px}.scroll-table{overflow:auto}td{min-width:110px}details{border:1px solid var(--line);border-radius:9px;padding:14px;margin:15px 0}details>summary{font-weight:600}details>.source-text{margin-top:16px}button{font:inherit;border:1px solid #bdcdc0;background:white;border-radius:8px;padding:8px 14px;color:var(--accent);cursor:pointer}.searchbox{width:100%;margin:10px 0 24px}.mini{font-size:13px;color:var(--muted)}
+</style></head><body><header><p><a href="../index.html">← 外部画布示例</a></p><h1>AI短剧工作流</h1><p class="meta">来源：第 32 篇「AI短剧工作流分享」 · 本地媒体 20 份</p><nav class="nav"><a href="../../%E6%95%99%E7%A8%8B/32-AI%E7%9F%AD%E5%89%A7%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%86%E4%BA%AB/%E6%95%99%E7%A8%8B.html">来源教程</a><a href="https://www.liblib.tv/canvas/share?shareId=aVQ3IViVQ">在线画布</a><a href="%E8%AF%B4%E6%98%8E.md">说明 Markdown</a><a href="%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%8E%E6%96%87%E6%9C%AC.md">提示词 Markdown</a></nav></header><main><nav class="nav"><a href="#description">说明</a><a href="#prompts">提示词与文本</a><a href="#media">本地媒体</a><a href="#data">画布与原始数据</a></nav><article><section id="description" class="source-section"><h2>说明</h2><h2>AI短剧工作流</h2><div class="source-text">
+来源教程：AI短剧工作流分享
+
+画布链接：<a href="https://www.liblib.tv/canvas/share?shareId=aVQ3IViVQ">https://www.liblib.tv/canvas/share?shareId=aVQ3IViVQ</a>
+
+已保存 24 个节点、22 条连线、6 个提示词或文本节点；本项目关联 20 个本地媒体文件。
+
+另有 0 个已过期的签名 URL；原文保存在画布数据和媒体清单中，未将这些 URL 计为已下载文件。
+
+<a href="%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B8%8E%E6%96%87%E6%9C%AC.md">提示词与文本</a> · <a href="%E7%94%BB%E5%B8%83%E6%95%B0%E6%8D%AE.json">画布数据</a> · <a href="%E5%AA%92%E4%BD%93%E6%B8%85%E5%8D%95.json">媒体清单</a>
+
+公开可用素材包含画布预览图和视频预览。文件记录中的 `quality` 标明可识别的预览来源，不能统一视为原始素材。</div></section><section id="prompts" class="source-section"><h2>提示词与文本</h2><h2>AI短剧工作流</h2><div class="source-text">
+来源：<a href="https://www.liblib.tv/canvas/share?shareId=aVQ3IViVQ">https://www.liblib.tv/canvas/share?shareId=aVQ3IViVQ</a>
+</div><h3>1 图片节点 3</h3><div class="source-text">
+基于我上传的图片 1，生成一张专业的角色设定图（Character Sheet）
+左侧三分之二展示该角色的全身三视图（包含正面、侧面、背面）。
+画面右侧三分之一展示半身肖像的高清特写，请严格保持原图的人物形象和服装细节。背景使用极简的高级中性灰，带有影棚光影质感，8K 超高清分辨率。
+</div><h3>2 剧本</h3><div class="source-text">
+[
+  &quot;**0-10秒**\\\n夜晚阳台，两个人对峙。女生穿白衣，男生站在她面前。\\\n男生冷冷说：\\\n**“你还要装到什么时候？”**\\\n女生愣住，还没来得及解释。\n\n**10-18秒**\\\n男生把一张照片摔到桌上。\\\n照片里是女生和另一个人见面的画面。\\\n女生想开口：\\\n**“不是你想的那样……”**\\\n男生情绪失控，抬手给了她一巴掌。\n\n**18-35秒**\\\n世界瞬间安静。\\\n女生的头被打偏，头发散下来。\\\n她慢慢转回脸，看着男生。\\\n第一秒是震惊。\\\n第二秒是不敢相信。\\\n第三秒，她嘴角微微动了一下，像是想笑。\\\n但那个笑很难看。\\\n她轻声问：\\\n**“你打我？”**\n\n**35-50秒**\\\n男生也愣住，后悔了，但没说话。\\\n女生眼眶一点点红了。\\\n她强忍着，声音发抖：\\\n**“我以为你至少会听我解释。”**\\\n她低头笑了一下，眼泪却掉下来。\\\n**“原来在你心里，我一直都是这样的人。”**\n\n**50-60秒**\\\n男生想靠近。\\\n女生退后一步。\\\n她擦掉眼泪，看着他，眼神从委屈慢慢变冷。\\\n她说：\\\n**“这一巴掌，不是打在我脸上。”**\\\n停顿。\\\n**“是打醒我了。”**\n\n黑场。\\\n字幕：\\\n**“有些关系，毁掉只需要一秒。”**&quot;
+]
+</div><h3>3 脚本生成器</h3><div class="source-text">
+根据我上传的剧本生成一个完整的故事脚本
+</div><h3>4 破裂的一秒</h3><div class="source-text">
+[
+  {
+    &quot;shotNumber&quot;: 1,
+    &quot;durationSeconds&quot;: 3,
+    &quot;plotDescription&quot;: &quot;夜晚阳台，男女主僵持对峙，确立压抑的场景基调&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;林白&quot;,
+        &quot;characterDescription&quot;: &quot;[林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      },
+      {
+        &quot;characterName&quot;: &quot;顾寒&quot;,
+        &quot;characterDescription&quot;: &quot;[顾寒: 二十多岁的年轻男性，穿着深色休闲外套，眉头紧锁，眼神带有强烈的攻击性，身形挺拔但姿态紧绷]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;shotSize&quot;: &quot;中远景&quot;,
+    &quot;characterAction&quot;: &quot;两人身体僵硬地站立，互相对视&quot;,
+    &quot;emotion&quot;: &quot;压抑，紧张&quot;,
+    &quot;sceneTags&quot;: &quot;夜晚，阳台，霓虹夜景&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;冷蓝色月光与暖色路灯交织，高对比度侧逆光&quot;,
+    &quot;audioEffects&quot;: &quot;微弱的城市白噪音，压抑的心跳声&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：中远景，侧面机位，双人构图] [林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱] 站在左侧；[顾寒: 二十多岁的年轻男性，穿着深色休闲外套，眉头紧锁，眼神带有强烈的攻击性，身形挺拔但姿态紧绷] 站在右侧面对她。[主体/人物空间与互动关系：两人中间隔着一张小圆桌，相对位置紧张，距离约一米] [极具体的微表情、主体状态或关键视觉信息：双方肢体僵硬，呈对峙姿态，气氛剑拔弩张] [明确的场景环境元素与前景/背景道具：夜晚阳台，背景是模糊的城市霓虹夜景，桌上放着昏暗的氛围灯] [光影几何与大气效果：高对比度冷蓝色月光与暖色路灯交织，形成清晰的侧逆光轮廓] [视觉风格/质感：写实电影感，暗调压抑] [技术参数：35mm镜头，f/2.8]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机微移缓慢推进] 两人身体僵硬对峙，夜风吹动女生的头发和白衬衫，画面充满张力。[环境物理动态：衣角和发丝随风微动] [音效：微弱的城市白噪音，压抑的心跳声] [时长：3秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;QsbhjTtYxq&quot;,
+    &quot;id&quot;: &quot;QsbhjTtYxq&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 2,
+    &quot;durationSeconds&quot;: 4,
+    &quot;plotDescription&quot;: &quot;男生冷漠质问女生，展现男生的愤怒情绪&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;顾寒&quot;,
+        &quot;characterDescription&quot;: &quot;[顾寒: 二十多岁的年轻男性，穿着深色休闲外套，眉头紧锁，眼神带有强烈的攻击性，身形挺拔但姿态紧绷]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;shotSize&quot;: &quot;特写&quot;,
+    &quot;characterAction&quot;: &quot;男生眼神冰冷，开口质问&quot;,
+    &quot;emotion&quot;: &quot;愤怒，冷酷&quot;,
+    &quot;sceneTags&quot;: &quot;夜晚，阳台&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;半面阴影，强烈的轮廓光&quot;,
+    &quot;audioEffects&quot;: &quot;无&quot;,
+    &quot;dialogue&quot;: &quot;你还要装到什么时候？&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：特写，正面偏侧机位] [顾寒: 二十多岁的年轻男性，穿着深色休闲外套，眉头紧锁，眼神带有强烈的攻击性，身形挺拔但姿态紧绷] [主体/人物空间与互动关系：占据画面主体，视线向下俯视，带有压迫感] [极具体的微表情、主体状态或关键视觉信息：眼神冰冷且充满愤怒，下颌线紧绷，嘴唇微启呈现说话状态] [明确的场景环境元素与前景/背景道具：背景是深度虚化的夜空与阳台金属栏杆] [光影几何与大气效果：半边脸隐没在深邃的阴影中，强烈的冷色轮廓光勾勒侧脸] [视觉风格/质感：电影级锐利质感，高反差] [技术参数：85mm镜头，f/1.8]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机固定，微焦距变化] 男生眼神锐利，嘴唇开合，带着压抑的怒意冷冷说话，下颌肌肉因咬牙而微动。[对话台词：你还要装到什么时候？语气冰冷刺骨] [时长：4秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;X9347AnPLL&quot;,
+    &quot;id&quot;: &quot;X9347AnPLL&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 3,
+    &quot;durationSeconds&quot;: 3,
+    &quot;plotDescription&quot;: &quot;女生面对质问感到错愕和愣住&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;林白&quot;,
+        &quot;characterDescription&quot;: &quot;[林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;shotSize&quot;: &quot;特写&quot;,
+    &quot;characterAction&quot;: &quot;表情瞬间僵住，无法言语&quot;,
+    &quot;emotion&quot;: &quot;震惊，错愕&quot;,
+    &quot;sceneTags&quot;: &quot;夜晚，阳台&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;面部受光均匀但偏冷，眼底有微光&quot;,
+    &quot;audioEffects&quot;: &quot;心跳骤停的音效&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：特写，微仰角机位] [林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱] [主体/人物空间与互动关系：居中构图，视线向上看着画面外的男生] [极具体的微表情、主体状态或关键视觉信息：瞳孔微震，嘴唇微张，原本平静的表情完全僵住，充满困惑与错愕] [明确的场景环境元素与前景/背景道具：背后是城市灯火的圆形虚影，夜晚空气清冷] [光影几何与大气效果：眼底有微弱的反射光点，面部光线柔和但色调偏冷蓝] [视觉风格/质感：细腻柔和且极具易碎感] [技术参数：85mm镜头，f/1.4]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机微微手持晃动] 女生原本平静的表情瞬间被打破，瞳孔放大，呼吸停滞了一瞬，嘴唇微张想要开口却没发出声音，显得手足无措。[时长：3秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;J2ul7lhg8Y&quot;,
+    &quot;id&quot;: &quot;J2ul7lhg8Y&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 4,
+    &quot;durationSeconds&quot;: 3,
+    &quot;plotDescription&quot;: &quot;男生将照片重重摔在桌面上&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;顾寒&quot;,
+        &quot;characterDescription&quot;: &quot;[顾寒: 二十多岁的年轻男性，穿着深色休闲外套，眉头紧锁，眼神带有强烈的攻击性，身形挺拔但姿态紧绷]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;shotSize&quot;: &quot;特写&quot;,
+    &quot;characterAction&quot;: &quot;男生的手将照片用力拍在桌面上&quot;,
+    &quot;emotion&quot;: &quot;暴怒&quot;,
+    &quot;sceneTags&quot;: &quot;圆桌，照片，夜景&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;顶光投射，手部带有强烈的动态阴影&quot;,
+    &quot;audioEffects&quot;: &quot;清脆刺耳的拍桌声&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：主观视角，俯拍特写] [顾寒: 二十多岁的年轻男性，穿着深色休闲外套，眉头紧锁，眼神带有强烈的攻击性，身形挺拔但姿态紧绷] 的右手 [主体/人物空间与互动关系：男性的右手用力将几张洗出来的照片按压在木质圆桌上] [极具体的微表情、主体状态或关键视觉信息：手背青筋凸起，散开的照片上隐约是模糊的男女并肩背影] [明确的场景环境元素与前景/背景道具：桌面木质纹理清晰，旁边有倒伏的玻璃杯] [光影几何与大气效果：强烈的顶光投射，手部和照片在桌面上形成锐利的动态阴影] [视觉风格/质感：高动态，高对比度，充满暴力暗示] [技术参数：50mm微距镜头，f/2.8]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机快速下摇跟随手部动作] 男生的手带着极大的力道将照片甩在桌面上，照片在木桌上滑开。[环境物理动态：照片纸张的摩擦反弹] [音效：清脆刺耳的拍桌声] [时长：3秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;T2oGGd6U3i&quot;,
+    &quot;id&quot;: &quot;T2oGGd6U3i&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 5,
+    &quot;durationSeconds&quot;: 2,
+    &quot;plotDescription&quot;: &quot;女生急切地想要解释照片内容&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;林白&quot;,
+        &quot;characterDescription&quot;: &quot;[林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;shotSize&quot;: &quot;近景特写&quot;,
+    &quot;characterAction&quot;: &quot;身体前倾，急切开口解释&quot;,
+    &quot;emotion&quot;: &quot;焦急，委屈&quot;,
+    &quot;sceneTags&quot;: &quot;夜晚，阳台&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;冷调侧光，面部明暗交界清晰&quot;,
+    &quot;audioEffects&quot;: &quot;无&quot;,
+    &quot;dialogue&quot;: &quot;不是你想的那样……&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：近景特写，平视机位] [林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱] [主体/人物空间与互动关系：身体微微前倾，试图靠近画面外的男生] [极具体的微表情、主体状态或关键视觉信息：眉头微皱，眼神焦急闪烁，带着祈求的意味，嘴唇张开正在急促说话] [明确的场景环境元素与前景/背景道具：虚化的阳台环境] [光影几何与大气效果：冷调侧光，在脸颊形成清冷的明暗交界线] [视觉风格/质感：写实情感特写] [技术参数：50mm镜头，f/1.8]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机微微推进] 女生快速摇头，眼神急切，身体前倾，嘴唇翕动试图语速极快地解释。[对话台词：不是你想的那样……，语气急促且带有哭腔] [时长：2秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;vGvnAO8bRm&quot;,
+    &quot;id&quot;: &quot;vGvnAO8bRm&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 6,
+    &quot;durationSeconds&quot;: 3,
+    &quot;plotDescription&quot;: &quot;男生情绪失控，抬手给了女生一巴掌&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;林白&quot;,
+        &quot;characterDescription&quot;: &quot;[林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      },
+      {
+        &quot;characterName&quot;: &quot;顾寒&quot;,
+        &quot;characterDescription&quot;: &quot;[顾寒: 二十多岁的年轻男性，穿着深色休闲外套，眉头紧锁，眼神带有强烈的攻击性，身形挺拔但姿态紧绷]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;shotSize&quot;: &quot;中景&quot;,
+    &quot;characterAction&quot;: &quot;男生猛地挥出耳光，女生头部受力即将偏转&quot;,
+    &quot;emotion&quot;: &quot;失控，暴力&quot;,
+    &quot;sceneTags&quot;: &quot;夜晚，阳台&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;光影凌乱，瞬间的明暗反差&quot;,
+    &quot;audioEffects&quot;: &quot;清脆响亮的耳光声&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：中景，侧面双人构图] [林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱] 和 [顾寒: 二十多岁的年轻男性，穿着深色休闲外套，眉头紧锁，眼神带有强烈的攻击性，身形挺拔但姿态紧绷] [主体/人物空间与互动关系：男生在右，女生在左，两人距离极近] [极具体的微表情、主体状态或关键视觉信息：男生愤怒达到极点，右手臂挥出形成强烈的动态模糊残影；女生头部因受力前奏微微后仰，发丝飞舞] [明确的场景环境元素与前景/背景道具：夜景阳台，背景灯带倾斜] [光影几何与大气效果：瞬间的灯光闪烁，强烈的明暗对比勾勒出肢体张力] [视觉风格/质感：极具爆发力的动作抓拍，剧情转折点] [技术参数：35mm镜头，f/2.8，较慢快门表现动态]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机快速横移并伴随剧烈的手持震动] 男生情绪彻底失控，猛地抬起右手，一记耳光重重挥向女生。动作极快带出残影，女生的头被重重打偏。[物理动态：女生的长发因剧烈受力在空中甩出弧线] [音效：清脆响亮的耳光声] [时长：3秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;MM47qZT8KI&quot;,
+    &quot;id&quot;: &quot;MM47qZT8KI&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 7,
+    &quot;durationSeconds&quot;: 5,
+    &quot;plotDescription&quot;: &quot;耳光后的极度死寂，女生被打偏头部的缓慢余波&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;林白&quot;,
+        &quot;characterDescription&quot;: &quot;[林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;shotSize&quot;: &quot;近景特写&quot;,
+    &quot;characterAction&quot;: &quot;头被打偏，头发散落遮住脸颊，保持不动&quot;,
+    &quot;emotion&quot;: &quot;死寂，麻木&quot;,
+    &quot;sceneTags&quot;: &quot;夜晚，失焦光斑&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;阴影笼罩面部，发丝边缘有逆光&quot;,
+    &quot;audioEffects&quot;: &quot;刺耳的耳鸣声，所有背景音消失&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：近景特写，微倾斜构图] [林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱] [主体/人物空间与互动关系：头部完全偏向画面左下侧，身体失去平衡微微倾斜] [极具体的微表情、主体状态或关键视觉信息：脸颊微微发红，眼睛紧闭，黑色长发凌乱散落遮住大半张脸，表情仿佛失去知觉] [明确的场景环境元素与前景/背景道具：背景城市灯光完全失焦成巨大的圆形光斑] [光影几何与大气效果：面部沉浸在深邃的阴影中，只有凌乱的发丝边缘透出冷冽的逆光] [视觉风格/质感：极度安静压抑，时间凝固感] [技术参数：85mm镜头，f/1.4]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[升格慢动作，摄影机几乎静止] 耳光落下后，世界瞬间陷入死寂。女生的头被打偏，黑发在空中缓慢而沉重地散落，她保持着被打偏的姿势一动不动，画面呈现令人窒息的静止感。[音效：长达数秒的尖锐耳鸣声，风声和环境音全部抽离] [时长：5秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;MSXC1gHPXq&quot;,
+    &quot;id&quot;: &quot;MSXC1gHPXq&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 8,
+    &quot;durationSeconds&quot;: 5,
+    &quot;plotDescription&quot;: &quot;女生缓慢转回脸，从震惊到不可置信&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;林白&quot;,
+        &quot;characterDescription&quot;: &quot;[林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;shotSize&quot;: &quot;特写&quot;,
+    &quot;characterAction&quot;: &quot;缓慢转头正对镜头，睁开眼睛&quot;,
+    &quot;emotion&quot;: &quot;震惊，不可置信&quot;,
+    &quot;sceneTags&quot;: &quot;夜晚，阳台&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;面部一半在光晕中，一半在阴影中&quot;,
+    &quot;audioEffects&quot;: &quot;无&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：特写，正视镜头] [林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱] [主体/人物空间与互动关系：脸部居中正对镜头，发丝凌乱贴在侧脸] [极具体的微表情、主体状态或关键视觉信息：双眼睁开，眼神从短暂的空洞迅速转为极度的震惊，随后是深深的不可置信，眼角微微抽动，面部肌肉僵硬] [明确的场景环境元素与前景/背景道具：黑色夜空为背景] [光影几何与大气效果：面部呈现明显的阴阳脸光效，一半在冷光下，一半在深阴影中，展现内心撕裂感] [视觉风格/质感：情感极度紧绷] [技术参数：85mm镜头，f/1.8]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机极其缓慢地推进] 女生像失去灵魂的提线木偶一样，一寸一寸地慢慢将脸转回正前方。她的视线重新聚焦，眼神里倒映着面前的人，瞳孔颤抖，充满了完全无法相信的震惊。[时长：5秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;kA95aI2PDr&quot;,
+    &quot;id&quot;: &quot;kA95aI2PDr&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 9,
+    &quot;durationSeconds&quot;: 7,
+    &quot;plotDescription&quot;: &quot;女生扯出难看的苦笑并轻声反问&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;林白&quot;,
+        &quot;characterDescription&quot;: &quot;[林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;shotSize&quot;: &quot;极限特写&quot;,
+    &quot;characterAction&quot;: &quot;嘴角抽动扯出惨淡的笑，轻声开口&quot;,
+    &quot;emotion&quot;: &quot;绝望，心碎，荒谬&quot;,
+    &quot;sceneTags&quot;: &quot;夜晚&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;冷冽高光打在颤抖的嘴唇上&quot;,
+    &quot;audioEffects&quot;: &quot;无&quot;,
+    &quot;dialogue&quot;: &quot;你打我？&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：极限特写，紧凑裁剪] [林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱] [主体/人物空间与互动关系：构图极度逼近，只留下双眼和嘴唇的区域] [极具体的微表情、主体状态或关键视觉信息：嘴角神经质地微微上扬，扯出一个极其难看、比哭还惨淡的笑，眼眶开始充血发红，眼神空洞中透着深深的绝望与荒谬感] [明确的场景环境元素与前景/背景道具：背景完全虚化为纯黑] [光影几何与大气效果：一道冷冽的高光精准打在她微微颤抖的嘴唇和充血的眼角上] [视觉风格/质感：极具侵略性的情感特写] [技术参数：100mm微距镜头，f/2.8]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[静止镜头] 女生死死盯着前方，嘴角不自然地抽动了一下，勉强扯出一个极度苦涩、难看的冷笑。她眼眶含泪但未落下，嘴唇发抖，轻轻吐出几个字。[对话台词：你打我？声音轻得像叹息，带着沙哑] [时长：7秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;puGEG4Y9Um&quot;,
+    &quot;id&quot;: &quot;puGEG4Y9Um&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 10,
+    &quot;durationSeconds&quot;: 4,
+    &quot;plotDescription&quot;: &quot;男生意识到自己的冲动，陷入慌乱与懊悔&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;顾寒&quot;,
+        &quot;characterDescription&quot;: &quot;[顾寒: 二十多岁的年轻男性，穿着深色休闲外套，眉头紧锁，眼神带有强烈的攻击性，身形挺拔但姿态紧绷]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;shotSize&quot;: &quot;特写&quot;,
+    &quot;characterAction&quot;: &quot;打人的手悬在半空发颤，满脸懊悔&quot;,
+    &quot;emotion&quot;: &quot;懊悔，慌乱，不知所措&quot;,
+    &quot;sceneTags&quot;: &quot;夜晚，阳台&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;面部全阴影，凸显内疚&quot;,
+    &quot;audioEffects&quot;: &quot;无&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：特写，略带俯视感机位] [顾寒: 二十多岁的年轻男性，穿着深色休闲外套，眉头紧锁，眼神带有强烈的攻击性，身形挺拔但姿态紧绷] [主体/人物空间与互动关系：呆立在画面中央，肢体僵硬] [极具体的微表情、主体状态或关键视觉信息：举起的右手悬在半空微微发颤，眼神里的怒火瞬间褪去，取而代之的是极度的懊悔、慌乱与不知所措，嘴唇微张却失声] [明确的场景环境元素与前景/背景道具：背景是压抑的城市夜色] [光影几何与大气效果：面部几乎完全陷入阴影，只有眼底反射着微弱的慌乱光芒，氛围沉重] [视觉风格/质感：心理防线崩溃的瞬间] [技术参数：85mm镜头，f/1.8]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机微晃] 男生仿佛被自己失控的动作吓到，打人的手僵在半空，手指微微蜷缩颤抖后无力地垂下。他嘴唇张了张，想要说话弥补却发不出任何声音，眼神躲闪退缩。[时长：4秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;EExi73vvbJ&quot;,
+    &quot;id&quot;: &quot;EExi73vvbJ&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 11,
+    &quot;durationSeconds&quot;: 5,
+    &quot;plotDescription&quot;: &quot;女生眼眶通红，强忍泪水诉说委屈&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;林白&quot;,
+        &quot;characterDescription&quot;: &quot;[林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;shotSize&quot;: &quot;特写&quot;,
+    &quot;characterAction&quot;: &quot;眼眶变红，强忍眼泪颤抖着说话&quot;,
+    &quot;emotion&quot;: &quot;极度委屈，心碎&quot;,
+    &quot;sceneTags&quot;: &quot;夜晚，阳台&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;眼眶泪水反射星芒，柔和冷光&quot;,
+    &quot;audioEffects&quot;: &quot;无&quot;,
+    &quot;dialogue&quot;: &quot;我以为你至少会听我解释。&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：特写，平视机位] [林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱] [主体/人物空间与互动关系：面部充满画面，视线直逼镜头] [极具体的微表情、主体状态或关键视觉信息：眼眶已经完全通红，一层水汽覆盖在眼球上，强忍着泪水不让其掉落，下巴微微颤抖，眼神中充满无尽的委屈、失望与心碎] [明确的场景环境元素与前景/背景道具：虚化的城市夜光] [光影几何与大气效果：眼眶里打转的泪水精准反射出路灯的星芒，面部光线柔和而悲伤] [视觉风格/质感：泪水欲落未落的脆弱感] [技术参数：85mm镜头，f/1.4]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机缓慢推近] 女生的眼眶一点点变红，泪水在眼眶里剧烈打转。她深吸一口气强行忍住，声音带着明显的颤抖和极大的委屈说出台词。[对话台词：我以为你至少会听我解释。] [时长：5秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;bLmwzR8cdh&quot;,
+    &quot;id&quot;: &quot;bLmwzR8cdh&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 12,
+    &quot;durationSeconds&quot;: 6,
+    &quot;plotDescription&quot;: &quot;女生低头苦笑，眼泪决堤滑落&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;林白&quot;,
+        &quot;characterDescription&quot;: &quot;[林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;shotSize&quot;: &quot;特写&quot;,
+    &quot;characterAction&quot;: &quot;低头自嘲地笑，一滴眼泪滑落脸颊&quot;,
+    &quot;emotion&quot;: &quot;彻底失望，哀莫大于心死&quot;,
+    &quot;sceneTags&quot;: &quot;夜晚，阳台&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;眼泪在暗光下划出反光轨迹&quot;,
+    &quot;audioEffects&quot;: &quot;无&quot;,
+    &quot;dialogue&quot;: &quot;原来在你心里，我一直都是这样的人。&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：特写，微俯拍视角] [林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱] [主体/人物空间与互动关系：脸部微微低垂] [极具体的微表情、主体状态或关键视觉信息：她低下头，嘴角勾起一抹自嘲的冷笑，一滴晶莹饱满的眼泪正顺着左侧脸颊滑落，眼神中原本的委屈彻底破碎，转为哀莫大于心死的冷漠] [明确的场景环境元素与前景/背景道具：黑暗的背景衬托人物的孤独] [光影几何与大气效果：脸颊上的泪痕在暗调的侧光下划出一条清晰的高光轨迹] [视觉风格/质感：凄美，绝望] [技术参数：85mm镜头，f/1.4]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[摄影机微微下摇后固定] 女生自嘲地低下头轻笑了一声，在这个瞬间，强忍的眼泪终于决堤掉落。她擦过眼泪再次抬起头时，眼神深处的东西开始彻底改变。[对话台词：原来在你心里，我一直都是这样的人。语气从颤抖转为自嘲的平静] [时长：6秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;y29Ut0AW2r&quot;,
+    &quot;id&quot;: &quot;y29Ut0AW2r&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 13,
+    &quot;durationSeconds&quot;: 3,
+    &quot;plotDescription&quot;: &quot;男生试图靠近，女生抗拒后退拉开距离&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;林白&quot;,
+        &quot;characterDescription&quot;: &quot;[林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      },
+      {
+        &quot;characterName&quot;: &quot;顾寒&quot;,
+        &quot;characterDescription&quot;: &quot;[顾寒: 二十多岁的年轻男性，穿着深色休闲外套，眉头紧锁，眼神带有强烈的攻击性，身形挺拔但姿态紧绷]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;shotSize&quot;: &quot;中景&quot;,
+    &quot;characterAction&quot;: &quot;男生向前伸手，女生果断后退一步&quot;,
+    &quot;emotion&quot;: &quot;抗拒，隔阂&quot;,
+    &quot;sceneTags&quot;: &quot;夜晚，阳台地砖&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;冷色调月光铺满地面&quot;,
+    &quot;audioEffects&quot;: &quot;脚步摩擦地面的声音&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：中景，全身双人构图] [林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱] 和 [顾寒: 二十多岁的年轻男性，穿着深色休闲外套，眉头紧锁，眼神带有强烈的攻击性，身形挺拔但姿态紧绷] [主体/人物空间与互动关系：男生在右侧向前迈出半步，伸出右手想要触碰女生；女生在左侧，身体重心完全后仰，双脚已经向后撤离，拉开两人距离] [极具体的微表情、主体状态或关键视觉信息：男生的手悬停在半空显得无力，女生的肢体语言充满极致的防备与决绝抗拒] [明确的场景环境元素与前景/背景道具：阳台的冷色调地砖和金属栏杆清晰可见] [光影几何与大气效果：冰冷的月光在两人之间画出了一道无形的阴影界线] [视觉风格/质感：关系断裂的空间具象化] [技术参数：35mm镜头，f/2.8]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[手持摄影，跟随动作小幅晃动] 男生满脸愧疚地向前一步想要拉她的手臂，女生如同触电般迅速且果断地后退一大步，肢体语言写满了抗拒与警惕，两人之间形成了一道不可逾越的鸿沟。[音效：鞋底剧烈摩擦地面的脚步声] [时长：3秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;24d11e9da1&quot;,
+    &quot;id&quot;: &quot;24d11e9da1&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 14,
+    &quot;durationSeconds&quot;: 7,
+    &quot;plotDescription&quot;: &quot;女生擦干眼泪，眼神变冷，宣告清醒&quot;,
+    &quot;characters&quot;: [
+      {
+        &quot;characterName&quot;: &quot;林白&quot;,
+        &quot;characterDescription&quot;: &quot;[林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱]&quot;,
+        &quot;characterImageUrl&quot;: &quot;&quot;
+      }
+    ],
+    &quot;shotSize&quot;: &quot;特写&quot;,
+    &quot;characterAction&quot;: &quot;用力擦去泪痕，眼神变得如死水般冰冷&quot;,
+    &quot;emotion&quot;: &quot;决绝，清醒，冰冷&quot;,
+    &quot;sceneTags&quot;: &quot;夜晚，阳台&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;面部迎着冷蓝色的月光，清冷决绝&quot;,
+    &quot;audioEffects&quot;: &quot;无&quot;,
+    &quot;dialogue&quot;: &quot;这一巴掌，不是打在我脸上。是打醒我了。&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：特写，平视偏低机位] [林白: 二十多岁的年轻女性，穿着简约的白色丝质衬衫，黑色长发，气质清冷，面部轮廓柔和但在光影下显得脆弱] [主体/人物空间与互动关系：面部充满画面，呈现极其强大的心理气场] [极具体的微表情、主体状态或关键视觉信息：她正抬起手背粗暴地擦去脸上的泪痕，眼周因用力擦拭而泛红。擦拭完后，她的眼神变得如死水般冰冷、锐利，再无一丝委屈或柔软，下颌微微扬起] [明确的场景环境元素与前景/背景道具：背后是沉寂的黑夜] [光影几何与大气效果：面部直面冷蓝色的月光，毫无温度的打光凸显其内心的彻底封闭与觉醒] [视觉风格/质感：女性觉醒，冷酷，力量感] [技术参数：50mm镜头，f/1.8]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[缓慢的轨道推进] 女生抬起手背，用力且粗暴地擦掉脸上的眼泪。她放下手，直视男生的眼睛，原本柔弱委屈的眼神里的温度瞬间降至冰点。她用毫无波澜、极度冷静的语气说出最后的话，中间有明显的停顿。[对话台词：这一巴掌，不是打在我脸上。（停顿）是打醒我了。] [时长：7秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;hKgDsobjoc&quot;,
+    &quot;id&quot;: &quot;hKgDsobjoc&quot;
+  },
+  {
+    &quot;shotNumber&quot;: 15,
+    &quot;durationSeconds&quot;: 3,
+    &quot;plotDescription&quot;: &quot;黑场出字幕，总结故事内核&quot;,
+    &quot;characters&quot;: [],
+    &quot;shotSize&quot;: &quot;全景（字幕卡）&quot;,
+    &quot;characterAction&quot;: &quot;无&quot;,
+    &quot;emotion&quot;: &quot;留白，沉思&quot;,
+    &quot;sceneTags&quot;: &quot;纯黑背景，白字&quot;,
+    &quot;lightingAndAtmosphere&quot;: &quot;无&quot;,
+    &quot;audioEffects&quot;: &quot;沉闷的低频心跳声（Boom），随后彻底安静&quot;,
+    &quot;dialogue&quot;: &quot;无&quot;,
+    &quot;imageGenerationPrompt&quot;: &quot;[画面构图：纯黑底色，正中央为白色极简中文字幕] [主体/人物空间与互动关系：无人物] [极具体的微表情、主体状态或关键视觉信息：文字内容为“有些关系，毁掉只需要一秒。”，排版居中，字体克制纤细] [明确的场景环境元素与前景/背景道具：无] [光影几何与大气效果：无] [视觉风格/质感：极简，大量留白，经典电影片尾质感] [技术参数：无]&quot;,
+    &quot;videoMotionPrompt&quot;: &quot;[静止镜头] 画面瞬间切为黑屏，随后缓慢淡入白色字幕“有些关系，毁掉只需要一秒。”，停留片刻后字幕缓慢淡出至全黑。[音效：一声悠长、沉闷的低频心跳声（Boom），随后彻底归于死寂] [时长：3秒]&quot;,
+    &quot;hiddenUuid&quot;: &quot;MPjwXcIjX5&quot;,
+    &quot;id&quot;: &quot;MPjwXcIjX5&quot;
+  }
+]
+</div><h3>5 图片节点 4</h3><div class="source-text">
+基于我上传的图片 1，生成一张专业的角色设定图（Character Sheet）
+左侧三分之二展示该角色的全身三视图（包含正面、侧面、背面）。
+画面右侧三分之一展示半身肖像的高清特写，请严格保持原图的人物形象和服装细节。背景使用极简的高级中性灰，带有影棚光影质感，8K 超高清分辨率。
+</div><h3>6 图片节点 5</h3><div class="source-text">
+根据人物角色和剧本，生成一张 4x4 网格图像，并且是一个连续性的片段，请根据剧本描述生成有故事逻辑的连续性图片电影级写实摄影，竖屏都市情绪短剧风格，电影级近景特写，浅景深背景虚化，低饱和冷调，柔和侧逆光，人物面部细节清晰
+</div><h3>7 文本节点 7</h3><div class="source-text">
+将剧本转换为一段15秒的AI视频生成提示词</div></section><section id="data" class="source-section"><h2>画布与原始数据</h2><p class="meta">画布节点 24 · 连线 22 · 提示词或文本节点 6</p><nav class="nav"><a href="%E7%94%BB%E5%B8%83%E6%95%B0%E6%8D%AE.json">打开画布 JSON</a><a href="%E7%94%BB%E5%B8%83%E6%95%B0%E6%8D%AE.json" download>下载画布 JSON</a><a href="%E5%AA%92%E4%BD%93%E6%B8%85%E5%8D%95.json">媒体清单 JSON</a><a href="%E6%9C%AC%E5%9C%B0%E5%AA%92%E4%BD%93%E7%B4%A2%E5%BC%95.md">本地媒体索引 Markdown</a></nav><p class="mini">画布 JSON 保留节点、连线和原始字段，供复查或后续整理；页面中的媒体来自已保存的本地文件。</p></section></article><section id="media"><h2>本地媒体索引</h2><p>本地媒体 20 份：mp4 1、png 19。<a href="%E6%9C%AC%E5%9C%B0%E5%AA%92%E4%BD%93%E7%B4%A2%E5%BC%95.md">Markdown 媒体索引</a></p><input class="searchbox" id="media-search" type="search" placeholder="筛选媒体名称、类型、节点 ID…" aria-label="筛选媒体"><div class="gallery"><section class="media-card" data-search="1 宫格分镜 4-2 png 来源文件 07e6bnzimx"><a href="../%E5%AA%92%E4%BD%93/148c37f97c3d5a1913f1d966.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/148c37f97c3d5a1913f1d966.png" alt="宫格分镜 4-2"></a><p><strong>1 · 宫格分镜 4-2</strong></p><p class="meta">png · 来源文件 · 228.2 KB</p><p><a href="../%E5%AA%92%E4%BD%93/148c37f97c3d5a1913f1d966.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/5ff71a28a039c5237ca2ce3293cb938327a50255.png">在线来源</a></p></section><section class="media-card" data-search="2 宫格分镜 4-2、宫格分镜 1-4、宫格分镜 3-2 png 来源文件 07e6bnzimx 0kwccr3ru8 1x8tbkrfqz 2qdsmhymmi af0v8ivogq ctfsdfrxkb nn9ja8xdn8 nvfkhrpvqg pgypugcq5x qrq2xfaswu rrxt9jygoo sjvmljbb5x tfgmniamyw vmjnvwtjy9"><a href="../%E5%AA%92%E4%BD%93/c3e364737dfb1170c5fdc221.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/c3e364737dfb1170c5fdc221.png" alt="宫格分镜 4-2、宫格分镜 1-4、宫格分镜 3-2"></a><p><strong>2 · 宫格分镜 4-2、宫格分镜 1-4、宫格分镜 3-2</strong></p><p class="meta">png · 来源文件 · 2.7 MB</p><p><a href="../%E5%AA%92%E4%BD%93/c3e364737dfb1170c5fdc221.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/05ac367865561443fce6f82275235ac7705e883dd386af14e21cab66a6685e03.png">在线来源</a></p></section><section class="media-card" data-search="3 宫格分镜 1-4 png 来源文件 0kwccr3ru8"><a href="../%E5%AA%92%E4%BD%93/1f0df12051015d9151f780e0.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/1f0df12051015d9151f780e0.png" alt="宫格分镜 1-4"></a><p><strong>3 · 宫格分镜 1-4</strong></p><p class="meta">png · 来源文件 · 200.7 KB</p><p><a href="../%E5%AA%92%E4%BD%93/1f0df12051015d9151f780e0.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/c230a4dbef36b64ef4cd2e81a1e06e562f431e5f.png">在线来源</a></p></section><section class="media-card" data-search="4 宫格分镜 3-2 png 来源文件 1x8tbkrfqz"><a href="../%E5%AA%92%E4%BD%93/73b517e811ed745e50839298.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/73b517e811ed745e50839298.png" alt="宫格分镜 3-2"></a><p><strong>4 · 宫格分镜 3-2</strong></p><p class="meta">png · 来源文件 · 215.1 KB</p><p><a href="../%E5%AA%92%E4%BD%93/73b517e811ed745e50839298.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/2afe8d9035667a488af2ef730f1de196d0194d69.png">在线来源</a></p></section><section class="media-card" data-search="5 宫格分镜 1-2 png 来源文件 2qdsmhymmi"><a href="../%E5%AA%92%E4%BD%93/1df62ed88f32cd11765d4f94.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/1df62ed88f32cd11765d4f94.png" alt="宫格分镜 1-2"></a><p><strong>5 · 宫格分镜 1-2</strong></p><p class="meta">png · 来源文件 · 230.9 KB</p><p><a href="../%E5%AA%92%E4%BD%93/1df62ed88f32cd11765d4f94.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/50742f7166b1a7f706c74f0b2a9707482f447753.png">在线来源</a></p></section><section class="media-card" data-search="6 图片节点 3、图片节点 5 png 来源文件 7goze0pccg qrq2xfaswu"><a href="../%E5%AA%92%E4%BD%93/0513d5e23bee8c07d1068ff0.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/0513d5e23bee8c07d1068ff0.png" alt="图片节点 3、图片节点 5"></a><p><strong>6 · 图片节点 3、图片节点 5</strong></p><p class="meta">png · 来源文件 · 2.9 MB</p><p><a href="../%E5%AA%92%E4%BD%93/0513d5e23bee8c07d1068ff0.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/93d43f1ed7a6ca5a008254e3f42dcd6430242f4132416898eb723d76fa895b9b.png">在线来源</a></p></section><section class="media-card" data-search="7 图片节点 3、clipboard - 2026-05-12 20.55.56 png 来源文件 7goze0pccg v9a5td5wwv"><a href="../%E5%AA%92%E4%BD%93/60ccb7851acba30bf21fa7d5.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/60ccb7851acba30bf21fa7d5.png" alt="图片节点 3、Clipboard - 2026-05-12 20.55.56"></a><p><strong>7 · 图片节点 3、Clipboard - 2026-05-12 20.55.56</strong></p><p class="meta">png · 来源文件 · 2.4 MB</p><p><a href="../%E5%AA%92%E4%BD%93/60ccb7851acba30bf21fa7d5.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/62d3c43d82141963ad533716c7c035f749e801be.png">在线来源</a></p></section><section class="media-card" data-search="8 宫格分镜 2-2 png 来源文件 af0v8ivogq"><a href="../%E5%AA%92%E4%BD%93/7841cc615dade83906cc2af2.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/7841cc615dade83906cc2af2.png" alt="宫格分镜 2-2"></a><p><strong>8 · 宫格分镜 2-2</strong></p><p class="meta">png · 来源文件 · 206.1 KB</p><p><a href="../%E5%AA%92%E4%BD%93/7841cc615dade83906cc2af2.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/0220f1371144fcf3b56ecc2c006869ac590afcea.png">在线来源</a></p></section><section class="media-card" data-search="9 宫格分镜 1-1 png 来源文件 ctfsdfrxkb"><a href="../%E5%AA%92%E4%BD%93/f470787d53d1dc9d5258e879.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/f470787d53d1dc9d5258e879.png" alt="宫格分镜 1-1"></a><p><strong>9 · 宫格分镜 1-1</strong></p><p class="meta">png · 来源文件 · 224.1 KB</p><p><a href="../%E5%AA%92%E4%BD%93/f470787d53d1dc9d5258e879.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/41dde7b40114d9c2c9fb41662ad2115984c94067.png">在线来源</a></p></section><section class="media-card" data-search="10 视频节点 6 mp4 来源文件 dvm4sf3gyc"><video controls preload="none" src="https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-d5cff4a59be7c9eedee2.mp4"></video><p><strong>10 · 视频节点 6</strong></p><p class="meta">mp4 · 来源文件 · 5.0 MB</p><p><a href="https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-d5cff4a59be7c9eedee2.mp4">打开本地文件</a> · <a href="https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/video/a79cb4f30d454bbdb1def4d2c47a095f/d5cff4a59be7c9eedee2e2fb34635b43731d59f1bc1011800b79b9ce62c85c07.mp4">在线来源</a></p></section><section class="media-card" data-search="11 视频节点 6、分镜拼接-2k png 来源文件 dvm4sf3gyc prwwpemnfe"><a href="../%E5%AA%92%E4%BD%93/0cd8ee5b77ed1262166dc5f7.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/0cd8ee5b77ed1262166dc5f7.png" alt="视频节点 6、分镜拼接-2k"></a><p><strong>11 · 视频节点 6、分镜拼接-2k</strong></p><p class="meta">png · 来源文件 · 2.8 MB</p><p><a href="../%E5%AA%92%E4%BD%93/0cd8ee5b77ed1262166dc5f7.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/f3c0c2b80acda78cfa1b10d7d9091771eedaa792.png">在线来源</a></p></section><section class="media-card" data-search="12 宫格分镜 3-3 png 来源文件 nn9ja8xdn8"><a href="../%E5%AA%92%E4%BD%93/a032d5d6cf91ed7e9748aa65.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/a032d5d6cf91ed7e9748aa65.png" alt="宫格分镜 3-3"></a><p><strong>12 · 宫格分镜 3-3</strong></p><p class="meta">png · 来源文件 · 217.3 KB</p><p><a href="../%E5%AA%92%E4%BD%93/a032d5d6cf91ed7e9748aa65.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/3dd85b0cc7213653f7124a2d793ea8f2aed0d4df.png">在线来源</a></p></section><section class="media-card" data-search="13 chatgpt image 2026年5月12日 17_08_37、图片节点 4 png 来源文件 no848ncice pv2jiauelf"><a href="../%E5%AA%92%E4%BD%93/e8ba72984675ffb2c5f8339d.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/e8ba72984675ffb2c5f8339d.png" alt="ChatGPT Image 2026年5月12日 17_08_37、图片节点 4"></a><p><strong>13 · ChatGPT Image 2026年5月12日 17_08_37、图片节点 4</strong></p><p class="meta">png · 来源文件 · 2.5 MB</p><p><a href="../%E5%AA%92%E4%BD%93/e8ba72984675ffb2c5f8339d.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/f4ec93c8649312404cc3f6c271cb86acde6b3ea8.png">在线来源</a></p></section><section class="media-card" data-search="14 宫格分镜 3-4 png 来源文件 nvfkhrpvqg"><a href="../%E5%AA%92%E4%BD%93/5877dd82dcaf2c996287f9d5.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/5877dd82dcaf2c996287f9d5.png" alt="宫格分镜 3-4"></a><p><strong>14 · 宫格分镜 3-4</strong></p><p class="meta">png · 来源文件 · 204.3 KB</p><p><a href="../%E5%AA%92%E4%BD%93/5877dd82dcaf2c996287f9d5.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/7ac4ee0a4a9690e6653a53dd30491e83812794a8.png">在线来源</a></p></section><section class="media-card" data-search="15 宫格分镜 4-1 png 来源文件 pgypugcq5x"><a href="../%E5%AA%92%E4%BD%93/57443820c88290349f78c4c0.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/57443820c88290349f78c4c0.png" alt="宫格分镜 4-1"></a><p><strong>15 · 宫格分镜 4-1</strong></p><p class="meta">png · 来源文件 · 230.9 KB</p><p><a href="../%E5%AA%92%E4%BD%93/57443820c88290349f78c4c0.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/b271a12c012e5afb81da49b4a70050f40e54bd62.png">在线来源</a></p></section><section class="media-card" data-search="16 图片节点 4、图片节点 5 png 来源文件 pv2jiauelf qrq2xfaswu"><a href="../%E5%AA%92%E4%BD%93/1c24fc0deb078eafb30ae5e3.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/1c24fc0deb078eafb30ae5e3.png" alt="图片节点 4、图片节点 5"></a><p><strong>16 · 图片节点 4、图片节点 5</strong></p><p class="meta">png · 来源文件 · 2.9 MB</p><p><a href="../%E5%AA%92%E4%BD%93/1c24fc0deb078eafb30ae5e3.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/sd-gen-save-img/genius_playground/image/a79cb4f30d454bbdb1def4d2c47a095f/8bf31607dff342af9cf34416b3593091d19f7fd72510fc02481630055cdcf254.png">在线来源</a></p></section><section class="media-card" data-search="17 宫格分镜 2-4 png 来源文件 rrxt9jygoo"><a href="../%E5%AA%92%E4%BD%93/58db93785c55cb5e4b1c06b2.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/58db93785c55cb5e4b1c06b2.png" alt="宫格分镜 2-4"></a><p><strong>17 · 宫格分镜 2-4</strong></p><p class="meta">png · 来源文件 · 219.3 KB</p><p><a href="../%E5%AA%92%E4%BD%93/58db93785c55cb5e4b1c06b2.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/01e00838a07fb79a9e83f5181ae84fbb4a980ccc.png">在线来源</a></p></section><section class="media-card" data-search="18 宫格分镜 2-3 png 来源文件 sjvmljbb5x"><a href="../%E5%AA%92%E4%BD%93/9e44a8e4fae36b153fa46912.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/9e44a8e4fae36b153fa46912.png" alt="宫格分镜 2-3"></a><p><strong>18 · 宫格分镜 2-3</strong></p><p class="meta">png · 来源文件 · 232.1 KB</p><p><a href="../%E5%AA%92%E4%BD%93/9e44a8e4fae36b153fa46912.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/ae58f7e7c6166bf7a492936e55db86f9d5e159a5.png">在线来源</a></p></section><section class="media-card" data-search="19 宫格分镜 3-1 png 来源文件 tfgmniamyw"><a href="../%E5%AA%92%E4%BD%93/e39bf12251b43369cc9c6647.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/e39bf12251b43369cc9c6647.png" alt="宫格分镜 3-1"></a><p><strong>19 · 宫格分镜 3-1</strong></p><p class="meta">png · 来源文件 · 215.2 KB</p><p><a href="../%E5%AA%92%E4%BD%93/e39bf12251b43369cc9c6647.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/467e311526e6325cb73b488da0d82b8c8f089335.png">在线来源</a></p></section><section class="media-card" data-search="20 宫格分镜 1-3 png 来源文件 vmjnvwtjy9"><a href="../%E5%AA%92%E4%BD%93/c3c538a4f0c24586b9e54739.png"><img loading="lazy" src="../%E5%AA%92%E4%BD%93/c3c538a4f0c24586b9e54739.png" alt="宫格分镜 1-3"></a><p><strong>20 · 宫格分镜 1-3</strong></p><p class="meta">png · 来源文件 · 219.0 KB</p><p><a href="../%E5%AA%92%E4%BD%93/c3c538a4f0c24586b9e54739.png">打开本地文件</a> · <a href="https://libtv-res.liblib.art/upload-images/a79cb4f30d454bbdb1def4d2c47a095f/67bc592122913a5738e3ef7aa957678232ad205b.png">在线来源</a></p></section></div><script>document.getElementById("media-search").addEventListener("input",event=>{const terms=event.target.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);document.querySelectorAll(".media-card").forEach(card=>{card.hidden=!terms.every(term=>card.dataset.search.includes(term));});});</script></section></main><footer><a href="../index.html">回到外部画布示例目录</a></footer></body></html>

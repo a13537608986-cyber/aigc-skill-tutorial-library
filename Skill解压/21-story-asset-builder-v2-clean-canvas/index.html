@@ -1,0 +1,1533 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>story-asset-builder-v2-clean-canvas.zip</title><style>
+:root{color-scheme:light;--ink:#182a27;--muted:#60716b;--line:#dce5df;--accent:#245e48;--paper:#fbfcf9}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}a{color:var(--accent);text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}header,main,footer{max-width:1080px;margin:auto;padding:28px 24px}header{padding-top:44px;padding-bottom:20px}h1{font-size:clamp(26px,4vw,40px);line-height:1.35;margin:.3em 0}h2,h3,h4,h5,h6{line-height:1.5;margin:1.5em 0 .5em}h2{font-size:26px}h3{font-size:22px}h4{font-size:19px}p{margin:.8em 0}.muted,.meta{color:var(--muted);font-size:14px}.meta{display:flex;flex-wrap:wrap;gap:8px 20px}.notice{background:#eef4ef;border:1px solid var(--line);border-radius:12px;padding:14px 18px}.warning{background:#fff7e7;border:1px solid #ead8a7;border-radius:8px;padding:10px 14px}.tools{display:flex;gap:12px;margin:22px 0}input,select{font:inherit;background:white;color:var(--ink);border:1px solid #bccdc2;border-radius:9px;padding:11px 13px}input{flex:1;min-width:0}select{max-width:200px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:16px}.card{background:white;border:1px solid var(--line);border-radius:13px;padding:20px}.card h2{font-size:20px;margin:8px 0}.card p{font-size:14px;color:var(--muted);margin:8px 0}.tag{font-size:12px;color:var(--accent);background:#edf4ec;padding:3px 8px;border-radius:20px}.cardlinks{display:flex;flex-wrap:wrap;gap:14px;font-size:14px}article{background:white;border:1px solid var(--line);border-radius:14px;padding:clamp(18px,4vw,44px);overflow-wrap:anywhere}article> :first-child{margin-top:0}.block{white-space:pre-wrap;word-break:break-word}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px}.grid-column{min-width:0}pre{background:#f1f4ef;border:1px solid #dce4da;border-radius:9px;padding:18px;overflow:auto;white-space:pre-wrap;word-break:break-word;font:14px/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}figure{margin:24px 0}img{display:block;max-width:100%;height:auto;border-radius:6px}figcaption{font-size:13px;color:var(--muted);margin-top:7px}video,audio{max-width:100%;width:100%}.asset{background:#f4f6f1;border:1px solid var(--line);border-radius:8px;padding:14px;margin:14px 0}.asset small{display:block;color:var(--muted)}blockquote{border-left:4px solid #b0c8b5;padding:8px 18px;margin:18px 0;background:#f3f7f0}.list-item{display:flex;gap:10px;margin:.6em 0}.list-item .marker{flex:0 0 1.8em;color:#60716b}.list-body{flex:1;min-width:0}.table-wrap{overflow:auto}table{border-collapse:collapse;min-width:70%;margin:18px 0}td,th{border:1px solid #ccd8ce;padding:8px 12px;vertical-align:top}hr{border:0;border-top:1px solid var(--line);margin:28px 0}summary{cursor:pointer}footer{font-size:13px;color:var(--muted)}[hidden]{display:none!important}@media(max-width:600px){header,main,footer{padding:22px 16px}.tools{flex-direction:column}select{max-width:none}article{border-radius:9px}}
+
+.nav{display:flex;flex-wrap:wrap;gap:9px 20px;margin:18px 0}.source-text{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.8;margin:0}.source-section{padding:18px 0;border-bottom:1px solid var(--line)}.source-section h2,.source-section h3{margin:.3em 0 .7em}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px}.media-card{border:1px solid var(--line);border-radius:10px;background:white;padding:12px;min-width:0}.media-card figure{margin:0}.media-card img{width:100%;max-height:320px;object-fit:contain;background:#f0f3ed}.media-card video{width:100%;max-height:320px;background:#152620}.media-card p{font-size:13px;margin:8px 0}.media-card .meta{font-size:12px}.scroll-table{overflow:auto}td{min-width:110px}details{border:1px solid var(--line);border-radius:9px;padding:14px;margin:15px 0}details>summary{font-weight:600}details>.source-text{margin-top:16px}button{font:inherit;border:1px solid #bdcdc0;background:white;border-radius:8px;padding:8px 14px;color:var(--accent);cursor:pointer}.searchbox{width:100%;margin:10px 0 24px}.mini{font-size:13px;color:var(--muted)}
+</style></head><body><header><p><a href="../../Skill%E5%AE%89%E8%A3%85%E5%8C%85%E7%9B%AE%E5%BD%95.html">← Skill 安装包目录</a></p><h1>story-asset-builder-v2-clean-canvas.zip</h1><p class="meta">已解压 27 个文件 · SKILL.md 1 份 · 其他 Markdown 15 份</p><nav class="nav"><a href="../../%E8%B5%84%E6%BA%90/21-%E7%94%B5%E5%BD%B1%E7%BA%A7%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%81%9A%E6%88%90%20skill/004-story-asset-builder-v2-clean-canvas.zip">原包</a><a href="%E5%86%85%E5%AE%B9%E7%9B%AE%E5%BD%95.md">Markdown 内容目录</a></nav></header><main><p class="notice">下面的文件是安全解压副本。点击文件名可打开或编辑；未运行任何包内脚本或提示词。</p><div class="scroll-table"><table><tr><th>文件</th><th>大小</th></tr><tr><td><a href="story-asset-builder/templates/character_sheet.md">story-asset-builder/templates/character_sheet.md</a></td><td>4,097 B</td></tr><tr><td><a href="story-asset-builder/templates/creature_sheet.md">story-asset-builder/templates/creature_sheet.md</a></td><td>3,050 B</td></tr><tr><td><a href="story-asset-builder/templates/prop_sheet.md">story-asset-builder/templates/prop_sheet.md</a></td><td>1,910 B</td></tr><tr><td><a href="story-asset-builder/templates/vehicle_sheet.md">story-asset-builder/templates/vehicle_sheet.md</a></td><td>1,882 B</td></tr><tr><td><a href="story-asset-builder/templates/environment_sheet.md">story-asset-builder/templates/environment_sheet.md</a></td><td>1,758 B</td></tr><tr><td><a href="story-asset-builder/templates/color_palette.md">story-asset-builder/templates/color_palette.md</a></td><td>1,551 B</td></tr><tr><td><a href="story-asset-builder/templates/storyboard_grid.md">story-asset-builder/templates/storyboard_grid.md</a></td><td>2,128 B</td></tr><tr><td><a href="story-asset-builder/templates/video_prompt.md">story-asset-builder/templates/video_prompt.md</a></td><td>1,107 B</td></tr><tr><td><a href="story-asset-builder/profiles/wansheng.yaml">story-asset-builder/profiles/wansheng.yaml</a></td><td>1,708 B</td></tr><tr><td><a href="story-asset-builder/profiles/default_cinematic.yaml">story-asset-builder/profiles/default_cinematic.yaml</a></td><td>973 B</td></tr><tr><td><a href="story-asset-builder/profiles/ancient_drama.yaml">story-asset-builder/profiles/ancient_drama.yaml</a></td><td>1,046 B</td></tr><tr><td><a href="story-asset-builder/profiles/apocalypse_thriller.yaml">story-asset-builder/profiles/apocalypse_thriller.yaml</a></td><td>1,006 B</td></tr><tr><td><a href="story-asset-builder/profiles/cyber_city.yaml">story-asset-builder/profiles/cyber_city.yaml</a></td><td>974 B</td></tr><tr><td><a href="story-asset-builder/rules/asset_extraction.md">story-asset-builder/rules/asset_extraction.md</a></td><td>2,309 B</td></tr><tr><td><a href="story-asset-builder/rules/prompt_compiler.md">story-asset-builder/rules/prompt_compiler.md</a></td><td>1,506 B</td></tr><tr><td><a href="story-asset-builder/rules/libtv_canvas_rules.md">story-asset-builder/rules/libtv_canvas_rules.md</a></td><td>5,718 B</td></tr><tr><td><a href="story-asset-builder/rules/qa_loop.md">story-asset-builder/rules/qa_loop.md</a></td><td>985 B</td></tr><tr><td><a href="story-asset-builder/examples/demo_request.md">story-asset-builder/examples/demo_request.md</a></td><td>1,287 B</td></tr><tr><td><a href="story-asset-builder/quick_prompts/01_create_new_project_canvas.txt">story-asset-builder/quick_prompts/01_create_new_project_canvas.txt</a></td><td>680 B</td></tr><tr><td><a href="story-asset-builder/quick_prompts/02_use_wansheng_profile.txt">story-asset-builder/quick_prompts/02_use_wansheng_profile.txt</a></td><td>562 B</td></tr><tr><td><a href="story-asset-builder/quick_prompts/03_retry_canvas_nodes.txt">story-asset-builder/quick_prompts/03_retry_canvas_nodes.txt</a></td><td>249 B</td></tr><tr><td><a href="story-asset-builder/quick_prompts/04_create_clean_canvas.txt">story-asset-builder/quick_prompts/04_create_clean_canvas.txt</a></td><td>940 B</td></tr><tr><td><a href="story-asset-builder/quick_prompts/05_reorganize_existing_canvas.txt">story-asset-builder/quick_prompts/05_reorganize_existing_canvas.txt</a></td><td>654 B</td></tr><tr><td><a href="story-asset-builder/SKILL.md">story-asset-builder/SKILL.md</a></td><td>8,630 B</td></tr><tr><td><a href="story-asset-builder/README.md">story-asset-builder/README.md</a></td><td>1,364 B</td></tr><tr><td><a href="story-asset-builder/manifest.json">story-asset-builder/manifest.json</a></td><td>693 B</td></tr><tr><td><a href="story-asset-builder/CHANGELOG.md">story-asset-builder/CHANGELOG.md</a></td><td>650 B</td></tr></table></div><h2>Markdown 原文预览</h2><details open><summary>story-asset-builder/SKILL.md</summary><p class="mini"><a href="story-asset-builder/SKILL.md">打开可编辑原文件</a></p><pre class="source-text"># story-asset-builder
+
+## 中文名
+剧本资产生成器 / Story Asset Builder
+
+## 定位
+本 Skill 用于把任意剧本、短片创意、分镜描述、世界观设定，自动拆解成 LibTV 画布里的资产节点，并按“工业化提示词文档”格式生成可复用 Prompt。
+
+它不是替代 LibTV skill / LibTV CLI，而是作为上层“资产导演 + Prompt 编译器”使用：
+
+```text
+用户输入剧本需求
+→ 解析项目与风格 Profile
+→ 拆解人物 / 场景 / 道具 / 怪兽 / 载具 / 色卡 / 分镜 / 视频段落
+→ 套用对应资产模板
+→ 生成标准化 Prompt 文档
+→ 调用已安装的 LibTV skill / LibTV CLI 在画布创建节点
+→ 把 Prompt、参数建议、实操注意、跑歪兜底加强写入对应节点
+→ 用户在 LibTV 里确认生成
+```
+
+## 何时触发
+当用户出现以下需求时，优先使用本 Skill：
+
+- “根据剧本创建 LibTV 资产画布”
+- “帮我拆人物、道具、场景、怪兽节点”
+- “按某个提示词文档格式生成资产 Prompt”
+- “我只想在 LibTV 确认生成，前面节点和提示词自动帮我建好”
+- “创建某个短剧 / 漫剧 / AI电影 / 产品片的资产准备工作流”
+- “把剧本变成角色设定图、道具图、场景图、分镜图、视频节点”
+
+## 依赖
+必须提前安装并授权 LibTV skill / LibTV CLI。若没有检测到 LibTV 相关能力，先提醒用户安装或授权，不要假装已经创建画布。
+
+安装位置建议：
+
+```text
+~/.openclaw/skills/story-asset-builder/
+```
+
+LibTV 访问要求：
+
+```text
+LIBTV_ACCESS_KEY 已配置，或用户已在 OpenClaw / 飞书 ClawBot 中完成 LibTV 授权。
+```
+
+## 工作原则
+
+### 1. 不写死项目
+不要把“万物生”写成唯一项目。本 Skill 是通用剧本资产生成器。
+“万物生”只是一个 profile 样板。遇到新剧本时，应先判断：
+
+```text
+是否指定项目 Profile？
+- 是：读取该 profile，继承风格规则。
+- 否：根据剧本自动创建临时 Project Profile。
+```
+
+### 2. 先拆资产，再建节点
+不要直接把用户剧本塞进一个大 Prompt。必须先输出并执行资产拆解：
+
+```text
+角色资产
+场景资产
+道具资产
+怪兽 / 生物资产
+载具资产
+色卡 / 视觉 DNA 资产
+关键帧 / 分镜资产
+视频段落资产
+```
+
+### 3. Prompt 必须工程化
+生成 Prompt 时，必须采用“标题 + 格式 + 资产设定 + prompt 主体 + constraints + 实操注意”的文档结构。
+不要只输出一句普通提示词。
+
+### 4. 实操注意不是生图 Prompt
+`【实操注意】`、`【跑歪兜底加强】`必须写入节点备注、质检说明或同级文档，不要混入生图 Prompt 主体。
+
+### 5. LibTV 画布必须有结构
+创建 LibTV 画布时，必须按资产类型分组：
+
+```text
+00_Project_Profile
+01_Character_Assets
+02_Creature_Assets
+03_Prop_Assets
+04_Vehicle_Assets
+05_Environment_Assets
+06_Color_And_Material_DNA
+07_Storyboard_And_Keyframes
+08_Video_Segments
+09_QA_Notes_And_Rerun_Fixes
+```
+
+### 6. 默认先创建资产图节点，不直接生成最终视频
+除非用户明确要求“直接出视频”，否则只准备资产节点和 Prompt，不启动最终视频合成。
+
+## 标准执行流程
+
+### Step 1：读取用户需求
+从用户输入中提取：
+
+```text
+project_name
+story_type
+episode_or_scene
+script_text
+visual_reference
+style_reference
+output_goal
+platform_or_model_preference
+```
+
+### Step 2：选择或创建 Project Profile
+优先级：
+
+1. 用户明确指定 profile
+2. 从剧本类型匹配已有 profile
+3. 自动创建临时 profile
+4. 使用 profiles/default_cinematic.yaml
+
+### Step 3：资产拆解
+输出资产清单，每个资产必须包含：
+
+```yaml
+asset_id:
+asset_name:
+asset_type:
+asset_role:
+priority:
+template:
+libtv_node_group:
+required_views:
+aspect_ratio:
+prompt_status:
+qa_risk:
+```
+
+### Step 4：Prompt 编译
+根据资产类型套用模板：
+
+```text
+人物 → templates/character_sheet.md
+怪兽 / 生物 → templates/creature_sheet.md
+道具 / 武器 → templates/prop_sheet.md
+载具 → templates/vehicle_sheet.md
+场景 → templates/environment_sheet.md
+色卡 → templates/color_palette.md
+分镜 → templates/storyboard_grid.md
+视频 → templates/video_prompt.md
+```
+
+### Step 5：LibTV 画布创建
+调用已安装 LibTV skill / CLI，执行：
+
+```text
+create_session / 开启新项目
+创建节点组
+创建每个资产节点
+写入 Prompt 主体
+写入尺寸 / 比例 / 模型建议
+写入实操注意与跑歪兜底加强
+把所有工作流放到画布上
+返回 LibTV project 链接
+```
+
+若画布没有节点，或节点为空，必须重试并提示：
+
+```text
+重试创建整个工作流放在画布
+你的节点是空的，重新创建工作流，要把结果也放到节点里
+```
+
+### Step 6：返回给用户
+最终回复必须包含：
+
+```text
+1. 已创建的项目名
+2. 资产节点数量
+3. 节点分组概览
+4. LibTV project 链接，若工具返回
+5. 需要用户确认生成的节点
+6. 若失败，明确说明失败点和下一步
+```
+
+## Prompt 文档标准结构
+每个资产 Prompt 文档必须尽量使用以下结构：
+
+```text
+=== GPT-Image Prompt - {project_name} {asset_name} {asset_type} v{version} ===
+
+【格式】
+- aspect ratio
+- layout
+- view count
+- model / quality suggestion
+
+【资产定位】
+- story function
+- visual memory point
+- relation to other assets
+- hierarchy / power level if applicable
+
+---
+
+【prompt】
+```
+
+Prompt 主体：
+- opening format sentence
+- Layout
+- Panel / View details
+- Subject
+- Core identity
+- Costume / Equipment / Structure
+- Color Palette
+- Pose / View / Camera
+- Critical consistency
+- Lighting
+- Style
+- Quality
+- Panel Labels if needed
+- Constraints
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+size / aspect ratio / quality / model / reference images / node group
+
+【实操注意】
+1. 跑出来重点检查
+2. 跑歪兜底加强
+3. 版本迭代建议
+```
+
+## LibTV 节点命名规范
+
+```text
+{序号}_{资产类型}_{资产名}_v{版本}
+```
+
+示例：
+
+```text
+01_Character_沙猎喽啰A钩索手_v1
+02_Creature_机械赛加羚羊_v1
+03_Environment_部落崖壁市集_v1
+04_Prop_旧收音机_v1
+05_Storyboard_第一场九宫格_v1
+```
+
+## 默认模型建议
+仅作为节点备注，不强制。具体以 LibTV 当前可用模型为准。
+
+```yaml
+image_reference_sheet: GPT-Image / Neo Image / Seedream / LibTV 当前可用图片模型
+video_generation: Seedance 2.0 默认；用户明确要求时可用 Kling O3/3.0
+aspect_ratio:
+  character_sheet: 9:16
+  creature_sheet: 16:9
+  prop_sheet: 16:9 or 1:1
+  environment_sheet: 16:9
+  storyboard_grid: 16:9 or 3:4
+  video: 根据用户平台，默认 16:9；短视频默认 9:16
+```
+
+## 失败处理
+
+如果无法调用 LibTV：
+
+```text
+我已经完成资产拆解和 Prompt 编译，但当前环境没有可用的 LibTV 调用能力 / 授权，无法直接创建画布。请确认已安装 LibTV skill / CLI 并配置 access_key。你也可以把我生成的节点创建指令复制到 OpenClaw 中执行。
+```
+
+如果节点没有放在画布：
+
+```text
+请确认是否把整个生成工作流创建在了画布上。若没有，请重试创建整个工作流放在画布。
+```
+
+如果生成结果不合格：
+
+```text
+不要直接重写全部 Prompt。先定位失败项，再从对应资产的【跑歪兜底加强】中追加修复句，创建 v2 节点。
+```
+
+---
+
+## Canvas Blueprint 硬规则 v2
+
+任何时候，只要用户要求创建 LibTV 画布，必须先读取并遵守：
+
+```text
+rules/libtv_canvas_rules.md
+```
+
+创建画布前必须生成 Canvas Blueprint，不能直接创建散乱节点。
+
+默认画布必须使用 6 个分区：
+
+```text
+01_PROJECT_INDEX：项目总览区
+02_STYLE_DNA：视觉风格 / 色卡 / 材质 / 灯光区
+03_CHARACTERS：人物资产区
+04_WORLD_ASSETS：场景 / 道具 / 怪兽 / 载具区
+05_STORYBOARD_VIDEO：分镜 / 关键帧 / 视频区
+99_ARCHIVE：废弃节点 / 失败节点 / 重跑节点区
+```
+
+所有节点必须使用统一命名：
+
+```text
+序号_资产类型_资产名称_用途_v版本号
+```
+
+每个资产小组默认包含：
+
+```text
+PROMPT / GENERATE / QA / REF可选 / V2_RETRY可选
+```
+
+禁止把所有 Prompt、生成节点、QA 节点分别堆在一起。每个资产的小组必须靠近摆放，并在最终回复里返回节点索引表。
+
+如果用户说：
+
+```text
+使用 story-asset-builder 创建画布
+按标准画布蓝图创建
+按标准 Canvas Blueprint 创建
+重新整理当前 LibTV 画布
+```
+
+应自动执行以上规则，不要要求用户重复输入画布排版规则。
+</pre></details><details><summary>story-asset-builder/templates/character_sheet.md</summary><p class="mini"><a href="story-asset-builder/templates/character_sheet.md">打开可编辑原文件</a></p><pre class="source-text"># Template: Character Sheet / 人物设定图
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} {character_name} 默认形态四视图人设图 v{version} ===
+
+【格式】
+- 9:16 竖版 + 最高分辨率
+- 4宫格不等大：上小下大
+- 左上正脸特写 + 右上侧脸特写 + 左下脖子以下全身无脸 + 右下背面全身含后脑勺
+- 背景、光线、色调继承当前 Project Profile
+
+【角色定位】
+{character_role}
+{story_function}
+{hierarchy_or_power_level}
+{relationship_to_other_assets}
+
+---
+
+【prompt】
+```
+
+A character design reference sheet. **Vertical 9:16 aspect ratio. Maximum resolution output.** {studio_backdrop}. {lighting_rule}. Same visual DNA as the project profile: {visual_dna}.
+
+【Layout】
+**2x2 grid with unequal panel heights**:
+- Top row: two smaller panels, each approximately 1/3 of total canvas height — head/face close-ups
+- Bottom row: two larger panels, each approximately 2/3 of total canvas height — full body shots
+- Thin neutral dividing lines between all four panels
+- All four panels share the same backdrop, same lighting setup, same color palette
+
+【4 Panels】
+**Top-left panel — FRONT FACE CLOSE-UP**:
+Tight close-up of {character_name}&#x27;s face, framed from collarbone-line up to top of head. Subject facing camera directly. Face fully visible. Preserve: {face_key_features}.
+
+**Top-right panel — SIDE FACE CLOSE-UP (PROFILE)**:
+Tight side profile close-up, framed from collarbone-line up to top of head. Subject facing camera-right. Profile silhouette clearly visible. Preserve: {side_profile_key_features}.
+
+**Bottom-left panel — FULL BODY FROM NECK DOWN, FRONT VIEW (NO FACE)**:
+Full body shot from collarbone-line down to feet, facing camera directly. The face/head is intentionally cropped out at the top of this panel. Focus on body proportions, costume, equipment, weapons and material details. Zero face involvement.
+
+**Bottom-right panel — FULL BODY BACK VIEW (INCLUDING BACK OF HEAD)**:
+Full body shot from head to feet, facing directly away from camera. Includes back of head, hairstyle/back headwear, back-mounted equipment and rear costume details.
+
+【Subject — same character across all 4 panels】
+{character_summary}
+
+【Character Core】
+{age_range}, {body_type}, {temperament}, {role_logic}. NOT {body_negative_list}.
+
+【Face / Ethnicity / Age / Texture】
+{face_and_identity_details}
+
+【Hair / Makeup / Skin】
+{hair_makeup_skin_details}
+
+【Costume】
+{costume_details}
+
+【Equipment / Weapons / Props】
+{equipment_details}
+
+【Color Palette】
+{color_palette}
+
+【Pose - same across all 4 panels】
+{pose_rule}
+
+【Critical consistency】
+SAME individual character in all 4 panels: identical face structure, hairstyle, costume, equipment, colors, body proportions, material aging, and lighting direction.
+
+【Lighting - critical】
+{lighting_detail}
+
+【Style】
+Hyperrealistic photographic character design rendering—shot like a high-end practical costume photographed in a film production studio for a cinematic lookbook reference board. NOT illustration, NOT obvious 3D CGI render. {style_references}
+
+【Quality】
+Maximum resolution output. Clean detail definition. Real physical costume cinematic photography aesthetic. {quality_details}
+
+【Panel Labels】
+Small clean monospace sans-serif black text below each panel:
+- Top-left: &quot;FRONT FACE&quot;
+- Top-right: &quot;SIDE FACE&quot;
+- Bottom-left: &quot;BODY FRONT (NO FACE)&quot;
+- Bottom-right: &quot;BACK&quot;
+Title at top center of canvas: &quot;{english_title} — DEFAULT FORM CHARACTER SHEET&quot;
+
+【Constraints】
+{constraints}
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+aspect_ratio: 9:16
+node_group: 01_Character_Assets
+model: image reference sheet model available in LibTV
+reference_images: {reference_images}
+
+【实操注意】
+1. 跑出来重点检查：
+   - 角色是否同一个人
+   - 左下 panel 是否严格无脸
+   - 服装 / 装备 / 体型 / 年龄是否正确
+   - 风格是否符合 Project Profile
+   - Title + 4 labels 是否准确
+2. 跑歪兜底加强：
+   - {rerun_fix_1}
+   - {rerun_fix_2}
+   - {rerun_fix_3}
+```
+</pre></details><details><summary>story-asset-builder/templates/creature_sheet.md</summary><p class="mini"><a href="story-asset-builder/templates/creature_sheet.md">打开可编辑原文件</a></p><pre class="source-text"># Template: Creature Sheet / 怪兽、生物、机械兽设定图
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} {creature_name} 多视图设定图 v{version} ===
+
+【格式】
+- 16:9 横版 + 最高分辨率
+- 4格均等 2x2：SIDE + FRONT + TOP + 3/4 VIEW
+- 背景、光线、材质继承当前 Project Profile
+
+【兽 / 怪兽设定】
+{creature_role}
+{species_or_construction}
+{tactical_function}
+{signature_visual_memory_point}
+{scale_rule}
+{world_dna}
+
+---
+
+【prompt】
+```
+
+A creature design reference sheet. **Horizontal 16:9 aspect ratio. Maximum resolution output.** {studio_backdrop}. {lighting_rule}. Same studio environment and visual DNA as {project_name}.
+
+【Layout】
+**2x2 equal grid**:
+- Top-left: SIDE VIEW
+- Top-right: FRONT VIEW
+- Bottom-left: TOP-DOWN VIEW
+- Bottom-right: 3/4 PERSPECTIVE VIEW
+Thin neutral dividing lines between all four panels. Creature centered in each panel with even space margin.
+
+【Subject — same creature across all 4 panels】
+{creature_summary}
+
+【Species / Anatomy / Construction — CRITICAL】
+{species_anatomy_or_mechanical_structure}
+
+【Scale】
+{scale_details}
+
+【Surface / Material】
+{surface_material_details}
+
+【Signature Visual Memory Point — MOST CRITICAL】
+{signature_details}
+
+【Eyes / Mouth / Limbs / Body Parts】
+{body_part_details}
+
+【Functional Story Elements】
+{functional_elements}
+
+【Decorations / Damage / Weathering】
+{decoration_weathering}
+
+【4 Panels detail】
+**Top-left panel — SIDE VIEW**: {side_view_detail}
+**Top-right panel — FRONT VIEW**: {front_view_detail}
+**Bottom-left panel — TOP-DOWN VIEW**: {top_view_detail}
+**Bottom-right panel — 3/4 PERSPECTIVE VIEW**: {three_quarter_detail}
+
+【Critical consistency】
+SAME individual creature in all 4 panels—identical proportions, signature feature, materials, markings, damage pattern, and lighting setup.
+
+【Lighting - critical】
+{lighting_detail}
+
+【Style】
+Hyperrealistic photographic creature design rendering—shot like a high-end practical animatronic creature or VFX production reference board. NOT illustration, NOT obvious 3D CGI render. {style_references}
+
+【Quality】
+Maximum resolution output. Sharp clean details. Every structural seam, texture, surface mark and functional part clearly defined.
+
+【Panel Labels】
+Small clean monospace sans-serif black text below each panel:
+- Top-left: &quot;SIDE&quot;
+- Top-right: &quot;FRONT&quot;
+- Bottom-left: &quot;TOP&quot;
+- Bottom-right: &quot;3/4 VIEW&quot;
+Title at top center: &quot;{english_title} — DESIGN SHEET&quot;
+
+【Constraints】
+{constraints}
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+aspect_ratio: 16:9
+node_group: 02_Creature_Assets
+model: image reference sheet model available in LibTV
+reference_images: {reference_images}
+
+【实操注意】
+1. 跑出来重点检查：
+   - 核心物种 / 怪兽识别点是否明显
+   - 体型比例是否正确
+   - 是否四视图一致
+   - 是否符合项目材质 DNA
+   - 文字标签是否准确
+2. 跑歪兜底加强：
+   - {rerun_fix_1}
+   - {rerun_fix_2}
+   - {rerun_fix_3}
+```
+</pre></details><details><summary>story-asset-builder/templates/prop_sheet.md</summary><p class="mini"><a href="story-asset-builder/templates/prop_sheet.md">打开可编辑原文件</a></p><pre class="source-text"># Template: Prop Sheet / 道具、武器、设备设定图
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} {prop_name} 道具设定图 v{version} ===
+
+【格式】
+- 默认 16:9 横版 + 最高分辨率
+- 4格或 3格多视图：FRONT / SIDE / BACK / DETAIL
+- 背景、材质、灯光继承当前 Project Profile
+
+【道具定位】
+{prop_story_function}
+{owner_or_related_character}
+{usage_scene}
+{signature_feature}
+
+---
+
+【prompt】
+```
+
+A professional prop design reference sheet. **Horizontal 16:9 aspect ratio. Maximum resolution output.** {studio_backdrop}. {lighting_rule}. Clean production design board layout.
+
+【Layout】
+{layout_detail}
+
+【Subject — same prop across all views】
+{prop_summary}
+
+【Form / Structure】
+{form_structure}
+
+【Materials】
+{material_details}
+
+【Functional Parts】
+{functional_parts}
+
+【Scale / Handling】
+{scale_handling}
+
+【Wear / Damage / History】
+{weathering_history}
+
+【Color Palette】
+{color_palette}
+
+【View Details】
+{view_details}
+
+【Critical consistency】
+Same prop across every view: identical silhouette, structure, material, color and wear pattern.
+
+【Lighting】
+{lighting_detail}
+
+【Style】
+Hyperrealistic prop photography / film production design reference sheet. NOT illustration, NOT toy-like, NOT generic 3D render. {style_references}
+
+【Quality】
+Maximum detail. Every seam, screw, scratch, fabric edge, symbol, functional part clearly defined.
+
+【Panel Labels】
+{panel_labels}
+
+【Constraints】
+{constraints}
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+aspect_ratio: 16:9
+node_group: 03_Prop_Assets
+reference_images: {reference_images}
+
+【实操注意】
+1. 跑出来重点检查：
+   - 轮廓是否可识别
+   - 功能结构是否清楚
+   - 材质是否符合项目
+   - 是否像真实可用道具，而不是装饰玩具
+2. 跑歪兜底加强：
+   - {rerun_fix_1}
+   - {rerun_fix_2}
+```
+</pre></details><details><summary>story-asset-builder/templates/vehicle_sheet.md</summary><p class="mini"><a href="story-asset-builder/templates/vehicle_sheet.md">打开可编辑原文件</a></p><pre class="source-text"># Template: Vehicle Sheet / 载具设定图
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} {vehicle_name} 载具设定图 v{version} ===
+
+【格式】
+- 16:9 横版 + 最高分辨率
+- 多视图设计板：SIDE / FRONT / TOP / 3/4 VIEW，可增加驾驶舱 / 轮组 / 引擎细节
+
+【载具定位】
+{vehicle_story_function}
+{driver_or_owner}
+{movement_logic}
+{signature_visual_memory_point}
+
+---
+
+【prompt】
+```
+
+A professional vehicle design reference sheet. **Horizontal 16:9 aspect ratio. Maximum resolution output.** {studio_backdrop}. {lighting_rule}. Official film production design board.
+
+【Layout】
+{layout_detail}
+
+【Subject — same vehicle across all views】
+{vehicle_summary}
+
+【Silhouette / Scale】
+{silhouette_scale}
+
+【Mechanical / Movement System】
+{mechanical_system}
+
+【Cockpit / Driver Interface】
+{cockpit_details}
+
+【Materials / Surface】
+{material_details}
+
+【Damage / Weathering / Customization】
+{weathering}
+
+【View Details】
+{view_details}
+
+【Critical consistency】
+Same vehicle across all panels—identical silhouette, components, material, decals, damage and scale.
+
+【Lighting】
+{lighting_detail}
+
+【Style】
+Hyperrealistic film vehicle production design reference, practical build / VFX vendor sheet aesthetic. NOT illustration, NOT cartoon, NOT clean toy render.
+
+【Quality】
+Maximum mechanical detail. Every panel seam, bolt, suspension part, cockpit detail and surface scratch visible.
+
+【Constraints】
+{constraints}
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+aspect_ratio: 16:9
+node_group: 04_Vehicle_Assets
+reference_images: {reference_images}
+
+【实操注意】
+1. 跑出来重点检查：
+   - 载具轮廓是否稳定
+   - 驾驶逻辑是否清楚
+   - 尺寸比例是否正确
+   - 和项目材质 DNA 是否统一
+2. 跑歪兜底加强：
+   - {rerun_fix_1}
+   - {rerun_fix_2}
+```
+</pre></details><details><summary>story-asset-builder/templates/environment_sheet.md</summary><p class="mini"><a href="story-asset-builder/templates/environment_sheet.md">打开可编辑原文件</a></p><pre class="source-text"># Template: Environment Sheet / 场景环境设定图
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} {environment_name} 场景设定图 v{version} ===
+
+【格式】
+- 默认 16:9 横版 + 最高分辨率
+- 可选：单张主视觉 / 3视图空间设定 / 九宫格环境情绪板
+
+【场景定位】
+{environment_story_function}
+{time_of_day}
+{mood}
+{key_story_action}
+{visual_memory_point}
+
+---
+
+【prompt】
+```
+
+A professional cinematic environment concept reference image. **Horizontal 16:9 aspect ratio. Maximum resolution output.** {environment_type}. {lighting_rule}. Same visual DNA as {project_name}: {visual_dna}.
+
+【Scene】
+{scene_summary}
+
+【Spatial Layout】
+{spatial_layout}
+
+【Architecture / Set Design】
+{architecture_set_design}
+
+【Key Props / Story Elements】
+{key_props_story_elements}
+
+【Atmosphere】
+{atmosphere}
+
+【Color Palette】
+{color_palette}
+
+【Camera / Composition】
+{camera_composition}
+
+【Lighting - critical】
+{lighting_detail}
+
+【Style】
+Photorealistic cinematic film still / production design environment reference. Natural lens behavior, realistic scale, believable set dressing. {style_references}
+
+【Quality】
+Maximum resolution. Architectural details, environmental textures, props and atmosphere are clear but natural. Not over-sharpened.
+
+【Constraints】
+{constraints}
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+aspect_ratio: 16:9
+node_group: 05_Environment_Assets
+reference_images: {reference_images}
+
+【实操注意】
+1. 跑出来重点检查：
+   - 空间结构是否清楚
+   - 关键剧情区域是否可用
+   - 风格和色彩是否继承 Profile
+   - 是否可作为后续镜头背景资产
+2. 跑歪兜底加强：
+   - {rerun_fix_1}
+   - {rerun_fix_2}
+```
+</pre></details><details><summary>story-asset-builder/templates/color_palette.md</summary><p class="mini"><a href="story-asset-builder/templates/color_palette.md">打开可编辑原文件</a></p><pre class="source-text"># Template: Color / Material DNA Sheet
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} 色卡与材质DNA v{version} ===
+
+【格式】
+- 16:9 横版
+- 扁平设计图，不要摄影元素
+- 用于项目视觉统一，不是剧情图
+
+【用途】
+为整个项目统一色彩、材质、灯光和关键词。
+
+---
+
+【prompt】
+```
+
+A clean digital color palette and material DNA reference design, 16:9 horizontal layout, pure flat design aesthetic with no photographic elements. Solid neutral background. Precise production design bible reference sheet.
+
+【Title】
+{palette_title}
+
+【Color Swatches】
+Create {color_count} clean rectangular swatches, evenly aligned, each with:
+- color name
+- hex code
+- function label
+
+【Colors】
+{color_list}
+
+【Material DNA】
+{material_dna_list}
+
+【Lighting DNA】
+{lighting_dna_list}
+
+【Typography】
+Clean sans-serif typography, minimal, professional, readable.
+
+【Overall Design】
+Flat vector-style production design documentation. No depth, no lighting, no paper texture, no shadow, no mockup, no 3D.
+
+【Constraints】
+Avoid: photographic rendering, texture, depth of field, lens blur, film grain, table surface, shadows, glossy finish, hand-painted look, illustration, watercolor, 3D render.
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+aspect_ratio: 16:9
+node_group: 06_Color_And_Material_DNA
+
+【实操注意】
+1. 跑出来重点检查：
+   - 色块是否清楚
+   - 是否有 hex / function label
+   - 是否无摄影质感
+   - 是否可作为项目视觉规范
+```
+</pre></details><details><summary>story-asset-builder/templates/storyboard_grid.md</summary><p class="mini"><a href="story-asset-builder/templates/storyboard_grid.md">打开可编辑原文件</a></p><pre class="source-text"># Template: Storyboard Grid / 九宫格分镜
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} 九宫格分镜 v{version} ===
+
+【格式】
+- 3x3 nine-panel grid image
+- 九个独立电影画面，细黑边分隔
+- 所有画面属于同一场戏 / 同一段落 / 同一视觉风格
+
+【分镜定位】
+{storyboard_function}
+{sequence_summary}
+{continuity_rule}
+
+---
+
+【prompt】
+```
+
+Generate a single 3x3 nine-panel grid image, nine separate cinematic frames arranged in a 3-row, 3-column grid, each panel divided by thin black borders, like a film contact sheet / storyboard sheet.
+
+All nine panels depict {sequence_continuity}. Keep the same visual DNA: {visual_dna}. Same color palette, same lighting logic, same atmosphere, same character and environment continuity across all panels.
+
+【Panel List】
+Panel 1 (top-left): {panel_1}
+Panel 2 (top-center): {panel_2}
+Panel 3 (top-right): {panel_3}
+Panel 4 (middle-left): {panel_4}
+Panel 5 (middle-center): {panel_5}
+Panel 6 (middle-right): {panel_6}
+Panel 7 (bottom-left): {panel_7}
+Panel 8 (bottom-center): {panel_8}
+Panel 9 (bottom-right): {panel_9}
+
+【Preserve】
+{preserve_rules}
+
+【Constraints】
+{constraints}
+
+【Photographic Tone】
+Each panel is a cinematic film still that may appear slightly soft and imperfect, like a real photograph. Natural lens depth of field, realistic light falloff, subtle organic film grain, restrained color grading, not HDR, not over-sharpened.
+
+Avoid: oversharpening, artificial sharpness, heavy digital grain, HDR effect, AI-generated aesthetic, overpolished look, oversaturation, glossy highlight blowout, cartoon or obvious CGI look, inconsistent characters, inconsistent environment.
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+aspect_ratio: 16:9 or 3:4 according to platform
+node_group: 07_Storyboard_And_Keyframes
+reference_images: {reference_images}
+
+【实操注意】
+1. 跑出来重点检查：
+   - 九格是否完整
+   - 是否同一场戏连续
+   - 角色 / 场景 / 光线是否一致
+   - 每格是否有明确镜头差异
+2. 跑歪兜底加强：
+   - {rerun_fix_1}
+   - {rerun_fix_2}
+```
+</pre></details><details><summary>story-asset-builder/templates/video_prompt.md</summary><p class="mini"><a href="story-asset-builder/templates/video_prompt.md">打开可编辑原文件</a></p><pre class="source-text"># Template: Video Prompt / 视频生成提示词
+
+```text
+=== Video Prompt - {project_name} {episode_or_scene} {segment_name} v{version} ===
+
+【视频定位】
+{segment_function}
+{duration}
+{platform}
+{reference_assets}
+
+---
+
+[STYLE LOCK]
+{style_lock}
+
+[SCENE]
+{scene_description}
+
+[CHARACTER LOCK]
+{character_lock}
+
+[CAMERA]
+{camera_language}
+
+[ACTION TIMELINE]
+0s-{time_1}: {action_1}
+{time_1}-{time_2}: {action_2}
+{time_2}-{time_3}: {action_3}
+{time_3}-{duration}: {action_4}
+
+[EMOTION / PERFORMANCE]
+{emotion_performance}
+
+[LIGHTING]
+{lighting}
+
+[SOUND / MUSIC]
+{sound_music}
+
+[CONTINUITY]
+{continuity_rules}
+
+[NEGATIVE / AVOID]
+{negative_rules}
+
+【LibTV 参数建议】
+model: Seedance 2.0 default unless user requests Kling O3/3.0
+aspect_ratio: {aspect_ratio}
+duration: {duration}
+reference_images: {reference_images}
+reference_video: {reference_video}
+node_group: 08_Video_Segments
+
+【实操注意】
+1. 嘴型 / 动作 / 镜头 / 角色一致性重点检查
+2. 如果角色漂移，先锁参考图，再重跑
+3. 如果视频没放到画布，要求：重试创建整个工作流放在画布
+```
+</pre></details><details><summary>story-asset-builder/rules/asset_extraction.md</summary><p class="mini"><a href="story-asset-builder/rules/asset_extraction.md">打开可编辑原文件</a></p><pre class="source-text"># 资产拆解规则
+
+## 目标
+把剧本拆成可生成、可管理、可复用的 LibTV 资产节点。
+
+## 必须识别的资产类型
+
+### 1. Character / 人物
+包括主角、反派、配角、群众、士兵、导师、怪人、变体形态。
+
+判断依据：
+- 有名字或称谓
+- 有行动决策
+- 有情绪或人物弧线
+- 后续多镜头复用
+
+默认模板：`templates/character_sheet.md`
+
+### 2. Creature / 怪兽、生物、机械兽
+包括巨兽、异形、机械动物、怪物、宠物、坐骑、变异生命体。
+
+默认模板：`templates/creature_sheet.md`
+
+### 3. Prop / 道具、武器、设备
+包括手持物、武器、机关、钥匙、收音机、电脑、法器、产品。
+
+默认模板：`templates/prop_sheet.md`
+
+### 4. Vehicle / 载具
+包括飞船、车、沙艇、机甲、船、摩托、飞行器。
+
+默认模板：`templates/vehicle_sheet.md`
+
+### 5. Environment / 场景
+包括房间、村庄、街道、集市、宫殿、峡谷、飞船内部、地下室。
+
+默认模板：`templates/environment_sheet.md`
+
+### 6. Color / Material DNA
+包括色卡、材质体系、灯光规则、世界观视觉规范。
+
+默认模板：`templates/color_palette.md`
+
+### 7. Storyboard / Keyframe
+包括九宫格分镜、关键帧、场景动作拆解、镜头运动参考。
+
+默认模板：`templates/storyboard_grid.md`
+
+### 8. Video Segment
+包括单段视频、转场、口播、动作、音乐 MV、短片段落。
+
+默认模板：`templates/video_prompt.md`
+
+## 资产优先级
+
+```text
+P0：必须先生成，否则后续无法保持一致
+P1：核心剧情资产
+P2：增强世界观资产
+P3：可后补细节资产
+```
+
+默认优先级：
+- 主角 / 反派 / 核心怪兽 / 核心场景：P0
+- 重要道具 / 载具 / 第二场景：P1
+- 群众 / 背景道具 / 色卡：P2
+- 纹理、贴图、细节补充：P3
+
+## 输出格式
+
+```yaml
+assets:
+  - asset_id: CHR_001
+    asset_name: 主角名称
+    asset_type: character
+    asset_role: 主角 / 反派 / 配角 / 群众
+    priority: P0
+    template: templates/character_sheet.md
+    libtv_node_group: 01_Character_Assets
+    aspect_ratio: 9:16
+    required_views: FRONT FACE / SIDE FACE / BODY FRONT / BACK
+    prompt_status: draft
+    qa_risk:
+      - 脸型不稳定
+      - 服装跑偏
+      - 年龄错误
+```
+</pre></details><details><summary>story-asset-builder/rules/prompt_compiler.md</summary><p class="mini"><a href="story-asset-builder/rules/prompt_compiler.md">打开可编辑原文件</a></p><pre class="source-text"># Prompt 编译规则
+
+## 核心原则
+Prompt 不是一句话，而是一份可生产、可质检、可迭代的资产说明书。
+
+## 必须区分三层内容
+
+### A. Prompt 主体
+真正放入图片/视频模型的内容。
+
+### B. API / LibTV 参数建议
+放入节点设置或备注，不混入 prompt 主体。
+
+### C. 实操注意 / 跑歪兜底加强
+放入质检备注，不混入 prompt 主体。
+
+## Prompt 文档模板
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} {asset_name} {asset_type} v{version} ===
+
+【格式】
+- {aspect_ratio}
+- {layout}
+- {view_count}
+- {resolution_or_quality}
+
+【资产定位】
+{asset_role_and_story_function}
+
+---
+
+【prompt】
+```
+
+主体内部顺序：
+
+```text
+Opening format sentence
+Layout
+Panel / View details
+Subject
+Core identity
+Appearance / Costume / Equipment / Structure
+Color Palette
+Pose / Camera / View
+Critical consistency
+Lighting
+Style
+Quality
+Panel Labels if needed
+Constraints
+```
+
+结束：
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+...
+
+【实操注意】
+...
+
+【跑歪兜底加强】
+...
+```
+
+## 生成语言
+- Prompt 主体优先英文，便于模型理解复杂画面。
+- 标题、资产定位、实操注意可以中文。
+- 专有名词可中英混排。
+
+## 禁止事项
+- 禁止只输出“生成一个 XXX”的短提示词。
+- 禁止把“跑出来重点检查”放进 Prompt 主体。
+- 禁止忽略版本号。
+- 禁止把不同资产塞进同一个混乱节点。
+- 禁止遗漏 Constraints。
+</pre></details><details><summary>story-asset-builder/rules/libtv_canvas_rules.md</summary><p class="mini"><a href="story-asset-builder/rules/libtv_canvas_rules.md">打开可编辑原文件</a></p><pre class="source-text"># LibTV 画布创建规则 v2 — Canvas Blueprint
+
+## 目标
+让 LibTV 画布不是一堆散节点，而是清晰、可读、可检查、可复用的资产生产看板。
+
+核心原则：
+
+```text
+剧本 → 资产清单 → Canvas Blueprint → LibTV 节点创建 → 节点索引表
+```
+
+任何创建 LibTV 画布的任务，都必须先生成 Canvas Blueprint，再创建节点。
+
+---
+
+## Canvas Blueprint Rule
+
+只要用户要求创建 LibTV 画布，必须先生成 Canvas Blueprint。除非用户明确说“不要规划，直接创建”，否则不得跳过。
+
+Canvas Blueprint 必须包含：
+
+1. 项目总览区
+2. 风格 DNA 区
+3. 人物资产区
+4. 场景 / 道具 / 怪兽 / 载具资产区
+5. 分镜 / 关键帧 / 视频区
+6. 废弃 / 重跑 / 归档区
+
+---
+
+## 默认画布分区
+
+```text
+01_PROJECT_INDEX：项目总览区
+02_STYLE_DNA：视觉风格 / 色卡 / 材质 / 灯光区
+03_CHARACTERS：人物资产区
+04_WORLD_ASSETS：场景 / 道具 / 怪兽 / 载具区
+05_STORYBOARD_VIDEO：分镜 / 关键帧 / 视频区
+99_ARCHIVE：废弃节点 / 失败节点 / 重跑节点区
+```
+
+### 推荐空间排布
+
+```text
+左侧：01_PROJECT_INDEX + 02_STYLE_DNA
+中上：03_CHARACTERS
+中下：04_WORLD_ASSETS
+右侧：05_STORYBOARD_VIDEO
+底部 / 最右下：99_ARCHIVE
+```
+
+如果 CLI 支持坐标，应按从左到右的流程摆放：
+
+```text
+Project / Style → Asset Prompt → Generate → QA / Retry → Storyboard / Video
+```
+
+如果 CLI 不支持坐标，也必须通过节点名称、分组、备注和索引表维持上述结构。
+
+---
+
+## 节点命名规则
+
+统一格式：
+
+```text
+序号_资产类型_资产名称_用途_v版本号
+```
+
+示例：
+
+```text
+01_INDEX_项目总览_v1
+02_STYLE_视觉DNA_v1
+03_CHARACTER_主角_四视图_v1
+04_ENV_地下储藏室_场景设定_v1
+05_PROP_旧收音机_道具设定_v1
+06_CREATURE_门外未知存在_概念设定_v1
+07_STORYBOARD_第一场_九宫格_v1
+08_VIDEO_第一场_图生视频_v1
+99_ARCHIVE_废弃节点区_v1
+```
+
+资产类型建议：
+
+```text
+INDEX / STYLE / CHARACTER / ENV / PROP / CREATURE / VEHICLE / STORYBOARD / KEYFRAME / VIDEO / QA / RETRY / ARCHIVE
+```
+
+---
+
+## 每个资产小组结构
+
+每个资产默认最多包含以下节点：
+
+```text
+PROMPT：完整提示词
+GENERATE：生成节点
+QA：实操注意 / 跑歪兜底加强
+REF：参考图节点，可选
+V2_RETRY：重跑节点，可选
+```
+
+每个资产的小组必须靠近摆放，不允许把所有 PROMPT 堆在一起，也不允许把所有 GENERATE 堆在一起。
+
+推荐命名：
+
+```text
+03_CHARACTER_主角_PROMPT_v1
+03_CHARACTER_主角_GENERATE_v1
+03_CHARACTER_主角_QA_v1
+03_CHARACTER_主角_V2_RETRY_v2
+```
+
+---
+
+## README / INDEX 节点
+
+每个 LibTV 画布必须创建一个 `01_INDEX_项目总览_v1` 节点，放在画布左上或第一个节点位置。
+
+INDEX 节点必须包含：
+
+```text
+项目名：
+一句话剧情：
+项目 Profile：
+资产数量：
+画布分区：
+节点命名规则：序号_资产类型_资产名称_用途_v版本号
+使用顺序：先看 STYLE_DNA，再看 CHARACTERS，再看 WORLD_ASSETS，最后看 STORYBOARD_VIDEO
+待用户确认生成的节点：
+```
+
+---
+
+## Canvas Blueprint 输出格式
+
+创建画布前，必须先输出如下规划表：
+
+```yaml
+canvas_blueprint:
+  project_name:
+  profile:
+  layout_version: canvas_blueprint_v2
+  sections:
+    - id: 01_PROJECT_INDEX
+      purpose: 项目总览区
+      nodes:
+        - node_name:
+          node_type:
+          asset_ref:
+          action: create_note / create_prompt / create_generate / create_qa
+          generate_now: false
+    - id: 02_STYLE_DNA
+      purpose: 视觉风格 / 色卡 / 材质 / 灯光区
+      nodes: []
+    - id: 03_CHARACTERS
+      purpose: 人物资产区
+      nodes: []
+    - id: 04_WORLD_ASSETS
+      purpose: 场景 / 道具 / 怪兽 / 载具区
+      nodes: []
+    - id: 05_STORYBOARD_VIDEO
+      purpose: 分镜 / 关键帧 / 视频区
+      nodes: []
+    - id: 99_ARCHIVE
+      purpose: 废弃 / 失败 / 重跑节点区
+      nodes: []
+```
+
+用户没有明确要求“立即创建”时，应先等待用户确认 Blueprint。
+
+用户明确说“直接创建画布 / 自动创建画布 / 不用确认”时，可以在生成 Blueprint 后直接执行创建，但仍必须在最终回复里返回 Blueprint 摘要与节点索引表。
+
+---
+
+## 禁止事项
+
+禁止：
+
+- 禁止直接把所有节点散乱创建到画布
+- 禁止无命名节点
+- 禁止重复空节点
+- 禁止把所有 prompt 堆在一起
+- 禁止未经规划直接创建大量节点
+- 禁止把【实操注意】混入生图 Prompt 主体
+- 禁止创建只有标题没有内容的空节点
+- 禁止把失败节点和正式资产节点混在同一区域
+
+---
+
+## 默认执行流程
+
+```text
+1. 先拆解资产清单
+2. 再生成 Canvas Blueprint
+3. 再按 Blueprint 创建 LibTV 画布节点
+4. 创建完成后输出节点索引表
+5. 如果节点乱了，执行“按标准 Canvas Blueprint 重新整理当前画布”
+```
+
+---
+
+## 画布失败处理
+
+如果工作流没有放到画布：
+
+```text
+请确认是否把整个生成工作流创建在了画布上？如果没有，请重试创建整个工作流放在画布。
+```
+
+如果节点为空：
+
+```text
+你的节点是空的，重新创建工作流，要把结果也放到节点里。
+```
+
+如果节点散乱：
+
+```text
+按 story-asset-builder/rules/libtv_canvas_rules.md 的 Canvas Blueprint Rule 重新整理当前画布；不要重新生成图片，只重排、重命名、归档和补充 INDEX 节点。
+```
+
+如果无法调用 LibTV：
+
+```text
+只输出资产清单 + Prompt 文档 + Canvas Blueprint + LibTV 节点创建指令，提醒用户安装 / 授权 LibTV skill 或 CLI。
+```
+</pre></details><details><summary>story-asset-builder/rules/qa_loop.md</summary><p class="mini"><a href="story-asset-builder/rules/qa_loop.md">打开可编辑原文件</a></p><pre class="source-text"># 质检与重跑规则
+
+## 质检目的
+不要只看图好不好看，要看关键设定是否符合。
+
+## 每个资产必须有 QA Checklist
+
+```text
+【实操注意】
+1. 跑出来重点检查：
+   - 核心识别点
+   - 版式比例
+   - 角色 / 物种 / 道具准确性
+   - 材质和色彩
+   - 灯光和风格
+   - 标签文字准确性
+2. 跑歪兜底加强：
+   - 如果 X 错了，追加 Y
+   - 如果 Y 漏了，追加 Z
+3. 版本迭代建议：
+   - v2 修哪个点
+   - v3 固定哪个参考图
+```
+
+## 重跑方式
+不要整段重写 Prompt。按失败点追加补丁：
+
+```text
+原 Prompt + failure-specific reinforcement sentence
+```
+
+示例：
+
+```text
+问题：机械兽跑成生物包机械甲
+追加：fully mechanical construction, all bronze panel armor surface in place of fur, NO biological tissue, NO real fur, NO real skin
+```
+
+## 版本规则
+
+```text
+v1：首版
+v2：修正主要跑偏点
+v3：锁定参考图后稳定版
+vFinal：用户确认版
+```
+</pre></details><details><summary>story-asset-builder/examples/demo_request.md</summary><p class="mini"><a href="story-asset-builder/examples/demo_request.md">打开可编辑原文件</a></p><pre class="source-text"># 示例请求
+
+```text
+使用 story-asset-builder。
+这是一个新项目，请先根据剧本创建 Project Profile，再创建 LibTV 资产准备画布。
+
+项目名：《地下七小时》
+类型：末日密闭空间悬疑短片
+
+剧本：
+男主醒来发现自己被困在地下储藏室，门外传来奇怪敲击声。房间里只有一台旧收音机、一瓶水、一盏快没电的应急灯。随着时间过去，他发现墙后面不是人，而是某种会模仿人声的东西。
+
+要求：
+1. 自动建立项目视觉规范
+2. 拆解人物、场景、道具、怪物、分镜资产
+3. 每个资产按工业化提示词文档格式生成完整 Prompt
+4. 调用 LibTV 创建新项目和画布节点
+5. 先只创建资产图节点，不直接生成最终视频
+6. 所有节点必须放到画布上
+```
+
+# 预期资产
+
+```yaml
+project_profile:
+  profile_id: apocalypse_thriller_custom
+  project_name: 地下七小时
+assets:
+  - CHR_001 男主 人物设定图 P0
+  - ENV_001 地下储藏室 场景设定图 P0
+  - PROP_001 旧收音机 道具设定图 P1
+  - PROP_002 应急灯 道具设定图 P1
+  - PROP_003 铁门与门锁 道具/场景细节 P1
+  - CRE_001 墙后模仿者 怪物概念图 P0
+  - COL_001 色卡与材质DNA P0
+  - STB_001 第一场九宫格分镜 P1
+```
+</pre></details><details><summary>story-asset-builder/README.md</summary><p class="mini"><a href="story-asset-builder/README.md">打开可编辑原文件</a></p><pre class="source-text"># story-asset-builder 使用说明
+
+这是一个通用“剧本资产生成 Skill”，用于配合 LibTV skill / LibTV CLI，把任意剧本自动拆成资产节点，并生成标准化 Prompt。
+
+## 安装
+
+把整个文件夹复制到：
+
+```bash
+~/.openclaw/skills/story-asset-builder/
+```
+
+或将压缩包解压到：
+
+```bash
+~/.openclaw/skills/
+```
+
+确认你已经安装并授权 LibTV skill / LibTV CLI：
+
+```bash
+export LIBTV_ACCESS_KEY=&quot;your-access-key&quot;
+```
+
+## 最推荐的使用指令
+
+```text
+使用 story-asset-builder。
+这是一个新项目，请先根据剧本创建 Project Profile，再创建 LibTV 资产准备画布。
+
+剧本：
+【粘贴你的剧本】
+
+要求：
+1. 自动拆解人物、场景、道具、怪兽、载具、色卡、分镜资产
+2. 每个资产按工业化提示词文档格式生成完整 Prompt
+3. 调用 LibTV 创建新项目和画布节点
+4. 只准备资产图节点，先不要直接生成最终视频
+5. 所有节点必须放到画布上
+6. 每个节点附带实操注意和跑歪兜底加强
+```
+
+## 用已有 Profile
+
+```text
+使用 story-asset-builder。
+项目 Profile：wansheng。
+根据下面剧本创建 LibTV 资产准备画布：
+【剧本内容】
+```
+
+## 注意
+
+本 Skill 负责“资产拆解 + Prompt 编译 + LibTV 节点编排”。真正生成图片/视频仍由 LibTV skill / LibTV CLI 执行。
+</pre></details><details><summary>story-asset-builder/CHANGELOG.md</summary><p class="mini"><a href="story-asset-builder/CHANGELOG.md">打开可编辑原文件</a></p><pre class="source-text"># Changelog
+
+## v0.2.0 — Canvas Blueprint Update
+
+新增：
+
+- `rules/libtv_canvas_rules.md` 重写为 Canvas Blueprint v2
+- `SKILL.md` 新增 Canvas Blueprint 硬规则
+- `quick_prompts/04_create_clean_canvas.txt`
+- `quick_prompts/05_reorganize_existing_canvas.txt`
+
+核心变化：
+
+- 创建 LibTV 画布前必须先生成 Canvas Blueprint
+- 默认 6 区排版：项目总览、风格 DNA、人物资产、世界资产、分镜视频、归档区
+- 统一节点命名：序号_资产类型_资产名称_用途_v版本号
+- 每个资产按 PROMPT / GENERATE / QA 小组靠近摆放
+- 禁止散乱节点、空节点、无命名节点、重复节点
+</pre></details></main><footer>原包 SHA-256：f47f0b09a2de07265e73bcb518de0add84b64cb660d31ebfc2075830eb305c08</footer></body></html>

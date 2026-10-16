@@ -1,0 +1,12 @@
+{
+  "archive_name": "中式诗意巨物美学SKILL.rar",
+  "archive_sha256": "c6c39f6b116df9103440c11a43936e28ff4fb3dfbf6f6118a791b4b0ff4e612c",
+  "method": "system bsdtar (stdout-only extraction)",
+  "files": [
+    {
+      "path": "中式诗意巨物美学SKILL.md",
+      "size": 15399
+    }
+  ],
+  "note": "Only extracted; no package scripts or prompts executed."
+}

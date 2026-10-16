@@ -1,0 +1,12 @@
+{
+  "archive_name": "名画轨迹运镜提示词-Skill.rar",
+  "archive_sha256": "a0525a9b968c2130b3149bb4847fecd4e7d4dad710dc12b9f191a5f7f8d9473d",
+  "method": "system bsdtar (stdout-only extraction)",
+  "files": [
+    {
+      "path": "名画轨迹运镜提示词-Skill.md",
+      "size": 9954
+    }
+  ],
+  "note": "Only extracted; no package scripts or prompts executed."
+}

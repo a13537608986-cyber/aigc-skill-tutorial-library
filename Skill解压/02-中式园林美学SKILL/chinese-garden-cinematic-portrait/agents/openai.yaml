@@ -1,0 +1,13 @@
+interface:
+  display_name: 中式园林人像 · MJV8.2
+  short_description: 生成素色旗袍与中式园林电影人像提示词，支持逐图倒推、统一风格和成图修正。
+  default_prompt: 用 $chinese-garden-cinematic-portrait 生成6组中式园林旗袍电影人像提示词，保持精简英文、16:9和自然肤质。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

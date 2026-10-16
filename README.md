@@ -12,7 +12,7 @@
 
 ## 在线与下载
 
-[在线资料库](https://a13537608986-cyber.github.io/aigc-skill-tutorial-library/) · [完整离线包（约 1.11 GB）](https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/skill-tutorial-library-full.zip) · [GitHub 仓库](https://github.com/a13537608986-cyber/aigc-skill-tutorial-library)
+[在线资料库](https://a13537608986-cyber.github.io/aigc-skill-tutorial-library/) · [完整离线包（约 1.10 GB）](https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/skill-tutorial-library-full.zip) · [GitHub 仓库](https://github.com/a13537608986-cyber/aigc-skill-tutorial-library)
 
 线上包含 42 篇文档、13 份原包与解压文件、601 张图片及 6 个示例画布；95 个视频文件去重后作为 86 个 Releases 资源保存，教程中的播放和下载链接已接好。[在线资源映射](在线资源映射.json)保留视频原路径、下载地址与 SHA-256。
 

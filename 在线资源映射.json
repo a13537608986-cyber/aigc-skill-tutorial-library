@@ -1,0 +1,679 @@
+{
+  "repository_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library",
+  "site_url": "https://a13537608986-cyber.github.io/aigc-skill-tutorial-library/",
+  "release_tag": "archive-2026-10-15",
+  "full_offline_archive": {
+    "asset_name": "skill-tutorial-library-full.zip",
+    "bytes": 1100643454,
+    "sha256": "9245eb0ea481c59528d7e1a5b97cb4e63a0f463c6135db2825a3b3525b5ca9af",
+    "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/skill-tutorial-library-full.zip"
+  },
+  "videos": [
+    {
+      "offline_path": "外部示例/媒体/004551d5704814d26b844bc8.mp4",
+      "asset_name": "video-5887a5b28a3d3ac07ab4.mp4",
+      "bytes": 990968,
+      "sha256": "5887a5b28a3d3ac07ab40c718d6490932f1a37e64ba1790dd7b168617d6eabc9",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-5887a5b28a3d3ac07ab4.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/09b1d75b828c493d98483d86.mp4",
+      "asset_name": "video-6f557b3b8ecfb1b1496d.mp4",
+      "bytes": 596959,
+      "sha256": "6f557b3b8ecfb1b1496d7df2444e0c32244d27bdce0338e70332d9087757450a",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-6f557b3b8ecfb1b1496d.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/0b016524d64d094a1d0ee4ef.mp4",
+      "asset_name": "video-1572a87ee5000926e489.mp4",
+      "bytes": 1244494,
+      "sha256": "1572a87ee5000926e4893de68a4c75bd2541f14dae0d9aeb18646d073bec3abd",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-1572a87ee5000926e489.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/0c0ce8c2c36a2881ba3ccc58.mp4",
+      "asset_name": "video-d4143f3622bda93395c8.mp4",
+      "bytes": 766047,
+      "sha256": "d4143f3622bda93395c80e6625587b4236f3c899c7645f2425ffd71425206d28",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-d4143f3622bda93395c8.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/183b92d0de9974beea4b8d58.mp4",
+      "asset_name": "video-d5cff4a59be7c9eedee2.mp4",
+      "bytes": 5260523,
+      "sha256": "d5cff4a59be7c9eedee2e2fb34635b43731d59f1bc1011800b79b9ce62c85c07",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-d5cff4a59be7c9eedee2.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/197b5b7b708da0297ed13a6f.mp4",
+      "asset_name": "video-94f48cc204c84228f104.mp4",
+      "bytes": 864279,
+      "sha256": "94f48cc204c84228f1044892fb5916cf05f6d6e3fe0884e37343331c731ac508",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-94f48cc204c84228f104.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/1ace7f577054598c75f656e0.mp4",
+      "asset_name": "video-6dff5a40b4d038ca7cd1.mp4",
+      "bytes": 1019058,
+      "sha256": "6dff5a40b4d038ca7cd1e8fdbcc916c89d2c41b2603c1fc68ab244fc64c1eb66",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-6dff5a40b4d038ca7cd1.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/1d38380ad826236442a3dd82.mp4",
+      "asset_name": "video-03d4d8159b037c983be0.mp4",
+      "bytes": 812713,
+      "sha256": "03d4d8159b037c983be026f648a8127791269f26f6bd6450de98ddea8bc64ec3",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-03d4d8159b037c983be0.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/1ff0cbf30750fd0c20c24c60.mp4",
+      "asset_name": "video-b7108fb7f722bbfc3263.mp4",
+      "bytes": 935829,
+      "sha256": "b7108fb7f722bbfc32632c3e53515263b149ecc31ac7c0a3f68c24d908179737",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-b7108fb7f722bbfc3263.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/26b2b53e3d44b41df779fd13.mp4",
+      "asset_name": "video-50484326f2cb45fb1b45.mp4",
+      "bytes": 1267057,
+      "sha256": "50484326f2cb45fb1b45a8ba9aa6f451961568f9e150d78d00333407c72c68d0",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-50484326f2cb45fb1b45.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/2728742a2a7b9ad1d6358f71.mp4",
+      "asset_name": "video-93042d53b15615003475.mp4",
+      "bytes": 381437,
+      "sha256": "93042d53b156150034750455439c645886de3b2d58aa4ccdb828fcabe2a29663",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-93042d53b15615003475.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/279fb96e7132cfe09af925af.mp4",
+      "asset_name": "video-2184dcb9686ddff9a58a.mp4",
+      "bytes": 1819691,
+      "sha256": "2184dcb9686ddff9a58a52e07a64b6f11ff322c3a5db80c2ed8d631241537c5c",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-2184dcb9686ddff9a58a.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/2c5bc80f130ad6e236860007.mp4",
+      "asset_name": "video-89b62cbb0252fc79c28e.mp4",
+      "bytes": 899757,
+      "sha256": "89b62cbb0252fc79c28e4dc338d226721b9ab888963c6526bea2cf0284fcdc4c",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-89b62cbb0252fc79c28e.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/2faecc34c7ca62a60af734a8.mp4",
+      "asset_name": "video-2f2bb03fb11c0a0cc066.mp4",
+      "bytes": 459342,
+      "sha256": "2f2bb03fb11c0a0cc066fdbb4722488fc3b79d8f0fdf6a80f629145e8b0014df",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-2f2bb03fb11c0a0cc066.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/372094186ec3e6bcb04ad5c8.mp4",
+      "asset_name": "video-2b5f1304edc1a91a0633.mp4",
+      "bytes": 8173122,
+      "sha256": "2b5f1304edc1a91a0633e89d9ff0fc5af1686bb80abb204f0a3baf73fec6ca6d",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-2b5f1304edc1a91a0633.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/3c65ff0ddbf26f1861ca19a9.mp4",
+      "asset_name": "video-3818d1cd64fcadce8f78.mp4",
+      "bytes": 2920341,
+      "sha256": "3818d1cd64fcadce8f788ea53badc27b8f220407ce3d8da98833d78958002eaa",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-3818d1cd64fcadce8f78.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/416d0bf8b4fce26f6b819025.mp4",
+      "asset_name": "video-08f23ad11432441dc295.mp4",
+      "bytes": 754874,
+      "sha256": "08f23ad11432441dc29580ff141c224f0d475efdc86c13a116cf637f56a81676",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-08f23ad11432441dc295.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/4d5fe800778dc9baf78f4bfa.mp4",
+      "asset_name": "video-a04c7d49cac25dc7b7a3.mp4",
+      "bytes": 881256,
+      "sha256": "a04c7d49cac25dc7b7a33c78daa53ceb194a76c3557077508d31c0f64bf552d9",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-a04c7d49cac25dc7b7a3.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/4e9cf0155019e919924d2d0b.mp4",
+      "asset_name": "video-da6b2fd7b814e0198344.mp4",
+      "bytes": 1249317,
+      "sha256": "da6b2fd7b814e019834424930204c346e16d11266be223eca45888e0e97a7e8d",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-da6b2fd7b814e0198344.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/51826eb238dd92e43b31c65d.mp4",
+      "asset_name": "video-663771dc427336beb135.mp4",
+      "bytes": 738823,
+      "sha256": "663771dc427336beb13519668e3c2d48ebe6b24ef7a806f6f7b0daa6d1fd904d",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-663771dc427336beb135.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/598de72d6482b990da6c8cd8.mp4",
+      "asset_name": "video-21316f8f2d2aa562e437.mp4",
+      "bytes": 1410051,
+      "sha256": "21316f8f2d2aa562e4375176a93fdec6425d80385992ea1ffce44805e37085f4",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-21316f8f2d2aa562e437.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/5a621d6bc2c25f34832e7874.mp4",
+      "asset_name": "video-6f1056d25bf07cc286f6.mp4",
+      "bytes": 733319,
+      "sha256": "6f1056d25bf07cc286f628c2a7eb897affba54f392744166d2211c34010d25a7",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-6f1056d25bf07cc286f6.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/5d5e33ea7ebcc9d1f161291b.mp4",
+      "asset_name": "video-b2ae89007fdaffeafeae.mp4",
+      "bytes": 753168,
+      "sha256": "b2ae89007fdaffeafeaeb9e3a9e2778da74948641603fc2ab0ffa4308a05a5cc",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-b2ae89007fdaffeafeae.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/5e90973b18165b6a19e47f1a.mp4",
+      "asset_name": "video-2f47ffd05f847c6d365e.mp4",
+      "bytes": 796025,
+      "sha256": "2f47ffd05f847c6d365ea0f148dd9031e733aca01dc087e44c446f5f2dcb49e3",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-2f47ffd05f847c6d365e.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/6498b3ccf70b224fa184b006.mp4",
+      "asset_name": "video-842e1541105465212358.mp4",
+      "bytes": 525530,
+      "sha256": "842e1541105465212358e196df74bc5b45a0e186253fa2c02c1699e0c6d8be44",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-842e1541105465212358.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/64be099de23821a10a9fa267.mp4",
+      "asset_name": "video-b95bcd9c5ce7a6cd1fac.mp4",
+      "bytes": 6622439,
+      "sha256": "b95bcd9c5ce7a6cd1fac95063dc5ca874b9d28c11a5286b2ce3b29b46f2ba3a7",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-b95bcd9c5ce7a6cd1fac.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/6736d3210c923351acd11694.mp4",
+      "asset_name": "video-9e70a3c953a48cc5a38e.mp4",
+      "bytes": 710772,
+      "sha256": "9e70a3c953a48cc5a38e472eed76f65cfb8b510c8715f9d879d10829b4784c04",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-9e70a3c953a48cc5a38e.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/67aa4d7e0db3e028fdc2a5ac.mp4",
+      "asset_name": "video-a34269a11e30ce975fcb.mp4",
+      "bytes": 587100,
+      "sha256": "a34269a11e30ce975fcbb66e13f92e5ed472e31f582b83555b9fab10068584fe",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-a34269a11e30ce975fcb.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/6b5a22e56a9948e01d7634e2.mp4",
+      "asset_name": "video-57724b0eef78b8a8b644.mp4",
+      "bytes": 1292977,
+      "sha256": "57724b0eef78b8a8b64410d97027deacd692f85c75b0e3c5ddce34ceba9f2cd5",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-57724b0eef78b8a8b644.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/73ec246d7b33d93a4a71d7a3.mp4",
+      "asset_name": "video-9cee2b4c97e4769ffc58.mp4",
+      "bytes": 1286410,
+      "sha256": "9cee2b4c97e4769ffc58beaa94a8d243716fd892c905f702faeb546ba9ff8e99",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-9cee2b4c97e4769ffc58.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/7597e64931a689490137ce4b.mp4",
+      "asset_name": "video-bab7423a749a085db871.mp4",
+      "bytes": 464643,
+      "sha256": "bab7423a749a085db8715cb9a06d4672dbb7a0df5dba3acc464b46f8b89736da",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-bab7423a749a085db871.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/76cdee6073132f56d78bda18.mp4",
+      "asset_name": "video-61f6f4c5768f9fd1de84.mp4",
+      "bytes": 893080,
+      "sha256": "61f6f4c5768f9fd1de841636a4097c80f37548fdaf1d9825de99059c855a479c",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-61f6f4c5768f9fd1de84.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/798ffe6d62fb6d7f1b2bdf1c.mp4",
+      "asset_name": "video-a30e8069c649e97c574b.mp4",
+      "bytes": 368951,
+      "sha256": "a30e8069c649e97c574befc51ccb6494c90f1776efa33f6e3ce77eed74c9a1d8",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-a30e8069c649e97c574b.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/7a16515d4b9ad3b2c5ab3c15.mp4",
+      "asset_name": "video-16fa38dbbbad4ae7a42e.mp4",
+      "bytes": 2047123,
+      "sha256": "16fa38dbbbad4ae7a42e696d1515aac7fb94fd5a14aba499a857ab783e911660",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-16fa38dbbbad4ae7a42e.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/7b0bb03588f55e2a8eef9f7e.mp4",
+      "asset_name": "video-db35c784d58e6af8e4ac.mp4",
+      "bytes": 1751552,
+      "sha256": "db35c784d58e6af8e4ac4265a503ae08682f91fe4e421b970682e7f0473fb9a7",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-db35c784d58e6af8e4ac.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/91f776f5a30d9ea241ddd034.mp4",
+      "asset_name": "video-760213826c3f797dc4ba.mp4",
+      "bytes": 677905,
+      "sha256": "760213826c3f797dc4ba313b2b6df23d6c29f94805b22e0007c769689b85fba2",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-760213826c3f797dc4ba.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/9701189045905760cbac5d92.mp4",
+      "asset_name": "video-f5262ddf247c4f9ca6cf.mp4",
+      "bytes": 432523,
+      "sha256": "f5262ddf247c4f9ca6cf2a535b8d75c1018df58ce305cf3a634b92865c482743",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-f5262ddf247c4f9ca6cf.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/97374871ee5cb6b831339ab5.mp4",
+      "asset_name": "video-b4cde058bb91b37b0f6e.mp4",
+      "bytes": 1088645,
+      "sha256": "b4cde058bb91b37b0f6ec296ffeaeaff90bca4555048cee5b1f544de020682b4",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-b4cde058bb91b37b0f6e.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/9e81bbff21e5bd72665729f0.mp4",
+      "asset_name": "video-6b6692284ce2c3eb6881.mp4",
+      "bytes": 487631,
+      "sha256": "6b6692284ce2c3eb6881f52a8bccbccb1f5896e99eb89a714a35044bbee97810",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-6b6692284ce2c3eb6881.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/a0f44a8e28ac17d10cb355d9.mp4",
+      "asset_name": "video-ef2586459ac2a8d9c05e.mp4",
+      "bytes": 783453,
+      "sha256": "ef2586459ac2a8d9c05e7015ab13d4b5a1cb053c29d12b65b0cb4a0a4292e71c",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-ef2586459ac2a8d9c05e.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/a1fe46d8f58b0ac7fb16bacb.mp4",
+      "asset_name": "video-5743cc6a514993aacaca.mp4",
+      "bytes": 1155907,
+      "sha256": "5743cc6a514993aacaca857e78ce57069cef4be159023767dd410121db086fa1",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-5743cc6a514993aacaca.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/a36f095599c859320c38f420.mp4",
+      "asset_name": "video-76934106c4f5435c7da6.mp4",
+      "bytes": 923897,
+      "sha256": "76934106c4f5435c7da673482649fa015fd76fdf02136e13a5f709005f06bdca",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-76934106c4f5435c7da6.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/a77075eb60fed008941cf026.mp4",
+      "asset_name": "video-5b43cadb07c3f204eb04.mp4",
+      "bytes": 1432534,
+      "sha256": "5b43cadb07c3f204eb044fe84cedbc6908e556fb9143f796905e905d595f12c0",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-5b43cadb07c3f204eb04.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/a900b67483c66e3ba096d3cc.mp4",
+      "asset_name": "video-09778d245628eccc098b.mp4",
+      "bytes": 1019340,
+      "sha256": "09778d245628eccc098b20a14e92e97a5dfa91cb2a7b2aceb0179943f54120d0",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-09778d245628eccc098b.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/ab3e33c5520c2a0dc4675bef.mp4",
+      "asset_name": "video-45760ae71f73b281a01c.mp4",
+      "bytes": 734114,
+      "sha256": "45760ae71f73b281a01cc2eeb833a405b32c590a58187d987abaaa038c006efc",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-45760ae71f73b281a01c.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/af771f9cf649e9fd11d01ec9.mp4",
+      "asset_name": "video-fe3b7ef711c6d973e62a.mp4",
+      "bytes": 1077894,
+      "sha256": "fe3b7ef711c6d973e62aa47afb65e6a79ca24ee41f965c0a2b6ca85574aedfb3",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-fe3b7ef711c6d973e62a.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/afd73457e604f681ae36249f.mp4",
+      "asset_name": "video-9c0bc40c75cc6f085dbc.mp4",
+      "bytes": 449399,
+      "sha256": "9c0bc40c75cc6f085dbc33bc654b118a423e74875547dc7c65e3273dbb1b7d30",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-9c0bc40c75cc6f085dbc.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/b2324a6c3dab3d15586d4e8c.mp4",
+      "asset_name": "video-93434c28a8a5f44b3205.mp4",
+      "bytes": 669220,
+      "sha256": "93434c28a8a5f44b32053bbab07a8130dc6c17fef4f689fb4574b30848af7847",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-93434c28a8a5f44b3205.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/b602cdb105d4dc560ab811c9.mp4",
+      "asset_name": "video-01e03b4981b736c6ce23.mp4",
+      "bytes": 1689778,
+      "sha256": "01e03b4981b736c6ce2314935aee71de0a2a0f9a94ad2e8aadf52d662ad9e402",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-01e03b4981b736c6ce23.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/b7bf7d10289ad2867b656d27.mp4",
+      "asset_name": "video-bbc481cc2199ab850cef.mp4",
+      "bytes": 515922,
+      "sha256": "bbc481cc2199ab850cef34086ddd87c52155353a15e05cdfbe00b0e983395c6d",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-bbc481cc2199ab850cef.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/bfcdf48230102f1a0c280d0a.mp4",
+      "asset_name": "video-080a14de258e27d605e9.mp4",
+      "bytes": 568173,
+      "sha256": "080a14de258e27d605e9131d09e4a7eb1d987f4c41f207f35820016accc543fe",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-080a14de258e27d605e9.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/c1a689d534d66e289d6e19da.mp4",
+      "asset_name": "video-6dad2f46aea527e3cf66.mp4",
+      "bytes": 1376608,
+      "sha256": "6dad2f46aea527e3cf664bd4ebc3fe0d00fe84689dcfbe9d52379c04b47d51ce",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-6dad2f46aea527e3cf66.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/c1a76b85431711346f2a0d0f.mp4",
+      "asset_name": "video-f80043f98e858da4381f.mp4",
+      "bytes": 2628625,
+      "sha256": "f80043f98e858da4381f19ee877178dd0adf3e6a68699fae8b62d1399f1f0d54",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-f80043f98e858da4381f.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/c257c953a46ca1ed851b8a7e.mp4",
+      "asset_name": "video-04641a8abc55ab9ef51f.mp4",
+      "bytes": 669338,
+      "sha256": "04641a8abc55ab9ef51fa5450a2f1fda01a0e5ee5358b4feb7868360f12ea6e6",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-04641a8abc55ab9ef51f.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/c26f8ee7891760bb996bc8a1.mp4",
+      "asset_name": "video-d2408e743c400d3b3b83.mp4",
+      "bytes": 1135748,
+      "sha256": "d2408e743c400d3b3b8368f80542ba810269b64d625868d5b48ff4fc5d9bb617",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-d2408e743c400d3b3b83.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/c3026e9205ebc2bc239aae25.mp4",
+      "asset_name": "video-aa04db1e602171fe0a59.mp4",
+      "bytes": 627730,
+      "sha256": "aa04db1e602171fe0a59c9e5ddb200e568ecf3ab3385af096771d71c0fa439a2",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-aa04db1e602171fe0a59.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/c6c08ed6d92a8d7cd7cd4d91.mp4",
+      "asset_name": "video-ca9d4e7adba7ebfe46c8.mp4",
+      "bytes": 2572345,
+      "sha256": "ca9d4e7adba7ebfe46c84917186773992d40a8a41373f01a534a42382b5a2bb4",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-ca9d4e7adba7ebfe46c8.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/c959c12ebd4ef7eca3a75437.mp4",
+      "asset_name": "video-68daaa8cf24323ff5c10.mp4",
+      "bytes": 719929,
+      "sha256": "68daaa8cf24323ff5c1054fcd0f11e1c5ac50e5521203b352fe9713e42a8a84e",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-68daaa8cf24323ff5c10.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/d0fcc812f1115dc7a1c65204.mp4",
+      "asset_name": "video-defec05a5c5fe75d3393.mp4",
+      "bytes": 637392,
+      "sha256": "defec05a5c5fe75d3393ff8535fadfc5e3077a0c7eb6d203ea9910bff73bbb18",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-defec05a5c5fe75d3393.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/d11c1541f3bdf7f20880aa32.mp4",
+      "asset_name": "video-8e4e9d33c77cefd0e6af.mp4",
+      "bytes": 581745,
+      "sha256": "8e4e9d33c77cefd0e6af2ec04f8b3a9b0754d3aa10afad1ed5ec3d26472744c8",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-8e4e9d33c77cefd0e6af.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/d7b0ee2fa51cc6eba3addb12.mp4",
+      "asset_name": "video-a277af2be6087c97e762.mp4",
+      "bytes": 6965314,
+      "sha256": "a277af2be6087c97e7622e6e794cca4195d4c4d06ba8b6af37528a48a3415a5e",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-a277af2be6087c97e762.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/da359338729ab5dcabc39958.mp4",
+      "asset_name": "video-3ca696500a538e0954ed.mp4",
+      "bytes": 1078980,
+      "sha256": "3ca696500a538e0954ed1ce77097da1d44dec51eccf216201d41dc5791fca5cf",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-3ca696500a538e0954ed.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/db291e14937be06c2c7c897c.mp4",
+      "asset_name": "video-81bea5014de125166a63.mp4",
+      "bytes": 575980,
+      "sha256": "81bea5014de125166a63ac2f9fa496ae157689684848b5b20ff0b1f652129fdb",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-81bea5014de125166a63.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/df85833e115624cc6e7f8027.mp4",
+      "asset_name": "video-d7049a091bbda9178efb.mp4",
+      "bytes": 1230158,
+      "sha256": "d7049a091bbda9178efb5558314df1b42310ef09503ea346f8f63b3d1fbc66ba",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-d7049a091bbda9178efb.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/e24ab10af608f884b8cd1f64.mp4",
+      "asset_name": "video-09d873ee10c7313c343e.mp4",
+      "bytes": 2054407,
+      "sha256": "09d873ee10c7313c343e64919b4ab691401a1ab7864b753dd2b44fc01c0c4d2b",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-09d873ee10c7313c343e.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/e2c1a5ba12362225a97aeb67.mp4",
+      "asset_name": "video-be739a1705a5d6e1544a.mp4",
+      "bytes": 802190,
+      "sha256": "be739a1705a5d6e1544ac47eac6f61701bc7cb034cf1ba915ebddad8adfd9a57",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-be739a1705a5d6e1544a.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/e54afa2fe59791607b73b711.mp4",
+      "asset_name": "video-d1e43818723079368129.mp4",
+      "bytes": 793896,
+      "sha256": "d1e438187230793681293d772dac67c970cfadaaa95094f6526f8876b2adca9e",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-d1e43818723079368129.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/e7790fc1de6071219c3dfeb6.mp4",
+      "asset_name": "video-698d8ffc46b2d97dc3f2.mp4",
+      "bytes": 937476,
+      "sha256": "698d8ffc46b2d97dc3f28d6ff8b9d8d5205b83cd198703bc9733ad55ef08cb50",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-698d8ffc46b2d97dc3f2.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/e7a3d72256cb0b618d57c068.mp4",
+      "asset_name": "video-ada6e09a75dfc51aaea6.mp4",
+      "bytes": 1625338,
+      "sha256": "ada6e09a75dfc51aaea6775ce14e987192186660b80999eda646578ba639663f",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-ada6e09a75dfc51aaea6.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/ea61f6a803330e562341cc33.mp4",
+      "asset_name": "video-16abdc111a86da9ee25f.mp4",
+      "bytes": 475960,
+      "sha256": "16abdc111a86da9ee25fd6f07d95be65ce8956b379fab79a7b6662dfd517966f",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-16abdc111a86da9ee25f.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/f8b25fb64e608e3cb1fbc38d.mp4",
+      "asset_name": "video-3bd08516c4e54f37d5e5.mp4",
+      "bytes": 390204,
+      "sha256": "3bd08516c4e54f37d5e568d2e41e528b37893080492e0776896aff156d75f68f",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-3bd08516c4e54f37d5e5.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/fbf00ad4d5ab6b6bdd17ae74.mp4",
+      "asset_name": "video-5adac6897996e4aac36f.mp4",
+      "bytes": 411421,
+      "sha256": "5adac6897996e4aac36f0651d753245cfbabf1979b8e23ff83ca1880def4fea0",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-5adac6897996e4aac36f.mp4"
+    },
+    {
+      "offline_path": "外部示例/媒体/febf0dd9d75ffa58233fbed5.mp4",
+      "asset_name": "video-b47e8fcd55c9e080c95d.mp4",
+      "bytes": 680931,
+      "sha256": "b47e8fcd55c9e080c95d7240e98639b86703b5e989db187be0261ac2e12b0a5d",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-b47e8fcd55c9e080c95d.mp4"
+    },
+    {
+      "offline_path": "资源/13-漫剧一键生成智能体教程/002-jiaocheng (1).mp4",
+      "asset_name": "video-123a6aeb4528f0208507.mp4",
+      "bytes": 329411256,
+      "sha256": "123a6aeb4528f02085075ee93421bcabdb02712cc0baea496f58651e125c0464",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-123a6aeb4528f0208507.mp4"
+    },
+    {
+      "offline_path": "资源/13-漫剧一键生成智能体教程/014-video_1779945108992.mp4",
+      "asset_name": "video-9ccf57662e580d03d169.mp4",
+      "bytes": 6165261,
+      "sha256": "9ccf57662e580d03d1692fb548223c588861aa326d5215f0a07bbc07a427ec38",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-9ccf57662e580d03d169.mp4"
+    },
+    {
+      "offline_path": "资源/14-超绝古装氛围风格教程提示词/006-AiMHJC.mp4",
+      "asset_name": "video-618d35f2ea588ec8758d.mp4",
+      "bytes": 93134338,
+      "sha256": "618d35f2ea588ec8758d530536149d540dcbadca3c7f03fb7f9e3beb388e683f",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-618d35f2ea588ec8758d.mp4"
+    },
+    {
+      "offline_path": "资源/27-人物站位和场景机位控制2/010-PixPin_2026-05-22_23-07-51.mp4",
+      "asset_name": "video-f8888466436766919e14.mp4",
+      "bytes": 380336,
+      "sha256": "f8888466436766919e1499320b50605d8cf876e9a1a1c507b6a137ecbb81c022",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-f8888466436766919e14.mp4"
+    },
+    {
+      "offline_path": "资源/27-人物站位和场景机位控制2/011-PixPin_2026-05-22_23-17-43.mp4",
+      "asset_name": "video-01cbe5ab5d3fa49781b6.mp4",
+      "bytes": 864399,
+      "sha256": "01cbe5ab5d3fa49781b62416987910f6f18d870dd0bf02d02487f5554bee431d",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-01cbe5ab5d3fa49781b6.mp4"
+    },
+    {
+      "offline_path": "资源/27-人物站位和场景机位控制2/013-PixPin_2026-05-22_23-58-13.mp4",
+      "asset_name": "video-658ce916bcc00c6ce200.mp4",
+      "bytes": 1382785,
+      "sha256": "658ce916bcc00c6ce200581314f0b49c017db3e393846713c5701576ede90368",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-658ce916bcc00c6ce200.mp4"
+    },
+    {
+      "offline_path": "资源/27-人物站位和场景机位控制2/014-PixPin_2026-05-23_00-03-00.mp4",
+      "asset_name": "video-b1fc9489d2482cf55d21.mp4",
+      "bytes": 186431,
+      "sha256": "b1fc9489d2482cf55d2105ee41213966cdab4d3eb9a74971e5bf4850c1d7772b",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-b1fc9489d2482cf55d21.mp4"
+    },
+    {
+      "offline_path": "资源/27-人物站位和场景机位控制2/015-PixPin_2026-05-23_00-08-26.mp4",
+      "asset_name": "video-00a85f945775d04cc656.mp4",
+      "bytes": 2543744,
+      "sha256": "00a85f945775d04cc65696b6132261e279d1a70ae1b75cecc58f2bdf30dbde13",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-00a85f945775d04cc656.mp4"
+    },
+    {
+      "offline_path": "资源/27-人物站位和场景机位控制2/016-PixPin_2026-05-23_00-15-05.mp4",
+      "asset_name": "video-0cce63a36f80d113d175.mp4",
+      "bytes": 312949,
+      "sha256": "0cce63a36f80d113d17527a9b9468c55a4985331a9e726392009d1a3730012da",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-0cce63a36f80d113d175.mp4"
+    },
+    {
+      "offline_path": "资源/27-人物站位和场景机位控制2/024-视频节点 8.mp4",
+      "asset_name": "video-aec47ad2aea07db106e1.mp4",
+      "bytes": 3435779,
+      "sha256": "aec47ad2aea07db106e18bbae2511ee740224f0d22072a4ff037cdf1b87e7119",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-aec47ad2aea07db106e1.mp4"
+    },
+    {
+      "offline_path": "资源/27-人物站位和场景机位控制2/025-PixPin_2026-05-23_00-41-17.mp4",
+      "asset_name": "video-cebbc48c2b2065ee40b5.mp4",
+      "bytes": 239580,
+      "sha256": "cebbc48c2b2065ee40b5810f0b89ee506d13e4c18d11df46cbdbc1447f40a93c",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-cebbc48c2b2065ee40b5.mp4"
+    },
+    {
+      "offline_path": "资源/27-人物站位和场景机位控制2/026-PixPin_2026-05-23_00-49-11.mp4",
+      "asset_name": "video-50177f7039670d4b7f37.mp4",
+      "bytes": 2953774,
+      "sha256": "50177f7039670d4b7f376dc8d593e953085f080c49043ae1391dd3111a1c3570",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-50177f7039670d4b7f37.mp4"
+    },
+    {
+      "offline_path": "资源/35-游戏CG视频操作教程/001-游戏CG教学视频.mp4",
+      "asset_name": "video-ef506a13a004bd9a0ad6.mp4",
+      "bytes": 24922021,
+      "sha256": "ef506a13a004bd9a0ad6695e0671e178885364dcbe2ed3282a6f4029a739a094",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-ef506a13a004bd9a0ad6.mp4"
+    },
+    {
+      "offline_path": "资源/42-人物站位和场景机位控制/010-PixPin_2026-05-22_23-07-51.mp4",
+      "asset_name": "video-f8888466436766919e14.mp4",
+      "bytes": 380336,
+      "sha256": "f8888466436766919e1499320b50605d8cf876e9a1a1c507b6a137ecbb81c022",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-f8888466436766919e14.mp4"
+    },
+    {
+      "offline_path": "资源/42-人物站位和场景机位控制/011-PixPin_2026-05-22_23-17-43.mp4",
+      "asset_name": "video-01cbe5ab5d3fa49781b6.mp4",
+      "bytes": 864399,
+      "sha256": "01cbe5ab5d3fa49781b62416987910f6f18d870dd0bf02d02487f5554bee431d",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-01cbe5ab5d3fa49781b6.mp4"
+    },
+    {
+      "offline_path": "资源/42-人物站位和场景机位控制/013-PixPin_2026-05-22_23-58-13.mp4",
+      "asset_name": "video-658ce916bcc00c6ce200.mp4",
+      "bytes": 1382785,
+      "sha256": "658ce916bcc00c6ce200581314f0b49c017db3e393846713c5701576ede90368",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-658ce916bcc00c6ce200.mp4"
+    },
+    {
+      "offline_path": "资源/42-人物站位和场景机位控制/014-PixPin_2026-05-23_00-03-00.mp4",
+      "asset_name": "video-b1fc9489d2482cf55d21.mp4",
+      "bytes": 186431,
+      "sha256": "b1fc9489d2482cf55d2105ee41213966cdab4d3eb9a74971e5bf4850c1d7772b",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-b1fc9489d2482cf55d21.mp4"
+    },
+    {
+      "offline_path": "资源/42-人物站位和场景机位控制/015-PixPin_2026-05-23_00-08-26.mp4",
+      "asset_name": "video-00a85f945775d04cc656.mp4",
+      "bytes": 2543744,
+      "sha256": "00a85f945775d04cc65696b6132261e279d1a70ae1b75cecc58f2bdf30dbde13",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-00a85f945775d04cc656.mp4"
+    },
+    {
+      "offline_path": "资源/42-人物站位和场景机位控制/016-PixPin_2026-05-23_00-15-05.mp4",
+      "asset_name": "video-0cce63a36f80d113d175.mp4",
+      "bytes": 312949,
+      "sha256": "0cce63a36f80d113d17527a9b9468c55a4985331a9e726392009d1a3730012da",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-0cce63a36f80d113d175.mp4"
+    },
+    {
+      "offline_path": "资源/42-人物站位和场景机位控制/024-视频节点 8.mp4",
+      "asset_name": "video-aec47ad2aea07db106e1.mp4",
+      "bytes": 3435779,
+      "sha256": "aec47ad2aea07db106e18bbae2511ee740224f0d22072a4ff037cdf1b87e7119",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-aec47ad2aea07db106e1.mp4"
+    },
+    {
+      "offline_path": "资源/42-人物站位和场景机位控制/025-PixPin_2026-05-23_00-41-17.mp4",
+      "asset_name": "video-cebbc48c2b2065ee40b5.mp4",
+      "bytes": 239580,
+      "sha256": "cebbc48c2b2065ee40b5810f0b89ee506d13e4c18d11df46cbdbc1447f40a93c",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-cebbc48c2b2065ee40b5.mp4"
+    },
+    {
+      "offline_path": "资源/42-人物站位和场景机位控制/026-PixPin_2026-05-23_00-49-11.mp4",
+      "asset_name": "video-50177f7039670d4b7f37.mp4",
+      "bytes": 2953774,
+      "sha256": "50177f7039670d4b7f376dc8d593e953085f080c49043ae1391dd3111a1c3570",
+      "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/video-50177f7039670d4b7f37.mp4"
+    }
+  ],
+  "note": "offline_path 及原校验记录指向完整离线包；online_url 是发布版对应视频。"
+}

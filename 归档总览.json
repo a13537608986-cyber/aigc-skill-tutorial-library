@@ -1,0 +1,26 @@
+{
+  "source_url": "https://ei5ttplwuwy.feishu.cn/wiki/BSLqw36K3iMKxZkkX2ucYkxznrb",
+  "root_directory_entries": 41,
+  "linked_documents": 42,
+  "nested_document_count": 1,
+  "editable_body_characters": 205998,
+  "original_packages": 13,
+  "packages_extracted": 13,
+  "primary_images_including_directory": 223,
+  "primary_videos": 22,
+  "example_canvases": 6,
+  "example_graph_nodes": 458,
+  "example_graph_edges": 555,
+  "example_media_files": 451,
+  "example_images": 378,
+  "example_videos": 73,
+  "media_and_package_files": 709,
+  "media_and_package_bytes": 1106140142,
+  "unresolved_download_failures": 0,
+  "notes": [
+    "原目录41项，另补充1篇内链教程；原始目录本身单独保存。",
+    "200个过期签名URL均保留原记录，相关素材已有有效预览替代；预览不等同原始分辨率。",
+    "28个画布节点未提供输出素材，已保留其提示词和节点结构，不计作已生成或下载失败。",
+    "13个原包及解压内容均保留，未安装或执行。"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "archive_name": "豆包AI电影导演智能体.rar",
+  "archive_sha256": "3fce6b982c04580f64360ce7e4488e373a3d9e98394afb08ea55c531bce3932c",
+  "method": "system bsdtar (stdout-only extraction)",
+  "files": [
+    {
+      "path": "豆包AI电影导演智能体/豆包AI电影导演智能体指令.md",
+      "size": 14403
+    }
+  ],
+  "note": "Only extracted; no package scripts or prompts executed."
+}
