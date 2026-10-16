@@ -1,0 +1,269 @@
+{
+  "summary": {
+    "packages": 13,
+    "substantive_bodies": 13,
+    "requires_feishu_page": 0,
+    "packages_with_upstream_missing_files": 5,
+    "upstream_missing_reference_documents": 9,
+    "upstream_missing_scripts": 2,
+    "extraction_omissions": 0,
+    "publishing_content_errors": 0,
+    "total_primary_characters": 76587
+  },
+  "items": [
+    {
+      "lesson_number": 2,
+      "title": "中式园林美学SKILL",
+      "package_path": "资源/02-中式园林高级美学SKILL/001-中式园林美学SKILL.zip",
+      "main_skill_file": "Skill解压/02-中式园林美学SKILL/chinese-garden-cinematic-portrait/SKILL.md",
+      "requires_feishu_page": false,
+      "missing_upstream_files": [],
+      "user_facing_notice": "正文和原包内配套文件已完整保存，可在本地或本库阅读；无需返回飞书来源页获取正文。"
+    },
+    {
+      "lesson_number": 3,
+      "title": "东方宫阙美学SKILL",
+      "package_path": "资源/03-东方宫阙美学SKILL/001-东方宫阙美学SKILL.zip",
+      "main_skill_file": "Skill解压/03-东方宫阙美学SKILL/celestial-court-portrait/SKILL.md",
+      "requires_feishu_page": false,
+      "missing_upstream_files": [],
+      "user_facing_notice": "正文和原包内配套文件已完整保存，可在本地或本库阅读；无需返回飞书来源页获取正文。"
+    },
+    {
+      "lesson_number": 4,
+      "title": "豆包AI电影导演智能体",
+      "package_path": "资源/04-豆包AI导演智能体教程/001-豆包AI电影导演智能体.rar",
+      "main_skill_file": "Skill解压/04-豆包AI电影导演智能体/豆包AI电影导演智能体/豆包AI电影导演智能体指令.md",
+      "requires_feishu_page": false,
+      "missing_upstream_files": [],
+      "user_facing_notice": "导演指令正文已完整保存，阅读和复制无需返回飞书；自动生图与视频步骤需要豆包当前对话支持相应功能。"
+    },
+    {
+      "lesson_number": 5,
+      "title": "东方美学人物角色.md",
+      "package_path": "资源/05-东方美学人物角色SKILL/001-东方美学人物角色.md.zip",
+      "main_skill_file": "Skill解压/05-东方美学人物角色.md/东方美学人物角色.md",
+      "requires_feishu_page": false,
+      "missing_upstream_files": [
+        {
+          "missing_file": "references/character-examples.md",
+          "origin": "原始安装包已缺失；非本次提取遗漏",
+          "importance": "必需（首次系列创作分支）",
+          "main_skill_path": "Skill解压/05-东方美学人物角色.md/东方美学人物角色.md",
+          "line": 60,
+          "excerpt": "首次生成一个系列时，读取 [角色与光色范例]",
+          "impact": "首次系列创作要求读取的角色与光色范例未附带。",
+          "present_in_source_archive": false,
+          "present_elsewhere_in_downloaded_library": false,
+          "present_in_publishing_copy": false
+        },
+        {
+          "missing_file": "references/video-examples.md",
+          "origin": "原始安装包已缺失；非本次提取遗漏",
+          "importance": "仅示例建议（需要具体动作尺度时）",
+          "main_skill_path": "Skill解压/05-东方美学人物角色.md/东方美学人物角色.md",
+          "line": 73,
+          "excerpt": "需要具体动作尺度时读取 [视频范例]",
+          "impact": "动作尺度的视频示例未附带，正文已有基本动作规则。",
+          "present_in_source_archive": false,
+          "present_elsewhere_in_downloaded_library": false,
+          "present_in_publishing_copy": false
+        },
+        {
+          "missing_file": "scripts/check_prompts.py",
+          "origin": "原始安装包已缺失；非本次提取遗漏",
+          "importance": "可选",
+          "main_skill_path": "Skill解压/05-东方美学人物角色.md/东方美学人物角色.md",
+          "line": 92,
+          "excerpt": "有执行环境时可运行",
+          "impact": "可选自动检查脚本未附带，不能按所示命令运行；正文允许人工计数。",
+          "present_in_source_archive": false,
+          "present_elsewhere_in_downloaded_library": false,
+          "present_in_publishing_copy": false
+        }
+      ],
+      "user_facing_notice": "正文已完整保存。原始安装包未附带文中引用的角色与光色范例、视频范例及 check_prompts.py 检查脚本；这些文件并非本次提取遗漏。正文可独立阅读复制，相关范例与自动检查步骤目前不完整。"
+    },
+    {
+      "lesson_number": 6,
+      "title": "宋式田园美学SKILL",
+      "package_path": "资源/06-宋式田园美学风格SKILL/001-宋式田园美学SKILL.rar",
+      "main_skill_file": "Skill解压/06-宋式田园美学SKILL/宋式田园美学SKILL.md",
+      "requires_feishu_page": false,
+      "missing_upstream_files": [
+        {
+          "missing_file": "scripts/check_mj_prompts.py",
+          "origin": "原始安装包已缺失；非本次提取遗漏",
+          "importance": "必需（有执行环境时的自动检查分支）",
+          "main_skill_path": "Skill解压/06-宋式田园美学SKILL/宋式田园美学SKILL.md",
+          "line": 92,
+          "excerpt": "有执行环境时运行：",
+          "impact": "自动文本检查脚本未附带；提示词正文和A/B模板仍可阅读复制，所示检查命令不能运行。",
+          "present_in_source_archive": false,
+          "present_elsewhere_in_downloaded_library": false,
+          "present_in_publishing_copy": false
+        }
+      ],
+      "user_facing_notice": "正文及两条 A/B 提示词模板已完整保存。原始安装包未附带文中要求的 scripts/check_mj_prompts.py，所示自动检查命令无法运行；这是原包缺件，正文仍可阅读复制。"
+    },
+    {
+      "lesson_number": 7,
+      "title": "中式诗意巨物美学SKILL",
+      "package_path": "资源/07-中式巨物美学风格SKILL/001-中式诗意巨物美学SKILL.rar",
+      "main_skill_file": "Skill解压/07-中式诗意巨物美学SKILL/中式诗意巨物美学SKILL.md",
+      "requires_feishu_page": false,
+      "missing_upstream_files": [
+        {
+          "missing_file": "references/style-atlas.md",
+          "origin": "原始安装包已缺失；非本次提取遗漏",
+          "importance": "仅示例建议",
+          "main_skill_path": "Skill解压/07-中式诗意巨物美学SKILL/中式诗意巨物美学SKILL.md",
+          "line": 10,
+          "excerpt": "原图的逐张描述见 [references/style-atlas.md]",
+          "impact": "九张参考图的逐图描述未附带。",
+          "present_in_source_archive": false,
+          "present_elsewhere_in_downloaded_library": false,
+          "present_in_publishing_copy": false
+        },
+        {
+          "missing_file": "references/image-to-video.md",
+          "origin": "原始安装包已缺失；非本次提取遗漏",
+          "importance": "必需（图生视频分支）",
+          "main_skill_path": "Skill解压/07-中式诗意巨物美学SKILL/中式诗意巨物美学SKILL.md",
+          "line": 17,
+          "excerpt": "视频阶段：实际看图，读取 [references/image-to-video.md]",
+          "impact": "进入图生视频分支要求读取的说明未附带；主文第118行再次要求读取。",
+          "present_in_source_archive": false,
+          "present_elsewhere_in_downloaded_library": false,
+          "present_in_publishing_copy": false
+        },
+        {
+          "missing_file": "references/mj-parameters.md",
+          "origin": "原始安装包已缺失；非本次提取遗漏",
+          "importance": "可选",
+          "main_skill_path": "Skill解压/07-中式诗意巨物美学SKILL/中式诗意巨物美学SKILL.md",
+          "line": 87,
+          "excerpt": "输出前按需阅读 [references/mj-parameters.md]",
+          "impact": "参数依据与版本核对说明未附带。",
+          "present_in_source_archive": false,
+          "present_elsewhere_in_downloaded_library": false,
+          "present_in_publishing_copy": false
+        },
+        {
+          "missing_file": "references/examples.md",
+          "origin": "原始安装包已缺失；非本次提取遗漏",
+          "importance": "仅示例建议",
+          "main_skill_path": "Skill解压/07-中式诗意巨物美学SKILL/中式诗意巨物美学SKILL.md",
+          "line": 114,
+          "excerpt": "只在需要示例时读取",
+          "impact": "不同题材与构图的完整示例集未附带。",
+          "present_in_source_archive": false,
+          "present_elsewhere_in_downloaded_library": false,
+          "present_in_publishing_copy": false
+        }
+      ],
+      "user_facing_notice": "正文已完整保存。原始安装包未附带文中引用的 style-atlas.md、image-to-video.md、mj-parameters.md、examples.md 四份参考文件；这是原包缺件。正文可独立阅读，参考范例、参数说明及图生视频分支并非完整配套。"
+    },
+    {
+      "lesson_number": 8,
+      "title": "AI高燃打斗提示词SKILL",
+      "package_path": "资源/08-AI高燃打斗提示词SKILL/001-AI高燃打斗提示词SKILL.rar",
+      "main_skill_file": "Skill解压/08-AI高燃打斗提示词SKILL/AI高燃打斗提示词SKILL.md",
+      "requires_feishu_page": false,
+      "missing_upstream_files": [
+        {
+          "missing_file": "references/reference-review.md",
+          "origin": "原始安装包已缺失；非本次提取遗漏",
+          "importance": "必需（诊断旧提示词、参考视频或多片融合分支）",
+          "main_skill_path": "Skill解压/08-AI高燃打斗提示词SKILL/AI高燃打斗提示词SKILL.md",
+          "line": 17,
+          "excerpt": "遇到旧提示词、参考视频、成片反馈或多片融合，先完整阅读",
+          "impact": "参考复盘流程文档未附带，相关分支不能完整按原文执行。",
+          "present_in_source_archive": false,
+          "present_elsewhere_in_downloaded_library": false,
+          "present_in_publishing_copy": false
+        },
+        {
+          "missing_file": "references/action-patterns.md",
+          "origin": "原始安装包已缺失；非本次提取遗漏",
+          "importance": "必需（选择题材动作语法或避免重复套路时）",
+          "main_skill_path": "Skill解压/08-AI高燃打斗提示词SKILL/AI高燃打斗提示词SKILL.md",
+          "line": 17,
+          "excerpt": "需要选择题材动作语法或避免重复套路时，阅读",
+          "impact": "题材动作语法文件未附带。",
+          "present_in_source_archive": false,
+          "present_elsewhere_in_downloaded_library": false,
+          "present_in_publishing_copy": false
+        }
+      ],
+      "user_facing_notice": "正文已完整保存。原始安装包未附带 references/reference-review.md 与 references/action-patterns.md；这是原包缺件。正文可独立阅读，但参考复盘与题材动作语法步骤缺少对应配套。"
+    },
+    {
+      "lesson_number": 9,
+      "title": "电商TVC广告SKILL",
+      "package_path": "资源/09-电商TVC广告Skill/001-电商TVC广告SKILL.rar",
+      "main_skill_file": "Skill解压/09-电商TVC广告SKILL/电商TVC广告SKILL.md",
+      "requires_feishu_page": false,
+      "missing_upstream_files": [
+        {
+          "missing_file": "references/category-playbook.md",
+          "origin": "原始安装包已缺失；非本次提取遗漏",
+          "importance": "必需（选择广告概念步骤）",
+          "main_skill_path": "Skill解压/09-电商TVC广告SKILL/电商TVC广告SKILL.md",
+          "line": 36,
+          "excerpt": "读取 [品类广告语法]",
+          "impact": "按产品类别选概念所要求的广告语法文件未附带。",
+          "present_in_source_archive": false,
+          "present_elsewhere_in_downloaded_library": false,
+          "present_in_publishing_copy": false
+        }
+      ],
+      "user_facing_notice": "正文已完整保存。原始安装包未附带 references/category-playbook.md；这是原包缺件。正文可独立阅读，但按品类选择广告概念的配套语法表缺失。"
+    },
+    {
+      "lesson_number": 10,
+      "title": "名画轨迹运镜提示词-Skill",
+      "package_path": "资源/10-名画运镜轨迹提示词skill/003-名画轨迹运镜提示词-Skill.rar",
+      "main_skill_file": "Skill解压/10-名画轨迹运镜提示词-Skill/名画轨迹运镜提示词-Skill.md",
+      "requires_feishu_page": false,
+      "missing_upstream_files": [],
+      "user_facing_notice": "正文和原包内配套文件已完整保存，可在本地或本库阅读；无需返回飞书来源页获取正文。"
+    },
+    {
+      "lesson_number": 12,
+      "title": "中式仙境风格SKILL",
+      "package_path": "资源/12-中式仙境震撼风格SKILL/001-中式仙境风格SKILL.rar",
+      "main_skill_file": "Skill解压/12-中式仙境风格SKILL/SKILL.md",
+      "requires_feishu_page": false,
+      "missing_upstream_files": [],
+      "user_facing_notice": "正文和原包内配套文件已完整保存，可在本地或本库阅读；无需返回飞书来源页获取正文。"
+    },
+    {
+      "lesson_number": 15,
+      "title": "SD2.5视频提示词优化 Skill",
+      "package_path": "资源/15-SD2.5视频提示词优化 Skill/001-SD2.5视频提示词优化 Skill.rar",
+      "main_skill_file": "Skill解压/15-SD2.5视频提示词优化 Skill/SD2.5视频提示词优化 Skill.md",
+      "requires_feishu_page": false,
+      "missing_upstream_files": [],
+      "user_facing_notice": "正文和原包内配套文件已完整保存，可在本地或本库阅读；无需返回飞书来源页获取正文。"
+    },
+    {
+      "lesson_number": 19,
+      "title": "character-forge-libtv-skill(5)",
+      "package_path": "资源/19-AI创建原创角色skill/004-character-forge-libtv-skill(5).zip",
+      "main_skill_file": "Skill解压/19-character-forge-libtv-skill(5)/character-forge-libtv/SKILL.md",
+      "requires_feishu_page": false,
+      "missing_upstream_files": [],
+      "user_facing_notice": "主 Skill 与 README 已完整保存，阅读无需返回飞书；创建和运行画布仍需已安装并登录的 LibTV CLI。"
+    },
+    {
+      "lesson_number": 21,
+      "title": "story-asset-builder-v2-clean-canvas",
+      "package_path": "资源/21-电影级工作流做成 skill/004-story-asset-builder-v2-clean-canvas.zip",
+      "main_skill_file": "Skill解压/21-story-asset-builder-v2-clean-canvas/story-asset-builder/SKILL.md",
+      "requires_feishu_page": false,
+      "missing_upstream_files": [],
+      "user_facing_notice": "主 Skill、模板、规则、Profiles 和快捷提示已完整保存，阅读无需返回飞书；实际建画布仍需 LibTV skill/CLI 授权。飞书 ClawBot 只是可选运行环境。"
+    }
+  ]
+}

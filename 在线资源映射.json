@@ -4,8 +4,8 @@
   "release_tag": "archive-2026-10-15",
   "full_offline_archive": {
     "asset_name": "skill-tutorial-library-full.zip",
-    "bytes": 1122854677,
-    "sha256": "43b969eb001b0a5509aee771ae557eb6e03c24905ee18db370c67867e51801f1",
+    "bytes": 1123379531,
+    "sha256": "b4e301ed0b8d032cd9c1af5895c984e58a9d3193793a952ab03366158a22f0dc",
     "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/skill-tutorial-library-full.zip"
   },
   "videos": [
@@ -678,7 +678,15 @@
   "note": "offline_path 及原校验记录指向完整离线包；online_url 是发布版对应视频。",
   "offline_source_snapshot": {
     "asset_name": "offline-document-sources.zip",
-    "bytes": 3354169,
-    "sha256": "8abf85c731472e9945ec5f70bf1ca7fbfdfd038c9645b7cd96875afdb43d817e"
+    "bytes": 3551962,
+    "sha256": "670bd55134718f275ce8a7ab79f0577f542afa7f1025260f1a75f68567ca95ed"
+  },
+  "skill_independence_revision": {
+    "packages": 13,
+    "embedded_primary_characters": 76587,
+    "requires_feishu_page": 0,
+    "packages_with_missing_upstream_files": 5,
+    "upstream_missing_files": 11,
+    "offline_archive_files": 941
   }
 }
