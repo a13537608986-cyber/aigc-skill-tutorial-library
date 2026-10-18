@@ -1,0 +1,2088 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>21 story-asset-builder-v2-clean-canvas｜修复版</title><style>
+:root{color-scheme:light;--ink:#182a27;--muted:#60716b;--line:#dce5df;--accent:#245e48;--paper:#fbfcf9}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}a{color:var(--accent);text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}header,main,footer{max-width:1080px;margin:auto;padding:28px 24px}header{padding-top:44px;padding-bottom:20px}h1{font-size:clamp(26px,4vw,40px);line-height:1.35;margin:.3em 0}h2,h3,h4,h5,h6{line-height:1.5;margin:1.5em 0 .5em}h2{font-size:26px}h3{font-size:22px}h4{font-size:19px}p{margin:.8em 0}.muted,.meta{color:var(--muted);font-size:14px}.meta{display:flex;flex-wrap:wrap;gap:8px 20px}.notice{background:#eef4ef;border:1px solid var(--line);border-radius:12px;padding:14px 18px}.warning{background:#fff7e7;border:1px solid #ead8a7;border-radius:8px;padding:10px 14px}.tools{display:flex;gap:12px;margin:22px 0}input,select{font:inherit;background:white;color:var(--ink);border:1px solid #bccdc2;border-radius:9px;padding:11px 13px}input{flex:1;min-width:0}select{max-width:200px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:16px}.card{background:white;border:1px solid var(--line);border-radius:13px;padding:20px}.card h2{font-size:20px;margin:8px 0}.card p{font-size:14px;color:var(--muted);margin:8px 0}.tag{font-size:12px;color:var(--accent);background:#edf4ec;padding:3px 8px;border-radius:20px}.cardlinks{display:flex;flex-wrap:wrap;gap:14px;font-size:14px}article{background:white;border:1px solid var(--line);border-radius:14px;padding:clamp(18px,4vw,44px);overflow-wrap:anywhere}article> :first-child{margin-top:0}.block{white-space:pre-wrap;word-break:break-word}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px}.grid-column{min-width:0}pre{background:#f1f4ef;border:1px solid #dce4da;border-radius:9px;padding:18px;overflow:auto;white-space:pre-wrap;word-break:break-word;font:14px/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}figure{margin:24px 0}img{display:block;max-width:100%;height:auto;border-radius:6px}figcaption{font-size:13px;color:var(--muted);margin-top:7px}video,audio{max-width:100%;width:100%}.asset{background:#f4f6f1;border:1px solid var(--line);border-radius:8px;padding:14px;margin:14px 0}.asset small{display:block;color:var(--muted)}blockquote{border-left:4px solid #b0c8b5;padding:8px 18px;margin:18px 0;background:#f3f7f0}.list-item{display:flex;gap:10px;margin:.6em 0}.list-item .marker{flex:0 0 1.8em;color:#60716b}.list-body{flex:1;min-width:0}.table-wrap{overflow:auto}table{border-collapse:collapse;min-width:70%;margin:18px 0}td,th{border:1px solid #ccd8ce;padding:8px 12px;vertical-align:top}hr{border:0;border-top:1px solid var(--line);margin:28px 0}summary{cursor:pointer}footer{font-size:13px;color:var(--muted)}[hidden]{display:none!important}@media(max-width:600px){header,main,footer{padding:22px 16px}.tools{flex-direction:column}select{max-width:none}article{border-radius:9px}}
+
+.nav{display:flex;flex-wrap:wrap;gap:9px 20px;margin:18px 0}.source-text{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.8;margin:0}.source-section{padding:18px 0;border-bottom:1px solid var(--line)}.source-section h2,.source-section h3{margin:.3em 0 .7em}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px}.media-card{border:1px solid var(--line);border-radius:10px;background:white;padding:12px;min-width:0}.media-card figure{margin:0}.media-card img{width:100%;max-height:320px;object-fit:contain;background:#f0f3ed}.media-card video{width:100%;max-height:320px;background:#152620}.media-card p{font-size:13px;margin:8px 0}.media-card .meta{font-size:12px}.scroll-table{overflow:auto}td{min-width:110px}details{border:1px solid var(--line);border-radius:9px;padding:14px;margin:15px 0}details>summary{font-weight:600}details>.source-text{margin-top:16px}button{font:inherit;border:1px solid #bdcdc0;background:white;border-radius:8px;padding:8px 14px;color:var(--accent);cursor:pointer}.searchbox{width:100%;margin:10px 0 24px}.mini{font-size:13px;color:var(--muted)}
+
+.skill-archive{border:2px solid var(--accent);border-radius:12px;padding:18px;margin:18px 0;background:#eef4ef}
+.skill-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.skill-actions a,.archive-action{display:inline-block;padding:9px 13px;border:1px solid #245e48;border-radius:8px;background:white;font-weight:600}
+.skill-actions a:first-child{background:#245e48;color:white}.skill-files{margin:24px 0 32px}.skill-file{border:1px solid var(--line);border-radius:9px;padding:16px;margin:15px 0;background:white}.skill-file summary{font-weight:600;overflow-wrap:anywhere}.skill-file pre{max-height:75vh;overflow:auto;white-space:pre-wrap;word-break:break-word}.skill-file .meta{margin:10px 0}.source-info{font-size:13px;color:var(--muted);margin:10px 0}.source-info summary{cursor:pointer}.source-info a{font-weight:400}.archive-status{font-size:13px;color:var(--muted)}
+</style></head><body><header><p><a href="../../Skill%E4%BF%AE%E5%A4%8D%E7%89%88%E4%B8%8E%E6%B5%8B%E8%AF%95.html">← 修复版与测试</a> · <a download href="../../Skill%E4%BF%AE%E5%A4%8D%E5%8C%85/21-story-asset-builder.zip">下载这个修复包</a> · <a download href="../../%E8%B5%84%E6%BA%90/21-%E7%94%B5%E5%BD%B1%E7%BA%A7%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%81%9A%E6%88%90%20skill/004-story-asset-builder-v2-clean-canvas.zip">保留的原包</a></p><h1>21 story-asset-builder-v2-clean-canvas｜修复版</h1></header><main><div class="notice"><p>这是归档修复版。入口与运行方式已检查，原始包另行保留。</p><p>LibTV授权工具（文本方案可独立使用）。</p></div><h2>本包调整</h2><ul><li>新增标准name与description配置。</li><li>依赖检测兼容已授权的Remote MCP；保留CLI分支，去掉在聊天中配置access_key的要求。</li><li>补充Remote MCP与本地CLI的调用分支及实时schema核验要求。</li></ul><h2>Skill 与配套文件</h2><details id="file-0" class="skill-file" ><summary>CHANGELOG.md</summary><p><a download href="CHANGELOG.md">下载此文件</a></p><pre><code># Changelog
+
+## v0.2.0 — Canvas Blueprint Update
+
+新增：
+
+- `rules/libtv_canvas_rules.md` 重写为 Canvas Blueprint v2
+- `SKILL.md` 新增 Canvas Blueprint 硬规则
+- `quick_prompts/04_create_clean_canvas.txt`
+- `quick_prompts/05_reorganize_existing_canvas.txt`
+
+核心变化：
+
+- 创建 LibTV 画布前必须先生成 Canvas Blueprint
+- 默认 6 区排版：项目总览、风格 DNA、人物资产、世界资产、分镜视频、归档区
+- 统一节点命名：序号_资产类型_资产名称_用途_v版本号
+- 每个资产按 PROMPT / GENERATE / QA 小组靠近摆放
+- 禁止散乱节点、空节点、无命名节点、重复节点
+</code></pre></details><details id="file-1" class="skill-file" ><summary>README.md</summary><p><a download href="README.md">下载此文件</a></p><pre><code># story-asset-builder 使用说明
+
+这是一个通用“剧本资产生成 Skill”，用于配合 LibTV skill / LibTV CLI，把任意剧本自动拆成资产节点，并生成标准化 Prompt。
+
+## 安装
+
+把整个文件夹复制到：
+
+```bash
+~/.openclaw/skills/story-asset-builder/
+```
+
+或将压缩包解压到：
+
+```bash
+~/.openclaw/skills/
+```
+
+确认你已经安装并授权 LibTV skill / LibTV CLI：
+
+```bash
+export LIBTV_ACCESS_KEY=&quot;your-access-key&quot;
+```
+
+## 最推荐的使用指令
+
+```text
+使用 story-asset-builder。
+这是一个新项目，请先根据剧本创建 Project Profile，再创建 LibTV 资产准备画布。
+
+剧本：
+【粘贴你的剧本】
+
+要求：
+1. 自动拆解人物、场景、道具、怪兽、载具、色卡、分镜资产
+2. 每个资产按工业化提示词文档格式生成完整 Prompt
+3. 调用 LibTV 创建新项目和画布节点
+4. 只准备资产图节点，先不要直接生成最终视频
+5. 所有节点必须放到画布上
+6. 每个节点附带实操注意和跑歪兜底加强
+```
+
+## 用已有 Profile
+
+```text
+使用 story-asset-builder。
+项目 Profile：wansheng。
+根据下面剧本创建 LibTV 资产准备画布：
+【剧本内容】
+```
+
+## 注意
+
+本 Skill 负责“资产拆解 + Prompt 编译 + LibTV 节点编排”。真正生成图片/视频仍由 LibTV skill / LibTV CLI 执行。
+</code></pre></details><details id="file-2" class="skill-file" open><summary>SKILL.md</summary><p><a download href="SKILL.md">下载此文件</a></p><pre><code>---
+name: story-asset-builder
+description: &quot;用于从剧本、短片创意和分镜拆解角色、场景、道具等资产及其提示词；创建实际LibTV画布需要已授权的LibTV工具。&quot;
+---
+
+&gt; 归档修复版（2026-10-17）：原始安装包另行保留。未连接并授权LibTV时，只能完成文字方案、候选或资产拆解，不得声称已建画布、连线或生成。若当前提供LibTV Remote MCP，使用其doctor及实时工具schema，先确认项目身份；无需安装本地CLI，也不运行下文仅用于CLI的help命令。模型/质量参数须从实时schema读取，不将旧CLI示例当成MCP调用。用户仅要求离线资产清单时，可先按本包模板拆解，不执行画布步骤。
+
+# story-asset-builder
+
+## 中文名
+剧本资产生成器 / Story Asset Builder
+
+## 定位
+本 Skill 用于把任意剧本、短片创意、分镜描述、世界观设定，自动拆解成 LibTV 画布里的资产节点，并按“工业化提示词文档”格式生成可复用 Prompt。
+
+它不是替代 LibTV skill / LibTV CLI，而是作为上层“资产导演 + Prompt 编译器”使用：
+
+```text
+用户输入剧本需求
+→ 解析项目与风格 Profile
+→ 拆解人物 / 场景 / 道具 / 怪兽 / 载具 / 色卡 / 分镜 / 视频段落
+→ 套用对应资产模板
+→ 生成标准化 Prompt 文档
+→ 调用已安装的 LibTV skill / LibTV CLI 在画布创建节点
+→ 把 Prompt、参数建议、实操注意、跑歪兜底加强写入对应节点
+→ 用户在 LibTV 里确认生成
+```
+
+## 何时触发
+当用户出现以下需求时，优先使用本 Skill：
+
+- “根据剧本创建 LibTV 资产画布”
+- “帮我拆人物、道具、场景、怪兽节点”
+- “按某个提示词文档格式生成资产 Prompt”
+- “我只想在 LibTV 确认生成，前面节点和提示词自动帮我建好”
+- “创建某个短剧 / 漫剧 / AI电影 / 产品片的资产准备工作流”
+- “把剧本变成角色设定图、道具图、场景图、分镜图、视频节点”
+
+## 依赖
+创建画布前必须有已授权的 LibTV 调用能力，可用 Remote MCP、LibTV skill 或 CLI。Remote MCP 使用 OAuth，无需本地 CLI；先用 doctor 核验连接。若没有可用能力，可交付离线资产与 Prompt，但不得声称已创建画布。
+
+安装位置建议：
+
+```text
+~/.openclaw/skills/story-asset-builder/
+```
+
+LibTV 访问要求：
+
+```text
+Remote MCP：通过当前插件 OAuth 授权。
+本地 CLI / OpenClaw：由用户在对应环境完成授权。不要索取、读取或展示密钥。
+```
+
+## 工作原则
+
+### 1. 不写死项目
+不要把“万物生”写成唯一项目。本 Skill 是通用剧本资产生成器。
+“万物生”只是一个 profile 样板。遇到新剧本时，应先判断：
+
+```text
+是否指定项目 Profile？
+- 是：读取该 profile，继承风格规则。
+- 否：根据剧本自动创建临时 Project Profile。
+```
+
+### 2. 先拆资产，再建节点
+不要直接把用户剧本塞进一个大 Prompt。必须先输出并执行资产拆解：
+
+```text
+角色资产
+场景资产
+道具资产
+怪兽 / 生物资产
+载具资产
+色卡 / 视觉 DNA 资产
+关键帧 / 分镜资产
+视频段落资产
+```
+
+### 3. Prompt 必须工程化
+生成 Prompt 时，必须采用“标题 + 格式 + 资产设定 + prompt 主体 + constraints + 实操注意”的文档结构。
+不要只输出一句普通提示词。
+
+### 4. 实操注意不是生图 Prompt
+`【实操注意】`、`【跑歪兜底加强】`必须写入节点备注、质检说明或同级文档，不要混入生图 Prompt 主体。
+
+### 5. LibTV 画布必须有结构
+创建 LibTV 画布时，必须按资产类型分组：
+
+```text
+00_Project_Profile
+01_Character_Assets
+02_Creature_Assets
+03_Prop_Assets
+04_Vehicle_Assets
+05_Environment_Assets
+06_Color_And_Material_DNA
+07_Storyboard_And_Keyframes
+08_Video_Segments
+09_QA_Notes_And_Rerun_Fixes
+```
+
+### 6. 默认先创建资产图节点，不直接生成最终视频
+除非用户明确要求“直接出视频”，否则只准备资产节点和 Prompt，不启动最终视频合成。
+
+## 标准执行流程
+
+### Step 1：读取用户需求
+从用户输入中提取：
+
+```text
+project_name
+story_type
+episode_or_scene
+script_text
+visual_reference
+style_reference
+output_goal
+platform_or_model_preference
+```
+
+### Step 2：选择或创建 Project Profile
+优先级：
+
+1. 用户明确指定 profile
+2. 从剧本类型匹配已有 profile
+3. 自动创建临时 profile
+4. 使用 profiles/default_cinematic.yaml
+
+### Step 3：资产拆解
+输出资产清单，每个资产必须包含：
+
+```yaml
+asset_id:
+asset_name:
+asset_type:
+asset_role:
+priority:
+template:
+libtv_node_group:
+required_views:
+aspect_ratio:
+prompt_status:
+qa_risk:
+```
+
+### Step 4：Prompt 编译
+根据资产类型套用模板：
+
+```text
+人物 → templates/character_sheet.md
+怪兽 / 生物 → templates/creature_sheet.md
+道具 / 武器 → templates/prop_sheet.md
+载具 → templates/vehicle_sheet.md
+场景 → templates/environment_sheet.md
+色卡 → templates/color_palette.md
+分镜 → templates/storyboard_grid.md
+视频 → templates/video_prompt.md
+```
+
+### Step 5：LibTV 画布创建
+调用已安装 LibTV skill / CLI，执行：
+
+```text
+create_session / 开启新项目
+创建节点组
+创建每个资产节点
+写入 Prompt 主体
+写入尺寸 / 比例 / 模型建议
+写入实操注意与跑歪兜底加强
+把所有工作流放到画布上
+返回 LibTV project 链接
+```
+
+若画布没有节点，或节点为空，必须重试并提示：
+
+```text
+重试创建整个工作流放在画布
+你的节点是空的，重新创建工作流，要把结果也放到节点里
+```
+
+### Step 6：返回给用户
+最终回复必须包含：
+
+```text
+1. 已创建的项目名
+2. 资产节点数量
+3. 节点分组概览
+4. LibTV project 链接，若工具返回
+5. 需要用户确认生成的节点
+6. 若失败，明确说明失败点和下一步
+```
+
+## Prompt 文档标准结构
+每个资产 Prompt 文档必须尽量使用以下结构：
+
+```text
+=== GPT-Image Prompt - {project_name} {asset_name} {asset_type} v{version} ===
+
+【格式】
+- aspect ratio
+- layout
+- view count
+- model / quality suggestion
+
+【资产定位】
+- story function
+- visual memory point
+- relation to other assets
+- hierarchy / power level if applicable
+
+---
+
+【prompt】
+```
+
+Prompt 主体：
+- opening format sentence
+- Layout
+- Panel / View details
+- Subject
+- Core identity
+- Costume / Equipment / Structure
+- Color Palette
+- Pose / View / Camera
+- Critical consistency
+- Lighting
+- Style
+- Quality
+- Panel Labels if needed
+- Constraints
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+size / aspect ratio / quality / model / reference images / node group
+
+【实操注意】
+1. 跑出来重点检查
+2. 跑歪兜底加强
+3. 版本迭代建议
+```
+
+## LibTV 节点命名规范
+
+```text
+{序号}_{资产类型}_{资产名}_v{版本}
+```
+
+示例：
+
+```text
+01_Character_沙猎喽啰A钩索手_v1
+02_Creature_机械赛加羚羊_v1
+03_Environment_部落崖壁市集_v1
+04_Prop_旧收音机_v1
+05_Storyboard_第一场九宫格_v1
+```
+
+## 默认模型建议
+仅作为节点备注，不强制。具体以 LibTV 当前可用模型为准。
+
+```yaml
+image_reference_sheet: GPT-Image / Neo Image / Seedream / LibTV 当前可用图片模型
+video_generation: Seedance 2.0 默认；用户明确要求时可用 Kling O3/3.0
+aspect_ratio:
+  character_sheet: 9:16
+  creature_sheet: 16:9
+  prop_sheet: 16:9 or 1:1
+  environment_sheet: 16:9
+  storyboard_grid: 16:9 or 3:4
+  video: 根据用户平台，默认 16:9；短视频默认 9:16
+```
+
+## 失败处理
+
+如果无法调用 LibTV：
+
+```text
+我已经完成资产拆解和 Prompt 编译，但当前环境没有可用的 LibTV 调用能力 / 授权，无法直接创建画布。请在所用的 LibTV 插件或本地工具中完成授权；不要在聊天中提供密钥。你也可以把我生成的节点创建指令复制到 OpenClaw 中执行。
+```
+
+如果节点没有放在画布：
+
+```text
+请确认是否把整个生成工作流创建在了画布上。若没有，请重试创建整个工作流放在画布。
+```
+
+如果生成结果不合格：
+
+```text
+不要直接重写全部 Prompt。先定位失败项，再从对应资产的【跑歪兜底加强】中追加修复句，创建 v2 节点。
+```
+
+---
+
+## Canvas Blueprint 硬规则 v2
+
+任何时候，只要用户要求创建 LibTV 画布，必须先读取并遵守：
+
+```text
+rules/libtv_canvas_rules.md
+```
+
+创建画布前必须生成 Canvas Blueprint，不能直接创建散乱节点。
+
+默认画布必须使用 6 个分区：
+
+```text
+01_PROJECT_INDEX：项目总览区
+02_STYLE_DNA：视觉风格 / 色卡 / 材质 / 灯光区
+03_CHARACTERS：人物资产区
+04_WORLD_ASSETS：场景 / 道具 / 怪兽 / 载具区
+05_STORYBOARD_VIDEO：分镜 / 关键帧 / 视频区
+99_ARCHIVE：废弃节点 / 失败节点 / 重跑节点区
+```
+
+所有节点必须使用统一命名：
+
+```text
+序号_资产类型_资产名称_用途_v版本号
+```
+
+每个资产小组默认包含：
+
+```text
+PROMPT / GENERATE / QA / REF可选 / V2_RETRY可选
+```
+
+禁止把所有 Prompt、生成节点、QA 节点分别堆在一起。每个资产的小组必须靠近摆放，并在最终回复里返回节点索引表。
+
+如果用户说：
+
+```text
+使用 story-asset-builder 创建画布
+按标准画布蓝图创建
+按标准 Canvas Blueprint 创建
+重新整理当前 LibTV 画布
+```
+
+应自动执行以上规则，不要要求用户重复输入画布排版规则。
+</code></pre></details><details id="file-3" class="skill-file" ><summary>examples/demo_request.md</summary><p><a download href="examples/demo_request.md">下载此文件</a></p><pre><code># 示例请求
+
+```text
+使用 story-asset-builder。
+这是一个新项目，请先根据剧本创建 Project Profile，再创建 LibTV 资产准备画布。
+
+项目名：《地下七小时》
+类型：末日密闭空间悬疑短片
+
+剧本：
+男主醒来发现自己被困在地下储藏室，门外传来奇怪敲击声。房间里只有一台旧收音机、一瓶水、一盏快没电的应急灯。随着时间过去，他发现墙后面不是人，而是某种会模仿人声的东西。
+
+要求：
+1. 自动建立项目视觉规范
+2. 拆解人物、场景、道具、怪物、分镜资产
+3. 每个资产按工业化提示词文档格式生成完整 Prompt
+4. 调用 LibTV 创建新项目和画布节点
+5. 先只创建资产图节点，不直接生成最终视频
+6. 所有节点必须放到画布上
+```
+
+# 预期资产
+
+```yaml
+project_profile:
+  profile_id: apocalypse_thriller_custom
+  project_name: 地下七小时
+assets:
+  - CHR_001 男主 人物设定图 P0
+  - ENV_001 地下储藏室 场景设定图 P0
+  - PROP_001 旧收音机 道具设定图 P1
+  - PROP_002 应急灯 道具设定图 P1
+  - PROP_003 铁门与门锁 道具/场景细节 P1
+  - CRE_001 墙后模仿者 怪物概念图 P0
+  - COL_001 色卡与材质DNA P0
+  - STB_001 第一场九宫格分镜 P1
+```
+</code></pre></details><details id="file-4" class="skill-file" ><summary>manifest.json</summary><p><a download href="manifest.json">下载此文件</a></p><pre><code>{
+  &quot;skill_name&quot;: &quot;story-asset-builder&quot;,
+  &quot;version&quot;: &quot;0.2.0&quot;,
+  &quot;description&quot;: &quot;通用剧本资产生成器：剧本拆解、Prompt 编译、LibTV Canvas Blueprint 画布编排。&quot;,
+  &quot;depends_on&quot;: [
+    &quot;LibTV skill or LibTV CLI&quot;,
+    &quot;OpenClaw / 飞书 ClawBot / KimiClaw compatible runtime&quot;
+  ],
+  &quot;entry&quot;: &quot;SKILL.md&quot;,
+  &quot;templates&quot;: [
+    &quot;character_sheet.md&quot;,
+    &quot;creature_sheet.md&quot;,
+    &quot;prop_sheet.md&quot;,
+    &quot;vehicle_sheet.md&quot;,
+    &quot;environment_sheet.md&quot;,
+    &quot;color_palette.md&quot;,
+    &quot;storyboard_grid.md&quot;,
+    &quot;video_prompt.md&quot;
+  ],
+  &quot;profiles&quot;: [
+    &quot;wansheng.yaml&quot;,
+    &quot;default_cinematic.yaml&quot;,
+    &quot;ancient_drama.yaml&quot;,
+    &quot;apocalypse_thriller.yaml&quot;,
+    &quot;cyber_city.yaml&quot;
+  ]
+}</code></pre></details><details id="file-5" class="skill-file" ><summary>profiles/ancient_drama.yaml</summary><p><a download href="profiles/ancient_drama.yaml">下载此文件</a></p><pre><code>profile_id: ancient_drama
+project_name: 古风权谋项目
+profile_type: ancient_court_cinematic_drama
+language: zh-CN
+visual_dna:
+  world: 古风宫廷、权谋、烛光、木质建筑、丝绸服饰、真实古装剧质感
+  cinematic_refs:
+    - realistic Chinese historical drama film still
+    - warm candlelight
+    - low-saturation elegant palette
+  materials:
+    - silk
+    - gold embroidery
+    - carved wood
+    - paper window
+    - bronze candle stand
+    - rain-wet stone
+  colors:
+    - warm candle gold
+    - dark wood brown
+    - desaturated red
+    - jade green
+    - smoke grey
+lighting:
+  asset_sheet: Soft controlled studio light with subtle side rim, realistic skin texture.
+  environment: Candlelight, window-grid light, warm low-key interior, restrained contrast.
+style_constraints:
+  avoid:
+    - plastic idol-drama skin
+    - over-bright beauty filter
+    - cheap cosplay costume
+    - fantasy xianxia glow overload
+qa_focus:
+  - 古装真实质感
+  - 服饰层次
+  - 人物情绪克制
+  - 场景木质与烛光统一
+</code></pre></details><details id="file-6" class="skill-file" ><summary>profiles/apocalypse_thriller.yaml</summary><p><a download href="profiles/apocalypse_thriller.yaml">下载此文件</a></p><pre><code>profile_id: apocalypse_thriller
+project_name: 末日密闭空间项目
+profile_type: low_budget_apocalypse_thriller
+language: zh-CN
+visual_dna:
+  world: 密闭空间、末日悬疑、低成本高张力、灰尘、旧设备、应急灯、未知威胁
+  cinematic_refs:
+    - realistic confined-space thriller
+    - low-key lighting
+    - handheld tension
+  materials:
+    - concrete
+    - rusted metal
+    - emergency plastic light
+    - dust
+    - cracked paint
+    - old radio
+  colors:
+    - cold grey
+    - emergency red
+    - dirty white
+    - rust brown
+    - sickly green
+lighting:
+  asset_sheet: Neutral studio reference for assets; environment uses low-key practical lighting.
+  environment: Flickering emergency light, flashlight beam, cold overhead light.
+style_constraints:
+  avoid:
+    - zombie cliché unless requested
+    - over-gory details
+    - clean sci-fi lab
+    - heroic action movie look
+qa_focus:
+  - 空间压迫感
+  - 道具真实可用
+  - 光源逻辑
+  - 怪物留白和悬念
+</code></pre></details><details id="file-7" class="skill-file" ><summary>profiles/cyber_city.yaml</summary><p><a download href="profiles/cyber_city.yaml">下载此文件</a></p><pre><code>profile_id: cyber_city
+project_name: 赛博都市项目
+profile_type: cyberpunk_city_drama
+language: zh-CN
+visual_dna:
+  world: 高密度都市、霓虹、雨夜、广告屏、底层街巷、科技与贫民区混合
+  cinematic_refs:
+    - cyberpunk rainy night city
+    - cinematic anamorphic neon
+    - gritty street photography
+  materials:
+    - wet asphalt
+    - glass
+    - LED signage
+    - scratched plastic
+    - black tech fabric
+  colors:
+    - cyan neon
+    - magenta neon
+    - sodium orange
+    - deep black
+    - rain grey
+lighting:
+  asset_sheet: Controlled studio reference with subtle neon reflection if needed.
+  environment: Neon signs, wet reflections, practical street lights, strong color contrast.
+style_constraints:
+  avoid:
+    - generic clean sci-fi
+    - overly cartoon neon
+    - empty streets unless requested
+    - polished luxury tech only
+qa_focus:
+  - 城市密度
+  - 雨夜反光
+  - 科技与贫民质感混合
+  - 角色服装不漂移
+</code></pre></details><details id="file-8" class="skill-file" ><summary>profiles/default_cinematic.yaml</summary><p><a download href="profiles/default_cinematic.yaml">下载此文件</a></p><pre><code>profile_id: default_cinematic
+project_name: 未命名电影感项目
+profile_type: generic_cinematic
+language: zh-CN
+visual_dna:
+  world: 根据剧本自动推断
+  cinematic_refs:
+    - realistic cinematic film still
+    - natural lens depth of field
+    - restrained color grading
+  materials: []
+  colors: []
+lighting:
+  asset_sheet: Clean studio reference lighting unless the project requires a stronger style.
+  environment: Scene-specific cinematic lighting.
+default_templates:
+  character: templates/character_sheet.md
+  creature: templates/creature_sheet.md
+  prop: templates/prop_sheet.md
+  vehicle: templates/vehicle_sheet.md
+  environment: templates/environment_sheet.md
+  storyboard: templates/storyboard_grid.md
+style_constraints:
+  avoid:
+    - generic AI image look
+    - oversharpening
+    - plastic skin
+    - random costume changes
+    - inconsistent characters
+qa_focus:
+  - 角色一致性
+  - 场景可用性
+  - 道具功能准确
+  - 分镜连续性
+</code></pre></details><details id="file-9" class="skill-file" ><summary>profiles/wansheng.yaml</summary><p><a download href="profiles/wansheng.yaml">下载此文件</a></p><pre><code>profile_id: wansheng
+project_name: 万物生
+profile_type: cinematic_desert_lost_tech
+language: zh-CN
+visual_dna:
+  world: 丝路荒漠、崖壁村落、沙猎部落、古代失落科技、青铜机改
+  cinematic_refs:
+    - Dune-like desert cinematic aesthetic
+    - 35mm Kodak Vision3 film grain
+    - 古代丝路边疆民族混合审美
+  ethnicity_anchor: Central Asian / Turkic / Sogdian Silk Road mixed ethnicity
+  materials:
+    - weathered sand
+    - dark leather
+    - aged bronze patina
+    - verdigris recesses
+    - dried-blood-red cloth accents
+    - dust-coated fabric
+  colors:
+    - name: Mecha Crimson Bronze
+      hex: &#x27;#7A6845&#x27;
+    - name: Aged Gold
+      hex: &#x27;#846035&#x27;
+    - name: LED Cyan Dormant
+      hex: &#x27;#4FC3D9&#x27;
+    - name: Desert Sand
+      hex: &#x27;#C8A66A&#x27;
+    - name: Dried Blood Red
+      hex: &#x27;#5A1E17&#x27;
+lighting:
+  asset_sheet: Single-sided side-rim backlighting from camera-right at 45 degrees behind subject, no fill light, no front light, no other light sources.
+  environment: Warm harsh desert sunlight or dusty dawn haze according to scene.
+default_templates:
+  character: templates/character_sheet.md
+  creature: templates/creature_sheet.md
+  prop: templates/prop_sheet.md
+  vehicle: templates/vehicle_sheet.md
+  environment: templates/environment_sheet.md
+  storyboard: templates/storyboard_grid.md
+style_constraints:
+  avoid:
+    - pure Caucasian European faces for Sand Hunter tribe
+    - modern cyberpunk neon
+    - clean polished chrome
+    - anime/cartoon style
+    - generic fantasy armor
+    - over-saturated color
+    - obvious CGI render
+qa_focus:
+  - 族群准确性
+  - 青铜机改 DNA
+  - 版式和标签准确
+  - 角色等级差异
+  - 材质风沙感
+</code></pre></details><details id="file-10" class="skill-file" ><summary>quick_prompts/01_create_new_project_canvas.txt</summary><p><a download href="quick_prompts/01_create_new_project_canvas.txt">下载此文件</a></p><pre><code>使用 story-asset-builder。
+这是一个新项目，请先根据剧本创建 Project Profile，再创建 LibTV 资产准备画布。
+
+项目名：【填写项目名】
+类型：【填写类型，例如古风权谋 / 末日悬疑 / 赛博都市 / 产品广告 / 奇幻冒险】
+
+剧本：
+【粘贴剧本】
+
+要求：
+1. 自动拆解人物、场景、道具、怪兽/生物、载具、色卡、分镜资产
+2. 每个资产按工业化提示词文档格式生成完整 Prompt
+3. 调用 LibTV 创建新项目和画布节点
+4. 只准备资产图节点，先不要直接生成最终视频
+5. 所有节点必须放到画布上
+6. 每个节点附带实操注意和跑歪兜底加强
+</code></pre></details><details id="file-11" class="skill-file" ><summary>quick_prompts/02_use_wansheng_profile.txt</summary><p><a download href="quick_prompts/02_use_wansheng_profile.txt">下载此文件</a></p><pre><code>使用 story-asset-builder。
+项目 Profile：wansheng。
+根据下面剧本创建 LibTV 资产准备画布。
+
+剧本：
+【粘贴万物生相关剧本】
+
+要求：
+1. 继承万物生丝路荒漠、青铜机改、沙猎部落、Dune-like 电影感视觉 DNA
+2. 自动拆解人物、机械兽、怪兽、道具、场景、色卡、分镜资产
+3. 每个资产按万物生提示词文档格式生成完整 Prompt
+4. 调用 LibTV 创建新项目和画布节点
+5. 只准备资产图节点，先不要直接生成最终视频
+6. 所有节点必须放到画布上
+</code></pre></details><details id="file-12" class="skill-file" ><summary>quick_prompts/03_retry_canvas_nodes.txt</summary><p><a download href="quick_prompts/03_retry_canvas_nodes.txt">下载此文件</a></p><pre><code>请确认是否把整个生成工作流创建在了画布上。
+如果没有，请重试创建整个工作流放在画布。
+如果节点是空的，请重新创建工作流，要把结果、Prompt、参数建议、实操注意都放到节点里。
+</code></pre></details><details id="file-13" class="skill-file" ><summary>quick_prompts/04_create_clean_canvas.txt</summary><p><a download href="quick_prompts/04_create_clean_canvas.txt">下载此文件</a></p><pre><code>使用 story-asset-builder 创建 LibTV 资产准备画布。
+
+请默认遵守 Canvas Blueprint Rule：
+1. 先拆解资产清单
+2. 再生成 Canvas Blueprint
+3. 再按 Blueprint 创建 LibTV 节点
+4. 所有节点按 6 个分区排版：
+   - 01_PROJECT_INDEX
+   - 02_STYLE_DNA
+   - 03_CHARACTERS
+   - 04_WORLD_ASSETS
+   - 05_STORYBOARD_VIDEO
+   - 99_ARCHIVE
+5. 节点命名格式必须是：序号_资产类型_资产名称_用途_v版本号
+6. 每个资产小组必须包含 PROMPT / GENERATE / QA，必要时添加 REF / V2_RETRY
+7. 禁止散乱节点、空节点、无命名节点、重复节点
+8. 创建完成后返回节点索引表
+
+项目名：【填写项目名】
+项目 Profile：【default_cinematic / wansheng / ancient_drama / apocalypse_thriller / cyber_city / 新建 Profile】
+
+剧本：
+【粘贴剧本】
+
+要求：
+- 先不要生成最终视频
+- 只创建资产准备画布
+- 所有节点必须放到 LibTV 画布上
+</code></pre></details><details id="file-14" class="skill-file" ><summary>quick_prompts/05_reorganize_existing_canvas.txt</summary><p><a download href="quick_prompts/05_reorganize_existing_canvas.txt">下载此文件</a></p><pre><code>使用 story-asset-builder，按标准 Canvas Blueprint 重新整理当前 LibTV 画布。
+
+要求：
+1. 不要重新生成图片或视频
+2. 只做重命名、分组、重排、补充 INDEX 节点、归档废弃节点
+3. 画布分区必须整理为：
+   - 01_PROJECT_INDEX
+   - 02_STYLE_DNA
+   - 03_CHARACTERS
+   - 04_WORLD_ASSETS
+   - 05_STORYBOARD_VIDEO
+   - 99_ARCHIVE
+4. 节点命名格式必须是：序号_资产类型_资产名称_用途_v版本号
+5. 每个资产小组内部按 PROMPT → GENERATE → QA → RETRY 的顺序摆放
+6. 空节点、重复节点、失败节点移动到 99_ARCHIVE
+7. 完成后返回节点索引表和整理说明
+</code></pre></details><details id="file-15" class="skill-file" ><summary>rules/asset_extraction.md</summary><p><a download href="rules/asset_extraction.md">下载此文件</a></p><pre><code># 资产拆解规则
+
+## 目标
+把剧本拆成可生成、可管理、可复用的 LibTV 资产节点。
+
+## 必须识别的资产类型
+
+### 1. Character / 人物
+包括主角、反派、配角、群众、士兵、导师、怪人、变体形态。
+
+判断依据：
+- 有名字或称谓
+- 有行动决策
+- 有情绪或人物弧线
+- 后续多镜头复用
+
+默认模板：`templates/character_sheet.md`
+
+### 2. Creature / 怪兽、生物、机械兽
+包括巨兽、异形、机械动物、怪物、宠物、坐骑、变异生命体。
+
+默认模板：`templates/creature_sheet.md`
+
+### 3. Prop / 道具、武器、设备
+包括手持物、武器、机关、钥匙、收音机、电脑、法器、产品。
+
+默认模板：`templates/prop_sheet.md`
+
+### 4. Vehicle / 载具
+包括飞船、车、沙艇、机甲、船、摩托、飞行器。
+
+默认模板：`templates/vehicle_sheet.md`
+
+### 5. Environment / 场景
+包括房间、村庄、街道、集市、宫殿、峡谷、飞船内部、地下室。
+
+默认模板：`templates/environment_sheet.md`
+
+### 6. Color / Material DNA
+包括色卡、材质体系、灯光规则、世界观视觉规范。
+
+默认模板：`templates/color_palette.md`
+
+### 7. Storyboard / Keyframe
+包括九宫格分镜、关键帧、场景动作拆解、镜头运动参考。
+
+默认模板：`templates/storyboard_grid.md`
+
+### 8. Video Segment
+包括单段视频、转场、口播、动作、音乐 MV、短片段落。
+
+默认模板：`templates/video_prompt.md`
+
+## 资产优先级
+
+```text
+P0：必须先生成，否则后续无法保持一致
+P1：核心剧情资产
+P2：增强世界观资产
+P3：可后补细节资产
+```
+
+默认优先级：
+- 主角 / 反派 / 核心怪兽 / 核心场景：P0
+- 重要道具 / 载具 / 第二场景：P1
+- 群众 / 背景道具 / 色卡：P2
+- 纹理、贴图、细节补充：P3
+
+## 输出格式
+
+```yaml
+assets:
+  - asset_id: CHR_001
+    asset_name: 主角名称
+    asset_type: character
+    asset_role: 主角 / 反派 / 配角 / 群众
+    priority: P0
+    template: templates/character_sheet.md
+    libtv_node_group: 01_Character_Assets
+    aspect_ratio: 9:16
+    required_views: FRONT FACE / SIDE FACE / BODY FRONT / BACK
+    prompt_status: draft
+    qa_risk:
+      - 脸型不稳定
+      - 服装跑偏
+      - 年龄错误
+```
+</code></pre></details><details id="file-16" class="skill-file" ><summary>rules/libtv_canvas_rules.md</summary><p><a download href="rules/libtv_canvas_rules.md">下载此文件</a></p><pre><code># LibTV 画布创建规则 v2 — Canvas Blueprint
+
+## 目标
+让 LibTV 画布不是一堆散节点，而是清晰、可读、可检查、可复用的资产生产看板。
+
+核心原则：
+
+```text
+剧本 → 资产清单 → Canvas Blueprint → LibTV 节点创建 → 节点索引表
+```
+
+任何创建 LibTV 画布的任务，都必须先生成 Canvas Blueprint，再创建节点。
+
+---
+
+## Canvas Blueprint Rule
+
+只要用户要求创建 LibTV 画布，必须先生成 Canvas Blueprint。除非用户明确说“不要规划，直接创建”，否则不得跳过。
+
+Canvas Blueprint 必须包含：
+
+1. 项目总览区
+2. 风格 DNA 区
+3. 人物资产区
+4. 场景 / 道具 / 怪兽 / 载具资产区
+5. 分镜 / 关键帧 / 视频区
+6. 废弃 / 重跑 / 归档区
+
+---
+
+## 默认画布分区
+
+```text
+01_PROJECT_INDEX：项目总览区
+02_STYLE_DNA：视觉风格 / 色卡 / 材质 / 灯光区
+03_CHARACTERS：人物资产区
+04_WORLD_ASSETS：场景 / 道具 / 怪兽 / 载具区
+05_STORYBOARD_VIDEO：分镜 / 关键帧 / 视频区
+99_ARCHIVE：废弃节点 / 失败节点 / 重跑节点区
+```
+
+### 推荐空间排布
+
+```text
+左侧：01_PROJECT_INDEX + 02_STYLE_DNA
+中上：03_CHARACTERS
+中下：04_WORLD_ASSETS
+右侧：05_STORYBOARD_VIDEO
+底部 / 最右下：99_ARCHIVE
+```
+
+如果 CLI 支持坐标，应按从左到右的流程摆放：
+
+```text
+Project / Style → Asset Prompt → Generate → QA / Retry → Storyboard / Video
+```
+
+如果 CLI 不支持坐标，也必须通过节点名称、分组、备注和索引表维持上述结构。
+
+---
+
+## 节点命名规则
+
+统一格式：
+
+```text
+序号_资产类型_资产名称_用途_v版本号
+```
+
+示例：
+
+```text
+01_INDEX_项目总览_v1
+02_STYLE_视觉DNA_v1
+03_CHARACTER_主角_四视图_v1
+04_ENV_地下储藏室_场景设定_v1
+05_PROP_旧收音机_道具设定_v1
+06_CREATURE_门外未知存在_概念设定_v1
+07_STORYBOARD_第一场_九宫格_v1
+08_VIDEO_第一场_图生视频_v1
+99_ARCHIVE_废弃节点区_v1
+```
+
+资产类型建议：
+
+```text
+INDEX / STYLE / CHARACTER / ENV / PROP / CREATURE / VEHICLE / STORYBOARD / KEYFRAME / VIDEO / QA / RETRY / ARCHIVE
+```
+
+---
+
+## 每个资产小组结构
+
+每个资产默认最多包含以下节点：
+
+```text
+PROMPT：完整提示词
+GENERATE：生成节点
+QA：实操注意 / 跑歪兜底加强
+REF：参考图节点，可选
+V2_RETRY：重跑节点，可选
+```
+
+每个资产的小组必须靠近摆放，不允许把所有 PROMPT 堆在一起，也不允许把所有 GENERATE 堆在一起。
+
+推荐命名：
+
+```text
+03_CHARACTER_主角_PROMPT_v1
+03_CHARACTER_主角_GENERATE_v1
+03_CHARACTER_主角_QA_v1
+03_CHARACTER_主角_V2_RETRY_v2
+```
+
+---
+
+## README / INDEX 节点
+
+每个 LibTV 画布必须创建一个 `01_INDEX_项目总览_v1` 节点，放在画布左上或第一个节点位置。
+
+INDEX 节点必须包含：
+
+```text
+项目名：
+一句话剧情：
+项目 Profile：
+资产数量：
+画布分区：
+节点命名规则：序号_资产类型_资产名称_用途_v版本号
+使用顺序：先看 STYLE_DNA，再看 CHARACTERS，再看 WORLD_ASSETS，最后看 STORYBOARD_VIDEO
+待用户确认生成的节点：
+```
+
+---
+
+## Canvas Blueprint 输出格式
+
+创建画布前，必须先输出如下规划表：
+
+```yaml
+canvas_blueprint:
+  project_name:
+  profile:
+  layout_version: canvas_blueprint_v2
+  sections:
+    - id: 01_PROJECT_INDEX
+      purpose: 项目总览区
+      nodes:
+        - node_name:
+          node_type:
+          asset_ref:
+          action: create_note / create_prompt / create_generate / create_qa
+          generate_now: false
+    - id: 02_STYLE_DNA
+      purpose: 视觉风格 / 色卡 / 材质 / 灯光区
+      nodes: []
+    - id: 03_CHARACTERS
+      purpose: 人物资产区
+      nodes: []
+    - id: 04_WORLD_ASSETS
+      purpose: 场景 / 道具 / 怪兽 / 载具区
+      nodes: []
+    - id: 05_STORYBOARD_VIDEO
+      purpose: 分镜 / 关键帧 / 视频区
+      nodes: []
+    - id: 99_ARCHIVE
+      purpose: 废弃 / 失败 / 重跑节点区
+      nodes: []
+```
+
+用户没有明确要求“立即创建”时，应先等待用户确认 Blueprint。
+
+用户明确说“直接创建画布 / 自动创建画布 / 不用确认”时，可以在生成 Blueprint 后直接执行创建，但仍必须在最终回复里返回 Blueprint 摘要与节点索引表。
+
+---
+
+## 禁止事项
+
+禁止：
+
+- 禁止直接把所有节点散乱创建到画布
+- 禁止无命名节点
+- 禁止重复空节点
+- 禁止把所有 prompt 堆在一起
+- 禁止未经规划直接创建大量节点
+- 禁止把【实操注意】混入生图 Prompt 主体
+- 禁止创建只有标题没有内容的空节点
+- 禁止把失败节点和正式资产节点混在同一区域
+
+---
+
+## 默认执行流程
+
+```text
+1. 先拆解资产清单
+2. 再生成 Canvas Blueprint
+3. 再按 Blueprint 创建 LibTV 画布节点
+4. 创建完成后输出节点索引表
+5. 如果节点乱了，执行“按标准 Canvas Blueprint 重新整理当前画布”
+```
+
+---
+
+## 画布失败处理
+
+如果工作流没有放到画布：
+
+```text
+请确认是否把整个生成工作流创建在了画布上？如果没有，请重试创建整个工作流放在画布。
+```
+
+如果节点为空：
+
+```text
+你的节点是空的，重新创建工作流，要把结果也放到节点里。
+```
+
+如果节点散乱：
+
+```text
+按 story-asset-builder/rules/libtv_canvas_rules.md 的 Canvas Blueprint Rule 重新整理当前画布；不要重新生成图片，只重排、重命名、归档和补充 INDEX 节点。
+```
+
+如果无法调用 LibTV：
+
+```text
+只输出资产清单 + Prompt 文档 + Canvas Blueprint + LibTV 节点创建指令，提醒用户安装 / 授权 LibTV skill 或 CLI。
+```
+</code></pre></details><details id="file-17" class="skill-file" ><summary>rules/prompt_compiler.md</summary><p><a download href="rules/prompt_compiler.md">下载此文件</a></p><pre><code># Prompt 编译规则
+
+## 核心原则
+Prompt 不是一句话，而是一份可生产、可质检、可迭代的资产说明书。
+
+## 必须区分三层内容
+
+### A. Prompt 主体
+真正放入图片/视频模型的内容。
+
+### B. API / LibTV 参数建议
+放入节点设置或备注，不混入 prompt 主体。
+
+### C. 实操注意 / 跑歪兜底加强
+放入质检备注，不混入 prompt 主体。
+
+## Prompt 文档模板
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} {asset_name} {asset_type} v{version} ===
+
+【格式】
+- {aspect_ratio}
+- {layout}
+- {view_count}
+- {resolution_or_quality}
+
+【资产定位】
+{asset_role_and_story_function}
+
+---
+
+【prompt】
+```
+
+主体内部顺序：
+
+```text
+Opening format sentence
+Layout
+Panel / View details
+Subject
+Core identity
+Appearance / Costume / Equipment / Structure
+Color Palette
+Pose / Camera / View
+Critical consistency
+Lighting
+Style
+Quality
+Panel Labels if needed
+Constraints
+```
+
+结束：
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+...
+
+【实操注意】
+...
+
+【跑歪兜底加强】
+...
+```
+
+## 生成语言
+- Prompt 主体优先英文，便于模型理解复杂画面。
+- 标题、资产定位、实操注意可以中文。
+- 专有名词可中英混排。
+
+## 禁止事项
+- 禁止只输出“生成一个 XXX”的短提示词。
+- 禁止把“跑出来重点检查”放进 Prompt 主体。
+- 禁止忽略版本号。
+- 禁止把不同资产塞进同一个混乱节点。
+- 禁止遗漏 Constraints。
+</code></pre></details><details id="file-18" class="skill-file" ><summary>rules/qa_loop.md</summary><p><a download href="rules/qa_loop.md">下载此文件</a></p><pre><code># 质检与重跑规则
+
+## 质检目的
+不要只看图好不好看，要看关键设定是否符合。
+
+## 每个资产必须有 QA Checklist
+
+```text
+【实操注意】
+1. 跑出来重点检查：
+   - 核心识别点
+   - 版式比例
+   - 角色 / 物种 / 道具准确性
+   - 材质和色彩
+   - 灯光和风格
+   - 标签文字准确性
+2. 跑歪兜底加强：
+   - 如果 X 错了，追加 Y
+   - 如果 Y 漏了，追加 Z
+3. 版本迭代建议：
+   - v2 修哪个点
+   - v3 固定哪个参考图
+```
+
+## 重跑方式
+不要整段重写 Prompt。按失败点追加补丁：
+
+```text
+原 Prompt + failure-specific reinforcement sentence
+```
+
+示例：
+
+```text
+问题：机械兽跑成生物包机械甲
+追加：fully mechanical construction, all bronze panel armor surface in place of fur, NO biological tissue, NO real fur, NO real skin
+```
+
+## 版本规则
+
+```text
+v1：首版
+v2：修正主要跑偏点
+v3：锁定参考图后稳定版
+vFinal：用户确认版
+```
+</code></pre></details><details id="file-19" class="skill-file" ><summary>templates/character_sheet.md</summary><p><a download href="templates/character_sheet.md">下载此文件</a></p><pre><code># Template: Character Sheet / 人物设定图
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} {character_name} 默认形态四视图人设图 v{version} ===
+
+【格式】
+- 9:16 竖版 + 最高分辨率
+- 4宫格不等大：上小下大
+- 左上正脸特写 + 右上侧脸特写 + 左下脖子以下全身无脸 + 右下背面全身含后脑勺
+- 背景、光线、色调继承当前 Project Profile
+
+【角色定位】
+{character_role}
+{story_function}
+{hierarchy_or_power_level}
+{relationship_to_other_assets}
+
+---
+
+【prompt】
+```
+
+A character design reference sheet. **Vertical 9:16 aspect ratio. Maximum resolution output.** {studio_backdrop}. {lighting_rule}. Same visual DNA as the project profile: {visual_dna}.
+
+【Layout】
+**2x2 grid with unequal panel heights**:
+- Top row: two smaller panels, each approximately 1/3 of total canvas height — head/face close-ups
+- Bottom row: two larger panels, each approximately 2/3 of total canvas height — full body shots
+- Thin neutral dividing lines between all four panels
+- All four panels share the same backdrop, same lighting setup, same color palette
+
+【4 Panels】
+**Top-left panel — FRONT FACE CLOSE-UP**:
+Tight close-up of {character_name}&#x27;s face, framed from collarbone-line up to top of head. Subject facing camera directly. Face fully visible. Preserve: {face_key_features}.
+
+**Top-right panel — SIDE FACE CLOSE-UP (PROFILE)**:
+Tight side profile close-up, framed from collarbone-line up to top of head. Subject facing camera-right. Profile silhouette clearly visible. Preserve: {side_profile_key_features}.
+
+**Bottom-left panel — FULL BODY FROM NECK DOWN, FRONT VIEW (NO FACE)**:
+Full body shot from collarbone-line down to feet, facing camera directly. The face/head is intentionally cropped out at the top of this panel. Focus on body proportions, costume, equipment, weapons and material details. Zero face involvement.
+
+**Bottom-right panel — FULL BODY BACK VIEW (INCLUDING BACK OF HEAD)**:
+Full body shot from head to feet, facing directly away from camera. Includes back of head, hairstyle/back headwear, back-mounted equipment and rear costume details.
+
+【Subject — same character across all 4 panels】
+{character_summary}
+
+【Character Core】
+{age_range}, {body_type}, {temperament}, {role_logic}. NOT {body_negative_list}.
+
+【Face / Ethnicity / Age / Texture】
+{face_and_identity_details}
+
+【Hair / Makeup / Skin】
+{hair_makeup_skin_details}
+
+【Costume】
+{costume_details}
+
+【Equipment / Weapons / Props】
+{equipment_details}
+
+【Color Palette】
+{color_palette}
+
+【Pose - same across all 4 panels】
+{pose_rule}
+
+【Critical consistency】
+SAME individual character in all 4 panels: identical face structure, hairstyle, costume, equipment, colors, body proportions, material aging, and lighting direction.
+
+【Lighting - critical】
+{lighting_detail}
+
+【Style】
+Hyperrealistic photographic character design rendering—shot like a high-end practical costume photographed in a film production studio for a cinematic lookbook reference board. NOT illustration, NOT obvious 3D CGI render. {style_references}
+
+【Quality】
+Maximum resolution output. Clean detail definition. Real physical costume cinematic photography aesthetic. {quality_details}
+
+【Panel Labels】
+Small clean monospace sans-serif black text below each panel:
+- Top-left: &quot;FRONT FACE&quot;
+- Top-right: &quot;SIDE FACE&quot;
+- Bottom-left: &quot;BODY FRONT (NO FACE)&quot;
+- Bottom-right: &quot;BACK&quot;
+Title at top center of canvas: &quot;{english_title} — DEFAULT FORM CHARACTER SHEET&quot;
+
+【Constraints】
+{constraints}
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+aspect_ratio: 9:16
+node_group: 01_Character_Assets
+model: image reference sheet model available in LibTV
+reference_images: {reference_images}
+
+【实操注意】
+1. 跑出来重点检查：
+   - 角色是否同一个人
+   - 左下 panel 是否严格无脸
+   - 服装 / 装备 / 体型 / 年龄是否正确
+   - 风格是否符合 Project Profile
+   - Title + 4 labels 是否准确
+2. 跑歪兜底加强：
+   - {rerun_fix_1}
+   - {rerun_fix_2}
+   - {rerun_fix_3}
+```
+</code></pre></details><details id="file-20" class="skill-file" ><summary>templates/color_palette.md</summary><p><a download href="templates/color_palette.md">下载此文件</a></p><pre><code># Template: Color / Material DNA Sheet
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} 色卡与材质DNA v{version} ===
+
+【格式】
+- 16:9 横版
+- 扁平设计图，不要摄影元素
+- 用于项目视觉统一，不是剧情图
+
+【用途】
+为整个项目统一色彩、材质、灯光和关键词。
+
+---
+
+【prompt】
+```
+
+A clean digital color palette and material DNA reference design, 16:9 horizontal layout, pure flat design aesthetic with no photographic elements. Solid neutral background. Precise production design bible reference sheet.
+
+【Title】
+{palette_title}
+
+【Color Swatches】
+Create {color_count} clean rectangular swatches, evenly aligned, each with:
+- color name
+- hex code
+- function label
+
+【Colors】
+{color_list}
+
+【Material DNA】
+{material_dna_list}
+
+【Lighting DNA】
+{lighting_dna_list}
+
+【Typography】
+Clean sans-serif typography, minimal, professional, readable.
+
+【Overall Design】
+Flat vector-style production design documentation. No depth, no lighting, no paper texture, no shadow, no mockup, no 3D.
+
+【Constraints】
+Avoid: photographic rendering, texture, depth of field, lens blur, film grain, table surface, shadows, glossy finish, hand-painted look, illustration, watercolor, 3D render.
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+aspect_ratio: 16:9
+node_group: 06_Color_And_Material_DNA
+
+【实操注意】
+1. 跑出来重点检查：
+   - 色块是否清楚
+   - 是否有 hex / function label
+   - 是否无摄影质感
+   - 是否可作为项目视觉规范
+```
+</code></pre></details><details id="file-21" class="skill-file" ><summary>templates/creature_sheet.md</summary><p><a download href="templates/creature_sheet.md">下载此文件</a></p><pre><code># Template: Creature Sheet / 怪兽、生物、机械兽设定图
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} {creature_name} 多视图设定图 v{version} ===
+
+【格式】
+- 16:9 横版 + 最高分辨率
+- 4格均等 2x2：SIDE + FRONT + TOP + 3/4 VIEW
+- 背景、光线、材质继承当前 Project Profile
+
+【兽 / 怪兽设定】
+{creature_role}
+{species_or_construction}
+{tactical_function}
+{signature_visual_memory_point}
+{scale_rule}
+{world_dna}
+
+---
+
+【prompt】
+```
+
+A creature design reference sheet. **Horizontal 16:9 aspect ratio. Maximum resolution output.** {studio_backdrop}. {lighting_rule}. Same studio environment and visual DNA as {project_name}.
+
+【Layout】
+**2x2 equal grid**:
+- Top-left: SIDE VIEW
+- Top-right: FRONT VIEW
+- Bottom-left: TOP-DOWN VIEW
+- Bottom-right: 3/4 PERSPECTIVE VIEW
+Thin neutral dividing lines between all four panels. Creature centered in each panel with even space margin.
+
+【Subject — same creature across all 4 panels】
+{creature_summary}
+
+【Species / Anatomy / Construction — CRITICAL】
+{species_anatomy_or_mechanical_structure}
+
+【Scale】
+{scale_details}
+
+【Surface / Material】
+{surface_material_details}
+
+【Signature Visual Memory Point — MOST CRITICAL】
+{signature_details}
+
+【Eyes / Mouth / Limbs / Body Parts】
+{body_part_details}
+
+【Functional Story Elements】
+{functional_elements}
+
+【Decorations / Damage / Weathering】
+{decoration_weathering}
+
+【4 Panels detail】
+**Top-left panel — SIDE VIEW**: {side_view_detail}
+**Top-right panel — FRONT VIEW**: {front_view_detail}
+**Bottom-left panel — TOP-DOWN VIEW**: {top_view_detail}
+**Bottom-right panel — 3/4 PERSPECTIVE VIEW**: {three_quarter_detail}
+
+【Critical consistency】
+SAME individual creature in all 4 panels—identical proportions, signature feature, materials, markings, damage pattern, and lighting setup.
+
+【Lighting - critical】
+{lighting_detail}
+
+【Style】
+Hyperrealistic photographic creature design rendering—shot like a high-end practical animatronic creature or VFX production reference board. NOT illustration, NOT obvious 3D CGI render. {style_references}
+
+【Quality】
+Maximum resolution output. Sharp clean details. Every structural seam, texture, surface mark and functional part clearly defined.
+
+【Panel Labels】
+Small clean monospace sans-serif black text below each panel:
+- Top-left: &quot;SIDE&quot;
+- Top-right: &quot;FRONT&quot;
+- Bottom-left: &quot;TOP&quot;
+- Bottom-right: &quot;3/4 VIEW&quot;
+Title at top center: &quot;{english_title} — DESIGN SHEET&quot;
+
+【Constraints】
+{constraints}
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+aspect_ratio: 16:9
+node_group: 02_Creature_Assets
+model: image reference sheet model available in LibTV
+reference_images: {reference_images}
+
+【实操注意】
+1. 跑出来重点检查：
+   - 核心物种 / 怪兽识别点是否明显
+   - 体型比例是否正确
+   - 是否四视图一致
+   - 是否符合项目材质 DNA
+   - 文字标签是否准确
+2. 跑歪兜底加强：
+   - {rerun_fix_1}
+   - {rerun_fix_2}
+   - {rerun_fix_3}
+```
+</code></pre></details><details id="file-22" class="skill-file" ><summary>templates/environment_sheet.md</summary><p><a download href="templates/environment_sheet.md">下载此文件</a></p><pre><code># Template: Environment Sheet / 场景环境设定图
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} {environment_name} 场景设定图 v{version} ===
+
+【格式】
+- 默认 16:9 横版 + 最高分辨率
+- 可选：单张主视觉 / 3视图空间设定 / 九宫格环境情绪板
+
+【场景定位】
+{environment_story_function}
+{time_of_day}
+{mood}
+{key_story_action}
+{visual_memory_point}
+
+---
+
+【prompt】
+```
+
+A professional cinematic environment concept reference image. **Horizontal 16:9 aspect ratio. Maximum resolution output.** {environment_type}. {lighting_rule}. Same visual DNA as {project_name}: {visual_dna}.
+
+【Scene】
+{scene_summary}
+
+【Spatial Layout】
+{spatial_layout}
+
+【Architecture / Set Design】
+{architecture_set_design}
+
+【Key Props / Story Elements】
+{key_props_story_elements}
+
+【Atmosphere】
+{atmosphere}
+
+【Color Palette】
+{color_palette}
+
+【Camera / Composition】
+{camera_composition}
+
+【Lighting - critical】
+{lighting_detail}
+
+【Style】
+Photorealistic cinematic film still / production design environment reference. Natural lens behavior, realistic scale, believable set dressing. {style_references}
+
+【Quality】
+Maximum resolution. Architectural details, environmental textures, props and atmosphere are clear but natural. Not over-sharpened.
+
+【Constraints】
+{constraints}
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+aspect_ratio: 16:9
+node_group: 05_Environment_Assets
+reference_images: {reference_images}
+
+【实操注意】
+1. 跑出来重点检查：
+   - 空间结构是否清楚
+   - 关键剧情区域是否可用
+   - 风格和色彩是否继承 Profile
+   - 是否可作为后续镜头背景资产
+2. 跑歪兜底加强：
+   - {rerun_fix_1}
+   - {rerun_fix_2}
+```
+</code></pre></details><details id="file-23" class="skill-file" ><summary>templates/prop_sheet.md</summary><p><a download href="templates/prop_sheet.md">下载此文件</a></p><pre><code># Template: Prop Sheet / 道具、武器、设备设定图
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} {prop_name} 道具设定图 v{version} ===
+
+【格式】
+- 默认 16:9 横版 + 最高分辨率
+- 4格或 3格多视图：FRONT / SIDE / BACK / DETAIL
+- 背景、材质、灯光继承当前 Project Profile
+
+【道具定位】
+{prop_story_function}
+{owner_or_related_character}
+{usage_scene}
+{signature_feature}
+
+---
+
+【prompt】
+```
+
+A professional prop design reference sheet. **Horizontal 16:9 aspect ratio. Maximum resolution output.** {studio_backdrop}. {lighting_rule}. Clean production design board layout.
+
+【Layout】
+{layout_detail}
+
+【Subject — same prop across all views】
+{prop_summary}
+
+【Form / Structure】
+{form_structure}
+
+【Materials】
+{material_details}
+
+【Functional Parts】
+{functional_parts}
+
+【Scale / Handling】
+{scale_handling}
+
+【Wear / Damage / History】
+{weathering_history}
+
+【Color Palette】
+{color_palette}
+
+【View Details】
+{view_details}
+
+【Critical consistency】
+Same prop across every view: identical silhouette, structure, material, color and wear pattern.
+
+【Lighting】
+{lighting_detail}
+
+【Style】
+Hyperrealistic prop photography / film production design reference sheet. NOT illustration, NOT toy-like, NOT generic 3D render. {style_references}
+
+【Quality】
+Maximum detail. Every seam, screw, scratch, fabric edge, symbol, functional part clearly defined.
+
+【Panel Labels】
+{panel_labels}
+
+【Constraints】
+{constraints}
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+aspect_ratio: 16:9
+node_group: 03_Prop_Assets
+reference_images: {reference_images}
+
+【实操注意】
+1. 跑出来重点检查：
+   - 轮廓是否可识别
+   - 功能结构是否清楚
+   - 材质是否符合项目
+   - 是否像真实可用道具，而不是装饰玩具
+2. 跑歪兜底加强：
+   - {rerun_fix_1}
+   - {rerun_fix_2}
+```
+</code></pre></details><details id="file-24" class="skill-file" ><summary>templates/storyboard_grid.md</summary><p><a download href="templates/storyboard_grid.md">下载此文件</a></p><pre><code># Template: Storyboard Grid / 九宫格分镜
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} 九宫格分镜 v{version} ===
+
+【格式】
+- 3x3 nine-panel grid image
+- 九个独立电影画面，细黑边分隔
+- 所有画面属于同一场戏 / 同一段落 / 同一视觉风格
+
+【分镜定位】
+{storyboard_function}
+{sequence_summary}
+{continuity_rule}
+
+---
+
+【prompt】
+```
+
+Generate a single 3x3 nine-panel grid image, nine separate cinematic frames arranged in a 3-row, 3-column grid, each panel divided by thin black borders, like a film contact sheet / storyboard sheet.
+
+All nine panels depict {sequence_continuity}. Keep the same visual DNA: {visual_dna}. Same color palette, same lighting logic, same atmosphere, same character and environment continuity across all panels.
+
+【Panel List】
+Panel 1 (top-left): {panel_1}
+Panel 2 (top-center): {panel_2}
+Panel 3 (top-right): {panel_3}
+Panel 4 (middle-left): {panel_4}
+Panel 5 (middle-center): {panel_5}
+Panel 6 (middle-right): {panel_6}
+Panel 7 (bottom-left): {panel_7}
+Panel 8 (bottom-center): {panel_8}
+Panel 9 (bottom-right): {panel_9}
+
+【Preserve】
+{preserve_rules}
+
+【Constraints】
+{constraints}
+
+【Photographic Tone】
+Each panel is a cinematic film still that may appear slightly soft and imperfect, like a real photograph. Natural lens depth of field, realistic light falloff, subtle organic film grain, restrained color grading, not HDR, not over-sharpened.
+
+Avoid: oversharpening, artificial sharpness, heavy digital grain, HDR effect, AI-generated aesthetic, overpolished look, oversaturation, glossy highlight blowout, cartoon or obvious CGI look, inconsistent characters, inconsistent environment.
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+aspect_ratio: 16:9 or 3:4 according to platform
+node_group: 07_Storyboard_And_Keyframes
+reference_images: {reference_images}
+
+【实操注意】
+1. 跑出来重点检查：
+   - 九格是否完整
+   - 是否同一场戏连续
+   - 角色 / 场景 / 光线是否一致
+   - 每格是否有明确镜头差异
+2. 跑歪兜底加强：
+   - {rerun_fix_1}
+   - {rerun_fix_2}
+```
+</code></pre></details><details id="file-25" class="skill-file" ><summary>templates/vehicle_sheet.md</summary><p><a download href="templates/vehicle_sheet.md">下载此文件</a></p><pre><code># Template: Vehicle Sheet / 载具设定图
+
+```text
+=== GPT-Image Prompt - {project_name} {episode_or_scene} {vehicle_name} 载具设定图 v{version} ===
+
+【格式】
+- 16:9 横版 + 最高分辨率
+- 多视图设计板：SIDE / FRONT / TOP / 3/4 VIEW，可增加驾驶舱 / 轮组 / 引擎细节
+
+【载具定位】
+{vehicle_story_function}
+{driver_or_owner}
+{movement_logic}
+{signature_visual_memory_point}
+
+---
+
+【prompt】
+```
+
+A professional vehicle design reference sheet. **Horizontal 16:9 aspect ratio. Maximum resolution output.** {studio_backdrop}. {lighting_rule}. Official film production design board.
+
+【Layout】
+{layout_detail}
+
+【Subject — same vehicle across all views】
+{vehicle_summary}
+
+【Silhouette / Scale】
+{silhouette_scale}
+
+【Mechanical / Movement System】
+{mechanical_system}
+
+【Cockpit / Driver Interface】
+{cockpit_details}
+
+【Materials / Surface】
+{material_details}
+
+【Damage / Weathering / Customization】
+{weathering}
+
+【View Details】
+{view_details}
+
+【Critical consistency】
+Same vehicle across all panels—identical silhouette, components, material, decals, damage and scale.
+
+【Lighting】
+{lighting_detail}
+
+【Style】
+Hyperrealistic film vehicle production design reference, practical build / VFX vendor sheet aesthetic. NOT illustration, NOT cartoon, NOT clean toy render.
+
+【Quality】
+Maximum mechanical detail. Every panel seam, bolt, suspension part, cockpit detail and surface scratch visible.
+
+【Constraints】
+{constraints}
+
+```text
+=== END ===
+
+【API / LibTV 参数建议】
+aspect_ratio: 16:9
+node_group: 04_Vehicle_Assets
+reference_images: {reference_images}
+
+【实操注意】
+1. 跑出来重点检查：
+   - 载具轮廓是否稳定
+   - 驾驶逻辑是否清楚
+   - 尺寸比例是否正确
+   - 和项目材质 DNA 是否统一
+2. 跑歪兜底加强：
+   - {rerun_fix_1}
+   - {rerun_fix_2}
+```
+</code></pre></details><details id="file-26" class="skill-file" ><summary>templates/video_prompt.md</summary><p><a download href="templates/video_prompt.md">下载此文件</a></p><pre><code># Template: Video Prompt / 视频生成提示词
+
+```text
+=== Video Prompt - {project_name} {episode_or_scene} {segment_name} v{version} ===
+
+【视频定位】
+{segment_function}
+{duration}
+{platform}
+{reference_assets}
+
+---
+
+[STYLE LOCK]
+{style_lock}
+
+[SCENE]
+{scene_description}
+
+[CHARACTER LOCK]
+{character_lock}
+
+[CAMERA]
+{camera_language}
+
+[ACTION TIMELINE]
+0s-{time_1}: {action_1}
+{time_1}-{time_2}: {action_2}
+{time_2}-{time_3}: {action_3}
+{time_3}-{duration}: {action_4}
+
+[EMOTION / PERFORMANCE]
+{emotion_performance}
+
+[LIGHTING]
+{lighting}
+
+[SOUND / MUSIC]
+{sound_music}
+
+[CONTINUITY]
+{continuity_rules}
+
+[NEGATIVE / AVOID]
+{negative_rules}
+
+【LibTV 参数建议】
+model: Seedance 2.0 default unless user requests Kling O3/3.0
+aspect_ratio: {aspect_ratio}
+duration: {duration}
+reference_images: {reference_images}
+reference_video: {reference_video}
+node_group: 08_Video_Segments
+
+【实操注意】
+1. 嘴型 / 动作 / 镜头 / 角色一致性重点检查
+2. 如果角色漂移，先锁参考图，再重跑
+3. 如果视频没放到画布，要求：重试创建整个工作流放在画布
+```
+</code></pre></details><h2>实际文字试用</h2><p>离线资产表及角色、场景、道具Prompt完成；未创建画布。</p><pre><code>《归来》的资产准备以同一处雨夜老屋为中心：门边煤油灯同时照见母子，旧帆布包承担“带着行李回来—放下行李”的动作线。以下为离线方案；年龄、细部外形与空间尺寸是本版创作设定，供后续统一使用。
+
+临时 Project Profile：30秒写实短片；真实皮肤、旧棉布、湿木与粗墙；室外冷雨、门边煤油灯暖光，克制低饱和调色。年代与具体地区未指定，不加入对应标识。资产图以清楚辨识为先，人物参考用柔和中性光，场景图保留雨夜光源逻辑。
+
+### 资产清单
+
+```yaml
+project_name: 归来
+delivery_mode: offline_text
+assets:
+  - asset_id: CHR_001
+    asset_name: 成年儿子
+    asset_type: character
+    asset_role: 返家者；穿灰夹克，背旧帆布包，随后放下布包
+    priority: P0
+    template: templates/character_sheet.md
+    libtv_node_group: 01_Character_Assets
+    required_views: [FRONT_FACE, SIDE_FACE, BODY_FRONT_NO_FACE, BACK]
+    aspect_ratio: &quot;9:16&quot;
+    prompt_status: 本次提供v1
+    qa_risk: [身份漂移, 灰夹克改变, 包带与肩部接触错误]
+  - asset_id: CHR_002
+    asset_name: 母亲
+    asset_type: character
+    asset_role: 门内等候并与儿子相认；穿靛蓝棉衫
+    priority: P0
+    template: templates/character_sheet.md
+    libtv_node_group: 01_Character_Assets
+    required_views: [FRONT_FACE, SIDE_FACE, BODY_FRONT_NO_FACE, BACK]
+    aspect_ratio: &quot;9:16&quot;
+    prompt_status: 已拆解；本次人物Prompt选取CHR_001
+    qa_risk: [年龄感漂移, 靛蓝变鲜蓝, 皮肤过度磨平]
+  - asset_id: ENV_001
+    asset_name: 老屋门口与木桌所在堂屋
+    asset_type: environment
+    asset_role: 从雨夜门槛到落座的同一连续空间
+    priority: P0
+    template: templates/environment_sheet.md
+    libtv_node_group: 05_Environment_Assets
+    required_views: [室内朝门口的主空间广角]
+    aspect_ratio: &quot;16:9&quot;
+    prompt_status: 本次提供v1
+    qa_risk: [门桌位置改变, 座位被遮挡, 灯光照射范围失真]
+  - asset_id: PRP_001
+    asset_name: 旧帆布包
+    asset_type: prop
+    asset_role: 儿子随身行李；由肩上转移到木桌旁地面
+    priority: P1
+    template: templates/prop_sheet.md
+    libtv_node_group: 03_Prop_Assets
+    required_views: [FRONT, SIDE, BACK, STRAP_DETAIL]
+    aspect_ratio: &quot;16:9&quot;
+    prompt_status: 本次提供v1
+    qa_risk: [包带断开, 尺寸漂移, 放下后形变不符合布料重量]
+  - asset_id: PRP_002
+    asset_name: 门边煤油灯
+    asset_type: prop
+    asset_role: 相认时的可见暖光源
+    priority: P1
+    template: templates/prop_sheet.md
+    libtv_node_group: 03_Prop_Assets
+    required_views: [FRONT, SIDE, WICK_DETAIL]
+    aspect_ratio: &quot;16:9&quot;
+    prompt_status: 已拆解
+    qa_risk: [变成电灯, 灯焰漂浮, 灯位变化造成光向矛盾]
+  - asset_id: PRP_003
+    asset_name: 旧木桌
+    asset_type: prop
+    asset_role: 两人最终静坐的空间中心
+    priority: P1
+    template: templates/prop_sheet.md
+    libtv_node_group: 03_Prop_Assets
+    required_views: [THREE_QUARTER, TOP, LEG_DETAIL]
+    aspect_ratio: &quot;16:9&quot;
+    prompt_status: 已拆解
+    qa_risk: [桌腿数量错误, 比例改变, 桌面阻碍人物落座]
+  - asset_id: PRP_004
+    asset_name: 两把木椅
+    asset_type: prop
+    asset_role: 木桌两侧的固定座位
+    priority: P1
+    template: templates/prop_sheet.md
+    libtv_node_group: 03_Prop_Assets
+    required_views: [FRONT, SIDE, BACK]
+    aspect_ratio: &quot;16:9&quot;
+    prompt_status: 已拆解
+    qa_risk: [数量改变, 椅背结构漂移, 角色与椅面接触错误]
+  - asset_id: DNA_001
+    asset_name: 冷雨与煤油灯材质色彩规则
+    asset_type: color_material_dna
+    asset_role: 统一灰夹克、靛蓝棉衫、卡其帆布、旧木和冷暖光关系
+    priority: P2
+    template: templates/color_palette.md
+    libtv_node_group: 06_Color_And_Material_DNA
+    required_views: [色彩与材质文字规范]
+    aspect_ratio: &quot;16:9&quot;
+    prompt_status: 本次以Project_Profile文字提供
+    qa_risk: [暖光过度染黄, 雨夜全黑, 材质变塑料]
+```
+
+资产基准：儿子约32岁，短黑发、偏瘦，灰色棉布夹克内穿米灰衬衣，深色长裤；母亲约60岁，低髻、自然细纹，靛蓝棉衫和深色长裤。帆布包为褪色卡其色，约40×28×12厘米，一条连续宽肩带，正面翻盖与两个金属扣。煤油灯为小型圆金属油壶、透明玻璃罩和可见灯芯，放在门框内侧固定木搁板上。木桌约110×65厘米，两把木椅分列长边两侧。
+
+连续状态：儿子到门口时包带搭左肩、包身落在左腰；进屋后先扶住包带并脱离肩部，再把包放到靠自己座位的桌腿外侧。包身接触地面后才松手，肩带随重力落到包侧。母亲始终穿同一件靛蓝棉衫；煤油灯始终在门边搁板，雨水集中在门外和儿子衣物的受淋部位。
+
+### 角色 Prompt｜CHR_001 成年儿子
+
+=== GPT-Image Prompt - 归来 成年儿子 默认形态四视图人设图 v1 ===
+
+【格式】
+
+- 9:16竖版，四宫格，上排占总高约1/3、下排约2/3。
+- 左上正脸、右上侧脸；左下锁骨以下正面全身、右下含后脑勺的背面全身。
+- 柔灰中性背景，柔和参考照明；输出尺寸选择模型支持的最高可用分辨率。
+
+【资产定位】
+
+返家者的身份与服装参考，供后续门口相认、脱下背包和落座使用。图中帆布包采用PRP_001的同一结构与尺寸。
+
+【prompt】
+
+```text
+Create a photorealistic film-production character reference sheet for the adult son in the short film “Homecoming”. Vertical 9:16 composition, highest supported resolution, neutral soft-grey backdrop and consistent soft studio illumination.
+
+Layout: a 2x2 grid with thin neutral dividers. The top row occupies one third of the sheet height; the bottom row occupies two thirds. Top left: direct front facial close-up from collarbone to the top of the head. Top right: close-up profile facing camera-right. Bottom left: front body view from the collarbone down to the feet, with the head intentionally outside this panel. Bottom right: complete rear view including the back of the head and both feet.
+
+Subject: the same 32-year-old Chinese man in every panel, lean but healthy build, slightly long face, level dark eyebrows, narrow attentive dark eyes, straight medium nose, naturally closed lips, short black hair with a plain side part. Natural pores, mild sun exposure and subtle under-eye texture; restrained, tired but attentive expression. He is clearly an adult.
+
+Costume: a faded medium-grey cotton jacket with a simple collar, front zipper and two low pockets; muted cream-grey shirt underneath; dark charcoal straight trousers and worn dark canvas shoes. Fabric has credible seam thickness, softened creases and slight dampness at the outer shoulders and cuffs.
+
+Equipment: one faded khaki canvas shoulder bag, approximately 40 cm wide, 28 cm high and 12 cm deep, rectangular soft body, one continuous broad shoulder strap and a front flap secured by two dull metal buckles. The strap rests on his left shoulder and the bag hangs at his left hip. Rear views show the same strap crossing and attachment points; frontal views keep the same bag shape and wear pattern.
+
+Pose: relaxed upright stance, arms naturally lowered, weight balanced, no performance gesture. The four views portray the same individual with identical face, hair, body proportions, clothing construction, wet areas and bag design. Use the visual palette of grey cotton, cream-grey shirt, charcoal trousers and faded khaki canvas.
+
+Style and quality: realistic cinematic costume photography, natural skin and fabric, readable construction, restrained grading and precise but unsharpened detail. Place small labels below the panels: FRONT FACE, SIDE FACE, BODY FRONT (NO FACE), BACK. Title: HOMECOMING — SON CHARACTER SHEET.
+
+Constraints: one character identity across four reference views; preserve adult age, jacket colour, left-shoulder carrying arrangement and functional strap connections. No additional people, extra bags, decorative uniforms or changed outfits.
+```
+
+=== END ===
+
+【API / LibTV 参数建议】
+
+aspect_ratio: 9:16；model: 支持人物参考图的可用图片模型；reference_images: 本轮无已确认参考图；node_group: 01_Character_Assets。本轮仅提供文本。
+
+【实操注意】
+
+核对四格是同一人、左下严格从锁骨裁切、右下头脚完整；检查灰夹克和左肩包带在各视角的结构连接。中性参考光用于辨识身份，进入雨夜场景后再继承ENV_001的光线。
+
+【跑歪兜底加强】
+
+只对发生偏差的项目补充：“All four panels show one identical adult man; the bag strap rests on the left shoulder and connects physically to both sides of the same khaki bag.” 若仅脸部漂移，先以选定正脸参考重做其他视角。
+
+### 场景 Prompt｜ENV_001 雨夜老屋堂屋
+
+=== GPT-Image Prompt - 归来 雨夜老屋 场景设定图 v1 ===
+
+【格式】
+
+- 16:9横版，单张主空间参考图。
+- 室内眼平广角视点，同时看清门口、灯位、通道、木桌和两把木椅。
+- 选择模型支持的最高可用分辨率。
+
+【资产定位】
+
+建立雨夜门口相认到两人落座的连续空间。场景本身不放置角色，也不提前把儿子的帆布包放进屋内。
+
+【prompt】
+
+```text
+Create a photorealistic cinematic production-design reference image of a modest old Chinese house interior on a rainy night for the short film “Homecoming”. Horizontal 16:9, one coherent eye-level wide view, highest supported resolution.
+
+Scene and spatial layout: view from the rear-right interior corner toward the front doorway. The open wooden doorway occupies the left-middle of the image. Beyond it, a short covered threshold leads to a dark rain-soaked courtyard. A plain rectangular wooden table, approximately 110 by 65 cm, stands in the middle-right interior, its long axis extending from the doorway toward the back wall. Two simple wooden chairs stand on opposite long sides. Keep a clear walking route from the threshold to both chairs, with sufficient room beside the nearer chair for a soft travel bag to be set down later.
+
+Architecture: aged timber doorframe, dull lime-plaster walls with modest repairs, solid wooden roof beams, dark worn floor with a wet patch confined to the threshold. Surfaces have credible grain, use and material thickness. The house is maintained and inhabited rather than ruined.
+
+Key objects: one small working kerosene lamp rests on a fixed wooden shelf immediately inside the doorway. It has a round dark metal fuel reservoir, transparent glass chimney and a small visible wick flame. The wooden table and the two chairs are the only prominent furniture. Keep the table surface clear.
+
+Lighting: the kerosene lamp is the visible warm key source, illuminating the inner jamb, the threshold and the nearby space where two people can face each other. Its amber illumination falls off naturally toward the table; the faces of seated people could remain readable through weak warm bounce from the pale wall. Cool diffuse exterior night light enters through the doorway and reflects softly on wet wood. Maintain a dark but readable room, without a strong unexplained overhead light.
+
+Atmosphere and palette: rain is visible outside the doorway, with fine splashes at the outer threshold and restrained humid haze. Muted indigo-grey exterior, neutral plaster, brown wood and small amber highlights. Use realistic perspective, natural lens depth, restrained colour grading and unsharpened material detail.
+
+Constraints: one consistent house layout, one doorway, one kerosene lamp, one rectangular table and exactly two chairs. The lamp shelf, doorway and table retain fixed positions. Keep the path and seating areas usable. No people, travel bags, electrical lamps, decorative fantasy architecture or text in the image.
+```
+
+=== END ===
+
+【API / LibTV 参数建议】
+
+aspect_ratio: 16:9；model: 可用写实场景图片模型；reference_images: 本轮无已确认参考图；node_group: 05_Environment_Assets。本轮仅提供文本。
+
+【实操注意】
+
+检查门口到木桌的行走路线是否畅通，两椅是否可坐、包的落点是否有空间；煤油灯须靠近门口相认区。落座区以衰减后的暖光及墙面反射保持可读，不把全屋照成均匀棚光。
+
+【跑歪兜底加强】
+
+若空间拥挤，只修通道：“Keep an unobstructed walking route from the open doorway to both chairs, with a free floor area beside the near chair.” 若灯光失真，只修光源：“Use the doorway kerosene lamp as the visible warm source, with natural falloff and weak wall bounce.”
+
+### 道具 Prompt｜PRP_001 旧帆布包
+
+=== GPT-Image Prompt - 归来 旧帆布包 道具设定图 v1 ===
+
+【格式】
+
+- 16:9横版，四格FRONT / SIDE / BACK / STRAP DETAIL。
+- 中性浅灰背景，统一柔光；尺寸选择模型支持的最高可用分辨率。
+
+【资产定位】
+
+儿子随身的旧行李，连接返家与落座两个动作。必须有真实可承重的肩带，放到地面后可自然塌落。
+
+【prompt】
+
+```text
+Create a professional photorealistic film prop reference sheet of one worn canvas shoulder bag for the short film “Homecoming”. Horizontal 16:9, highest supported resolution, four clear panels on the same light-grey studio backdrop with identical soft neutral lighting.
+
+Layout: equal panels labelled FRONT, SIDE, BACK and STRAP DETAIL. Show the same single prop across all four views, with complete silhouettes in the first three panels and a close detailed view of the shoulder-strap attachment in the fourth. No people or hands.
+
+Subject and structure: one rectangular soft-bodied travel bag, approximately 40 cm wide, 28 cm high and 12 cm deep. Faded khaki cotton canvas, a broad overlapping front flap, two short fastening tabs with dull dark-metal buckles, stitched side gussets and one continuous 4 cm-wide adjustable shoulder strap. Each end of the strap is securely sewn through reinforced canvas tabs at the upper left and right sides. The rear panel is plain apart from structural seams.
+
+Materials and wear: dense woven canvas with softened folds, fraying confined to the flap corners, a darker rubbed mark at the lower-right front corner and dull patina on the two buckles. Preserve the same seams, corner wear and rubbed mark wherever visible. The bag is old but intact and usable, with modest everyday contents giving it soft weight.
+
+Scale and handling: size appropriate for one adult to carry on a shoulder, hang beside the hip and lower to the floor with one hand controlling the strap. The flat fabric base can make stable contact with the floor; the soft upper body and strap can settle naturally under gravity. Keep the bag resting upright with a relaxed strap in the full views.
+
+Colour palette: faded khaki canvas, slightly darker khaki stitching, dark oxidized metal and neutral shadows. Style: realistic film-production prop photography, readable weave, functional construction, believable thickness and subdued reflections.
+
+Constraints: one identical bag design throughout; exactly one continuous broad shoulder strap and two front buckles; stable dimensions, seam positions, attachment points and wear pattern. Retain a soft canvas body, without logos, decorative symbols, rigid suitcase parts or extra handles.
+```
+
+=== END ===
+
+【API / LibTV 参数建议】
+
+aspect_ratio: 16:9；model: 支持多视图道具参考的可用图片模型；reference_images: 本轮无已确认参考图；node_group: 03_Prop_Assets。本轮仅提供文本。
+
+【实操注意】
+
+核对肩带数量、两端缝合位置和正面两扣，侧视图须体现12厘米厚度。后续放包动作先保证包底接触地面，再让手松开，最后让肩带落下；包不会由肩上直接跳到地面。
+
+【跑歪兜底加强】
+
+若肩带结构错误，只补：“Exactly one continuous 4 cm-wide shoulder strap, physically attached to reinforced tabs on the upper left and right sides; show both load-bearing connections clearly.” 若包体像硬箱，只补：“Soft woven canvas with natural compressible folds and a flexible flat fabric base.”
+
+</code></pre></main><footer>2026-10-17 修复与验证。原件、修复文件及测试边界分别记录。</footer></body></html>

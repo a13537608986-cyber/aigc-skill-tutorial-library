@@ -1,0 +1,909 @@
+{
+  "summary": {
+    "original_contract_cases": 16,
+    "edge_cases": 82,
+    "passed": 98,
+    "failed": 0,
+    "blocked": 0
+  },
+  "scope": "All 16 original contracts and 82 edge cases were freshly executed against the selected script paths. No cached case outcomes, global Skill install, generated media or external canvas.",
+  "cases": [
+    {
+      "name": "05_original_example_10",
+      "skill": "05",
+      "expected_success": true,
+      "observed_success": true,
+      "returncode": 0,
+      "status": "pass",
+      "args": []
+    },
+    {
+      "name": "05_count_override_1",
+      "skill": "05",
+      "expected_success": true,
+      "observed_success": true,
+      "returncode": 0,
+      "status": "pass",
+      "args": [
+        "--count",
+        "1"
+      ]
+    },
+    {
+      "name": "05_count_9_rejected",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": false,
+      "returncode": 1,
+      "status": "pass",
+      "args": []
+    },
+    {
+      "name": "05_wrong_aspect_rejected",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": false,
+      "returncode": 1,
+      "status": "pass",
+      "args": []
+    },
+    {
+      "name": "05_mixed_aspect_any",
+      "skill": "05",
+      "expected_success": true,
+      "observed_success": true,
+      "returncode": 0,
+      "status": "pass",
+      "args": [
+        "--aspect",
+        "any"
+      ]
+    },
+    {
+      "name": "05_under_50_words_rejected",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": false,
+      "returncode": 1,
+      "status": "pass",
+      "args": []
+    },
+    {
+      "name": "05_missing_raw_rejected",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": false,
+      "returncode": 1,
+      "status": "pass",
+      "args": []
+    },
+    {
+      "name": "05_wrong_version_rejected",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": false,
+      "returncode": 1,
+      "status": "pass",
+      "args": []
+    },
+    {
+      "name": "06_original_A_B_10",
+      "skill": "06",
+      "expected_success": true,
+      "observed_success": true,
+      "returncode": 0,
+      "status": "pass",
+      "args": []
+    },
+    {
+      "name": "06_count_9_rejected",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": false,
+      "returncode": 1,
+      "status": "pass",
+      "args": []
+    },
+    {
+      "name": "06_wrong_aspect_rejected",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": false,
+      "returncode": 1,
+      "status": "pass",
+      "args": []
+    },
+    {
+      "name": "06_wrong_version_rejected",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": false,
+      "returncode": 1,
+      "status": "pass",
+      "args": []
+    },
+    {
+      "name": "06_missing_raw_rejected",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": false,
+      "returncode": 1,
+      "status": "pass",
+      "args": []
+    },
+    {
+      "name": "06_missing_style_anchor_rejected",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": false,
+      "returncode": 1,
+      "status": "pass",
+      "args": []
+    },
+    {
+      "name": "06_forbidden_portrait_rejected",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": false,
+      "returncode": 1,
+      "status": "pass",
+      "args": []
+    },
+    {
+      "name": "06_explicit_user_overrides",
+      "skill": "06",
+      "expected_success": true,
+      "observed_success": true,
+      "returncode": 0,
+      "status": "pass",
+      "args": [
+        "--aspect",
+        "9:16",
+        "--version",
+        "7",
+        "--raw-mode",
+        "optional",
+        "--style-profile",
+        "basic"
+      ]
+    },
+    {
+      "name": "05_empty",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_whitespace",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_only_python",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_only_bash",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_unlabelled_fence",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_four_backticks",
+      "skill": "05",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_tilde_fence",
+      "skill": "05",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_longer_closer",
+      "skill": "05",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_short_closer",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_unclosed_text",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_ignore_python_then_valid",
+      "skill": "05",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_stray_prompt_outside",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_duplicate_ar",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_duplicate_same_v",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_duplicate_raw",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_ar_missing_value",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_half_ar_value",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_v_missing_value",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_attached_flag_value",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_raw_extra_value",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_unknown_parameter",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_template_square",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_template_angle",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_template_curly",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_foreign_prompt",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_empty_text_block",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_plain_original",
+      "skill": "05",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_plain_with_numbered_title",
+      "skill": "05",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_plain_chinese_paragraph",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_punctuation_padding",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_inclusive_word_boundary_49",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_inclusive_word_boundary_50",
+      "skill": "05",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_inclusive_word_boundary_80",
+      "skill": "05",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_inclusive_word_boundary_81",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_version_override",
+      "skill": "05",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_aspect_override",
+      "skill": "05",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_raw_optional",
+      "skill": "05",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_word_range_override",
+      "skill": "05",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_invalid_count_argument",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 2,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_invalid_range_arguments",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 2,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "05_invalid_aspect_argument",
+      "skill": "05",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 2,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_empty",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_whitespace",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_only_python",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_only_bash",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_unlabelled_fence",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_four_backticks",
+      "skill": "06",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_tilde_fence",
+      "skill": "06",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_longer_closer",
+      "skill": "06",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_short_closer",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_unclosed_text",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_ignore_python_then_valid",
+      "skill": "06",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_stray_prompt_outside",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_duplicate_ar",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_duplicate_same_v",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_duplicate_raw",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_ar_missing_value",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_half_ar_value",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_v_missing_value",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_attached_flag_value",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_raw_extra_value",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_unknown_parameter",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_template_square",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_template_angle",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_template_curly",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_foreign_prompt",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_empty_text_block",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_plain_original",
+      "skill": "06",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_plain_with_numbered_title",
+      "skill": "06",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_plain_chinese_paragraph",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_punctuation_padding",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_inclusive_word_boundary_49",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_inclusive_word_boundary_50",
+      "skill": "06",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_inclusive_word_boundary_80",
+      "skill": "06",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_inclusive_word_boundary_81",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 1,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_version_override",
+      "skill": "06",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_aspect_override",
+      "skill": "06",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_raw_optional",
+      "skill": "06",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_word_range_override",
+      "skill": "06",
+      "expected_success": true,
+      "observed_success": null,
+      "returncode": 0,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_invalid_count_argument",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 2,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_invalid_range_arguments",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 2,
+      "status": "pass",
+      "args": null
+    },
+    {
+      "name": "06_invalid_aspect_argument",
+      "skill": "06",
+      "expected_success": false,
+      "observed_success": null,
+      "returncode": 2,
+      "status": "pass",
+      "args": null
+    }
+  ]
+}

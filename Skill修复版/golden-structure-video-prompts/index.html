@@ -1,0 +1,529 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>15 SD2.5视频提示词优化 Skill｜修复版</title><style>
+:root{color-scheme:light;--ink:#182a27;--muted:#60716b;--line:#dce5df;--accent:#245e48;--paper:#fbfcf9}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}a{color:var(--accent);text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}header,main,footer{max-width:1080px;margin:auto;padding:28px 24px}header{padding-top:44px;padding-bottom:20px}h1{font-size:clamp(26px,4vw,40px);line-height:1.35;margin:.3em 0}h2,h3,h4,h5,h6{line-height:1.5;margin:1.5em 0 .5em}h2{font-size:26px}h3{font-size:22px}h4{font-size:19px}p{margin:.8em 0}.muted,.meta{color:var(--muted);font-size:14px}.meta{display:flex;flex-wrap:wrap;gap:8px 20px}.notice{background:#eef4ef;border:1px solid var(--line);border-radius:12px;padding:14px 18px}.warning{background:#fff7e7;border:1px solid #ead8a7;border-radius:8px;padding:10px 14px}.tools{display:flex;gap:12px;margin:22px 0}input,select{font:inherit;background:white;color:var(--ink);border:1px solid #bccdc2;border-radius:9px;padding:11px 13px}input{flex:1;min-width:0}select{max-width:200px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:16px}.card{background:white;border:1px solid var(--line);border-radius:13px;padding:20px}.card h2{font-size:20px;margin:8px 0}.card p{font-size:14px;color:var(--muted);margin:8px 0}.tag{font-size:12px;color:var(--accent);background:#edf4ec;padding:3px 8px;border-radius:20px}.cardlinks{display:flex;flex-wrap:wrap;gap:14px;font-size:14px}article{background:white;border:1px solid var(--line);border-radius:14px;padding:clamp(18px,4vw,44px);overflow-wrap:anywhere}article> :first-child{margin-top:0}.block{white-space:pre-wrap;word-break:break-word}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px}.grid-column{min-width:0}pre{background:#f1f4ef;border:1px solid #dce4da;border-radius:9px;padding:18px;overflow:auto;white-space:pre-wrap;word-break:break-word;font:14px/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}figure{margin:24px 0}img{display:block;max-width:100%;height:auto;border-radius:6px}figcaption{font-size:13px;color:var(--muted);margin-top:7px}video,audio{max-width:100%;width:100%}.asset{background:#f4f6f1;border:1px solid var(--line);border-radius:8px;padding:14px;margin:14px 0}.asset small{display:block;color:var(--muted)}blockquote{border-left:4px solid #b0c8b5;padding:8px 18px;margin:18px 0;background:#f3f7f0}.list-item{display:flex;gap:10px;margin:.6em 0}.list-item .marker{flex:0 0 1.8em;color:#60716b}.list-body{flex:1;min-width:0}.table-wrap{overflow:auto}table{border-collapse:collapse;min-width:70%;margin:18px 0}td,th{border:1px solid #ccd8ce;padding:8px 12px;vertical-align:top}hr{border:0;border-top:1px solid var(--line);margin:28px 0}summary{cursor:pointer}footer{font-size:13px;color:var(--muted)}[hidden]{display:none!important}@media(max-width:600px){header,main,footer{padding:22px 16px}.tools{flex-direction:column}select{max-width:none}article{border-radius:9px}}
+
+.nav{display:flex;flex-wrap:wrap;gap:9px 20px;margin:18px 0}.source-text{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.8;margin:0}.source-section{padding:18px 0;border-bottom:1px solid var(--line)}.source-section h2,.source-section h3{margin:.3em 0 .7em}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px}.media-card{border:1px solid var(--line);border-radius:10px;background:white;padding:12px;min-width:0}.media-card figure{margin:0}.media-card img{width:100%;max-height:320px;object-fit:contain;background:#f0f3ed}.media-card video{width:100%;max-height:320px;background:#152620}.media-card p{font-size:13px;margin:8px 0}.media-card .meta{font-size:12px}.scroll-table{overflow:auto}td{min-width:110px}details{border:1px solid var(--line);border-radius:9px;padding:14px;margin:15px 0}details>summary{font-weight:600}details>.source-text{margin-top:16px}button{font:inherit;border:1px solid #bdcdc0;background:white;border-radius:8px;padding:8px 14px;color:var(--accent);cursor:pointer}.searchbox{width:100%;margin:10px 0 24px}.mini{font-size:13px;color:var(--muted)}
+
+.skill-archive{border:2px solid var(--accent);border-radius:12px;padding:18px;margin:18px 0;background:#eef4ef}
+.skill-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.skill-actions a,.archive-action{display:inline-block;padding:9px 13px;border:1px solid #245e48;border-radius:8px;background:white;font-weight:600}
+.skill-actions a:first-child{background:#245e48;color:white}.skill-files{margin:24px 0 32px}.skill-file{border:1px solid var(--line);border-radius:9px;padding:16px;margin:15px 0;background:white}.skill-file summary{font-weight:600;overflow-wrap:anywhere}.skill-file pre{max-height:75vh;overflow:auto;white-space:pre-wrap;word-break:break-word}.skill-file .meta{margin:10px 0}.source-info{font-size:13px;color:var(--muted);margin:10px 0}.source-info summary{cursor:pointer}.source-info a{font-weight:400}.archive-status{font-size:13px;color:var(--muted)}
+</style></head><body><header><p><a href="../../Skill%E4%BF%AE%E5%A4%8D%E7%89%88%E4%B8%8E%E6%B5%8B%E8%AF%95.html">← 修复版与测试</a> · <a download href="../../Skill%E4%BF%AE%E5%A4%8D%E5%8C%85/15-golden-structure-video-prompts.zip">下载这个修复包</a> · <a download href="../../%E8%B5%84%E6%BA%90/15-SD2.5%E8%A7%86%E9%A2%91%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%BC%98%E5%8C%96%20Skill/001-SD2.5%E8%A7%86%E9%A2%91%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%BC%98%E5%8C%96%20Skill.rar">保留的原包</a></p><h1>15 SD2.5视频提示词优化 Skill｜修复版</h1></header><main><div class="notice"><p>这是归档修复版。入口与运行方式已检查，原始包另行保留。</p><p>文字模型；生图/视频另需目标平台。</p></div><h2>本包调整</h2><ul><li>新增标准name与description配置。</li><li>将入口规范为SKILL.md，正文取自原Markdown。</li></ul><h2>Skill 与配套文件</h2><details id="file-0" class="skill-file" open><summary>SKILL.md</summary><p><a download href="SKILL.md">下载此文件</a></p><pre><code>---
+name: golden-structure-video-prompts
+description: &quot;用于整理或优化零散的视频创意、剧本、分镜和原始提示词，适合要求保留时长、画幅、对白与连续性的6+2结构视频提示词任务。&quot;
+---
+
+&gt; 归档修复版（2026-10-17）：原始安装包另行保留。
+
+# 黄金结构视频提示词优化 Skill
+
+## Skill 名称
+黄金结构视频提示词优化器
+
+## 一句话介绍
+把任何零散的视频创意、剧本、分镜或原始提示词，重构成可直接用于 AI 视频生成的“6+2 黄金结构”专业提示词。
+
+## 适用范围
+- Seedance 2.0 / 2.5
+- MiniMax H3
+- LibTV Agent
+- 其他支持自然语言视频生成的模型
+- 写实电影、日系旅拍、科幻、奇幻、动作、打斗、子弹时间、广告、Vlog、剧情短片
+
+---
+
+# 一、核心目标
+
+收到用户的原始需求后，不直接把内容简单扩写成一大段，而是先完成以下工作：
+
+1. 提取硬性约束：时长、比例、模型、人物、场景、对白、镜头方式、声音、参考素材。
+2. 找出原始提示词中的逻辑冲突、时间冲突、空间冲突和重复动作。
+3. 重新建立明确的因果链、空间关系和情绪递进。
+4. 按“6+2 黄金结构”输出完整专业提示词。
+5. 所有镜头动作必须服务于剧情、空间关系或情绪，不做无意义炫技。
+6. 优先使用明确、直接、肯定式语言描述目标画面。
+7. 保留用户明确指定的台词、人物身份、道具文字、动作和关键设定，不擅自替换。
+8. 当用户提供参考图或参考视频时，明确区分“人物参考 / 场景参考 / 道具参考 / 运镜参考 / 声音参考”。
+
+---
+
+# 二、6+2 黄金结构
+
+固定输出以下八个部分，标题和顺序保持不变：
+
+## 【一、生成任务】
+## 【二、主要主体】
+## 【三、场景与环境状态】
+## 【四、情绪目标】
+## 【五、摄影参数及视觉风格】
+## 【六、分段镜头脚本】
+## 【七、声音设计】
+## 【八、连续性与生成控制】
+
+不得把八个模块压缩成一段普通描述。
+
+---
+
+# 三、输入分析规则
+
+在改写前，内部先识别以下信息：
+
+### 1. 基础参数
+- 时长
+- 画幅
+- 模型
+- 是否一镜到底
+- 是否切镜
+- 是否子弹时间
+- 是否有台词
+- 是否有音乐
+- 是否需要参考图 / 参考视频 / 音频
+
+### 2. 主体
+- 人物数量
+- 人物身份
+- 年龄与性别
+- 外貌与发型
+- 服装
+- 装备
+- 坐骑 / 车辆 / 怪兽 / 道具
+- 每个主体的动作权限
+
+### 3. 空间
+- 场景数量
+- 固定空间锚点
+- 左右前后高低位置
+- 主体之间的距离与方向
+- 摄影机起点、终点和路径
+
+### 4. 叙事
+- 起因
+- 危险 / 冲突
+- 转折
+- 高潮
+- 结果
+
+### 5. 视觉
+- 摄影机
+- 镜头
+- 焦段
+- 景深
+- 滤镜
+- 调色
+- 光线
+- 材质
+- 运动模糊
+- 胶片颗粒
+
+---
+
+# 四、硬性优化规则
+
+## 1. 时长规则
+每个镜头段落的时间总和必须严格等于用户要求的总时长。
+
+例如 15 秒视频：
+- 0—3秒
+- 3—6秒
+- 6—10秒
+- 10—13秒
+- 13—15秒
+
+禁止出现时间重叠、超时或缺失。
+
+## 2. 单段信息密度
+一个时间段只安排一个主要视觉事件。
+
+## 3. 空间连续性
+当用户要求一镜到底、连续运镜、子弹时间时，必须先建立可画出来的摄影机路径。
+
+格式：
+A点 → B点 → C点 → D点
+
+不得使用容易让模型重新生成场景的模糊跳转描述，除非用户明确要求多场景。
+
+## 4. 固定空间锚点
+连续空间中至少设置 2—4 个固定锚点，例如：
+- 中央时钟
+- 左侧扶梯
+- 右侧广告牌
+- 江面
+- 红色门
+- 长桌
+- 轨道
+
+不同机位中这些锚点保持固定位置、造型和颜色。
+
+## 5. 人物镜头规则
+人物情绪镜头优先表现：
+- 正面脸部
+- 眼睛
+- 嘴角
+- 呼吸
+- 眨眼
+- 发丝
+- 肩膀与身体重心变化
+
+当用户要求面部特写时，必须明确：
+“正面面部特写 / 双眼清晰可见 / 镜头最终停留在人物面部”。
+
+## 6. 子弹时间规则
+子弹时间不是单纯慢动作。
+
+必须同时表现：
+- 世界运动被极度拉长
+- 摄影机仍可自由运动
+- 悬浮碎片 / 水滴 / 发丝 / 衣摆 / 火花保持极慢运动
+- 摄影机利用时间膨胀观察人物和空间关系
+- 子弹时间段有明确开始点和恢复点
+
+若没有剧情角色需要触发能力，则直接写：
+“时间膨胀仅作为电影摄影表现手法，不由任何人物触发。”
+
+## 7. 一镜到底规则
+视觉上一镜到底时：
+- 不使用“切到”“再切”“突然换场”
+- 用“摄影机继续”“镜头沿着”“摄影机弧形绕行”“镜头穿过”“镜头升高”“镜头俯冲”描述
+- 每次改变方向都必须有可理解的过渡运动
+
+## 8. 物理互动规则
+大型电影感必须通过真实环境互动体现：
+- 马蹄踩泥 → 泥土形变与飞溅
+- 火焰经过 → 环境产生动态暖光
+- 爆炸 → 碎片、烟尘、冲击波具有方向
+- 水火接触 → 蒸汽膨胀
+- 列车失控 → 车体倾斜、导向结构受力、火花和碎片具有连续方向
+
+## 9. 剧情因果规则
+所有主要动作形成清晰因果链：
+
+起因 → 危险 → 判断 → 行动 → 结果
+
+人物特写、环绕镜头和道具必须对剧情有作用，不能随机展示。
+
+## 10. 正向语言
+优先写目标状态：
+- “人物全程沉默”
+- “声音仅保留现场环境原声”
+- “画面保持纯净”
+- “人物身份与服装始终一致”
+
+---
+
+# 五、参考素材绑定规则
+
+## 人物参考
+写入：
+【参考人物资产】
+并在【主要主体】中说明：
+“保持参考图中的脸部身份、发型、年龄感和整体气质。”
+
+## 场景参考
+写入：
+【参考场景资产】
+并在【场景与环境状态】中说明：
+“空间布局、建筑比例、主要锚点和光线关系参考上传场景图。”
+
+## 道具 / 文字参考
+写入：
+【参考道具资产】
+并明确：
+“文字、书法、Logo、折扇、屏幕内容以参考图为视觉依据。”
+
+## 运镜参考视频
+必须写：
+“参考视频只用于复刻镜头路径、镜头节奏、推进、转向、环绕、升降、停顿、加速和减速；不复刻原视频的美术内容。”
+
+## 白膜 / Previz 图
+必须写：
+“白膜图用于确定角色位置、角色颜色、几何体位置和空间布局；保持极简 techvis / previz 表达。”
+
+## 声音参考
+必须明确：
+- 角色名
+- 音色
+- 年龄感
+- 语速
+- 情绪
+- 使用范围
+
+---
+
+# 六、固定输出模板
+
+## 【一、生成任务】
+
+生成一段【时长】、【画幅】的视频。
+
+视频类型：
+核心事件：
+表现方式：
+镜头结构：
+核心观感：
+
+---
+
+## 【二、主要主体】
+
+### 主体A
+身份：
+年龄 / 性别：
+外貌：
+服装：
+装备：
+动作特点：
+当前状态：
+
+### 主体B
+身份：
+……
+
+### 车辆 / 坐骑 / 怪兽 / 核心道具
+造型：
+材质：
+体型：
+运动方式：
+关键功能：
+
+---
+
+## 【三、场景与环境状态】
+
+时间：
+地点：
+天气：
+光线：
+空间结构：
+
+前景：
+中景：
+后景：
+
+固定空间锚点：
+1.
+2.
+3.
+
+环境互动：
+- 
+- 
+- 
+
+主体位置关系：
+- 
+- 
+- 
+
+---
+
+## 【四、情绪目标】
+
+整体情绪：
+【情绪1】→【情绪2】→【情绪3】→【高潮】→【结尾】
+
+人物表演重点：
+眼神：
+呼吸：
+嘴角：
+动作力度：
+身体重心：
+
+---
+
+## 【五、摄影参数及视觉风格】
+
+整体风格：
+
+摄影语言模拟：
+摄影机：
+镜头：
+焦段：
+光圈：
+滤镜：
+帧率 / 快门：
+
+画面质感：
+调色：
+光线：
+材质：
+
+镜头运动：
+- 
+- 
+- 
+
+景深与焦点：
+摄影机靠近前景主体时焦点自然前移，离开前景后自然转移至人物或主要事件主体。
+
+---
+
+## 【六、分段镜头脚本】
+
+### 0—X秒｜镜头标题
+景别 / 焦段：
+摄影机起点：
+摄影机运动：
+主体动作：
+环境互动：
+焦点变化：
+镜头结束位置：
+
+### X—X秒｜镜头标题
+……
+
+时间总和严格等于总时长。
+
+若为一镜到底，所有镜头段落必须写成同一条连续摄影路径。
+
+---
+
+## 【七、声音设计】
+
+环境声：
+动作声：
+机械 / 特效声：
+音乐：
+对白：
+
+声音随剧情变化：
+- 
+- 
+- 
+
+---
+
+## 【八、连续性与生成控制】
+
+全片场景数量：
+主体数量：
+
+摄影机连续路径：
+A → B → C → D
+
+固定空间锚点：
+1.
+2.
+3.
+
+连续性要求：
+- 人物身份一致
+- 发型一致
+- 服装一致
+- 道具一致
+- 车辆 / 怪兽造型一致
+- 空间方向一致
+- 运动方向连续
+- 同一建筑结构保持一致
+
+剧情控制：
+- 每个关键动作都有因果关系
+- 每个特写都服务于剧情或情绪
+- 结尾必须完成主要事件的视觉兑现
+
+---
+
+# 七、输出要求
+
+默认输出一版完整专业提示词。
+
+当用户说：
+- “精简版” → 输出更短的模型直投版
+- “完整公式版” → 输出完整八模块
+- “只要镜头脚本” → 只输出第六部分
+- “白膜预演版” → 保留运镜与空间关系，将人物改为人偶、复杂物体改为简单几何体
+- “Seedance 2.0版” → 强化时间可执行性、动作顺序和空间连续性
+- “MiniMax H3版” → 保留更完整的电影视觉、美术与运镜描述
+
+---
+
+# 八、质量检查
+
+输出前必须检查：
+
+1. 时长是否准确。
+2. 比例是否统一。
+3. 是否存在前后冲突。
+4. 是否在短时间内塞入过多动作。
+5. 人物数量是否前后一致。
+6. 对白是否重复。
+7. 说话角色是否正确。
+8. 场景是否被无意拆成多个重复空间。
+9. 连续运镜路径是否真实可理解。
+10. 子弹时间是否真正展示空间和人物，而不是单纯慢动作。
+11. 结尾是否完成前面建立的主要冲突。
+12. 用户明确要求的面部特写、道具、文字、声音、比例、时长是否全部保留。
+
+如果发现冲突，先内部修正，再输出最终版，不把错误留给用户处理。
+</code></pre></details><h2>实际文字试用</h2><p>15秒八模块提示词完成，画幅、持袋与单镜头要求保留。</p><pre><code>## 【一、生成任务】
+
+生成一段15秒、9:16的写实视频，视觉上一镜到底，连续空间、连续时间。
+
+核心事件：站台上的成年女子听见并看向自己左侧的进站列车，随后把目光转回站台入口。摄影机从正面中景沿女子左前方的小弧线持续靠近，最后停留在面部。人物全程沉默，仅保留现场环境原声。
+
+## 【二、主要主体】
+
+一名成年女子，约30岁，黑色齐肩直发，穿朴素灰褐外套和深色长裤。表情克制，身体自然站稳，双脚始终位于黄线靠站台内侧的区域。
+
+她的右手全程拎着同一只蓝色布袋，手指环握两条提带。布袋位于右腿外侧，受重力下垂，只随呼吸和列车带来的微风轻轻摆动。
+
+列车从女子左侧轨道驶入，沿同一条轨道接近站台，车体与窗列保持连续。
+
+## 【三、场景与环境状态】
+
+傍晚的普通铁路站台，顶棚灯提供柔和、稳定的中性光。轨道在女子左侧；黄线位于她与轨道之间，女子离黄线约一米。摄影机全程位于站台内侧。
+
+固定空间锚点：女子左侧的连续黄色安全线、女子右后方的灰色顶棚立柱、女子正前方且位于摄影机初始位置后方的站台入口。入口方向全程固定，近景无需把入口拍入画面。
+
+前景为站台地面和少量黄色线条；中景是女子；后景为向远处延伸的轨道、顶棚和进站列车。列车带来的气流只在后半段轻微带动发梢和布袋边缘。
+
+## 【四、情绪目标】
+
+从安静等候，到确认列车到来，再把注意力交还入口方向。表演通过视线、呼吸和肩颈的轻微变化完成。
+
+她先用眼睛寻找声音，再把头缓慢转向左侧来车方向；确认后，目光与头部平顺回到正前方的入口，最终保持双眼可辨的安静等待状态。右臂自然下垂，身体重心不随视线大幅移动。
+
+## 【五、摄影参数及视觉风格】
+
+模拟自然的写实电影摄影：50mm焦段感，24fps，约180度快门，中等浅景深，肤质自然、衣料与布袋纹理可辨，调色低饱和，亮部克制。
+
+摄影机从女子正前方约2.5米、与眼睛近似等高的位置开始。全程向女子左前方弧形靠近，总弧度约15度；使用摄影机实际移动改变景别，焦段保持稳定。最终距她约1米，形成近乎正面的面部特写，双眼清晰可见。运动在最后3秒逐渐减速，停点保持在站台内侧。
+
+焦点始终优先跟随面部，列车保留可辨的运动轮廓与自然运动模糊。
+
+## 【六、分段镜头脚本】
+
+### 0—3秒｜建立等待
+
+正面中景，女子头部、躯干和右手蓝色布袋同时可见。摄影机从A点平缓启动，向左前方小弧线移动并靠近。女子站稳，视线朝前；灰色立柱、黄线和远处轨道建立空间。焦点在她脸上，景别逐渐收至胸上。
+
+### 3—7秒｜看向列车
+
+摄影机保持同一方向和速度，继续从B点向左前方靠近。来车声由远及近，女子先移眼，再把头向自己的左侧转约35度，注意轨道远处驶来的列车。身体与双脚保持原位，右手继续拎袋。列车沿固定轨道进入后景，窗列以稳定方向掠过；镜头到达C点时仍保留部分肩部。
+
+### 7—11秒｜目光回到入口
+
+摄影机继续沿原来的小弧线靠近，开始缓慢减速。女子确认列车到来后，把头和目光从左侧平顺转回正前方的入口方向，结束时脸朝入口、与摄影机仅有约15度夹角。焦点稳定在双眼，呼吸轻微放松，嘴唇自然闭合。列车在后景继续减速，发梢受到轻风影响。
+
+### 11—15秒｜停在面部
+
+摄影机由C点继续向D点小幅靠近，第14秒到达终点，最后1秒稳定停住。形成近乎正面的面部特写，双眼清晰可见，镜头最终停留在人物面部。女子持续望向固定入口方向，完成一次自然眨眼；布袋因景别收紧逐渐离开画面下缘，始终由右手持有。列车声音保持在现场空间中。
+
+## 【七、声音设计】
+
+环境声：站台低微底噪、顶棚下的轻风，以及远处列车逐渐接近的钢轨滚动声。
+
+动作声：衣料与布袋提带极轻的摩擦声。
+
+列车声：由远及近的轮轨声和减速时的空气声，音量自然变化，避免压过全部空间细节。
+
+对白：人物全程沉默；现场广播与可辨人声关闭。音乐关闭，仅保留现场环境原声。
+
+## 【八、连续性与生成控制】
+
+全片一个站台空间、一名主要人物、一列进站列车、一只蓝色布袋。
+
+摄影机连续路径：A（正前方2.5米中景）→B（左前方小幅移动、胸上景）→C（累计弧度约10度、肩上近景）→D（累计弧度约15度、约1米面部特写）。
+
+人物的左侧始终指她自身的左侧；轨道、来车方向、黄线、灰色立柱与入口保持同一空间关系。女子站在黄线靠站台内侧的区域，摄影机的整条路径也位于站台内侧。
+
+同一人物、发型与服装贯穿全程；右手始终持有同一蓝色布袋，袋体外观和提带连接稳定。视线依次完成“朝前—看向左侧列车—回到入口”，没有重复转头。摄影机连续前进、沿小弧线转向并自然停稳，画面中不发生剪切、跳位或时间改变。
+
+</code></pre></main><footer>2026-10-17 修复与验证。原件、修复文件及测试边界分别记录。</footer></body></html>

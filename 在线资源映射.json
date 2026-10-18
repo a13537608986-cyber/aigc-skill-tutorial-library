@@ -4,8 +4,8 @@
   "release_tag": "archive-2026-10-15",
   "full_offline_archive": {
     "asset_name": "skill-tutorial-library-full.zip",
-    "bytes": 1123776957,
-    "sha256": "da4eeb0b9d476651c8ee5332ca53bc84f8f8f9423bb0577b1a2f50d0adc74dcc",
+    "bytes": 1125159591,
+    "sha256": "39b9e3e4f0b1fcbd629d9ced33b54111b5614724e4ab78bd4a35e2781cbb1afe",
     "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/skill-tutorial-library-full.zip"
   },
   "videos": [
@@ -678,8 +678,8 @@
   "note": "offline_path 及原校验记录指向完整离线包；online_url 是发布版对应视频。",
   "offline_source_snapshot": {
     "asset_name": "offline-document-sources.zip",
-    "bytes": 3924703,
-    "sha256": "270d31057b9c909f35005f5669cc50a0cb94ccfeb8b3c214ce8724afbfd0fa34"
+    "bytes": 4697443,
+    "sha256": "00d781c06c31d6e3deebce103d5cfad734cda5a4c80b51c8e5714515304f06f8"
   },
   "skill_independence_revision": {
     "packages": 13,
@@ -688,5 +688,19 @@
     "packages_with_missing_upstream_files": 5,
     "upstream_missing_files": 11,
     "offline_archive_files": 942
+  },
+  "skill_repair_revision": {
+    "date": "2026-10-17",
+    "repaired_skill_directories": 13,
+    "original_files_recovered": 0,
+    "reconstructed_references": 9,
+    "reconstructed_scripts": 2,
+    "original_packages_preserved": true,
+    "script_cases_passed": 98,
+    "text_usage_cases": 13,
+    "paid_generation_tested": false,
+    "report": "Skill修复版与测试.html",
+    "download": "Skill修复版合集.zip",
+    "offline_archive_files": 1048
   }
 }

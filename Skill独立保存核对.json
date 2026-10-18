@@ -18,7 +18,9 @@
       "main_skill_file": "Skill解压/02-中式园林美学SKILL/chinese-garden-cinematic-portrait/SKILL.md",
       "requires_feishu_page": false,
       "missing_upstream_files": [],
-      "user_facing_notice": "正文和原包内配套文件已完整保存，可在本地或本库阅读；无需返回飞书来源页获取正文。"
+      "user_facing_notice": "正文和原包内配套文件已完整保存，可在本地或本库阅读；无需返回飞书来源页获取正文。",
+      "repaired_directory": "Skill修复版/chinese-garden-cinematic-portrait",
+      "reconstructed_files": []
     },
     {
       "lesson_number": 3,
@@ -27,7 +29,9 @@
       "main_skill_file": "Skill解压/03-东方宫阙美学SKILL/celestial-court-portrait/SKILL.md",
       "requires_feishu_page": false,
       "missing_upstream_files": [],
-      "user_facing_notice": "正文和原包内配套文件已完整保存，可在本地或本库阅读；无需返回飞书来源页获取正文。"
+      "user_facing_notice": "正文和原包内配套文件已完整保存，可在本地或本库阅读；无需返回飞书来源页获取正文。",
+      "repaired_directory": "Skill修复版/celestial-court-portrait",
+      "reconstructed_files": []
     },
     {
       "lesson_number": 4,
@@ -36,7 +40,9 @@
       "main_skill_file": "Skill解压/04-豆包AI电影导演智能体/豆包AI电影导演智能体/豆包AI电影导演智能体指令.md",
       "requires_feishu_page": false,
       "missing_upstream_files": [],
-      "user_facing_notice": "导演指令正文已完整保存，阅读和复制无需返回飞书；自动生图与视频步骤需要豆包当前对话支持相应功能。"
+      "user_facing_notice": "导演指令正文已完整保存，阅读和复制无需返回飞书；自动生图与视频步骤需要豆包当前对话支持相应功能。",
+      "repaired_directory": "Skill修复版/doubao-film-director",
+      "reconstructed_files": []
     },
     {
       "lesson_number": 5,
@@ -82,7 +88,13 @@
           "present_in_publishing_copy": false
         }
       ],
-      "user_facing_notice": "正文已完整保存。原始安装包未附带文中引用的角色与光色范例、视频范例及 check_prompts.py 检查脚本；这些文件并非本次提取遗漏。正文可独立阅读复制，相关范例与自动检查步骤目前不完整。"
+      "user_facing_notice": "正文已完整保存。原始安装包未附带文中引用的角色与光色范例、视频范例及 check_prompts.py 检查脚本；这些文件并非本次提取遗漏。正文可独立阅读复制，相关范例与自动检查步骤目前不完整。",
+      "repaired_directory": "Skill修复版/eastern-character-mj-seedance",
+      "reconstructed_files": [
+        "references/character-examples.md",
+        "references/video-examples.md",
+        "scripts/check_prompts.py"
+      ]
     },
     {
       "lesson_number": 6,
@@ -104,7 +116,11 @@
           "present_in_publishing_copy": false
         }
       ],
-      "user_facing_notice": "正文及两条 A/B 提示词模板已完整保存。原始安装包未附带文中要求的 scripts/check_mj_prompts.py，所示自动检查命令无法运行；这是原包缺件，正文仍可阅读复制。"
+      "user_facing_notice": "正文及两条 A/B 提示词模板已完整保存。原始安装包未附带文中要求的 scripts/check_mj_prompts.py，所示自动检查命令无法运行；这是原包缺件，正文仍可阅读复制。",
+      "repaired_directory": "Skill修复版/song-pastoral-mj-seedance",
+      "reconstructed_files": [
+        "scripts/check_mj_prompts.py"
+      ]
     },
     {
       "lesson_number": 7,
@@ -162,7 +178,14 @@
           "present_in_publishing_copy": false
         }
       ],
-      "user_facing_notice": "正文已完整保存。原始安装包未附带文中引用的 style-atlas.md、image-to-video.md、mj-parameters.md、examples.md 四份参考文件；这是原包缺件。正文可独立阅读，参考范例、参数说明及图生视频分支并非完整配套。"
+      "user_facing_notice": "正文已完整保存。原始安装包未附带文中引用的 style-atlas.md、image-to-video.md、mj-parameters.md、examples.md 四份参考文件；这是原包缺件。正文可独立阅读，参考范例、参数说明及图生视频分支并非完整配套。",
+      "repaired_directory": "Skill修复版/mjv8-chinese-poetic-worlds",
+      "reconstructed_files": [
+        "references/examples.md",
+        "references/image-to-video.md",
+        "references/mj-parameters.md",
+        "references/style-atlas.md"
+      ]
     },
     {
       "lesson_number": 8,
@@ -196,7 +219,12 @@
           "present_in_publishing_copy": false
         }
       ],
-      "user_facing_notice": "正文已完整保存。原始安装包未附带 references/reference-review.md 与 references/action-patterns.md；这是原包缺件。正文可独立阅读，但参考复盘与题材动作语法步骤缺少对应配套。"
+      "user_facing_notice": "正文已完整保存。原始安装包未附带 references/reference-review.md 与 references/action-patterns.md；这是原包缺件。正文可独立阅读，但参考复盘与题材动作语法步骤缺少对应配套。",
+      "repaired_directory": "Skill修复版/ai-fight-director",
+      "reconstructed_files": [
+        "references/action-patterns.md",
+        "references/reference-review.md"
+      ]
     },
     {
       "lesson_number": 9,
@@ -218,7 +246,11 @@
           "present_in_publishing_copy": false
         }
       ],
-      "user_facing_notice": "正文已完整保存。原始安装包未附带 references/category-playbook.md；这是原包缺件。正文可独立阅读，但按品类选择广告概念的配套语法表缺失。"
+      "user_facing_notice": "正文已完整保存。原始安装包未附带 references/category-playbook.md；这是原包缺件。正文可独立阅读，但按品类选择广告概念的配套语法表缺失。",
+      "repaired_directory": "Skill修复版/generate-product-tvc-sd25",
+      "reconstructed_files": [
+        "references/category-playbook.md"
+      ]
     },
     {
       "lesson_number": 10,
@@ -227,7 +259,9 @@
       "main_skill_file": "Skill解压/10-名画轨迹运镜提示词-Skill/名画轨迹运镜提示词-Skill.md",
       "requires_feishu_page": false,
       "missing_upstream_files": [],
-      "user_facing_notice": "正文和原包内配套文件已完整保存，可在本地或本库阅读；无需返回飞书来源页获取正文。"
+      "user_facing_notice": "正文和原包内配套文件已完整保存，可在本地或本库阅读；无需返回飞书来源页获取正文。",
+      "repaired_directory": "Skill修复版/masterpiece-path-camera",
+      "reconstructed_files": []
     },
     {
       "lesson_number": 12,
@@ -236,7 +270,9 @@
       "main_skill_file": "Skill解压/12-中式仙境风格SKILL/SKILL.md",
       "requires_feishu_page": false,
       "missing_upstream_files": [],
-      "user_facing_notice": "正文和原包内配套文件已完整保存，可在本地或本库阅读；无需返回飞书来源页获取正文。"
+      "user_facing_notice": "正文和原包内配套文件已完整保存，可在本地或本库阅读；无需返回飞书来源页获取正文。",
+      "repaired_directory": "Skill修复版/write-seedance-image-video-prompt",
+      "reconstructed_files": []
     },
     {
       "lesson_number": 15,
@@ -245,7 +281,9 @@
       "main_skill_file": "Skill解压/15-SD2.5视频提示词优化 Skill/SD2.5视频提示词优化 Skill.md",
       "requires_feishu_page": false,
       "missing_upstream_files": [],
-      "user_facing_notice": "正文和原包内配套文件已完整保存，可在本地或本库阅读；无需返回飞书来源页获取正文。"
+      "user_facing_notice": "正文和原包内配套文件已完整保存，可在本地或本库阅读；无需返回飞书来源页获取正文。",
+      "repaired_directory": "Skill修复版/golden-structure-video-prompts",
+      "reconstructed_files": []
     },
     {
       "lesson_number": 19,
@@ -254,7 +292,9 @@
       "main_skill_file": "Skill解压/19-character-forge-libtv-skill(5)/character-forge-libtv/SKILL.md",
       "requires_feishu_page": false,
       "missing_upstream_files": [],
-      "user_facing_notice": "主 Skill 与 README 已完整保存，阅读无需返回飞书；创建和运行画布仍需已安装并登录的 LibTV CLI。"
+      "user_facing_notice": "主 Skill 与 README 已完整保存，阅读无需返回飞书；创建和运行画布仍需已安装并登录的 LibTV CLI。",
+      "repaired_directory": "Skill修复版/character-forge-libtv",
+      "reconstructed_files": []
     },
     {
       "lesson_number": 21,
@@ -263,7 +303,22 @@
       "main_skill_file": "Skill解压/21-story-asset-builder-v2-clean-canvas/story-asset-builder/SKILL.md",
       "requires_feishu_page": false,
       "missing_upstream_files": [],
-      "user_facing_notice": "主 Skill、模板、规则、Profiles 和快捷提示已完整保存，阅读无需返回飞书；实际建画布仍需 LibTV skill/CLI 授权。飞书 ClawBot 只是可选运行环境。"
+      "user_facing_notice": "主 Skill、模板、规则、Profiles 和快捷提示已完整保存，阅读无需返回飞书；实际建画布仍需 LibTV skill/CLI 授权。飞书 ClawBot 只是可选运行环境。",
+      "repaired_directory": "Skill修复版/story-asset-builder",
+      "reconstructed_files": []
     }
-  ]
+  ],
+  "repaired_version": {
+    "date": "2026-10-17",
+    "repaired_skill_directories": 13,
+    "original_files_recovered": 0,
+    "reconstructed_references": 9,
+    "reconstructed_scripts": 2,
+    "original_packages_preserved": true,
+    "script_cases_passed": 98,
+    "text_usage_cases": 13,
+    "paid_generation_tested": false,
+    "report": "Skill修复版与测试.html",
+    "download": "Skill修复版合集.zip"
+  }
 }

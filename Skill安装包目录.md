@@ -53,3 +53,11 @@
 ## 21 story-asset-builder-v2-clean-canvas
 [下载归档原包](%E8%B5%84%E6%BA%90/21-%E7%94%B5%E5%BD%B1%E7%BA%A7%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%81%9A%E6%88%90%20skill/004-story-asset-builder-v2-clean-canvas.zip) · [完整 Skill 与包内文件](Skill%E8%A7%A3%E5%8E%8B/21-story-asset-builder-v2-clean-canvas/index.html)
 主 Skill、模板、规则、Profiles 和快捷提示已完整保存，阅读无需返回飞书；实际建画布仍需 LibTV skill/CLI 授权。飞书 ClawBot 只是可选运行环境。
+
+## 2026-10-17 修复版与使用测试
+
+已另行提供13份标准Skill目录。5份原包缺少的11个文件已依据主文与教程重建（9参考、2脚本），不是找回作者原件；原包保持不变。
+
+[查看修复版及使用测试](Skill修复版与测试.html) · [下载修复版合集](Skill修复版合集.zip) · [改动与测试记录](Skill修复与测试.json)
+
+结构与引用13/13通过；脚本98个用例通过；13份文字任务已试用。付费生图、视频与平台建画布未做端到端测试。

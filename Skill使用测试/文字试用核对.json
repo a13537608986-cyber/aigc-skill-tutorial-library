@@ -1,0 +1,483 @@
+{
+  "summary": {
+    "tested": 13,
+    "passed": 13,
+    "failed": 0,
+    "paid_generation_tested": false
+  },
+  "method": "两次独立上下文的实际使用交付；主Agent按输入核对全文，再做数量、词数、参数、时间线、原文保留及最终脚本检查。",
+  "input_boundaries": [
+    "07输入为四格截图，第一次要求选单幅；补充选择左上单幅后才继续动态图文。",
+    "09输入为对话截图，商品只有缩略图；不能将旧稿文字当观察证据。",
+    "10未附画作文件，按馆藏说明预写，真实运行仍需原作图。"
+  ],
+  "items": [
+    {
+      "lesson_number": 2,
+      "status": "pass",
+      "conclusion": "2条园林人物提示词，景别、正文词数与16:9参数通过。",
+      "output_path": "Skill使用测试/02.md",
+      "output_sha256": "17bab52e7838e7928399b53ca0f8b2a4caa0c7e3b42a6496a2cfc992014ed1da",
+      "checks": [
+        {
+          "independent_prompt_count": 2,
+          "body_word_counts": [
+            84,
+            86
+          ]
+        }
+      ],
+      "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+      "inputs": [
+        "给我2条中式园林旗袍人物图片提示词，16:9；一条窗前背影，一条园林岩石旁半身，只要文字。"
+      ]
+    },
+    {
+      "lesson_number": 3,
+      "status": "pass",
+      "conclusion": "2条宫阙人物提示词，9:16与完整头饰要求通过。",
+      "output_path": "Skill使用测试/03.md",
+      "output_sha256": "9be25aaac2ac962823d79f3976c79952f00bbbfb6ee93181d2da358dded1d5a7",
+      "checks": [
+        {
+          "independent_prompt_count": 2,
+          "body_word_counts": [
+            85,
+            84
+          ]
+        }
+      ],
+      "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+      "inputs": [
+        "给我2条东方宫阙人物英文图片提示词，9:16，成年女子，画面完整容纳头饰；只要提示词。"
+      ]
+    },
+    {
+      "lesson_number": 4,
+      "status": "pass",
+      "conclusion": "3个导演方向符合仅文字协作要求，未调用豆包生成。",
+      "output_path": "Skill使用测试/04.md",
+      "output_sha256": "a3aa340f5ca25587ef7c42b7e595682f22e0c6cdbaa96ecc5c67072504e02f70",
+      "checks": [
+        {
+          "director_choices": 3,
+          "required_phrase_occurrences": 1
+        }
+      ],
+      "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+      "inputs": [
+        "只做文字导演协作，想拍15秒写实短片：成年儿子雨夜回老屋，门内母亲认出他。先给导演方向供选择，不生成素材。"
+      ]
+    },
+    {
+      "lesson_number": 5,
+      "status": "pass",
+      "conclusion": "10条角色提示词完成，最终真实脚本校验通过。",
+      "output_path": "Skill使用测试/05.md",
+      "output_sha256": "c15ecdc9a9f5213ee5d306e17bc3683c1ddcad6496cdc73e468ebe794fddea26",
+      "checks": [
+        {
+          "independent_prompt_count": 10,
+          "body_word_counts": [
+            65,
+            64,
+            66,
+            66,
+            66,
+            65,
+            65,
+            65,
+            65,
+            68
+          ]
+        },
+        {
+          "real_script_result": {
+            "ok": true,
+            "skill": "05",
+            "prompt_count": 10,
+            "word_count_rule": "whitespace-separated terms containing letters/digits, including all parameter flags and values; punctuation-only terms excluded",
+            "errors": [],
+            "prompts": [
+              {
+                "words_including_parameters": 70,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 69,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 71,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 71,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 71,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 70,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 70,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 70,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 70,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 73,
+                "errors": []
+              }
+            ],
+            "scope": "Text constraints only; no image generation or aesthetic evaluation."
+          }
+        }
+      ],
+      "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+      "inputs": [
+        "给我10组不同的东方武侠成年角色图片提示词，包括斗笠客、品茗文士、竹林侠女，其他角色你安排；默认画幅和格式，只要文字。"
+      ]
+    },
+    {
+      "lesson_number": 6,
+      "status": "pass",
+      "conclusion": "10条生活提示词完成，A/B原文保留且strict校验通过。",
+      "output_path": "Skill使用测试/06.md",
+      "output_sha256": "4de599fd7f16acce67b7c53a680ae349729f9670d67551c7cf1f1a6d1a74d2ac",
+      "checks": [
+        {
+          "independent_prompt_count": 10,
+          "body_word_counts": [
+            67,
+            72,
+            59,
+            61,
+            61,
+            60,
+            61,
+            67,
+            67,
+            66
+          ]
+        },
+        {
+          "real_script_result": {
+            "ok": true,
+            "skill": "06",
+            "prompt_count": 10,
+            "word_count_rule": "whitespace-separated terms containing letters/digits, including all parameter flags and values; punctuation-only terms excluded",
+            "errors": [],
+            "prompts": [
+              {
+                "words_including_parameters": 72,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 77,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 64,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 66,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 66,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 65,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 66,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 72,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 72,
+                "errors": []
+              },
+              {
+                "words_including_parameters": 71,
+                "errors": []
+              }
+            ],
+            "scope": "Text constraints only; no image generation or aesthetic evaluation."
+          }
+        },
+        {
+          "original_A_B_preserved_exactly": true
+        }
+      ],
+      "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+      "inputs": [
+        "给我10组宋式水乡生活图片提示词，其中溪边浣衣、墙头摘果使用你Skill里的认可原文，其余按模板换活动，只要图片提示词。"
+      ]
+    },
+    {
+      "lesson_number": 7,
+      "status": "pass",
+      "conclusion": "3条图片提示词及选定单幅后的4秒动态文字完成。",
+      "output_path": "Skill使用测试/07.md",
+      "output_sha256": "7d9e1f5a0e17bf86e9bc66920ccb86787d08b674f7965f7ee3efef9d9263765d",
+      "checks": [
+        {
+          "independent_prompt_count": 3,
+          "body_word_counts": [
+            98,
+            100,
+            105
+          ]
+        },
+        {
+          "image_to_video_output": "07-video.md",
+          "chosen_panel": "top-left",
+          "prompt_count": 1
+        }
+      ],
+      "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+      "inputs": [
+        "先给3条不同中式巨荷仙境图片提示词，16:9，不要视频。",
+        "这张图怎么动，给约4秒提示词，不生成。图片：outputs/飞书Skill与教程资料库/资源/07-中式巨物美学风格SKILL/005-image.png。"
+      ],
+      "actual_image_observation": [
+        {
+          "tool": "view_image",
+          "path": "/Users/kangl/Documents/Codex/2026-10-15/https-ei5ttplwuwy-feishu-cn-wiki-bslqw36k3imkxzkkx2ucykxznrb/outputs/飞书Skill与教程资料库/资源/07-中式巨物美学风格SKILL/005-image.png",
+          "success": true,
+          "whole_file": "实际看到四格图片结果界面，四幅中都有青衣与粉衣两名女子、巨荷叶、水面与蓝天，带下载和设为主图等界面按钮；不是单幅干净首帧。",
+          "selected_region": "后续明确选择左上角。该幅可见青衣女子在左、粉衣女子在右，二人坐于宽大荷叶面，青衣举长竿、粉衣有圆扇，近处鱼与水花遮挡右侧部分画面；低水面仰视，明亮蓝天与日光。",
+          "uncertain": "仅凭这张静态区域不能确认鱼的先前起跳过程或完整运动方向，未据此编造落水路线、钓线受力或跨帧稳定性。"
+        }
+      ]
+    },
+    {
+      "lesson_number": 8,
+      "status": "pass",
+      "conclusion": "12秒旧稿修复完成，持握、攻防与同庭院位置连续。",
+      "output_path": "Skill使用测试/08.md",
+      "output_sha256": "d7a1dee38d5cdd8000f4fa0ba8281573e4772df3ff4653c46639c5be11590b1c",
+      "checks": [
+        {
+          "continuous_timeline_seconds": [
+            [
+              0.0,
+              3.0
+            ],
+            [
+              3.0,
+              6.0
+            ],
+            [
+              6.0,
+              9.0
+            ],
+            [
+              9.0,
+              12.0
+            ]
+          ]
+        }
+      ],
+      "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+      "inputs": [
+        "请修复这个12秒16:9武侠打斗旧稿，保持同一石板庭院、双人、无爆炸，A右手持剑、B双手持枪：0–4秒两人同时大挥武器三次；4–8秒A还握着剑的右手抓住头顶横梁，B瞬间移到A身后；8–12秒A突然出现在屋顶把B踢下去，结束。只要一版改好的提示词，不生成视频。"
+      ]
+    },
+    {
+      "lesson_number": 9,
+      "status": "pass",
+      "conclusion": "30秒TVC文字完成；截图缩略图与旧示例文字的证据已区分。",
+      "output_path": "Skill使用测试/09.md",
+      "output_sha256": "4e77e86add0cc43a15d314712c0ce2f4fb48315babf85be9ae3672751e879efa",
+      "checks": [
+        {
+          "continuous_timeline_seconds": [
+            [
+              0.0,
+              3.0
+            ],
+            [
+              3.0,
+              7.0
+            ],
+            [
+              7.0,
+              11.0
+            ],
+            [
+              11.0,
+              15.0
+            ],
+            [
+              15.0,
+              19.0
+            ],
+            [
+              19.0,
+              23.0
+            ],
+            [
+              23.0,
+              27.0
+            ],
+            [
+              27.0,
+              30.0
+            ]
+          ]
+        }
+      ],
+      "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+      "inputs": [
+        "根据 outputs/飞书Skill与教程资料库/资源/09-电商TVC广告Skill/002-image.png 中的产品，给一版30秒16:9电商TVC，默认无旁白，只要完整提示词。先实际读原图，不清楚的型号与功能不要猜。"
+      ],
+      "actual_image_observation": [
+        {
+          "tool": "view_image",
+          "path": "/Users/kangl/Documents/Codex/2026-10-15/https-ei5ttplwuwy-feishu-cn-wiki-bslqw36k3imkxzkkx2ucykxznrb/outputs/飞书Skill与教程资料库/资源/09-电商TVC广告Skill/002-image.png",
+          "success": true,
+          "view_calls": 2,
+          "second_view_detail": "original",
+          "whole_file": "原文件是对话长截图，产品仅在右上白色方框的小缩略图中。大面积正文是旧广告提示词，不能当作已核验的产品功能。",
+          "confirmed": "缩略图可见横向矩形键盘、浅色外框、深色为主并混有浅色的键帽、底部长空格键、键列间青绿至暖色的彩色带、两端红色竖向色块。",
+          "not_confirmed": [
+            "品牌与型号",
+            "具体机械轴体",
+            "小号键面字符",
+            "旋钮与接口结构",
+            "背面和内部",
+            "RGB按压响应或灯效控制逻辑",
+            "性能参数",
+            "声学特征"
+          ],
+          "evidence_rule": "未用文件名、截图旧提示词或参考页中转述的键盘描述替代对产品缩略图的实际观察。"
+        }
+      ]
+    },
+    {
+      "lesson_number": 10,
+      "status": "pass",
+      "conclusion": "8秒单镜头设计完成；未附原画，明确按馆藏说明预写。",
+      "output_path": "Skill使用测试/10.md",
+      "output_sha256": "e06571fc0240a8678efca97d4790641f5754ec8033fb8a2cf957bc9985abe3e3",
+      "checks": [
+        {
+          "continuous_timeline_seconds": [
+            [
+              0.0,
+              2.0
+            ],
+            [
+              2.0,
+              5.0
+            ],
+            [
+              5.0,
+              8.0
+            ]
+          ]
+        }
+      ],
+      "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+      "inputs": [
+        "把《戴珍珠耳环的少女》的单张人物画作设计成8秒一镜到底动态提示词，不增加人物，不生成视频。"
+      ]
+    },
+    {
+      "lesson_number": 12,
+      "status": "pass",
+      "conclusion": "2条仙境图片提示词完成，使用更新后的Raw写法。",
+      "output_path": "Skill使用测试/12.md",
+      "output_sha256": "07e327bc9a889cf6c713da3eb388ca867e8fcca17dd4b6e7d90d55e6f5b437bd",
+      "checks": [
+        {
+          "independent_prompt_count": 2,
+          "body_word_counts": [
+            138,
+            139
+          ]
+        }
+      ],
+      "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+      "inputs": [
+        "给我2条不同的中式仙境场景英文图片提示词，16:9，只要图片阶段。"
+      ]
+    },
+    {
+      "lesson_number": 15,
+      "status": "pass",
+      "conclusion": "15秒八模块提示词完成，画幅、持袋与单镜头要求保留。",
+      "output_path": "Skill使用测试/15.md",
+      "output_sha256": "aa210fed02b7f0c3a6ddcedc73bcb5e2d37a862c2a9426193bb7d6c17707641a",
+      "checks": [
+        {
+          "continuous_timeline_seconds": [
+            [
+              0.0,
+              3.0
+            ],
+            [
+              3.0,
+              7.0
+            ],
+            [
+              7.0,
+              11.0
+            ],
+            [
+              11.0,
+              15.0
+            ]
+          ]
+        }
+      ],
+      "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+      "inputs": [
+        "优化这段15秒9:16写实一镜到底：女子站在站台黄线内，右手拎蓝色布袋，镜头从正面中景沿左侧小弧线靠近面部，她看向左侧进站列车后回头望入口；全程无对白，不要音乐，仅环境声。只要视频提示词。"
+      ]
+    },
+    {
+      "lesson_number": 19,
+      "status": "pass",
+      "conclusion": "3个差异化角色候选完成；未创建或生成LibTV节点。",
+      "output_path": "Skill使用测试/19.md",
+      "output_sha256": "d4f42b37a8f2cdc7597c6b1616f44aa398dacccfcc11fb55b6abee4158418f7b",
+      "checks": [],
+      "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+      "inputs": [
+        "先只在聊天里给3个差异化成年乡村女教师角色候选，1990年代末桂东南，亲切朴素，供我选择；不建画布、不生成。"
+      ]
+    },
+    {
+      "lesson_number": 21,
+      "status": "pass",
+      "conclusion": "离线资产表及角色、场景、道具Prompt完成；未创建画布。",
+      "output_path": "Skill使用测试/21.md",
+      "output_sha256": "75dc78f57b8f524959a914307146db634ec2ea8e8978ac47aa0e238d4f2b0461",
+      "checks": [],
+      "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+      "inputs": [
+        "只做离线资产拆解和提示词，不建LibTV画布、不生成：30秒写实短片《归来》，雨夜老屋，成年儿子穿灰夹克背旧帆布包，母亲穿靛蓝棉衫，门边煤油灯照亮彼此，儿子放下布包，两人静静坐到木桌旁。请给资产清单及角色/场景/道具各一份可用Prompt。"
+      ]
+    }
+  ]
+}

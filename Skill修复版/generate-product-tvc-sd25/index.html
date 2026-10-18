@@ -1,0 +1,252 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>09 电商TVC广告SKILL｜修复版</title><style>
+:root{color-scheme:light;--ink:#182a27;--muted:#60716b;--line:#dce5df;--accent:#245e48;--paper:#fbfcf9}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}a{color:var(--accent);text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}header,main,footer{max-width:1080px;margin:auto;padding:28px 24px}header{padding-top:44px;padding-bottom:20px}h1{font-size:clamp(26px,4vw,40px);line-height:1.35;margin:.3em 0}h2,h3,h4,h5,h6{line-height:1.5;margin:1.5em 0 .5em}h2{font-size:26px}h3{font-size:22px}h4{font-size:19px}p{margin:.8em 0}.muted,.meta{color:var(--muted);font-size:14px}.meta{display:flex;flex-wrap:wrap;gap:8px 20px}.notice{background:#eef4ef;border:1px solid var(--line);border-radius:12px;padding:14px 18px}.warning{background:#fff7e7;border:1px solid #ead8a7;border-radius:8px;padding:10px 14px}.tools{display:flex;gap:12px;margin:22px 0}input,select{font:inherit;background:white;color:var(--ink);border:1px solid #bccdc2;border-radius:9px;padding:11px 13px}input{flex:1;min-width:0}select{max-width:200px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:16px}.card{background:white;border:1px solid var(--line);border-radius:13px;padding:20px}.card h2{font-size:20px;margin:8px 0}.card p{font-size:14px;color:var(--muted);margin:8px 0}.tag{font-size:12px;color:var(--accent);background:#edf4ec;padding:3px 8px;border-radius:20px}.cardlinks{display:flex;flex-wrap:wrap;gap:14px;font-size:14px}article{background:white;border:1px solid var(--line);border-radius:14px;padding:clamp(18px,4vw,44px);overflow-wrap:anywhere}article> :first-child{margin-top:0}.block{white-space:pre-wrap;word-break:break-word}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px}.grid-column{min-width:0}pre{background:#f1f4ef;border:1px solid #dce4da;border-radius:9px;padding:18px;overflow:auto;white-space:pre-wrap;word-break:break-word;font:14px/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}figure{margin:24px 0}img{display:block;max-width:100%;height:auto;border-radius:6px}figcaption{font-size:13px;color:var(--muted);margin-top:7px}video,audio{max-width:100%;width:100%}.asset{background:#f4f6f1;border:1px solid var(--line);border-radius:8px;padding:14px;margin:14px 0}.asset small{display:block;color:var(--muted)}blockquote{border-left:4px solid #b0c8b5;padding:8px 18px;margin:18px 0;background:#f3f7f0}.list-item{display:flex;gap:10px;margin:.6em 0}.list-item .marker{flex:0 0 1.8em;color:#60716b}.list-body{flex:1;min-width:0}.table-wrap{overflow:auto}table{border-collapse:collapse;min-width:70%;margin:18px 0}td,th{border:1px solid #ccd8ce;padding:8px 12px;vertical-align:top}hr{border:0;border-top:1px solid var(--line);margin:28px 0}summary{cursor:pointer}footer{font-size:13px;color:var(--muted)}[hidden]{display:none!important}@media(max-width:600px){header,main,footer{padding:22px 16px}.tools{flex-direction:column}select{max-width:none}article{border-radius:9px}}
+
+.nav{display:flex;flex-wrap:wrap;gap:9px 20px;margin:18px 0}.source-text{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.8;margin:0}.source-section{padding:18px 0;border-bottom:1px solid var(--line)}.source-section h2,.source-section h3{margin:.3em 0 .7em}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px}.media-card{border:1px solid var(--line);border-radius:10px;background:white;padding:12px;min-width:0}.media-card figure{margin:0}.media-card img{width:100%;max-height:320px;object-fit:contain;background:#f0f3ed}.media-card video{width:100%;max-height:320px;background:#152620}.media-card p{font-size:13px;margin:8px 0}.media-card .meta{font-size:12px}.scroll-table{overflow:auto}td{min-width:110px}details{border:1px solid var(--line);border-radius:9px;padding:14px;margin:15px 0}details>summary{font-weight:600}details>.source-text{margin-top:16px}button{font:inherit;border:1px solid #bdcdc0;background:white;border-radius:8px;padding:8px 14px;color:var(--accent);cursor:pointer}.searchbox{width:100%;margin:10px 0 24px}.mini{font-size:13px;color:var(--muted)}
+
+.skill-archive{border:2px solid var(--accent);border-radius:12px;padding:18px;margin:18px 0;background:#eef4ef}
+.skill-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.skill-actions a,.archive-action{display:inline-block;padding:9px 13px;border:1px solid #245e48;border-radius:8px;background:white;font-weight:600}
+.skill-actions a:first-child{background:#245e48;color:white}.skill-files{margin:24px 0 32px}.skill-file{border:1px solid var(--line);border-radius:9px;padding:16px;margin:15px 0;background:white}.skill-file summary{font-weight:600;overflow-wrap:anywhere}.skill-file pre{max-height:75vh;overflow:auto;white-space:pre-wrap;word-break:break-word}.skill-file .meta{margin:10px 0}.source-info{font-size:13px;color:var(--muted);margin:10px 0}.source-info summary{cursor:pointer}.source-info a{font-weight:400}.archive-status{font-size:13px;color:var(--muted)}
+</style></head><body><header><p><a href="../../Skill%E4%BF%AE%E5%A4%8D%E7%89%88%E4%B8%8E%E6%B5%8B%E8%AF%95.html">← 修复版与测试</a> · <a download href="../../Skill%E4%BF%AE%E5%A4%8D%E5%8C%85/09-generate-product-tvc-sd25.zip">下载这个修复包</a> · <a download href="../../%E8%B5%84%E6%BA%90/09-%E7%94%B5%E5%95%86TVC%E5%B9%BF%E5%91%8ASkill/001-%E7%94%B5%E5%95%86TVC%E5%B9%BF%E5%91%8ASKILL.rar">保留的原包</a></p><h1>09 电商TVC广告SKILL｜修复版</h1></header><main><div class="notice"><p>这是归档修复版。配套文件为重新整理或编写，未找回原作者缺件。</p><p>文字模型；生图/视频另需目标平台。</p></div><h2>本包调整</h2><ul><li>将入口规范为SKILL.md，正文取自原Markdown。</li><li>补入1个自行重建文件；并非找回作者原件。</li><li>将参考文档的本机来源链接改为归档路径文字，避免在其他电脑产生无效导航。</li></ul><h2>Skill 与配套文件</h2><details id="file-0" class="skill-file" open><summary>SKILL.md</summary><p><a download href="SKILL.md">下载此文件</a></p><pre><code>---
+name: generate-product-tvc-sd25
+description: Turn a single product reference image, product packshot, or small set of product images into one complete, directly copyable 30-second Seedance 2.5 ecommerce TVC advertising prompt. Use when the user uploads a product image and asks for 电商TVC、产品广告、30秒广告、商业广告片、产品宣传片、SD2.5/Seedance 2.5 提示词、单图出广告、产品图转视频，or wants a shot-by-shot product commercial with visual identity locks, camera direction, sound design, copy, transitions, and consistency constraints. Also use to revise an existing Seedance product-ad prompt while preserving the referenced product.
+---
+
+&gt; 归档修复版（2026-10-17）：原始安装包另行保留。缺失配套文件由归档主文与教程重建，非作者原件，原参考图对应关系未恢复。
+
+# 单图生成 30 秒电商 TVC
+
+根据参考图提炼一份产品视觉圣经，并直接输出一版可复制到 Seedance 2.5 的完整 30 秒广告提示词。默认 16:9、无旁白、电影级商业广告质感；用户另有要求时服从用户。
+
+## 执行原则
+
+- 先完整查看所有参考图，再写提示词。若输入是本地文件，使用可用的图像查看工具检查原图。
+- 默认只交付一版成熟方案，不给多个方向，不先追问风格，不展示分析过程。
+- 仅在两个同等显眼的物体导致主产品无法判断，或用户要求必须出现但图片中不存在的关键信息时，提出一个简短问题。
+- 产品不明时，把画面中央、面积最大、清晰度最高的商品视为主产品；明显成套的配件可作为陪体，否则不要擅自增加商品。
+- 用户只给一张图也要完成任务。看不见的侧面、背面和内部结构不得被描述成确定事实。
+- 用户未要求生成或编辑图片时，不调用图像生成工具；本 Skill 的交付物是文字提示词。
+
+## 工作流
+
+### 1. 建立产品视觉锁定
+
+从参考图提取并在最终提示词的【产品视觉锁定】中写清：
+
+- 品类、轮廓、长宽高比例和朝向；
+- 可见部件、数量、排列、开孔、接口、按键或包装结构；
+- 主色、辅色、透明度、材质、表面纹理、边缘形态和反光特征；
+- 可读的品牌、型号、Logo 位置、包装文字与图案；
+- 同图中的附件是否属于产品套装；
+- 绝对不能漂移的身份锚点，选择 4–8 项最具辨识度的特征。
+
+文字看不清时写“保持参考图原有标识及版式，不新增或改写字符”，不要猜品牌或型号。只有用户明确提供、图片清楚可见或可靠资料已验证的功能，才能写成技术卖点。未知技术参数改用可观察的体验卖点，例如触感、收纳、使用场景、材料观感和操作反馈。
+
+### 2. 选择一个广告概念
+
+读取 [品类广告语法](references/category-playbook.md)，按产品类别选择一个主概念，并让全片共享一个视觉母题和一条连续的声音线索。创意必须来源于产品形态、材质、动作或使用结果，不得只靠随机粒子、强炫光和无意义悬浮制造“高级感”。
+
+默认创意结构：
+
+1. **吸引**：0–4 秒内用产品独有的动作、材质或使用瞬间建立钩子；
+2. **识别**：尽快交代完整产品、品牌或核心轮廓；
+3. **证明**：用 2–3 个可拍摄的视觉证据展示主要价值；
+4. **体验**：加入真实使用、结果或场景变化；
+5. **记忆**：以稳定英雄镜头、短文案和品牌收束。
+
+### 3. 编排 30 秒连续时间线
+
+- 使用 6–9 个镜头，每镜头通常 2.5–5 秒；时间段必须连续覆盖 0–30 秒，无空档、重叠或总时长错误。
+- 每个镜头依次写清：时间、景别/机位、摄影机运动、产品动作、物理反馈、环境光影、衔接方式、同步声音。
+- 每个镜头只设置一个主动作和一个主要运镜；复杂效果拆到下一个镜头完成。
+- 给动作写明确起点、过程和终点。例如“键帽被按下—触底—回弹复位”，不要只写“展示按键”。
+- 使用形态匹配、动作承接、遮挡转场、光线扫过或声音桥连接镜头，避免彼此无关的 MV 式堆砌。
+- 前 4 秒出现清晰钩子，前 8 秒内至少出现一次完整产品，最后 2–3 秒保持稳定的品牌英雄镜头。
+- 需要人物时优先只出现与产品有关的手或局部动作；只有使用情境确实需要时才出现人物全身或面部。
+- 拆解、剖面、液体包裹、形态变化等效果只有在能清晰解释产品时使用。所有部件沿合理轴线运动，拆解后必须能对应原位置并完整复原。
+
+### 4. 写成 Seedance 2.5 可执行语言
+
+- 使用明确的现实空间、相机位置、焦段感、运动方向、速度和焦点变化。
+- 为微距、快速运动、透明件、反射面、液体或粒子补充合理的光线与物理行为。
+- 把“高端、震撼、电影感”等抽象词落成可见设计：布光、材质、景深、色彩、速度和声音。
+- 不强迫模型生成大段小字。画面内文字以品牌、型号、1–2 条短卖点和结尾标语为限；用户未给正式广告语时，可写一条不包含未经证实功能承诺的短句。
+- 品牌和型号不确定时，不写伪造文字；采用“按参考图保留原标识”，并把长文案视为后期叠字内容。
+
+## 默认设置
+
+用户没有指定时采用：
+
+- 时长：30 秒；
+- 画幅：16:9；
+- 规格：高品质电影级商业广告，写实产品摄影与可信 CG 融合；
+- 声音：无旁白，以产品原生声音、拟音和不抢主体的现代氛围音乐构成；
+- 节奏：前段快速建立兴趣，中段清楚展示价值，结尾留足品牌记忆；
+- 画面：干净、质感真实、受控高光、可辨识产品轮廓，不默认套用纯白科技空间；
+- 人物：非必要不露脸；手部自然、数量与关节正确。
+
+## 最终输出格式
+
+除非用户要求解释，直接输出以下内容，不附加分镜表、备选方案、使用教程或冗长前言：
+
+```text
+=== 30秒电商TVC｜Seedance 2.5 完整提示词 ===
+
+【广告基础设定】
+时长、画幅、产品、受众感受、广告目标、声音总原则。
+
+【产品视觉锁定】
+把参考图中可确认的产品特征写成连续一致的产品身份说明。
+
+【创意概念】
+一句概念名 + 一句从产品特征出发的视觉叙事。
+
+【整体风格】
+空间、色彩、光线、材质、摄影、景深、运动与质感。
+
+【时间线】
+0–X秒，……
+X–X秒，……
+……
+X–30秒，稳定英雄镜头与品牌收束。
+
+【声音设计】
+音乐走势、产品拟音、转场声、结尾声音标识；默认无旁白。
+
+【画面文字】
+只列实际出现的短文字、出现时段和版式位置。未知品牌不杜撰。
+
+【全程一致性与生成限制】
+用完整语句锁定同一产品、结构、颜色、标识、配件、空间连续性、运动物理、人物肢体和画面洁净度。
+```
+
+## 一致性检查
+
+交付前静默检查并修正：
+
+- 是否精确覆盖 30 秒；
+- 是否始终为参考图中的同一件产品；
+- 是否至少出现一次完整、无遮挡、易识别的产品；
+- 是否把不可见结构或未经证实参数当成事实；
+- 是否每个镜头都有可执行的主体动作与摄影机动作；
+- 是否存在不能复原的拆解、穿透、融化、数量变化或配件凭空出现；
+- 是否控制文字数量并避免乱码风险；
+- 是否给声音设计留出主次和节奏；
+- 是否只有一版最终提示词，且可以直接复制使用。
+
+## 修改已有提示词
+
+用户提供旧稿时，保留其产品、时长、画幅和明确创意意图，优先修复产品漂移、动作不连贯、镜头拥挤、时间线错误、卖点无证据、文字过多和结尾不稳。用户说“继续”“再优化”“按这个产品改”时，基于上一版迭代，不从零换创意。
+</code></pre></details><details id="file-1" class="skill-file" ><summary>references/category-playbook.md</summary><p><a download href="references/category-playbook.md">下载此文件</a></p><pre><code>&gt; 修复版参考文件：基于已归档主文/教程重新整理，非找回作者原件。
+
+# 品类广告语法 · 修复版
+
+来源记录（下列为完整资料库内路径，仅供溯源，不是本包运行依赖）：原包主文（归档路径：`Skill解压/09-电商TVC广告SKILL/电商TVC广告SKILL.md`）；已归档教程（归档路径：`教程/09-电商TVC广告Skill/教程.md`）。
+
+依据原主文的“吸引—识别—证明—体验—记忆”结构和教程中的机械键盘文字广告示范重建。下方品类矩阵、迁移规则及30秒示范是本次新整理，未验证生成效果。教程的产品图片与视频未在本次单独查看，涉及键盘的外观描述仅注明来自教程文字，不能当作本次看图确认。
+
+## 先选可见证据，再选概念
+
+完整看过用户产品图后，先锁定4–8项外观锚点，再找“这个产品独有的形态、材质、动作或使用关系”。只有文字稿时，可以基于文字做概念，但明确哪些外观与功能尚待用户图确认。一个30秒片段只保留一个主要概念、2–3个证据与一条声音线索。
+
+| 品类 | 可用钩子与主概念 | 可拍的证明与体验 | 视觉母题 / 声音 | 不从图外推的内容 |
+| --- | --- | --- | --- | --- |
+| 机械键盘、鼠标等桌面硬件 | 一次按压或已存在的灯光变化；把桌面带入秩序 | 完整轮廓、手部输入、已可见旋钮与键帽动作 | 行列秩序、真实按键拟音 | 未知内部轴体、响应速度、寿命、未证实的灯效逻辑 |
+| 耳机与随身数码 | 握持、开合或佩戴动作；从收纳进入使用 | 可见接口、外形、盒盖与耳机数量、真实佩戴关系 | 开合线条、轻触与空间声氛围 | 未证实的降噪曲线、电池时长、看不见的内部芯片 |
+| 瓶装护肤与日用品 | 瓶盖、泵头、液体或表面反光；材质与使用手感 | 已知开合、取用、手部接触和包装识别 | 轮廓线、高光移动、轻微取用拟音 | 未证实的疗效、成分、渗透层或使用前后功效 |
+| 服饰、鞋包 | 褶皱展开、鞋带或提手受力；日常动作中的质感 | 布料纹理、裁片、包身形态、真实穿用 | 布料回摆、步伐、拉链或扣件声 | 未验证的防水承重、真实材质等级或用途认证 |
+| 水杯、茶具与餐具 | 杯沿反光、握持和倒水；安静的使用仪式 | 轮廓、接触、液面与桌面关系 | 弧线与涟漪、杯碰桌与注水声 | 未证实的保温小时数、耐摔、食品接触认证 |
+| 小家电 | 用户明确的操作步骤与已知使用结果 | 一次按键、正常摆放、真实功能前后关系 | 结构秩序、开关与使用拟音 | 仅凭外观推断吸力、温度、噪声或内部工作原理 |
+| 食品与饮料 | 切面、倒入、蒸汽或可见质地；一个具体食用瞬间 | 包装识别、实际份量、器具接触、食物表面 | 质地、轻微烹饪或倒入声 | 未核实的营养、产地、功效或规格承诺 |
+| 香氛、灯具与家居小物 | 空间中的光、轮廓或摆放动作；场景感受 | 同一物件在明确空间中的位置与使用 | 光影变化、室内环境声 | 把看不见的香味“证明”为身体效果，或编节能参数 |
+
+不是每个品类都需要人物。需要使用证据时，只出现足以说明动作的手部或局部身体；脸和全身应由使用情境决定。
+
+## 把概念落实成30秒
+
+用下面的分配开始，再按产品调整。每镜头只设一个主动作和一个主要运镜，覆盖0–30秒，无空档或重叠。
+
+| 阶段 | 建议时间 | 必须交代 |
+| --- | --- | --- |
+| 吸引 | 0–3秒 | 产品自身动作或材质，避免先拍无关风景 |
+| 识别 | 3–7秒 | 一次完整、无遮挡产品，确认轮廓与锚点 |
+| 证明一 | 7–11秒 | 一个可见部件或操作，不堆功能标签 |
+| 证明二 | 11–15秒 | 与前镜有动作或形态承接的另一证据 |
+| 体验 | 15–19秒 | 手与物在真实空间的接触关系 |
+| 加深记忆 | 19–23秒 | 让视觉母题再次出现，仍围绕产品 |
+| 英雄准备 | 23–27秒 | 回到完整产品，结束复杂动作 |
+| 记忆收束 | 27–30秒 | 稳定英雄镜头、原有标识与一条短文案 |
+
+这些时间段是新编结构建议，不是平台限制。用户另有时长时重新分配；产品不支持某种功能时直接换证据，不虚构结果来填满阶段。
+
+## 用教程键盘例子练习
+
+已归档教程文字描述了一把白色/银白机身、黑白键帽、黑色空格键、右上银色旋钮、左侧红色半透明条和RGB背光的键盘。本次未查看其产品图，以下只把它作为明确标注的文字输入；执行前应以用户实际产品图核对并覆盖。旋钮声音、音乐、灯光的先后变化是新编视听设计，不代表硬件功能实测。
+
+新编概念：**桌面节奏，从一次按下开始。**用键帽的下压回弹、已知旋钮与完整产品三个证据，把“秩序与触感”落在可拍动作里，不增加未知参数。
+
+```text
+【广告基础设定】30秒，16:9，写实桌面产品广告。以下外观暂按教程文字定义，执行时以实际产品参考图为准。默认无旁白，按键拟音贯穿，音乐克制，不编写品牌或型号。
+【产品视觉锁定】使用同一把白色/银白色机身机械键盘，黑白键帽、黑色长空格键、右上银色圆形旋钮、左侧红色半透明条和原有RGB背光布局全程不变。保持实际参考图的比例、标识与字符，不添加未知接口、配件或内部结构。
+【创意概念】桌面节奏，从一次按下开始。由一次清楚的键帽动作启动全片，通过行列、旋钮圆弧和手部输入构成连贯视觉母题。
+【整体风格】深灰真实桌面，柔和顶部条光勾勒浅色机身，侧面低亮轮廓光保留键帽与旋钮形体。材质反光受控，光效始终依附实际产品，不让粒子或炫光盖住轮廓。
+【时间线】
+0–3秒：键帽微距，画面内一根手指自然按下黑色键帽，完成下压、触底、回弹。摄影机固定，保持指尖接触与键帽轮廓清楚；单次按键拟音建立钩子。
+3–7秒：以键帽回弹后的声尾连接完整产品俯拍。整把键盘无遮挡置于桌面中央，摄影机缓慢微推近，尽早确认白色机身、黑白布局、旋钮和红色条的位置，已知灯光保持稳定。
+7–11秒：切到右上旋钮近景，手指轻转旋钮后离开，摄影机只做短距离侧移以显示金属高光移动。声音为本次设计的轻微操作拟音，不在画面中宣称调音量、性能或阻尼数值。
+11–15秒：侧向中近景，手指沿一小段键列依次输入，每次按下与回弹可读，手不在同一时刻穿过多个键帽。摄影机沿键列缓慢跟移，声音节奏承接上一镜操作声，不展示内部轴体。
+15–19秒：真实使用中景，只出现手部与手腕，键盘稳定承托在桌面上。摄影机固定，双手完成一段克制输入，背景屏幕只作为模糊光源，不出现可读内容或未知界面。
+19–23秒：形态匹配连接到左侧红色半透明条与机身边缘。摄影机沿侧面短滑，展示已知的材质透光和轮廓；不把红色条虚构成会逐段响应输入的功能，不改变开孔与零件数量。
+23–27秒：回到完整产品三分之二角度，摄影机缓慢移到最终英雄位置，所有产品动作逐渐收束。原有背光亮度稳定，桌面保持整洁，按键拟音变少，音乐留出结尾空间。
+27–30秒：固定英雄镜头，键盘居中、边缘清楚，实际标识保持原样。只在产品之外留白处后期叠加一句“点亮桌面节奏”，不在键帽上生成新字符。音乐随着最后一次轻微按键拟音自然收尾。
+【声音设计】无旁白。产品操作拟音为主，现代氛围音乐为辅；旋钮与输入的拟音只服务创意节奏，不当作实测声学特性。结尾不突然加入与产品无关的爆炸或电流巨响。
+【画面文字】仅27–30秒一条后期短文案“点亮桌面节奏”。不杜撰品牌、型号、性能、价格或规格，不把“保留原标识”这句制作说明生成在画面内。
+【全程一致性】同一键盘、机身比例、键帽布局、旋钮位置、红色条、背光与手部接触连续。不得拆解看不见的内部、融化机身、复制键帽或凭空增加配件。原图与教程文字有冲突时，以实际产品图为准后统一修改整段。
+```
+
+## 迁移到别的品类
+
+先替换产品锚点，再替换操作证据和声音，最后重写与产品有关的视觉母题。例如迁移到陶杯，可用杯沿、握持与注水替换键帽、旋钮和输入；不要把RGB灯条或电子音顺手带过去。只给了外观而没有功能证据时，用轮廓、材质、接触与空间关系完成广告，不靠未知性能作卖点。
+
+最终只输出用户要的一版完整提示词。检查结束后可以说“文字已整理”，不能说“广告效果已验收”“产品参数已验证”或“已生成成片”。
+</code></pre></details><h2>实际文字试用</h2><p>30秒TVC文字完成；截图缩略图与旧示例文字的证据已区分。</p><pre><code>```text
+=== 30秒电商TVC｜Seedance 2.5 完整提示词 ===
+
+【广告基础设定】
+时长30秒，16:9横版，参考图右上缩略图中的同一把桌面键盘。以键列秩序、键帽起伏和日常输入建立可见的产品印象，目标是让观众记住这把键盘的轮廓与配色。无旁白，声音由按键拟音、轻微桌面环境声和克制的电子氛围音乐构成。参考图是对话截图，产品细节较小；只沿用缩略图可辨识的外观，截图正文中的旧广告描述不作为已确认功能。
+
+【产品视觉锁定】
+始终是缩略图里的同一件紧凑横向矩形键盘：浅色矩形外框，深色为主并混有浅色的成排键帽，底部横向长空格键，键列间呈现青绿、黄色到暖橙的彩色带，两端带有红色竖向色块。严格沿用参考图的宽高比例、正面键位分区、可见键帽高低与色块位置。图片无法清晰辨认品牌、型号、细小键面文字、旋钮和接口，因此不突出未能确认的零件；保持参考图原有标识及版式，不新增或改写字符。两端红色色块仅表现已见色彩，不编为按键、灯条或接口。图片之外的背面、内部轴体、连接方式、技术参数与功能不进入画面。
+
+【创意概念】
+“指尖落下，桌面有了节奏。”从一次可见的按下回弹出发，让键帽行列、指尖节拍与浅色外框共同构成整片的视觉线索。
+
+【整体风格】
+同一张深灰桌面、同一面暗灰背景，真实产品摄影质感。柔和顶部条形光照出浅色外框，侧面窄轮廓光分开键帽高度，彩色带保持参考图中的分布和亮度，不沿按键制造未经确认的响应灯效。材质高光柔和，清楚保留边缘。先以局部吸引，再给完整外形；使用固定、短距离平移或缓慢后移，每镜头只有一种主要运镜，不展示不可见侧面。
+
+【时间线】
+0–3秒：键列近景，俯视角度只略低于参考图。固定摄影机，一根自然手指落在可见深色键帽中心，将它按下、短暂停住，再抬起使键帽回弹到原高度；相邻键帽不移动。顶部光沿键帽边缘形成细亮线。一声克制按键拟音启动节奏，回弹声尾连接下一镜。
+
+3–7秒：切到接近参考图方向的三分之二俯视中景，摄影机缓慢后移，至第5秒已完整露出整把键盘，无遮挡置于桌面中央。键盘静置，浅色外框、深浅键帽、长空格键、彩色带和两端红色色块同时可辨。轻微桌面接触声落下，电子音乐进入；外框横线引向下一镜。
+
+7–11秒：键列中近景，摄影机沿横向一小段缓慢右移。手指先后按下相邻两颗键，每颗完成下压、停留、回弹后再移动到下一颗；手指始终接触真实键面。保持彩色带稳定，浅色外框提供方向参照。两次拟音与音乐节拍相连，不夸大键盘速度、阻尼或静音性能。
+
+11–15秒：切到正面略俯视的长空格键近景，固定摄影机。拇指从上方接触长空格键中央，完成一次轻按与复位后离开，长键整体沿垂直方向运动，不弯折、不脱落。柔和顶光体现长键与相邻小键的尺度差异。稍低的一次操作拟音作为声音重音，连接真实使用段落。
+
+15–19秒：同一桌面的双手使用中景，只出现手与手腕。固定机位，双手完成一小段自然输入，键盘由桌面稳定承托，不滑动或弹跳；手指轮流落下，不同时穿过多个键帽。背景保持安静暗灰，无需屏幕证明未知软件功能。输入拟音短暂密集后渐疏，动作末尾双手停在键列上方。
+
+19–23秒：承接输入结束，切到浅色外框和一端红色色块的近景。摄影机沿已见正面边缘短距离平移；键盘不转动、不拆解，柔和高光沿外框移动，红色色块保留其静态形状。只展示图中可辨的配色关系，不生成旋钮、接口或动态发光机制。按键声尾通过声音桥延续，音乐留下空间。
+
+23–27秒：回到完整产品的三分之二俯视中景。摄影机缓慢后移一小段，到第27秒到达最终英雄位置；双手从两侧自然退出，键盘静置在桌面中央，轮廓与两端色块无遮挡。光照维持统一，细小反光随机位变化，音乐由密到疏，最后一次拟音落下。
+
+27–30秒：完全固定的完整产品英雄镜头，键盘与全部可见结构稳定，四周留足暗灰留白。仅在画面下方产品以外区域后期叠加“让桌面有节奏”，整句保持稳定到结束。保留参考图原有标识，不生成新的品牌或型号。氛围音乐与最后一个短音自然收束，画面不闪白、不黑场遮盖产品。
+
+【声音设计】
+无旁白。以人为按压动作同步的轻触、下压与回弹拟音为主线；这些是广告声音设计，不冒充该型号实录声学特征。电子氛围音乐在3秒进入，15–19秒托住输入节奏，23秒后逐步变简。转场主要靠按键声尾衔接，不用电流爆响或无来源机械轰鸣。最后一个短音结束，保留一点桌面空间感。
+
+【画面文字】
+27–30秒：后期叠字“让桌面有节奏”，置于画面下方留白，字号适中，避开产品。其余时段没有新广告文字。键面与原有标识按参考图保留，不杜撰品牌、型号、功能、价格或规格。
+
+【全程一致性与生成限制】
+始终是同一把参考键盘，浅色外框、深浅键帽的原有分区、长空格键、彩色带与两端红色色块全程一致。键帽只沿可见的下压方向运动并原位回弹，不拆解、融化、变形、复制或增加零件。红色色块不被擅自解释成功能部件，未知侧面、背面与内部不出现。人物只出现两只自然的手，指节与接触正确，双手退出后不残留多余肢体。桌面、背景与主光连续，画面没有对话截图界面、下载按钮、输入框、额外水印或未经确认的功能可视化。
+```
+</code></pre></main><footer>2026-10-17 修复与验证。原件、修复文件及测试边界分别记录。</footer></body></html>

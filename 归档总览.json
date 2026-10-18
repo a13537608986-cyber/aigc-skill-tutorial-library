@@ -22,5 +22,18 @@
     "200个过期签名URL均保留原记录，相关素材已有有效预览替代；预览不等同原始分辨率。",
     "28个画布节点未提供输出素材，已保留其提示词和节点结构，不计作已生成或下载失败。",
     "13个原包及解压内容均保留，未安装或执行。"
-  ]
+  ],
+  "repair_revision": {
+    "date": "2026-10-17",
+    "repaired_skill_directories": 13,
+    "original_files_recovered": 0,
+    "reconstructed_references": 9,
+    "reconstructed_scripts": 2,
+    "original_packages_preserved": true,
+    "script_cases_passed": 98,
+    "text_usage_cases": 13,
+    "paid_generation_tested": false,
+    "report": "Skill修复版与测试.html",
+    "download": "Skill修复版合集.zip"
+  }
 }

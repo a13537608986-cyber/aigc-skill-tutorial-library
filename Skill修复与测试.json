@@ -1,0 +1,1633 @@
+{
+  "revision": "2026-10-17",
+  "originals_preserved": true,
+  "notice": "独立修复版。11个缺件重建为9份参考和2个检查脚本；未找回原作者文件。原始安装包保持不变。",
+  "items": [
+    {
+      "lesson_number": 2,
+      "title": "中式园林美学SKILL",
+      "name": "chinese-garden-cinematic-portrait",
+      "directory": "Skill修复版/chinese-garden-cinematic-portrait",
+      "original_package": "资源/02-中式园林高级美学SKILL/001-中式园林美学SKILL.zip",
+      "original_main": "Skill解压/02-中式园林美学SKILL/chinese-garden-cinematic-portrait/SKILL.md",
+      "original_package_sha256": "61f612c6592de7391de2dd68ca2f45289651c3a2d6a1d86465e7e42fbad620b1",
+      "original_main_sha256": "f121aa14033ea0aab8f2378cf8e58582399536e4bcf085461599db2954adf597",
+      "repaired_main_sha256": "df89e5e877d095df7b9ca6ca5238235db13afe8f99e38661454a93ad73488b68",
+      "reconstructed_files": [],
+      "changes": [],
+      "reconstructed_reference_provenance": [],
+      "original_files_recovered": 0,
+      "execution_dependency": "文字模型；生图/视频另需目标平台",
+      "repaired_zip": "Skill修复包/02-chinese-garden-cinematic-portrait.zip",
+      "repaired_zip_stats": {
+        "bytes": 7641,
+        "sha256": "f2e56c4783ea03477f513ea44a494deae7f2fca933d4c8dd717fc8d796930bb5"
+      },
+      "runtime_files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 6988,
+          "sha256": "df89e5e877d095df7b9ca6ca5238235db13afe8f99e38661454a93ad73488b68"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "bytes": 493,
+          "sha256": "36678bb36f27f2316a498b2820a805d9c682e173c04a17286f2e380c75e507bc"
+        },
+        {
+          "path": "assets/icon.svg",
+          "bytes": 1210,
+          "sha256": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee"
+        },
+        {
+          "path": "references/prompt-baselines.md",
+          "bytes": 4481,
+          "sha256": "0707849ab484e45af80581aca67460d7a66a507f671cdb1aaf4f7c42b4653651"
+        }
+      ],
+      "text_test_output": "Skill使用测试/02.md"
+    },
+    {
+      "lesson_number": 3,
+      "title": "东方宫阙美学SKILL",
+      "name": "celestial-court-portrait",
+      "directory": "Skill修复版/celestial-court-portrait",
+      "original_package": "资源/03-东方宫阙美学SKILL/001-东方宫阙美学SKILL.zip",
+      "original_main": "Skill解压/03-东方宫阙美学SKILL/celestial-court-portrait/SKILL.md",
+      "original_package_sha256": "5e51a09c231d9ddbb7734ce02fed63e3fe9089c6f17f9c317f7cf089eda92b3f",
+      "original_main_sha256": "e6f86fc944c0a38ba3a9ef0effa8d7a84da049ff19dd8469cffb9a1fc2deab1b",
+      "repaired_main_sha256": "d84a0bc9aad737bc95ce5e71e36e749158e07dd20a78ea98dc2a6ae65326adc5",
+      "reconstructed_files": [],
+      "changes": [],
+      "reconstructed_reference_provenance": [],
+      "original_files_recovered": 0,
+      "execution_dependency": "文字模型；生图/视频另需目标平台",
+      "repaired_zip": "Skill修复包/03-celestial-court-portrait.zip",
+      "repaired_zip_stats": {
+        "bytes": 13028,
+        "sha256": "0f03539638932c71bc0f30e6edda008aa5cea5f3d04e29f144dbc15534461721"
+      },
+      "runtime_files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 7847,
+          "sha256": "d84a0bc9aad737bc95ce5e71e36e749158e07dd20a78ea98dc2a6ae65326adc5"
+        },
+        {
+          "path": "agents/openai.yaml",
+          "bytes": 545,
+          "sha256": "f31cb74ff7d0f86464eb1902df5cdec64fc1516c0de284631de4a881aa2d7b89"
+        },
+        {
+          "path": "assets/icon.svg",
+          "bytes": 1210,
+          "sha256": "49315dda7125ec5fc77ef5f2b96126d8b2121c6e72944b4702972e90f321d3ee"
+        },
+        {
+          "path": "references/reference-guide.md",
+          "bytes": 4503,
+          "sha256": "587973b0e995e887d70364d08c2815ff21b8cac26b9b8942b4b6cee15e1ecb09"
+        },
+        {
+          "path": "references/repair-guide.md",
+          "bytes": 3643,
+          "sha256": "5b38c19433a9d7229a37cd04d77c829b014d393b3f1143d26010d448a173e7fc"
+        },
+        {
+          "path": "references/style-guide.md",
+          "bytes": 3620,
+          "sha256": "a0ff8d51b46950a8208f280501d109fd8b060c08c918c7519d36568d401a10c0"
+        }
+      ],
+      "text_test_output": "Skill使用测试/03.md"
+    },
+    {
+      "lesson_number": 4,
+      "title": "豆包AI电影导演智能体",
+      "name": "doubao-film-director",
+      "directory": "Skill修复版/doubao-film-director",
+      "original_package": "资源/04-豆包AI导演智能体教程/001-豆包AI电影导演智能体.rar",
+      "original_main": "Skill解压/04-豆包AI电影导演智能体/豆包AI电影导演智能体/豆包AI电影导演智能体指令.md",
+      "original_package_sha256": "3fce6b982c04580f64360ce7e4488e373a3d9e98394afb08ea55c531bce3932c",
+      "original_main_sha256": "d56032e8c20f7797c47092cfa35ca296bb5de5e6c430d391d41d95ba4adfba81",
+      "repaired_main_sha256": "f3b06f97a4943e5212f24c7c82feb525f2b281105469b4c9e9b9834d4df5f285",
+      "reconstructed_files": [],
+      "changes": [
+        "新增标准name与description配置。",
+        "将入口规范为SKILL.md，正文取自原Markdown。"
+      ],
+      "reconstructed_reference_provenance": [],
+      "original_files_recovered": 0,
+      "execution_dependency": "豆包原生生成能力（文本可独立使用）",
+      "repaired_zip": "Skill修复包/04-doubao-film-director.zip",
+      "repaired_zip_stats": {
+        "bytes": 6735,
+        "sha256": "ff66efc18d54ffb033a8fea18a7d9bddeebc8581691e431e7b2e69721762f566"
+      },
+      "runtime_files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 14778,
+          "sha256": "f3b06f97a4943e5212f24c7c82feb525f2b281105469b4c9e9b9834d4df5f285"
+        }
+      ],
+      "text_test_output": "Skill使用测试/04.md"
+    },
+    {
+      "lesson_number": 5,
+      "title": "东方美学人物角色.md",
+      "name": "eastern-character-mj-seedance",
+      "directory": "Skill修复版/eastern-character-mj-seedance",
+      "original_package": "资源/05-东方美学人物角色SKILL/001-东方美学人物角色.md.zip",
+      "original_main": "Skill解压/05-东方美学人物角色.md/东方美学人物角色.md",
+      "original_package_sha256": "7a0e28264e927be811a3b84fae9ddfb06115d8562d98a8517e55be72a2f9bc32",
+      "original_main_sha256": "35b058ba088c152d831dc22e2e39e233bce03031dce568b4cb7b2dfd0a8bb3e8",
+      "repaired_main_sha256": "e5e3899591ec32068417885dc000c8d20cba9878455993eca5fe297b70e2d170",
+      "reconstructed_files": [
+        "references/character-examples.md",
+        "references/video-examples.md",
+        "scripts/check_prompts.py"
+      ],
+      "changes": [
+        "将入口规范为SKILL.md，正文取自原Markdown。",
+        "更正缺失参考图的范例来源表述，使用明确标注的新编参考。",
+        "补入3个自行重建文件；并非找回作者原件。",
+        "将参考文档的本机来源链接改为归档路径文字，避免在其他电脑产生无效导航。"
+      ],
+      "reconstructed_reference_provenance": [
+        {
+          "file": "references/character-examples.md",
+          "status": "reconstructed_not_author_original",
+          "distributed_sha256": "1dd271bf10068da3ee58499f35a17b73e2a89d1474c0eb7b05aed9069ff59cb0",
+          "sources": [
+            {
+              "kind": "main",
+              "archive_relative_path": "Skill解压/05-东方美学人物角色.md/东方美学人物角色.md",
+              "sha256": "35b058ba088c152d831dc22e2e39e233bce03031dce568b4cb7b2dfd0a8bb3e8",
+              "read_scope": "main_full_text",
+              "relevant_sections": [
+                "默认交付",
+                "风格核心",
+                "选择一个光色方向",
+                "图片工作方法",
+                "成图到约4秒视频"
+              ]
+            },
+            {
+              "kind": "tutorial",
+              "archive_relative_path": "教程/05-东方美学人物角色SKILL/教程.md",
+              "sha256": "1e12653bee2fad68bb93b7a27cc68cfd85a1df70238ba74a476599099da6a511",
+              "read_scope": "tutorial_unique_body_plus_appended_main_compared_to_original",
+              "relevant_sections": [
+                "原教程步骤与提示词示范",
+                "已归档Skill完整正文"
+              ]
+            },
+            {
+              "kind": "viewed_image",
+              "archive_relative_path": "资源/05-东方美学人物角色SKILL/005-image.png",
+              "sha256": "1ac935b6d9f2286aaccf0fc9f44dafa10b1eefb9b7149241018210dfefb70189",
+              "is_screenshot": true,
+              "viewed_as": "static_image_only",
+              "not_observed": [
+                "video_motion",
+                "audio",
+                "platform_execution"
+              ]
+            },
+            {
+              "kind": "viewed_image",
+              "archive_relative_path": "资源/05-东方美学人物角色SKILL/008-image.png",
+              "sha256": "bfee511595c0a5a1e2929b7918eac54c12db7ebd21468da78274a07b4ee348e6",
+              "is_screenshot": true,
+              "viewed_as": "static_image_only",
+              "not_observed": [
+                "video_motion",
+                "audio",
+                "platform_execution"
+              ]
+            }
+          ],
+          "distribution_adjustment": "本机绝对来源链接改为纯文字归档路径；不改变创作规则与范例。"
+        },
+        {
+          "file": "references/video-examples.md",
+          "status": "reconstructed_not_author_original",
+          "distributed_sha256": "c55bd876a6cc2e8d12e1740610b1a6976304282be042eb82ccab22c5ca4cae69",
+          "sources": [
+            {
+              "kind": "main",
+              "archive_relative_path": "Skill解压/05-东方美学人物角色.md/东方美学人物角色.md",
+              "sha256": "35b058ba088c152d831dc22e2e39e233bce03031dce568b4cb7b2dfd0a8bb3e8",
+              "read_scope": "main_full_text",
+              "relevant_sections": [
+                "默认交付",
+                "风格核心",
+                "选择一个光色方向",
+                "图片工作方法",
+                "成图到约4秒视频"
+              ]
+            },
+            {
+              "kind": "tutorial",
+              "archive_relative_path": "教程/05-东方美学人物角色SKILL/教程.md",
+              "sha256": "1e12653bee2fad68bb93b7a27cc68cfd85a1df70238ba74a476599099da6a511",
+              "read_scope": "tutorial_unique_body_plus_appended_main_compared_to_original",
+              "relevant_sections": [
+                "原教程步骤与提示词示范",
+                "已归档Skill完整正文"
+              ]
+            },
+            {
+              "kind": "viewed_image",
+              "archive_relative_path": "资源/05-东方美学人物角色SKILL/005-image.png",
+              "sha256": "1ac935b6d9f2286aaccf0fc9f44dafa10b1eefb9b7149241018210dfefb70189",
+              "is_screenshot": true,
+              "viewed_as": "static_image_only",
+              "not_observed": [
+                "video_motion",
+                "audio",
+                "platform_execution"
+              ]
+            },
+            {
+              "kind": "viewed_image",
+              "archive_relative_path": "资源/05-东方美学人物角色SKILL/008-image.png",
+              "sha256": "bfee511595c0a5a1e2929b7918eac54c12db7ebd21468da78274a07b4ee348e6",
+              "is_screenshot": true,
+              "viewed_as": "static_image_only",
+              "not_observed": [
+                "video_motion",
+                "audio",
+                "platform_execution"
+              ]
+            }
+          ],
+          "distribution_adjustment": "本机绝对来源链接改为纯文字归档路径；不改变创作规则与范例。"
+        }
+      ],
+      "original_files_recovered": 0,
+      "execution_dependency": "文字模型；生图/视频另需目标平台",
+      "repaired_zip": "Skill修复包/05-eastern-character-mj-seedance.zip",
+      "repaired_zip_stats": {
+        "bytes": 17045,
+        "sha256": "1493e4c9452cfa45f4d298d0424a77c5bf38c521be779c6318ac45dd8879b7b2"
+      },
+      "runtime_files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 10539,
+          "sha256": "e5e3899591ec32068417885dc000c8d20cba9878455993eca5fe297b70e2d170"
+        },
+        {
+          "path": "references/character-examples.md",
+          "bytes": 8746,
+          "sha256": "1dd271bf10068da3ee58499f35a17b73e2a89d1474c0eb7b05aed9069ff59cb0"
+        },
+        {
+          "path": "references/video-examples.md",
+          "bytes": 5484,
+          "sha256": "c55bd876a6cc2e8d12e1740610b1a6976304282be042eb82ccab22c5ca4cae69"
+        },
+        {
+          "path": "scripts/check_prompts.py",
+          "bytes": 8989,
+          "sha256": "0531a3cc4ff9980c7680fabf8b78573b4152dd9a6f7e42d3be708a4432eb4195"
+        }
+      ],
+      "text_test_output": "Skill使用测试/05.md"
+    },
+    {
+      "lesson_number": 6,
+      "title": "宋式田园美学SKILL",
+      "name": "song-pastoral-mj-seedance",
+      "directory": "Skill修复版/song-pastoral-mj-seedance",
+      "original_package": "资源/06-宋式田园美学风格SKILL/001-宋式田园美学SKILL.rar",
+      "original_main": "Skill解压/06-宋式田园美学SKILL/宋式田园美学SKILL.md",
+      "original_package_sha256": "45e6d29be774124ae6bc436c12aa77270f61f3787df252213c84d51c57a1e610",
+      "original_main_sha256": "2ba89ec5369fb524dc9696a775326b3adec7248e5c97d936168a2fd26cf64bc8",
+      "repaired_main_sha256": "1fdcdda8d0a3a11e7af98f5478d1b40dc86ea5906b91f4d359d8b010157b022c",
+      "reconstructed_files": [
+        "scripts/check_mj_prompts.py"
+      ],
+      "changes": [
+        "将入口规范为SKILL.md，正文取自原Markdown。",
+        "补入1个自行重建文件；并非找回作者原件。"
+      ],
+      "reconstructed_reference_provenance": [],
+      "original_files_recovered": 0,
+      "execution_dependency": "文字模型；生图/视频另需目标平台",
+      "repaired_zip": "Skill修复包/06-song-pastoral-mj-seedance.zip",
+      "repaired_zip_stats": {
+        "bytes": 9160,
+        "sha256": "7db38cac9ea950e0f4b50989384af5a6465d46eb6a9c28dc2e59201a8508f716"
+      },
+      "runtime_files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 10909,
+          "sha256": "1fdcdda8d0a3a11e7af98f5478d1b40dc86ea5906b91f4d359d8b010157b022c"
+        },
+        {
+          "path": "scripts/check_mj_prompts.py",
+          "bytes": 8989,
+          "sha256": "4d6e22d79c0d833f95ac9ecd7e8c5ecffb1eff4250e9c14899e852496bb1e91b"
+        }
+      ],
+      "text_test_output": "Skill使用测试/06.md"
+    },
+    {
+      "lesson_number": 7,
+      "title": "中式诗意巨物美学SKILL",
+      "name": "mjv8-chinese-poetic-worlds",
+      "directory": "Skill修复版/mjv8-chinese-poetic-worlds",
+      "original_package": "资源/07-中式巨物美学风格SKILL/001-中式诗意巨物美学SKILL.rar",
+      "original_main": "Skill解压/07-中式诗意巨物美学SKILL/中式诗意巨物美学SKILL.md",
+      "original_package_sha256": "c6c39f6b116df9103440c11a43936e28ff4fb3dfbf6f6118a791b4b0ff4e612c",
+      "original_main_sha256": "2f04b59480ec66950ec2e6306b679e34eb8c0d4607a3465986d100631def0303",
+      "repaired_main_sha256": "c6d9eb515dd55a13f0b22c8caf635f522c288d0d5b740781b2f9747c60d0d495",
+      "reconstructed_files": [
+        "references/examples.md",
+        "references/image-to-video.md",
+        "references/mj-parameters.md",
+        "references/style-atlas.md"
+      ],
+      "changes": [
+        "将入口规范为SKILL.md，正文取自原Markdown。",
+        "更正九图档案的来源表述，补充本次参数核验依据。",
+        "补入4个自行重建文件；并非找回作者原件。",
+        "将参考文档的本机来源链接改为归档路径文字，避免在其他电脑产生无效导航。"
+      ],
+      "reconstructed_reference_provenance": [
+        {
+          "file": "references/style-atlas.md",
+          "status": "reconstructed_not_author_original",
+          "distributed_sha256": "deeed5d4e0a9819b316014075b1033d8f25e7484cbab39256be04a1872619769",
+          "sources": [
+            {
+              "kind": "main",
+              "archive_relative_path": "Skill解压/07-中式诗意巨物美学SKILL/中式诗意巨物美学SKILL.md",
+              "sha256": "2f04b59480ec66950ec2e6306b679e34eb8c0d4607a3465986d100631def0303",
+              "read_scope": "main_full_text",
+              "relevant_sections": [
+                "固定风格骨架",
+                "构图与场景编排",
+                "编写英文提示词",
+                "图片模型与参数",
+                "成图后的约4秒动态规则"
+              ]
+            },
+            {
+              "kind": "tutorial",
+              "archive_relative_path": "教程/07-中式巨物美学风格SKILL/教程.md",
+              "sha256": "b6b891978a6f4fc6b5a4e962fc2a8e86b1867c32c335e8261a9e2d60ef8b34a4",
+              "read_scope": "tutorial_unique_body_plus_appended_main_compared_to_original",
+              "relevant_sections": [
+                "原教程步骤与提示词示范",
+                "已归档Skill完整正文"
+              ]
+            },
+            {
+              "kind": "viewed_image",
+              "archive_relative_path": "资源/07-中式巨物美学风格SKILL/005-image.png",
+              "sha256": "60f32bc2a6009f0b8e06ac52bded58747bece21486543c3b7c483c9e212273c1",
+              "is_screenshot": true,
+              "viewed_as": "static_image_only",
+              "not_observed": [
+                "video_motion",
+                "audio",
+                "platform_execution"
+              ]
+            },
+            {
+              "kind": "viewed_image",
+              "archive_relative_path": "资源/07-中式巨物美学风格SKILL/006-image.png",
+              "sha256": "2ed174878270e2f5e0219f557014525856a679247cd0f33dd2919da791497739",
+              "is_screenshot": true,
+              "viewed_as": "static_image_only",
+              "not_observed": [
+                "video_motion",
+                "audio",
+                "platform_execution"
+              ]
+            },
+            {
+              "kind": "viewed_image",
+              "archive_relative_path": "资源/07-中式巨物美学风格SKILL/008-image.png",
+              "sha256": "956941d34a38c5cb882db8548791c504976f7a8d4a69407c0cc59efd59158bd3",
+              "is_screenshot": true,
+              "viewed_as": "static_image_only",
+              "not_observed": [
+                "video_motion",
+                "audio",
+                "platform_execution"
+              ]
+            }
+          ],
+          "distribution_adjustment": "本机绝对来源链接改为纯文字归档路径；不改变创作规则与范例。"
+        },
+        {
+          "file": "references/image-to-video.md",
+          "status": "reconstructed_not_author_original",
+          "distributed_sha256": "4c3d2a56fe269702009af48a3f22339ba46ff1dccb7988944958497c88f24010",
+          "sources": [
+            {
+              "kind": "main",
+              "archive_relative_path": "Skill解压/07-中式诗意巨物美学SKILL/中式诗意巨物美学SKILL.md",
+              "sha256": "2f04b59480ec66950ec2e6306b679e34eb8c0d4607a3465986d100631def0303",
+              "read_scope": "main_full_text",
+              "relevant_sections": [
+                "固定风格骨架",
+                "构图与场景编排",
+                "编写英文提示词",
+                "图片模型与参数",
+                "成图后的约4秒动态规则"
+              ]
+            },
+            {
+              "kind": "tutorial",
+              "archive_relative_path": "教程/07-中式巨物美学风格SKILL/教程.md",
+              "sha256": "b6b891978a6f4fc6b5a4e962fc2a8e86b1867c32c335e8261a9e2d60ef8b34a4",
+              "read_scope": "tutorial_unique_body_plus_appended_main_compared_to_original",
+              "relevant_sections": [
+                "原教程步骤与提示词示范",
+                "已归档Skill完整正文"
+              ]
+            },
+            {
+              "kind": "viewed_image",
+              "archive_relative_path": "资源/07-中式巨物美学风格SKILL/005-image.png",
+              "sha256": "60f32bc2a6009f0b8e06ac52bded58747bece21486543c3b7c483c9e212273c1",
+              "is_screenshot": true,
+              "viewed_as": "static_image_only",
+              "not_observed": [
+                "video_motion",
+                "audio",
+                "platform_execution"
+              ]
+            },
+            {
+              "kind": "viewed_image",
+              "archive_relative_path": "资源/07-中式巨物美学风格SKILL/006-image.png",
+              "sha256": "2ed174878270e2f5e0219f557014525856a679247cd0f33dd2919da791497739",
+              "is_screenshot": true,
+              "viewed_as": "static_image_only",
+              "not_observed": [
+                "video_motion",
+                "audio",
+                "platform_execution"
+              ]
+            },
+            {
+              "kind": "viewed_image",
+              "archive_relative_path": "资源/07-中式巨物美学风格SKILL/008-image.png",
+              "sha256": "956941d34a38c5cb882db8548791c504976f7a8d4a69407c0cc59efd59158bd3",
+              "is_screenshot": true,
+              "viewed_as": "static_image_only",
+              "not_observed": [
+                "video_motion",
+                "audio",
+                "platform_execution"
+              ]
+            }
+          ],
+          "distribution_adjustment": "本机绝对来源链接改为纯文字归档路径；不改变创作规则与范例。"
+        },
+        {
+          "file": "references/mj-parameters.md",
+          "status": "reconstructed_not_author_original",
+          "distributed_sha256": "ea292c9f5f3a735a5fc4af0df1f78d15d975165df72491248cf7ffe9c4a5c0fb",
+          "sources": [
+            {
+              "kind": "main",
+              "archive_relative_path": "Skill解压/07-中式诗意巨物美学SKILL/中式诗意巨物美学SKILL.md",
+              "sha256": "2f04b59480ec66950ec2e6306b679e34eb8c0d4607a3465986d100631def0303",
+              "read_scope": "main_full_text",
+              "relevant_sections": [
+                "固定风格骨架",
+                "构图与场景编排",
+                "编写英文提示词",
+                "图片模型与参数",
+                "成图后的约4秒动态规则"
+              ]
+            },
+            {
+              "kind": "tutorial",
+              "archive_relative_path": "教程/07-中式巨物美学风格SKILL/教程.md",
+              "sha256": "b6b891978a6f4fc6b5a4e962fc2a8e86b1867c32c335e8261a9e2d60ef8b34a4",
+              "read_scope": "tutorial_unique_body_plus_appended_main_compared_to_original",
+              "relevant_sections": [
+                "原教程步骤与提示词示范",
+                "已归档Skill完整正文"
+              ]
+            },
+            {
+              "kind": "official_web_document",
+              "url": "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version",
+              "verified_on": "2026-10-17",
+              "scope": "current default V8.2; V8.0 no longer available; V8.1/8.2 compatibility table; no generation performed"
+            },
+            {
+              "kind": "official_web_document",
+              "url": "https://docs.midjourney.com/hc/en-us/articles/32180011136653-Style-Reference",
+              "verified_on": "2026-10-17",
+              "scope": "style-only reference, valid URL input, style weight default100/range0-1000; no generation performed"
+            }
+          ],
+          "distribution_adjustment": "本机绝对来源链接改为纯文字归档路径；不改变创作规则与范例。"
+        },
+        {
+          "file": "references/examples.md",
+          "status": "reconstructed_not_author_original",
+          "distributed_sha256": "01108426d00c0a7f13ca8c21446f9eef92c2b32e90910a8ef0f610cced893a22",
+          "sources": [
+            {
+              "kind": "main",
+              "archive_relative_path": "Skill解压/07-中式诗意巨物美学SKILL/中式诗意巨物美学SKILL.md",
+              "sha256": "2f04b59480ec66950ec2e6306b679e34eb8c0d4607a3465986d100631def0303",
+              "read_scope": "main_full_text",
+              "relevant_sections": [
+                "固定风格骨架",
+                "构图与场景编排",
+                "编写英文提示词",
+                "图片模型与参数",
+                "成图后的约4秒动态规则"
+              ]
+            },
+            {
+              "kind": "tutorial",
+              "archive_relative_path": "教程/07-中式巨物美学风格SKILL/教程.md",
+              "sha256": "b6b891978a6f4fc6b5a4e962fc2a8e86b1867c32c335e8261a9e2d60ef8b34a4",
+              "read_scope": "tutorial_unique_body_plus_appended_main_compared_to_original",
+              "relevant_sections": [
+                "原教程步骤与提示词示范",
+                "已归档Skill完整正文"
+              ]
+            },
+            {
+              "kind": "viewed_image",
+              "archive_relative_path": "资源/07-中式巨物美学风格SKILL/005-image.png",
+              "sha256": "60f32bc2a6009f0b8e06ac52bded58747bece21486543c3b7c483c9e212273c1",
+              "is_screenshot": true,
+              "viewed_as": "static_image_only",
+              "not_observed": [
+                "video_motion",
+                "audio",
+                "platform_execution"
+              ]
+            },
+            {
+              "kind": "viewed_image",
+              "archive_relative_path": "资源/07-中式巨物美学风格SKILL/006-image.png",
+              "sha256": "2ed174878270e2f5e0219f557014525856a679247cd0f33dd2919da791497739",
+              "is_screenshot": true,
+              "viewed_as": "static_image_only",
+              "not_observed": [
+                "video_motion",
+                "audio",
+                "platform_execution"
+              ]
+            },
+            {
+              "kind": "viewed_image",
+              "archive_relative_path": "资源/07-中式巨物美学风格SKILL/008-image.png",
+              "sha256": "956941d34a38c5cb882db8548791c504976f7a8d4a69407c0cc59efd59158bd3",
+              "is_screenshot": true,
+              "viewed_as": "static_image_only",
+              "not_observed": [
+                "video_motion",
+                "audio",
+                "platform_execution"
+              ]
+            }
+          ],
+          "distribution_adjustment": "本机绝对来源链接改为纯文字归档路径；不改变创作规则与范例。"
+        }
+      ],
+      "original_files_recovered": 0,
+      "execution_dependency": "文字模型；生图/视频另需目标平台",
+      "repaired_zip": "Skill修复包/07-mjv8-chinese-poetic-worlds.zip",
+      "repaired_zip_stats": {
+        "bytes": 21354,
+        "sha256": "4f6b2ba88444d353642f111f39aa6ea49cdc6557d97c43e45edfd03e61fe8037"
+      },
+      "runtime_files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 15651,
+          "sha256": "c6d9eb515dd55a13f0b22c8caf635f522c288d0d5b740781b2f9747c60d0d495"
+        },
+        {
+          "path": "references/examples.md",
+          "bytes": 6464,
+          "sha256": "01108426d00c0a7f13ca8c21446f9eef92c2b32e90910a8ef0f610cced893a22"
+        },
+        {
+          "path": "references/image-to-video.md",
+          "bytes": 6086,
+          "sha256": "4c3d2a56fe269702009af48a3f22339ba46ff1dccb7988944958497c88f24010"
+        },
+        {
+          "path": "references/mj-parameters.md",
+          "bytes": 5428,
+          "sha256": "ea292c9f5f3a735a5fc4af0df1f78d15d975165df72491248cf7ffe9c4a5c0fb"
+        },
+        {
+          "path": "references/style-atlas.md",
+          "bytes": 5424,
+          "sha256": "deeed5d4e0a9819b316014075b1033d8f25e7484cbab39256be04a1872619769"
+        }
+      ],
+      "text_test_output": "Skill使用测试/07.md",
+      "image_to_video_test_output": "Skill使用测试/07-video.md"
+    },
+    {
+      "lesson_number": 8,
+      "title": "AI高燃打斗提示词SKILL",
+      "name": "ai-fight-director",
+      "directory": "Skill修复版/ai-fight-director",
+      "original_package": "资源/08-AI高燃打斗提示词SKILL/001-AI高燃打斗提示词SKILL.rar",
+      "original_main": "Skill解压/08-AI高燃打斗提示词SKILL/AI高燃打斗提示词SKILL.md",
+      "original_package_sha256": "a06f52f535eda528312700d522eec8ecad7924f75e28469270235255d6a00cac",
+      "original_main_sha256": "629df60d4fdc61aed4246b861f9612f1abc58b321475bdfa7e85214104e3fa94",
+      "repaired_main_sha256": "286e2a1e196380eb4c6f741d299f6085daab66974b43ddfbf2533dba8736b68e",
+      "reconstructed_files": [
+        "references/action-patterns.md",
+        "references/reference-review.md"
+      ],
+      "changes": [
+        "将入口规范为SKILL.md，正文取自原Markdown。",
+        "补入2个自行重建文件；并非找回作者原件。",
+        "将参考文档的本机来源链接改为归档路径文字，避免在其他电脑产生无效导航。"
+      ],
+      "reconstructed_reference_provenance": [
+        {
+          "file": "references/reference-review.md",
+          "status": "reconstructed_not_author_original",
+          "distributed_sha256": "90909bb489617eb9c83040fb478514d1025d563677880eb1346ba264adcaea23",
+          "sources": [
+            {
+              "kind": "main",
+              "archive_relative_path": "Skill解压/08-AI高燃打斗提示词SKILL/AI高燃打斗提示词SKILL.md",
+              "sha256": "629df60d4fdc61aed4246b861f9612f1abc58b321475bdfa7e85214104e3fa94",
+              "read_scope": "main_full_text",
+              "relevant_sections": [
+                "确认任务",
+                "战斗状态",
+                "动作链",
+                "节奏变化",
+                "镜头可读性",
+                "提交前自检"
+              ]
+            },
+            {
+              "kind": "tutorial",
+              "archive_relative_path": "教程/08-AI高燃打斗提示词SKILL/教程.md",
+              "sha256": "483ed92aa4970dc6eb765f717477557d63f3cafb97e8d48fe12bc346f94dbb85",
+              "read_scope": "tutorial_unique_body_plus_appended_main_compared_to_original",
+              "relevant_sections": [
+                "原教程步骤与提示词示范",
+                "已归档Skill完整正文"
+              ]
+            }
+          ],
+          "distribution_adjustment": "本机绝对来源链接改为纯文字归档路径；不改变创作规则与范例。"
+        },
+        {
+          "file": "references/action-patterns.md",
+          "status": "reconstructed_not_author_original",
+          "distributed_sha256": "50ac0a31947ec59f3a3ca1b19cf8febc6db15bee55c46201bba60f8d20a217e0",
+          "sources": [
+            {
+              "kind": "main",
+              "archive_relative_path": "Skill解压/08-AI高燃打斗提示词SKILL/AI高燃打斗提示词SKILL.md",
+              "sha256": "629df60d4fdc61aed4246b861f9612f1abc58b321475bdfa7e85214104e3fa94",
+              "read_scope": "main_full_text",
+              "relevant_sections": [
+                "确认任务",
+                "战斗状态",
+                "动作链",
+                "节奏变化",
+                "镜头可读性",
+                "提交前自检"
+              ]
+            },
+            {
+              "kind": "tutorial",
+              "archive_relative_path": "教程/08-AI高燃打斗提示词SKILL/教程.md",
+              "sha256": "483ed92aa4970dc6eb765f717477557d63f3cafb97e8d48fe12bc346f94dbb85",
+              "read_scope": "tutorial_unique_body_plus_appended_main_compared_to_original",
+              "relevant_sections": [
+                "原教程步骤与提示词示范",
+                "已归档Skill完整正文"
+              ]
+            }
+          ],
+          "distribution_adjustment": "本机绝对来源链接改为纯文字归档路径；不改变创作规则与范例。"
+        }
+      ],
+      "original_files_recovered": 0,
+      "execution_dependency": "文字模型；生图/视频另需目标平台",
+      "repaired_zip": "Skill修复包/08-ai-fight-director.zip",
+      "repaired_zip_stats": {
+        "bytes": 14918,
+        "sha256": "de10cec2059a598d446cb6c2da2ef84cdf6ba4153561f935adc7456c92699660"
+      },
+      "runtime_files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 11041,
+          "sha256": "286e2a1e196380eb4c6f741d299f6085daab66974b43ddfbf2533dba8736b68e"
+        },
+        {
+          "path": "references/action-patterns.md",
+          "bytes": 8695,
+          "sha256": "50ac0a31947ec59f3a3ca1b19cf8febc6db15bee55c46201bba60f8d20a217e0"
+        },
+        {
+          "path": "references/reference-review.md",
+          "bytes": 7695,
+          "sha256": "90909bb489617eb9c83040fb478514d1025d563677880eb1346ba264adcaea23"
+        }
+      ],
+      "text_test_output": "Skill使用测试/08.md"
+    },
+    {
+      "lesson_number": 9,
+      "title": "电商TVC广告SKILL",
+      "name": "generate-product-tvc-sd25",
+      "directory": "Skill修复版/generate-product-tvc-sd25",
+      "original_package": "资源/09-电商TVC广告Skill/001-电商TVC广告SKILL.rar",
+      "original_main": "Skill解压/09-电商TVC广告SKILL/电商TVC广告SKILL.md",
+      "original_package_sha256": "6850726defd7952c59a287b02e9e58da400fc0cfc2beffae9cba347eac19813f",
+      "original_main_sha256": "bb4f9a9a728a89755cac86a062d87c7116c9d63e9912c4b63dcf830478c579a5",
+      "repaired_main_sha256": "ce158ea3cb574ac6d2465276908c6888559a4db3345c1ec94dfb703189390891",
+      "reconstructed_files": [
+        "references/category-playbook.md"
+      ],
+      "changes": [
+        "将入口规范为SKILL.md，正文取自原Markdown。",
+        "补入1个自行重建文件；并非找回作者原件。",
+        "将参考文档的本机来源链接改为归档路径文字，避免在其他电脑产生无效导航。"
+      ],
+      "reconstructed_reference_provenance": [
+        {
+          "file": "references/category-playbook.md",
+          "status": "reconstructed_not_author_original",
+          "distributed_sha256": "39a1549e7c57420881c5d5cf7482c791b85fa060d50629c08a0b9ba8065d20e3",
+          "sources": [
+            {
+              "kind": "main",
+              "archive_relative_path": "Skill解压/09-电商TVC广告SKILL/电商TVC广告SKILL.md",
+              "sha256": "bb4f9a9a728a89755cac86a062d87c7116c9d63e9912c4b63dcf830478c579a5",
+              "read_scope": "main_full_text",
+              "relevant_sections": [
+                "建立产品视觉锁定",
+                "选择一个广告概念",
+                "编排30秒连续时间线",
+                "最终输出格式",
+                "一致性检查"
+              ]
+            },
+            {
+              "kind": "tutorial",
+              "archive_relative_path": "教程/09-电商TVC广告Skill/教程.md",
+              "sha256": "2f4666f0720d5cfa438f8697600162b6ef635a8e31c6cf02815197a5e4172afa",
+              "read_scope": "tutorial_unique_body_plus_appended_main_compared_to_original",
+              "relevant_sections": [
+                "原教程步骤与提示词示范",
+                "已归档Skill完整正文"
+              ]
+            }
+          ],
+          "distribution_adjustment": "本机绝对来源链接改为纯文字归档路径；不改变创作规则与范例。"
+        }
+      ],
+      "original_files_recovered": 0,
+      "execution_dependency": "文字模型；生图/视频另需目标平台",
+      "repaired_zip": "Skill修复包/09-generate-product-tvc-sd25.zip",
+      "repaired_zip_stats": {
+        "bytes": 9215,
+        "sha256": "9d871d4892963bd789862eddb3100e2f7e385e717d6749c08b5c62b78485b6af"
+      },
+      "runtime_files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 8032,
+          "sha256": "ce158ea3cb574ac6d2465276908c6888559a4db3345c1ec94dfb703189390891"
+        },
+        {
+          "path": "references/category-playbook.md",
+          "bytes": 9186,
+          "sha256": "39a1549e7c57420881c5d5cf7482c791b85fa060d50629c08a0b9ba8065d20e3"
+        }
+      ],
+      "text_test_output": "Skill使用测试/09.md"
+    },
+    {
+      "lesson_number": 10,
+      "title": "名画轨迹运镜提示词-Skill",
+      "name": "masterpiece-path-camera",
+      "directory": "Skill修复版/masterpiece-path-camera",
+      "original_package": "资源/10-名画运镜轨迹提示词skill/003-名画轨迹运镜提示词-Skill.rar",
+      "original_main": "Skill解压/10-名画轨迹运镜提示词-Skill/名画轨迹运镜提示词-Skill.md",
+      "original_package_sha256": "a0525a9b968c2130b3149bb4847fecd4e7d4dad710dc12b9f191a5f7f8d9473d",
+      "original_main_sha256": "7d7896ec08795a896e668e383812f322659d612d01e23e199985fd1e6b3f4e59",
+      "repaired_main_sha256": "f49cc9da3556ec3d008c3526135973992ed7d22f3646cdc1c74921b6187a121b",
+      "reconstructed_files": [],
+      "changes": [
+        "将入口规范为SKILL.md，正文取自原Markdown。"
+      ],
+      "reconstructed_reference_provenance": [],
+      "original_files_recovered": 0,
+      "execution_dependency": "文字模型；生图/视频另需目标平台",
+      "repaired_zip": "Skill修复包/10-masterpiece-path-camera.zip",
+      "repaired_zip_stats": {
+        "bytes": 4951,
+        "sha256": "f34702e30d44906355238aae1b6a5ccdcd7b200bfcfad2e4ad0007c4e4f30450"
+      },
+      "runtime_files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 10022,
+          "sha256": "f49cc9da3556ec3d008c3526135973992ed7d22f3646cdc1c74921b6187a121b"
+        }
+      ],
+      "text_test_output": "Skill使用测试/10.md"
+    },
+    {
+      "lesson_number": 12,
+      "title": "中式仙境风格SKILL",
+      "name": "write-seedance-image-video-prompt",
+      "directory": "Skill修复版/write-seedance-image-video-prompt",
+      "original_package": "资源/12-中式仙境震撼风格SKILL/001-中式仙境风格SKILL.rar",
+      "original_main": "Skill解压/12-中式仙境风格SKILL/SKILL.md",
+      "original_package_sha256": "2cd49e73f001d54b10cbb6932384363bb4c30a4b1ab3ae0ecd6a6867b9f8485a",
+      "original_main_sha256": "34bd3b7a1ff643d907fb2586d7146a70feb9e8accc6cee59ef4a28ca648debc4",
+      "repaired_main_sha256": "8311b5f095d80fefa461610639a750bb6bdb10f92bd5a1e5a89cce312dd5f345",
+      "reconstructed_files": [],
+      "changes": [
+        "按Midjourney官方Raw文档将--style raw更新为--raw（2026-10-17核对）。"
+      ],
+      "reconstructed_reference_provenance": [],
+      "original_files_recovered": 0,
+      "execution_dependency": "文字模型；生图/视频另需目标平台",
+      "repaired_zip": "Skill修复包/12-write-seedance-image-video-prompt.zip",
+      "repaired_zip_stats": {
+        "bytes": 5014,
+        "sha256": "7e8e8a802dcb8557d847b9f0fbef39779f7e14c369d4d119b43a24b1792d7160"
+      },
+      "runtime_files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 9895,
+          "sha256": "8311b5f095d80fefa461610639a750bb6bdb10f92bd5a1e5a89cce312dd5f345"
+        }
+      ],
+      "text_test_output": "Skill使用测试/12.md"
+    },
+    {
+      "lesson_number": 15,
+      "title": "SD2.5视频提示词优化 Skill",
+      "name": "golden-structure-video-prompts",
+      "directory": "Skill修复版/golden-structure-video-prompts",
+      "original_package": "资源/15-SD2.5视频提示词优化 Skill/001-SD2.5视频提示词优化 Skill.rar",
+      "original_main": "Skill解压/15-SD2.5视频提示词优化 Skill/SD2.5视频提示词优化 Skill.md",
+      "original_package_sha256": "620e2cef7281b2b0d5ae617e8f91b5573d2e9b8315b23da822478bfc7a217016",
+      "original_main_sha256": "94e65a438ee6e12e87817d166a0debd2739e557883b53e72200c8f6738a9bfcc",
+      "repaired_main_sha256": "31fbcce6c1db371c7af7b98069a415f63fd9e4e73a50898afb8d430b8d437038",
+      "reconstructed_files": [],
+      "changes": [
+        "新增标准name与description配置。",
+        "将入口规范为SKILL.md，正文取自原Markdown。"
+      ],
+      "reconstructed_reference_provenance": [],
+      "original_files_recovered": 0,
+      "execution_dependency": "文字模型；生图/视频另需目标平台",
+      "repaired_zip": "Skill修复包/15-golden-structure-video-prompts.zip",
+      "repaired_zip_stats": {
+        "bytes": 4748,
+        "sha256": "ae453a319eae17a7a433775375db0d78951ec5352f726f3b2cdb0fa4c600a761"
+      },
+      "runtime_files": [
+        {
+          "path": "SKILL.md",
+          "bytes": 10022,
+          "sha256": "31fbcce6c1db371c7af7b98069a415f63fd9e4e73a50898afb8d430b8d437038"
+        }
+      ],
+      "text_test_output": "Skill使用测试/15.md"
+    },
+    {
+      "lesson_number": 19,
+      "title": "character-forge-libtv-skill(5)",
+      "name": "character-forge-libtv",
+      "directory": "Skill修复版/character-forge-libtv",
+      "original_package": "资源/19-AI创建原创角色skill/004-character-forge-libtv-skill(5).zip",
+      "original_main": "Skill解压/19-character-forge-libtv-skill(5)/character-forge-libtv/SKILL.md",
+      "original_package_sha256": "ab680a6f5e6abf89219b7ea1d180568989fc93c99ea965b0ff8366ed5d1f8251",
+      "original_main_sha256": "527a50a3fe7c7eb15a6d063371414629a02ce2d9376d445a7a0d5028c31fa98f",
+      "repaired_main_sha256": "63ac11ec49fc1f4e295e27925b7c0f0336a16446bef6d0a483baad454a24a718",
+      "reconstructed_files": [],
+      "changes": [
+        "将原版version字段移入metadata，适配标准Skill frontmatter。",
+        "补充Remote MCP与本地CLI的调用分支及实时schema核验要求。"
+      ],
+      "reconstructed_reference_provenance": [],
+      "original_files_recovered": 0,
+      "execution_dependency": "LibTV授权工具（文本方案可独立使用）",
+      "repaired_zip": "Skill修复包/19-character-forge-libtv.zip",
+      "repaired_zip_stats": {
+        "bytes": 11303,
+        "sha256": "225fdc6aa2235b9f3db39bc5a80fb5d8f9b18015edd8a02541fc0c862e3084b7"
+      },
+      "runtime_files": [
+        {
+          "path": "README.md",
+          "bytes": 5632,
+          "sha256": "eac9bbaa7a81a9d2df890e451a7c3aa78253499a3966bdb3c823eb6e36111085"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 25094,
+          "sha256": "63ac11ec49fc1f4e295e27925b7c0f0336a16446bef6d0a483baad454a24a718"
+        }
+      ],
+      "text_test_output": "Skill使用测试/19.md"
+    },
+    {
+      "lesson_number": 21,
+      "title": "story-asset-builder-v2-clean-canvas",
+      "name": "story-asset-builder",
+      "directory": "Skill修复版/story-asset-builder",
+      "original_package": "资源/21-电影级工作流做成 skill/004-story-asset-builder-v2-clean-canvas.zip",
+      "original_main": "Skill解压/21-story-asset-builder-v2-clean-canvas/story-asset-builder/SKILL.md",
+      "original_package_sha256": "f47f0b09a2de07265e73bcb518de0add84b64cb660d31ebfc2075830eb305c08",
+      "original_main_sha256": "ca2b1bcd218c8211ad9b223f9865bf7925923305f9dc58ff4e57ad5b8877c333",
+      "repaired_main_sha256": "4a61dc220de7b1af9643d706b2cb862737e63aa55e588f8138e79122e20b6fba",
+      "reconstructed_files": [],
+      "changes": [
+        "新增标准name与description配置。",
+        "依赖检测兼容已授权的Remote MCP；保留CLI分支，去掉在聊天中配置access_key的要求。",
+        "补充Remote MCP与本地CLI的调用分支及实时schema核验要求。"
+      ],
+      "reconstructed_reference_provenance": [],
+      "original_files_recovered": 0,
+      "execution_dependency": "LibTV授权工具（文本方案可独立使用）",
+      "repaired_zip": "Skill修复包/21-story-asset-builder.zip",
+      "repaired_zip_stats": {
+        "bytes": 32950,
+        "sha256": "18c3c2edc41beab161a1b64840ec353b961645d1267549a4cd1912b592869457"
+      },
+      "runtime_files": [
+        {
+          "path": "CHANGELOG.md",
+          "bytes": 650,
+          "sha256": "00dc408cbd4d76f0a408866d840ce3893b38d2714d33b6f9313d684e5ec5ce0c"
+        },
+        {
+          "path": "README.md",
+          "bytes": 1364,
+          "sha256": "cf0cae53c70767d52607ce60d4ac8a1479f1a4a130145cf5e271f5cdea28158f"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 9560,
+          "sha256": "4a61dc220de7b1af9643d706b2cb862737e63aa55e588f8138e79122e20b6fba"
+        },
+        {
+          "path": "examples/demo_request.md",
+          "bytes": 1287,
+          "sha256": "9c2d7cb6d897fa29b4e515c0e921456063596d11d6fdbdd941d67884d59d9151"
+        },
+        {
+          "path": "manifest.json",
+          "bytes": 693,
+          "sha256": "9eb808418b14ff2e3635734e628ce4874ff1f2e7c5ab16b4d70bf2c9efa50b3c"
+        },
+        {
+          "path": "profiles/ancient_drama.yaml",
+          "bytes": 1046,
+          "sha256": "ca82b2f9a9eb9a21aeff7f014614bab846bd998c6326faf84e398b3fc59938aa"
+        },
+        {
+          "path": "profiles/apocalypse_thriller.yaml",
+          "bytes": 1006,
+          "sha256": "1f2c14cf4f6e4dc7e98a753e838d7932b08743e31a5df48d3a7437062ff57f0e"
+        },
+        {
+          "path": "profiles/cyber_city.yaml",
+          "bytes": 974,
+          "sha256": "5f5a35c974d5e38773d525cbf416186960367f4b1c9d82419914ef939bcacd3b"
+        },
+        {
+          "path": "profiles/default_cinematic.yaml",
+          "bytes": 973,
+          "sha256": "e1b593baa7a1822990ec14565445eb276ba547795a506d55a0dee2c76b57c16c"
+        },
+        {
+          "path": "profiles/wansheng.yaml",
+          "bytes": 1708,
+          "sha256": "74d28fd4bffec66def0cbb50dbcfc42a6eff53b3f19b6ea4b38748b720857d61"
+        },
+        {
+          "path": "quick_prompts/01_create_new_project_canvas.txt",
+          "bytes": 680,
+          "sha256": "c559d69074451aff285a161c1ab33aabf6f8f043bba25c93601967c57f2fce97"
+        },
+        {
+          "path": "quick_prompts/02_use_wansheng_profile.txt",
+          "bytes": 562,
+          "sha256": "7fff5e006bb451c526f2494e5e920da5f38acef87fffd1dbe761a96657ba8692"
+        },
+        {
+          "path": "quick_prompts/03_retry_canvas_nodes.txt",
+          "bytes": 249,
+          "sha256": "41bb7d40aaa9e885ac9da7867a91056c14c2650930d9ba38ea826c0dca962968"
+        },
+        {
+          "path": "quick_prompts/04_create_clean_canvas.txt",
+          "bytes": 940,
+          "sha256": "7138905757ab22a81d6e4c53c5eccbc12af2c484c3ba607720246fd9c2ee335b"
+        },
+        {
+          "path": "quick_prompts/05_reorganize_existing_canvas.txt",
+          "bytes": 654,
+          "sha256": "13ce18bdbc3d9ab6bfa872c4925b2c1e53341305d0e19227b0f0fbe9256d61bc"
+        },
+        {
+          "path": "rules/asset_extraction.md",
+          "bytes": 2309,
+          "sha256": "032ddbc1293feb8792e19abf6b47a08eeaf0e692f62228f50442333fca9ac7bf"
+        },
+        {
+          "path": "rules/libtv_canvas_rules.md",
+          "bytes": 5718,
+          "sha256": "26f7ce74e8b5efac254a18cf252c52061f56bf0abde99fcabcc1b29e8e954826"
+        },
+        {
+          "path": "rules/prompt_compiler.md",
+          "bytes": 1506,
+          "sha256": "52be9f9663da2c0a85434c7acb8c9add5fe4065dc9e400d0a6319b09c4f9e8cf"
+        },
+        {
+          "path": "rules/qa_loop.md",
+          "bytes": 985,
+          "sha256": "a6e6b660c3748a773d80c65b2b7265097aaadc3acaeb74c5554d44b082413958"
+        },
+        {
+          "path": "templates/character_sheet.md",
+          "bytes": 4097,
+          "sha256": "19f66ee61bb0c13883e2fd7e59d8677730f1edf09ce75f3abd7b7d614fc9f9d5"
+        },
+        {
+          "path": "templates/color_palette.md",
+          "bytes": 1551,
+          "sha256": "5e70c874166ece43c98947ebff209ec1812357ab92ce6b5237b48c39290f7580"
+        },
+        {
+          "path": "templates/creature_sheet.md",
+          "bytes": 3050,
+          "sha256": "4c6b6de837bf16235d467adfb5bbe28d97a6cb2788567df4b4fe02e0e13a3cfd"
+        },
+        {
+          "path": "templates/environment_sheet.md",
+          "bytes": 1758,
+          "sha256": "2a8750fe5299a5de36fed4bdb69b131c68f351c7fed0908216f26091773a1251"
+        },
+        {
+          "path": "templates/prop_sheet.md",
+          "bytes": 1910,
+          "sha256": "3d8ba2abf50f4214f0eeb66f8f345e699e29b987f169c984b66838443c31ce5c"
+        },
+        {
+          "path": "templates/storyboard_grid.md",
+          "bytes": 2128,
+          "sha256": "b9bcca23d3855a4bd1515f2475359d9ad68e56cec0d9f17cccee0f509f74f9ee"
+        },
+        {
+          "path": "templates/vehicle_sheet.md",
+          "bytes": 1882,
+          "sha256": "e01825053ba86dd047c60986841d1f91dad146357785a992a0bfad5578735721"
+        },
+        {
+          "path": "templates/video_prompt.md",
+          "bytes": 1107,
+          "sha256": "4b362cb6cab6ce04b0c2a2479ca5eccef249f4d1795b631268431ccaed16e542"
+        }
+      ],
+      "text_test_output": "Skill使用测试/21.md"
+    }
+  ],
+  "validation": {
+    "structure": {
+      "packages": 13,
+      "structure_passed": 13,
+      "missing_local_references": 0,
+      "original_packages_unchanged": 13,
+      "reconstructed_files": 11
+    },
+    "script_cases": {
+      "original_contract_cases": 16,
+      "edge_cases": 82,
+      "passed": 98,
+      "failed": 0,
+      "blocked": 0
+    },
+    "text_usage": {
+      "summary": {
+        "tested": 13,
+        "passed": 13,
+        "failed": 0,
+        "paid_generation_tested": false
+      },
+      "method": "两次独立上下文的实际使用交付；主Agent按输入核对全文，再做数量、词数、参数、时间线、原文保留及最终脚本检查。",
+      "input_boundaries": [
+        "07输入为四格截图，第一次要求选单幅；补充选择左上单幅后才继续动态图文。",
+        "09输入为对话截图，商品只有缩略图；不能将旧稿文字当观察证据。",
+        "10未附画作文件，按馆藏说明预写，真实运行仍需原作图。"
+      ],
+      "items": [
+        {
+          "lesson_number": 2,
+          "status": "pass",
+          "conclusion": "2条园林人物提示词，景别、正文词数与16:9参数通过。",
+          "output_path": "Skill使用测试/02.md",
+          "output_sha256": "17bab52e7838e7928399b53ca0f8b2a4caa0c7e3b42a6496a2cfc992014ed1da",
+          "checks": [
+            {
+              "independent_prompt_count": 2,
+              "body_word_counts": [
+                84,
+                86
+              ]
+            }
+          ],
+          "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+          "inputs": [
+            "给我2条中式园林旗袍人物图片提示词，16:9；一条窗前背影，一条园林岩石旁半身，只要文字。"
+          ]
+        },
+        {
+          "lesson_number": 3,
+          "status": "pass",
+          "conclusion": "2条宫阙人物提示词，9:16与完整头饰要求通过。",
+          "output_path": "Skill使用测试/03.md",
+          "output_sha256": "9be25aaac2ac962823d79f3976c79952f00bbbfb6ee93181d2da358dded1d5a7",
+          "checks": [
+            {
+              "independent_prompt_count": 2,
+              "body_word_counts": [
+                85,
+                84
+              ]
+            }
+          ],
+          "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+          "inputs": [
+            "给我2条东方宫阙人物英文图片提示词，9:16，成年女子，画面完整容纳头饰；只要提示词。"
+          ]
+        },
+        {
+          "lesson_number": 4,
+          "status": "pass",
+          "conclusion": "3个导演方向符合仅文字协作要求，未调用豆包生成。",
+          "output_path": "Skill使用测试/04.md",
+          "output_sha256": "a3aa340f5ca25587ef7c42b7e595682f22e0c6cdbaa96ecc5c67072504e02f70",
+          "checks": [
+            {
+              "director_choices": 3,
+              "required_phrase_occurrences": 1
+            }
+          ],
+          "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+          "inputs": [
+            "只做文字导演协作，想拍15秒写实短片：成年儿子雨夜回老屋，门内母亲认出他。先给导演方向供选择，不生成素材。"
+          ]
+        },
+        {
+          "lesson_number": 5,
+          "status": "pass",
+          "conclusion": "10条角色提示词完成，最终真实脚本校验通过。",
+          "output_path": "Skill使用测试/05.md",
+          "output_sha256": "c15ecdc9a9f5213ee5d306e17bc3683c1ddcad6496cdc73e468ebe794fddea26",
+          "checks": [
+            {
+              "independent_prompt_count": 10,
+              "body_word_counts": [
+                65,
+                64,
+                66,
+                66,
+                66,
+                65,
+                65,
+                65,
+                65,
+                68
+              ]
+            },
+            {
+              "real_script_result": {
+                "ok": true,
+                "skill": "05",
+                "prompt_count": 10,
+                "word_count_rule": "whitespace-separated terms containing letters/digits, including all parameter flags and values; punctuation-only terms excluded",
+                "errors": [],
+                "prompts": [
+                  {
+                    "words_including_parameters": 70,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 69,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 71,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 71,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 71,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 70,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 70,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 70,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 70,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 73,
+                    "errors": []
+                  }
+                ],
+                "scope": "Text constraints only; no image generation or aesthetic evaluation."
+              }
+            }
+          ],
+          "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+          "inputs": [
+            "给我10组不同的东方武侠成年角色图片提示词，包括斗笠客、品茗文士、竹林侠女，其他角色你安排；默认画幅和格式，只要文字。"
+          ]
+        },
+        {
+          "lesson_number": 6,
+          "status": "pass",
+          "conclusion": "10条生活提示词完成，A/B原文保留且strict校验通过。",
+          "output_path": "Skill使用测试/06.md",
+          "output_sha256": "4de599fd7f16acce67b7c53a680ae349729f9670d67551c7cf1f1a6d1a74d2ac",
+          "checks": [
+            {
+              "independent_prompt_count": 10,
+              "body_word_counts": [
+                67,
+                72,
+                59,
+                61,
+                61,
+                60,
+                61,
+                67,
+                67,
+                66
+              ]
+            },
+            {
+              "real_script_result": {
+                "ok": true,
+                "skill": "06",
+                "prompt_count": 10,
+                "word_count_rule": "whitespace-separated terms containing letters/digits, including all parameter flags and values; punctuation-only terms excluded",
+                "errors": [],
+                "prompts": [
+                  {
+                    "words_including_parameters": 72,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 77,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 64,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 66,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 66,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 65,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 66,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 72,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 72,
+                    "errors": []
+                  },
+                  {
+                    "words_including_parameters": 71,
+                    "errors": []
+                  }
+                ],
+                "scope": "Text constraints only; no image generation or aesthetic evaluation."
+              }
+            },
+            {
+              "original_A_B_preserved_exactly": true
+            }
+          ],
+          "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+          "inputs": [
+            "给我10组宋式水乡生活图片提示词，其中溪边浣衣、墙头摘果使用你Skill里的认可原文，其余按模板换活动，只要图片提示词。"
+          ]
+        },
+        {
+          "lesson_number": 7,
+          "status": "pass",
+          "conclusion": "3条图片提示词及选定单幅后的4秒动态文字完成。",
+          "output_path": "Skill使用测试/07.md",
+          "output_sha256": "7d9e1f5a0e17bf86e9bc66920ccb86787d08b674f7965f7ee3efef9d9263765d",
+          "checks": [
+            {
+              "independent_prompt_count": 3,
+              "body_word_counts": [
+                98,
+                100,
+                105
+              ]
+            },
+            {
+              "image_to_video_output": "07-video.md",
+              "chosen_panel": "top-left",
+              "prompt_count": 1
+            }
+          ],
+          "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+          "inputs": [
+            "先给3条不同中式巨荷仙境图片提示词，16:9，不要视频。",
+            "这张图怎么动，给约4秒提示词，不生成。图片：outputs/飞书Skill与教程资料库/资源/07-中式巨物美学风格SKILL/005-image.png。"
+          ],
+          "actual_image_observation": [
+            {
+              "tool": "view_image",
+              "path": "/Users/kangl/Documents/Codex/2026-10-15/https-ei5ttplwuwy-feishu-cn-wiki-bslqw36k3imkxzkkx2ucykxznrb/outputs/飞书Skill与教程资料库/资源/07-中式巨物美学风格SKILL/005-image.png",
+              "success": true,
+              "whole_file": "实际看到四格图片结果界面，四幅中都有青衣与粉衣两名女子、巨荷叶、水面与蓝天，带下载和设为主图等界面按钮；不是单幅干净首帧。",
+              "selected_region": "后续明确选择左上角。该幅可见青衣女子在左、粉衣女子在右，二人坐于宽大荷叶面，青衣举长竿、粉衣有圆扇，近处鱼与水花遮挡右侧部分画面；低水面仰视，明亮蓝天与日光。",
+              "uncertain": "仅凭这张静态区域不能确认鱼的先前起跳过程或完整运动方向，未据此编造落水路线、钓线受力或跨帧稳定性。"
+            }
+          ]
+        },
+        {
+          "lesson_number": 8,
+          "status": "pass",
+          "conclusion": "12秒旧稿修复完成，持握、攻防与同庭院位置连续。",
+          "output_path": "Skill使用测试/08.md",
+          "output_sha256": "d7a1dee38d5cdd8000f4fa0ba8281573e4772df3ff4653c46639c5be11590b1c",
+          "checks": [
+            {
+              "continuous_timeline_seconds": [
+                [
+                  0.0,
+                  3.0
+                ],
+                [
+                  3.0,
+                  6.0
+                ],
+                [
+                  6.0,
+                  9.0
+                ],
+                [
+                  9.0,
+                  12.0
+                ]
+              ]
+            }
+          ],
+          "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+          "inputs": [
+            "请修复这个12秒16:9武侠打斗旧稿，保持同一石板庭院、双人、无爆炸，A右手持剑、B双手持枪：0–4秒两人同时大挥武器三次；4–8秒A还握着剑的右手抓住头顶横梁，B瞬间移到A身后；8–12秒A突然出现在屋顶把B踢下去，结束。只要一版改好的提示词，不生成视频。"
+          ]
+        },
+        {
+          "lesson_number": 9,
+          "status": "pass",
+          "conclusion": "30秒TVC文字完成；截图缩略图与旧示例文字的证据已区分。",
+          "output_path": "Skill使用测试/09.md",
+          "output_sha256": "4e77e86add0cc43a15d314712c0ce2f4fb48315babf85be9ae3672751e879efa",
+          "checks": [
+            {
+              "continuous_timeline_seconds": [
+                [
+                  0.0,
+                  3.0
+                ],
+                [
+                  3.0,
+                  7.0
+                ],
+                [
+                  7.0,
+                  11.0
+                ],
+                [
+                  11.0,
+                  15.0
+                ],
+                [
+                  15.0,
+                  19.0
+                ],
+                [
+                  19.0,
+                  23.0
+                ],
+                [
+                  23.0,
+                  27.0
+                ],
+                [
+                  27.0,
+                  30.0
+                ]
+              ]
+            }
+          ],
+          "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+          "inputs": [
+            "根据 outputs/飞书Skill与教程资料库/资源/09-电商TVC广告Skill/002-image.png 中的产品，给一版30秒16:9电商TVC，默认无旁白，只要完整提示词。先实际读原图，不清楚的型号与功能不要猜。"
+          ],
+          "actual_image_observation": [
+            {
+              "tool": "view_image",
+              "path": "/Users/kangl/Documents/Codex/2026-10-15/https-ei5ttplwuwy-feishu-cn-wiki-bslqw36k3imkxzkkx2ucykxznrb/outputs/飞书Skill与教程资料库/资源/09-电商TVC广告Skill/002-image.png",
+              "success": true,
+              "view_calls": 2,
+              "second_view_detail": "original",
+              "whole_file": "原文件是对话长截图，产品仅在右上白色方框的小缩略图中。大面积正文是旧广告提示词，不能当作已核验的产品功能。",
+              "confirmed": "缩略图可见横向矩形键盘、浅色外框、深色为主并混有浅色的键帽、底部长空格键、键列间青绿至暖色的彩色带、两端红色竖向色块。",
+              "not_confirmed": [
+                "品牌与型号",
+                "具体机械轴体",
+                "小号键面字符",
+                "旋钮与接口结构",
+                "背面和内部",
+                "RGB按压响应或灯效控制逻辑",
+                "性能参数",
+                "声学特征"
+              ],
+              "evidence_rule": "未用文件名、截图旧提示词或参考页中转述的键盘描述替代对产品缩略图的实际观察。"
+            }
+          ]
+        },
+        {
+          "lesson_number": 10,
+          "status": "pass",
+          "conclusion": "8秒单镜头设计完成；未附原画，明确按馆藏说明预写。",
+          "output_path": "Skill使用测试/10.md",
+          "output_sha256": "e06571fc0240a8678efca97d4790641f5754ec8033fb8a2cf957bc9985abe3e3",
+          "checks": [
+            {
+              "continuous_timeline_seconds": [
+                [
+                  0.0,
+                  2.0
+                ],
+                [
+                  2.0,
+                  5.0
+                ],
+                [
+                  5.0,
+                  8.0
+                ]
+              ]
+            }
+          ],
+          "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+          "inputs": [
+            "把《戴珍珠耳环的少女》的单张人物画作设计成8秒一镜到底动态提示词，不增加人物，不生成视频。"
+          ]
+        },
+        {
+          "lesson_number": 12,
+          "status": "pass",
+          "conclusion": "2条仙境图片提示词完成，使用更新后的Raw写法。",
+          "output_path": "Skill使用测试/12.md",
+          "output_sha256": "07e327bc9a889cf6c713da3eb388ca867e8fcca17dd4b6e7d90d55e6f5b437bd",
+          "checks": [
+            {
+              "independent_prompt_count": 2,
+              "body_word_counts": [
+                138,
+                139
+              ]
+            }
+          ],
+          "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+          "inputs": [
+            "给我2条不同的中式仙境场景英文图片提示词，16:9，只要图片阶段。"
+          ]
+        },
+        {
+          "lesson_number": 15,
+          "status": "pass",
+          "conclusion": "15秒八模块提示词完成，画幅、持袋与单镜头要求保留。",
+          "output_path": "Skill使用测试/15.md",
+          "output_sha256": "aa210fed02b7f0c3a6ddcedc73bcb5e2d37a862c2a9426193bb7d6c17707641a",
+          "checks": [
+            {
+              "continuous_timeline_seconds": [
+                [
+                  0.0,
+                  3.0
+                ],
+                [
+                  3.0,
+                  7.0
+                ],
+                [
+                  7.0,
+                  11.0
+                ],
+                [
+                  11.0,
+                  15.0
+                ]
+              ]
+            }
+          ],
+          "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+          "inputs": [
+            "优化这段15秒9:16写实一镜到底：女子站在站台黄线内，右手拎蓝色布袋，镜头从正面中景沿左侧小弧线靠近面部，她看向左侧进站列车后回头望入口；全程无对白，不要音乐，仅环境声。只要视频提示词。"
+          ]
+        },
+        {
+          "lesson_number": 19,
+          "status": "pass",
+          "conclusion": "3个差异化角色候选完成；未创建或生成LibTV节点。",
+          "output_path": "Skill使用测试/19.md",
+          "output_sha256": "d4f42b37a8f2cdc7597c6b1616f44aa398dacccfcc11fb55b6abee4158418f7b",
+          "checks": [],
+          "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+          "inputs": [
+            "先只在聊天里给3个差异化成年乡村女教师角色候选，1990年代末桂东南，亲切朴素，供我选择；不建画布、不生成。"
+          ]
+        },
+        {
+          "lesson_number": 21,
+          "status": "pass",
+          "conclusion": "离线资产表及角色、场景、道具Prompt完成；未创建画布。",
+          "output_path": "Skill使用测试/21.md",
+          "output_sha256": "75dc78f57b8f524959a914307146db634ec2ea8e8978ac47aa0e238d4f2b0461",
+          "checks": [],
+          "scope": "文字工作流；未验证模型出图、视频或真实平台画布执行。",
+          "inputs": [
+            "只做离线资产拆解和提示词，不建LibTV画布、不生成：30秒写实短片《归来》，雨夜老屋，成年儿子穿灰夹克背旧帆布包，母亲穿靛蓝棉衫，门边煤油灯照亮彼此，儿子放下布包，两人静静坐到木桌旁。请给资产清单及角色/场景/道具各一份可用Prompt。"
+          ]
+        }
+      ]
+    },
+    "platform": {
+      "status": "ready",
+      "connection_state_ready": true,
+      "ready_scope": "identity-and-connection-store",
+      "local_runtime_required": false,
+      "checked_by": "LibTV Remote MCP doctor",
+      "canvas_creation_tested": false,
+      "generation_tested": false,
+      "note": "仅验证身份与连接就绪，未创建项目、节点或运行付费生成；当前本地PATH无libtv CLI不等于Remote MCP不可用。"
+    },
+    "scope": "结构与引用、两个脚本真实CLI运行、13份文字任务；未进行付费生图、视频或画布端到端执行。",
+    "runtime_files": 59
+  }
+}

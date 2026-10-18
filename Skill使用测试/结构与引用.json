@@ -1,0 +1,184 @@
+{
+  "scope": "Skill结构、依赖引用、缺件存在性与原件SHA检查；不代表审美或付费平台端到端运行。",
+  "summary": {
+    "packages": 13,
+    "structure_passed": 13,
+    "missing_local_references": 0,
+    "original_packages_unchanged": 13,
+    "reconstructed_files": 11
+  },
+  "items": [
+    {
+      "lesson_number": 2,
+      "name": "chinese-garden-cinematic-portrait",
+      "official_structure_check": "pass",
+      "name_matches_directory": true,
+      "local_reference_count": 1,
+      "missing_local_references": [],
+      "original_package_unchanged": true,
+      "original_primary_unchanged": true,
+      "reconstructed_missing_files_present": [],
+      "repaired_primary_sha256": "df89e5e877d095df7b9ca6ca5238235db13afe8f99e38661454a93ad73488b68"
+    },
+    {
+      "lesson_number": 3,
+      "name": "celestial-court-portrait",
+      "official_structure_check": "pass",
+      "name_matches_directory": true,
+      "local_reference_count": 3,
+      "missing_local_references": [],
+      "original_package_unchanged": true,
+      "original_primary_unchanged": true,
+      "reconstructed_missing_files_present": [],
+      "repaired_primary_sha256": "d84a0bc9aad737bc95ce5e71e36e749158e07dd20a78ea98dc2a6ae65326adc5"
+    },
+    {
+      "lesson_number": 4,
+      "name": "doubao-film-director",
+      "official_structure_check": "pass",
+      "name_matches_directory": true,
+      "local_reference_count": 0,
+      "missing_local_references": [],
+      "original_package_unchanged": true,
+      "original_primary_unchanged": true,
+      "reconstructed_missing_files_present": [],
+      "repaired_primary_sha256": "f3b06f97a4943e5212f24c7c82feb525f2b281105469b4c9e9b9834d4df5f285"
+    },
+    {
+      "lesson_number": 5,
+      "name": "eastern-character-mj-seedance",
+      "official_structure_check": "pass",
+      "name_matches_directory": true,
+      "local_reference_count": 3,
+      "missing_local_references": [],
+      "original_package_unchanged": true,
+      "original_primary_unchanged": true,
+      "reconstructed_missing_files_present": [
+        "references/character-examples.md",
+        "references/video-examples.md",
+        "scripts/check_prompts.py"
+      ],
+      "repaired_primary_sha256": "e5e3899591ec32068417885dc000c8d20cba9878455993eca5fe297b70e2d170"
+    },
+    {
+      "lesson_number": 6,
+      "name": "song-pastoral-mj-seedance",
+      "official_structure_check": "pass",
+      "name_matches_directory": true,
+      "local_reference_count": 0,
+      "missing_local_references": [],
+      "original_package_unchanged": true,
+      "original_primary_unchanged": true,
+      "reconstructed_missing_files_present": [
+        "scripts/check_mj_prompts.py"
+      ],
+      "repaired_primary_sha256": "1fdcdda8d0a3a11e7af98f5478d1b40dc86ea5906b91f4d359d8b010157b022c"
+    },
+    {
+      "lesson_number": 7,
+      "name": "mjv8-chinese-poetic-worlds",
+      "official_structure_check": "pass",
+      "name_matches_directory": true,
+      "local_reference_count": 4,
+      "missing_local_references": [],
+      "original_package_unchanged": true,
+      "original_primary_unchanged": true,
+      "reconstructed_missing_files_present": [
+        "references/style-atlas.md",
+        "references/image-to-video.md",
+        "references/mj-parameters.md",
+        "references/examples.md"
+      ],
+      "repaired_primary_sha256": "c6d9eb515dd55a13f0b22c8caf635f522c288d0d5b740781b2f9747c60d0d495"
+    },
+    {
+      "lesson_number": 8,
+      "name": "ai-fight-director",
+      "official_structure_check": "pass",
+      "name_matches_directory": true,
+      "local_reference_count": 2,
+      "missing_local_references": [],
+      "original_package_unchanged": true,
+      "original_primary_unchanged": true,
+      "reconstructed_missing_files_present": [
+        "references/reference-review.md",
+        "references/action-patterns.md"
+      ],
+      "repaired_primary_sha256": "286e2a1e196380eb4c6f741d299f6085daab66974b43ddfbf2533dba8736b68e"
+    },
+    {
+      "lesson_number": 9,
+      "name": "generate-product-tvc-sd25",
+      "official_structure_check": "pass",
+      "name_matches_directory": true,
+      "local_reference_count": 1,
+      "missing_local_references": [],
+      "original_package_unchanged": true,
+      "original_primary_unchanged": true,
+      "reconstructed_missing_files_present": [
+        "references/category-playbook.md"
+      ],
+      "repaired_primary_sha256": "ce158ea3cb574ac6d2465276908c6888559a4db3345c1ec94dfb703189390891"
+    },
+    {
+      "lesson_number": 10,
+      "name": "masterpiece-path-camera",
+      "official_structure_check": "pass",
+      "name_matches_directory": true,
+      "local_reference_count": 0,
+      "missing_local_references": [],
+      "original_package_unchanged": true,
+      "original_primary_unchanged": true,
+      "reconstructed_missing_files_present": [],
+      "repaired_primary_sha256": "f49cc9da3556ec3d008c3526135973992ed7d22f3646cdc1c74921b6187a121b"
+    },
+    {
+      "lesson_number": 12,
+      "name": "write-seedance-image-video-prompt",
+      "official_structure_check": "pass",
+      "name_matches_directory": true,
+      "local_reference_count": 0,
+      "missing_local_references": [],
+      "original_package_unchanged": true,
+      "original_primary_unchanged": true,
+      "reconstructed_missing_files_present": [],
+      "repaired_primary_sha256": "8311b5f095d80fefa461610639a750bb6bdb10f92bd5a1e5a89cce312dd5f345"
+    },
+    {
+      "lesson_number": 15,
+      "name": "golden-structure-video-prompts",
+      "official_structure_check": "pass",
+      "name_matches_directory": true,
+      "local_reference_count": 0,
+      "missing_local_references": [],
+      "original_package_unchanged": true,
+      "original_primary_unchanged": true,
+      "reconstructed_missing_files_present": [],
+      "repaired_primary_sha256": "31fbcce6c1db371c7af7b98069a415f63fd9e4e73a50898afb8d430b8d437038"
+    },
+    {
+      "lesson_number": 19,
+      "name": "character-forge-libtv",
+      "official_structure_check": "pass",
+      "name_matches_directory": true,
+      "local_reference_count": 0,
+      "missing_local_references": [],
+      "original_package_unchanged": true,
+      "original_primary_unchanged": true,
+      "reconstructed_missing_files_present": [],
+      "repaired_primary_sha256": "63ac11ec49fc1f4e295e27925b7c0f0336a16446bef6d0a483baad454a24a718"
+    },
+    {
+      "lesson_number": 21,
+      "name": "story-asset-builder",
+      "official_structure_check": "pass",
+      "name_matches_directory": true,
+      "local_reference_count": 19,
+      "missing_local_references": [],
+      "original_package_unchanged": true,
+      "original_primary_unchanged": true,
+      "reconstructed_missing_files_present": [],
+      "repaired_primary_sha256": "4a61dc220de7b1af9643d706b2cb862737e63aa55e588f8138e79122e20b6fba"
+    }
+  ]
+}
