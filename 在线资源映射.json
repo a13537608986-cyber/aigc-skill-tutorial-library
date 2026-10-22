@@ -4,8 +4,8 @@
   "release_tag": "archive-2026-10-15",
   "full_offline_archive": {
     "asset_name": "skill-tutorial-library-full.zip",
-    "bytes": 1125159591,
-    "sha256": "39b9e3e4f0b1fcbd629d9ced33b54111b5614724e4ab78bd4a35e2781cbb1afe",
+    "bytes": 1125219126,
+    "sha256": "0f8d56b2d0cea4a45702048e66dd55a5ee3011934b71bfe083e850b488ffc5ea",
     "online_url": "https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/skill-tutorial-library-full.zip"
   },
   "videos": [
@@ -678,8 +678,8 @@
   "note": "offline_path 及原校验记录指向完整离线包；online_url 是发布版对应视频。",
   "offline_source_snapshot": {
     "asset_name": "offline-document-sources.zip",
-    "bytes": 4697443,
-    "sha256": "00d781c06c31d6e3deebce103d5cfad734cda5a4c80b51c8e5714515304f06f8"
+    "bytes": 4711577,
+    "sha256": "5db807d0b737865335629081ecc6871f7825cfd4ba327e5a41d0e67691301416"
   },
   "skill_independence_revision": {
     "packages": 13,
@@ -701,6 +701,13 @@
     "paid_generation_tested": false,
     "report": "Skill修复版与测试.html",
     "download": "Skill修复版合集.zip",
-    "offline_archive_files": 1048
+    "offline_archive_files": 1050
+  },
+  "download_experience_revision": {
+    "date": "2026-10-22",
+    "behavior": "Archive file clicks save files while retaining the library document and tab. Large archived assets use the uploaded repository attachment store; no source-page export or proxy is performed.",
+    "site_download_page": "download.html",
+    "script": "downloads.js",
+    "remote_archive_objects": 87
   }
 }

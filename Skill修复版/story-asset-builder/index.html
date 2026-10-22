@@ -1,4 +1,6 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>21 story-asset-builder-v2-clean-canvas｜修复版</title><style>
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>21 story-asset-builder-v2-clean-canvas｜修复版</title><style>
 :root{color-scheme:light;--ink:#182a27;--muted:#60716b;--line:#dce5df;--accent:#245e48;--paper:#fbfcf9}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}a{color:var(--accent);text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}header,main,footer{max-width:1080px;margin:auto;padding:28px 24px}header{padding-top:44px;padding-bottom:20px}h1{font-size:clamp(26px,4vw,40px);line-height:1.35;margin:.3em 0}h2,h3,h4,h5,h6{line-height:1.5;margin:1.5em 0 .5em}h2{font-size:26px}h3{font-size:22px}h4{font-size:19px}p{margin:.8em 0}.muted,.meta{color:var(--muted);font-size:14px}.meta{display:flex;flex-wrap:wrap;gap:8px 20px}.notice{background:#eef4ef;border:1px solid var(--line);border-radius:12px;padding:14px 18px}.warning{background:#fff7e7;border:1px solid #ead8a7;border-radius:8px;padding:10px 14px}.tools{display:flex;gap:12px;margin:22px 0}input,select{font:inherit;background:white;color:var(--ink);border:1px solid #bccdc2;border-radius:9px;padding:11px 13px}input{flex:1;min-width:0}select{max-width:200px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:16px}.card{background:white;border:1px solid var(--line);border-radius:13px;padding:20px}.card h2{font-size:20px;margin:8px 0}.card p{font-size:14px;color:var(--muted);margin:8px 0}.tag{font-size:12px;color:var(--accent);background:#edf4ec;padding:3px 8px;border-radius:20px}.cardlinks{display:flex;flex-wrap:wrap;gap:14px;font-size:14px}article{background:white;border:1px solid var(--line);border-radius:14px;padding:clamp(18px,4vw,44px);overflow-wrap:anywhere}article> :first-child{margin-top:0}.block{white-space:pre-wrap;word-break:break-word}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px}.grid-column{min-width:0}pre{background:#f1f4ef;border:1px solid #dce4da;border-radius:9px;padding:18px;overflow:auto;white-space:pre-wrap;word-break:break-word;font:14px/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}figure{margin:24px 0}img{display:block;max-width:100%;height:auto;border-radius:6px}figcaption{font-size:13px;color:var(--muted);margin-top:7px}video,audio{max-width:100%;width:100%}.asset{background:#f4f6f1;border:1px solid var(--line);border-radius:8px;padding:14px;margin:14px 0}.asset small{display:block;color:var(--muted)}blockquote{border-left:4px solid #b0c8b5;padding:8px 18px;margin:18px 0;background:#f3f7f0}.list-item{display:flex;gap:10px;margin:.6em 0}.list-item .marker{flex:0 0 1.8em;color:#60716b}.list-body{flex:1;min-width:0}.table-wrap{overflow:auto}table{border-collapse:collapse;min-width:70%;margin:18px 0}td,th{border:1px solid #ccd8ce;padding:8px 12px;vertical-align:top}hr{border:0;border-top:1px solid var(--line);margin:28px 0}summary{cursor:pointer}footer{font-size:13px;color:var(--muted)}[hidden]{display:none!important}@media(max-width:600px){header,main,footer{padding:22px 16px}.tools{flex-direction:column}select{max-width:none}article{border-radius:9px}}
 
 .nav{display:flex;flex-wrap:wrap;gap:9px 20px;margin:18px 0}.source-text{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.8;margin:0}.source-section{padding:18px 0;border-bottom:1px solid var(--line)}.source-section h2,.source-section h3{margin:.3em 0 .7em}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:16px}.media-card{border:1px solid var(--line);border-radius:10px;background:white;padding:12px;min-width:0}.media-card figure{margin:0}.media-card img{width:100%;max-height:320px;object-fit:contain;background:#f0f3ed}.media-card video{width:100%;max-height:320px;background:#152620}.media-card p{font-size:13px;margin:8px 0}.media-card .meta{font-size:12px}.scroll-table{overflow:auto}td{min-width:110px}details{border:1px solid var(--line);border-radius:9px;padding:14px;margin:15px 0}details>summary{font-weight:600}details>.source-text{margin-top:16px}button{font:inherit;border:1px solid #bdcdc0;background:white;border-radius:8px;padding:8px 14px;color:var(--accent);cursor:pointer}.searchbox{width:100%;margin:10px 0 24px}.mini{font-size:13px;color:var(--muted)}
@@ -6,7 +8,7 @@
 .skill-archive{border:2px solid var(--accent);border-radius:12px;padding:18px;margin:18px 0;background:#eef4ef}
 .skill-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.skill-actions a,.archive-action{display:inline-block;padding:9px 13px;border:1px solid #245e48;border-radius:8px;background:white;font-weight:600}
 .skill-actions a:first-child{background:#245e48;color:white}.skill-files{margin:24px 0 32px}.skill-file{border:1px solid var(--line);border-radius:9px;padding:16px;margin:15px 0;background:white}.skill-file summary{font-weight:600;overflow-wrap:anywhere}.skill-file pre{max-height:75vh;overflow:auto;white-space:pre-wrap;word-break:break-word}.skill-file .meta{margin:10px 0}.source-info{font-size:13px;color:var(--muted);margin:10px 0}.source-info summary{cursor:pointer}.source-info a{font-weight:400}.archive-status{font-size:13px;color:var(--muted)}
-</style></head><body><header><p><a href="../../Skill%E4%BF%AE%E5%A4%8D%E7%89%88%E4%B8%8E%E6%B5%8B%E8%AF%95.html">← 修复版与测试</a> · <a download href="../../Skill%E4%BF%AE%E5%A4%8D%E5%8C%85/21-story-asset-builder.zip">下载这个修复包</a> · <a download href="../../%E8%B5%84%E6%BA%90/21-%E7%94%B5%E5%BD%B1%E7%BA%A7%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%81%9A%E6%88%90%20skill/004-story-asset-builder-v2-clean-canvas.zip">保留的原包</a></p><h1>21 story-asset-builder-v2-clean-canvas｜修复版</h1></header><main><div class="notice"><p>这是归档修复版。入口与运行方式已检查，原始包另行保留。</p><p>LibTV授权工具（文本方案可独立使用）。</p></div><h2>本包调整</h2><ul><li>新增标准name与description配置。</li><li>依赖检测兼容已授权的Remote MCP；保留CLI分支，去掉在聊天中配置access_key的要求。</li><li>补充Remote MCP与本地CLI的调用分支及实时schema核验要求。</li></ul><h2>Skill 与配套文件</h2><details id="file-0" class="skill-file" ><summary>CHANGELOG.md</summary><p><a download href="CHANGELOG.md">下载此文件</a></p><pre><code># Changelog
+</style><script data-archive-download-script="" defer="True" src="../../downloads.js?v=20261022"></script></head><body><header><p><a href="../../Skill%E4%BF%AE%E5%A4%8D%E7%89%88%E4%B8%8E%E6%B5%8B%E8%AF%95.html">← 修复版与测试</a> · <a download="21-story-asset-builder.zip" href="../../Skill%E4%BF%AE%E5%A4%8D%E5%8C%85/21-story-asset-builder.zip">下载这个修复包</a> · <a download="004-story-asset-builder-v2-clean-canvas.zip" href="../../%E8%B5%84%E6%BA%90/21-%E7%94%B5%E5%BD%B1%E7%BA%A7%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%81%9A%E6%88%90%20skill/004-story-asset-builder-v2-clean-canvas.zip">保留的原包</a></p><h1>21 story-asset-builder-v2-clean-canvas｜修复版</h1></header><main><div class="notice"><p>这是归档修复版。入口与运行方式已检查，原始包另行保留。</p><p>LibTV授权工具（文本方案可独立使用）。</p></div><h2>本包调整</h2><ul><li>新增标准name与description配置。</li><li>依赖检测兼容已授权的Remote MCP；保留CLI分支，去掉在聊天中配置access_key的要求。</li><li>补充Remote MCP与本地CLI的调用分支及实时schema核验要求。</li></ul><h2>Skill 与配套文件</h2><details class="skill-file" id="file-0"><summary>CHANGELOG.md</summary><p><a download="CHANGELOG.md" href="CHANGELOG.md">下载此文件</a></p><pre><code># Changelog
 
 ## v0.2.0 — Canvas Blueprint Update
 
@@ -24,7 +26,7 @@
 - 统一节点命名：序号_资产类型_资产名称_用途_v版本号
 - 每个资产按 PROMPT / GENERATE / QA 小组靠近摆放
 - 禁止散乱节点、空节点、无命名节点、重复节点
-</code></pre></details><details id="file-1" class="skill-file" ><summary>README.md</summary><p><a download href="README.md">下载此文件</a></p><pre><code># story-asset-builder 使用说明
+</code></pre></details><details class="skill-file" id="file-1"><summary>README.md</summary><p><a download="README.md" href="README.md">下载此文件</a></p><pre><code># story-asset-builder 使用说明
 
 这是一个通用“剧本资产生成 Skill”，用于配合 LibTV skill / LibTV CLI，把任意剧本自动拆成资产节点，并生成标准化 Prompt。
 
@@ -45,7 +47,7 @@
 确认你已经安装并授权 LibTV skill / LibTV CLI：
 
 ```bash
-export LIBTV_ACCESS_KEY=&quot;your-access-key&quot;
+export LIBTV_ACCESS_KEY="your-access-key"
 ```
 
 ## 最推荐的使用指令
@@ -78,9 +80,9 @@ export LIBTV_ACCESS_KEY=&quot;your-access-key&quot;
 ## 注意
 
 本 Skill 负责“资产拆解 + Prompt 编译 + LibTV 节点编排”。真正生成图片/视频仍由 LibTV skill / LibTV CLI 执行。
-</code></pre></details><details id="file-2" class="skill-file" open><summary>SKILL.md</summary><p><a download href="SKILL.md">下载此文件</a></p><pre><code>---
+</code></pre></details><details class="skill-file" id="file-2" open=""><summary>SKILL.md</summary><p><a download="SKILL.md" href="SKILL.md">下载此文件</a></p><pre><code>---
 name: story-asset-builder
-description: &quot;用于从剧本、短片创意和分镜拆解角色、场景、道具等资产及其提示词；创建实际LibTV画布需要已授权的LibTV工具。&quot;
+description: "用于从剧本、短片创意和分镜拆解角色、场景、道具等资产及其提示词；创建实际LibTV画布需要已授权的LibTV工具。"
 ---
 
 &gt; 归档修复版（2026-10-17）：原始安装包另行保留。未连接并授权LibTV时，只能完成文字方案、候选或资产拆解，不得声称已建画布、连线或生成。若当前提供LibTV Remote MCP，使用其doctor及实时工具schema，先确认项目身份；无需安装本地CLI，也不运行下文仅用于CLI的help命令。模型/质量参数须从实时schema读取，不将旧CLI示例当成MCP调用。用户仅要求离线资产清单时，可先按本包模板拆解，不执行画布步骤。
@@ -421,7 +423,7 @@ PROMPT / GENERATE / QA / REF可选 / V2_RETRY可选
 ```
 
 应自动执行以上规则，不要要求用户重复输入画布排版规则。
-</code></pre></details><details id="file-3" class="skill-file" ><summary>examples/demo_request.md</summary><p><a download href="examples/demo_request.md">下载此文件</a></p><pre><code># 示例请求
+</code></pre></details><details class="skill-file" id="file-3"><summary>examples/demo_request.md</summary><p><a download="demo_request.md" href="examples/demo_request.md">下载此文件</a></p><pre><code># 示例请求
 
 ```text
 使用 story-asset-builder。
@@ -458,33 +460,33 @@ assets:
   - COL_001 色卡与材质DNA P0
   - STB_001 第一场九宫格分镜 P1
 ```
-</code></pre></details><details id="file-4" class="skill-file" ><summary>manifest.json</summary><p><a download href="manifest.json">下载此文件</a></p><pre><code>{
-  &quot;skill_name&quot;: &quot;story-asset-builder&quot;,
-  &quot;version&quot;: &quot;0.2.0&quot;,
-  &quot;description&quot;: &quot;通用剧本资产生成器：剧本拆解、Prompt 编译、LibTV Canvas Blueprint 画布编排。&quot;,
-  &quot;depends_on&quot;: [
-    &quot;LibTV skill or LibTV CLI&quot;,
-    &quot;OpenClaw / 飞书 ClawBot / KimiClaw compatible runtime&quot;
+</code></pre></details><details class="skill-file" id="file-4"><summary>manifest.json</summary><p><a download="manifest.json" href="manifest.json">下载此文件</a></p><pre><code>{
+  "skill_name": "story-asset-builder",
+  "version": "0.2.0",
+  "description": "通用剧本资产生成器：剧本拆解、Prompt 编译、LibTV Canvas Blueprint 画布编排。",
+  "depends_on": [
+    "LibTV skill or LibTV CLI",
+    "OpenClaw / 飞书 ClawBot / KimiClaw compatible runtime"
   ],
-  &quot;entry&quot;: &quot;SKILL.md&quot;,
-  &quot;templates&quot;: [
-    &quot;character_sheet.md&quot;,
-    &quot;creature_sheet.md&quot;,
-    &quot;prop_sheet.md&quot;,
-    &quot;vehicle_sheet.md&quot;,
-    &quot;environment_sheet.md&quot;,
-    &quot;color_palette.md&quot;,
-    &quot;storyboard_grid.md&quot;,
-    &quot;video_prompt.md&quot;
+  "entry": "SKILL.md",
+  "templates": [
+    "character_sheet.md",
+    "creature_sheet.md",
+    "prop_sheet.md",
+    "vehicle_sheet.md",
+    "environment_sheet.md",
+    "color_palette.md",
+    "storyboard_grid.md",
+    "video_prompt.md"
   ],
-  &quot;profiles&quot;: [
-    &quot;wansheng.yaml&quot;,
-    &quot;default_cinematic.yaml&quot;,
-    &quot;ancient_drama.yaml&quot;,
-    &quot;apocalypse_thriller.yaml&quot;,
-    &quot;cyber_city.yaml&quot;
+  "profiles": [
+    "wansheng.yaml",
+    "default_cinematic.yaml",
+    "ancient_drama.yaml",
+    "apocalypse_thriller.yaml",
+    "cyber_city.yaml"
   ]
-}</code></pre></details><details id="file-5" class="skill-file" ><summary>profiles/ancient_drama.yaml</summary><p><a download href="profiles/ancient_drama.yaml">下载此文件</a></p><pre><code>profile_id: ancient_drama
+}</code></pre></details><details class="skill-file" id="file-5"><summary>profiles/ancient_drama.yaml</summary><p><a download="ancient_drama.yaml" href="profiles/ancient_drama.yaml">下载此文件</a></p><pre><code>profile_id: ancient_drama
 project_name: 古风权谋项目
 profile_type: ancient_court_cinematic_drama
 language: zh-CN
@@ -521,7 +523,7 @@ qa_focus:
   - 服饰层次
   - 人物情绪克制
   - 场景木质与烛光统一
-</code></pre></details><details id="file-6" class="skill-file" ><summary>profiles/apocalypse_thriller.yaml</summary><p><a download href="profiles/apocalypse_thriller.yaml">下载此文件</a></p><pre><code>profile_id: apocalypse_thriller
+</code></pre></details><details class="skill-file" id="file-6"><summary>profiles/apocalypse_thriller.yaml</summary><p><a download="apocalypse_thriller.yaml" href="profiles/apocalypse_thriller.yaml">下载此文件</a></p><pre><code>profile_id: apocalypse_thriller
 project_name: 末日密闭空间项目
 profile_type: low_budget_apocalypse_thriller
 language: zh-CN
@@ -558,7 +560,7 @@ qa_focus:
   - 道具真实可用
   - 光源逻辑
   - 怪物留白和悬念
-</code></pre></details><details id="file-7" class="skill-file" ><summary>profiles/cyber_city.yaml</summary><p><a download href="profiles/cyber_city.yaml">下载此文件</a></p><pre><code>profile_id: cyber_city
+</code></pre></details><details class="skill-file" id="file-7"><summary>profiles/cyber_city.yaml</summary><p><a download="cyber_city.yaml" href="profiles/cyber_city.yaml">下载此文件</a></p><pre><code>profile_id: cyber_city
 project_name: 赛博都市项目
 profile_type: cyberpunk_city_drama
 language: zh-CN
@@ -594,7 +596,7 @@ qa_focus:
   - 雨夜反光
   - 科技与贫民质感混合
   - 角色服装不漂移
-</code></pre></details><details id="file-8" class="skill-file" ><summary>profiles/default_cinematic.yaml</summary><p><a download href="profiles/default_cinematic.yaml">下载此文件</a></p><pre><code>profile_id: default_cinematic
+</code></pre></details><details class="skill-file" id="file-8"><summary>profiles/default_cinematic.yaml</summary><p><a download="default_cinematic.yaml" href="profiles/default_cinematic.yaml">下载此文件</a></p><pre><code>profile_id: default_cinematic
 project_name: 未命名电影感项目
 profile_type: generic_cinematic
 language: zh-CN
@@ -628,7 +630,7 @@ qa_focus:
   - 场景可用性
   - 道具功能准确
   - 分镜连续性
-</code></pre></details><details id="file-9" class="skill-file" ><summary>profiles/wansheng.yaml</summary><p><a download href="profiles/wansheng.yaml">下载此文件</a></p><pre><code>profile_id: wansheng
+</code></pre></details><details class="skill-file" id="file-9"><summary>profiles/wansheng.yaml</summary><p><a download="wansheng.yaml" href="profiles/wansheng.yaml">下载此文件</a></p><pre><code>profile_id: wansheng
 project_name: 万物生
 profile_type: cinematic_desert_lost_tech
 language: zh-CN
@@ -648,15 +650,15 @@ visual_dna:
     - dust-coated fabric
   colors:
     - name: Mecha Crimson Bronze
-      hex: &#x27;#7A6845&#x27;
+      hex: '#7A6845'
     - name: Aged Gold
-      hex: &#x27;#846035&#x27;
+      hex: '#846035'
     - name: LED Cyan Dormant
-      hex: &#x27;#4FC3D9&#x27;
+      hex: '#4FC3D9'
     - name: Desert Sand
-      hex: &#x27;#C8A66A&#x27;
+      hex: '#C8A66A'
     - name: Dried Blood Red
-      hex: &#x27;#5A1E17&#x27;
+      hex: '#5A1E17'
 lighting:
   asset_sheet: Single-sided side-rim backlighting from camera-right at 45 degrees behind subject, no fill light, no front light, no other light sources.
   environment: Warm harsh desert sunlight or dusty dawn haze according to scene.
@@ -682,7 +684,7 @@ qa_focus:
   - 版式和标签准确
   - 角色等级差异
   - 材质风沙感
-</code></pre></details><details id="file-10" class="skill-file" ><summary>quick_prompts/01_create_new_project_canvas.txt</summary><p><a download href="quick_prompts/01_create_new_project_canvas.txt">下载此文件</a></p><pre><code>使用 story-asset-builder。
+</code></pre></details><details class="skill-file" id="file-10"><summary>quick_prompts/01_create_new_project_canvas.txt</summary><p><a download="01_create_new_project_canvas.txt" href="quick_prompts/01_create_new_project_canvas.txt">下载此文件</a></p><pre><code>使用 story-asset-builder。
 这是一个新项目，请先根据剧本创建 Project Profile，再创建 LibTV 资产准备画布。
 
 项目名：【填写项目名】
@@ -698,7 +700,7 @@ qa_focus:
 4. 只准备资产图节点，先不要直接生成最终视频
 5. 所有节点必须放到画布上
 6. 每个节点附带实操注意和跑歪兜底加强
-</code></pre></details><details id="file-11" class="skill-file" ><summary>quick_prompts/02_use_wansheng_profile.txt</summary><p><a download href="quick_prompts/02_use_wansheng_profile.txt">下载此文件</a></p><pre><code>使用 story-asset-builder。
+</code></pre></details><details class="skill-file" id="file-11"><summary>quick_prompts/02_use_wansheng_profile.txt</summary><p><a download="02_use_wansheng_profile.txt" href="quick_prompts/02_use_wansheng_profile.txt">下载此文件</a></p><pre><code>使用 story-asset-builder。
 项目 Profile：wansheng。
 根据下面剧本创建 LibTV 资产准备画布。
 
@@ -712,10 +714,10 @@ qa_focus:
 4. 调用 LibTV 创建新项目和画布节点
 5. 只准备资产图节点，先不要直接生成最终视频
 6. 所有节点必须放到画布上
-</code></pre></details><details id="file-12" class="skill-file" ><summary>quick_prompts/03_retry_canvas_nodes.txt</summary><p><a download href="quick_prompts/03_retry_canvas_nodes.txt">下载此文件</a></p><pre><code>请确认是否把整个生成工作流创建在了画布上。
+</code></pre></details><details class="skill-file" id="file-12"><summary>quick_prompts/03_retry_canvas_nodes.txt</summary><p><a download="03_retry_canvas_nodes.txt" href="quick_prompts/03_retry_canvas_nodes.txt">下载此文件</a></p><pre><code>请确认是否把整个生成工作流创建在了画布上。
 如果没有，请重试创建整个工作流放在画布。
 如果节点是空的，请重新创建工作流，要把结果、Prompt、参数建议、实操注意都放到节点里。
-</code></pre></details><details id="file-13" class="skill-file" ><summary>quick_prompts/04_create_clean_canvas.txt</summary><p><a download href="quick_prompts/04_create_clean_canvas.txt">下载此文件</a></p><pre><code>使用 story-asset-builder 创建 LibTV 资产准备画布。
+</code></pre></details><details class="skill-file" id="file-13"><summary>quick_prompts/04_create_clean_canvas.txt</summary><p><a download="04_create_clean_canvas.txt" href="quick_prompts/04_create_clean_canvas.txt">下载此文件</a></p><pre><code>使用 story-asset-builder 创建 LibTV 资产准备画布。
 
 请默认遵守 Canvas Blueprint Rule：
 1. 先拆解资产清单
@@ -743,7 +745,7 @@ qa_focus:
 - 先不要生成最终视频
 - 只创建资产准备画布
 - 所有节点必须放到 LibTV 画布上
-</code></pre></details><details id="file-14" class="skill-file" ><summary>quick_prompts/05_reorganize_existing_canvas.txt</summary><p><a download href="quick_prompts/05_reorganize_existing_canvas.txt">下载此文件</a></p><pre><code>使用 story-asset-builder，按标准 Canvas Blueprint 重新整理当前 LibTV 画布。
+</code></pre></details><details class="skill-file" id="file-14"><summary>quick_prompts/05_reorganize_existing_canvas.txt</summary><p><a download="05_reorganize_existing_canvas.txt" href="quick_prompts/05_reorganize_existing_canvas.txt">下载此文件</a></p><pre><code>使用 story-asset-builder，按标准 Canvas Blueprint 重新整理当前 LibTV 画布。
 
 要求：
 1. 不要重新生成图片或视频
@@ -759,7 +761,7 @@ qa_focus:
 5. 每个资产小组内部按 PROMPT → GENERATE → QA → RETRY 的顺序摆放
 6. 空节点、重复节点、失败节点移动到 99_ARCHIVE
 7. 完成后返回节点索引表和整理说明
-</code></pre></details><details id="file-15" class="skill-file" ><summary>rules/asset_extraction.md</summary><p><a download href="rules/asset_extraction.md">下载此文件</a></p><pre><code># 资产拆解规则
+</code></pre></details><details class="skill-file" id="file-15"><summary>rules/asset_extraction.md</summary><p><a download="asset_extraction.md" href="rules/asset_extraction.md">下载此文件</a></p><pre><code># 资产拆解规则
 
 ## 目标
 把剧本拆成可生成、可管理、可复用的 LibTV 资产节点。
@@ -846,7 +848,7 @@ assets:
       - 服装跑偏
       - 年龄错误
 ```
-</code></pre></details><details id="file-16" class="skill-file" ><summary>rules/libtv_canvas_rules.md</summary><p><a download href="rules/libtv_canvas_rules.md">下载此文件</a></p><pre><code># LibTV 画布创建规则 v2 — Canvas Blueprint
+</code></pre></details><details class="skill-file" id="file-16"><summary>rules/libtv_canvas_rules.md</summary><p><a download="libtv_canvas_rules.md" href="rules/libtv_canvas_rules.md">下载此文件</a></p><pre><code># LibTV 画布创建规则 v2 — Canvas Blueprint
 
 ## 目标
 让 LibTV 画布不是一堆散节点，而是清晰、可读、可检查、可复用的资产生产看板。
@@ -1074,7 +1076,7 @@ canvas_blueprint:
 ```text
 只输出资产清单 + Prompt 文档 + Canvas Blueprint + LibTV 节点创建指令，提醒用户安装 / 授权 LibTV skill 或 CLI。
 ```
-</code></pre></details><details id="file-17" class="skill-file" ><summary>rules/prompt_compiler.md</summary><p><a download href="rules/prompt_compiler.md">下载此文件</a></p><pre><code># Prompt 编译规则
+</code></pre></details><details class="skill-file" id="file-17"><summary>rules/prompt_compiler.md</summary><p><a download="prompt_compiler.md" href="rules/prompt_compiler.md">下载此文件</a></p><pre><code># Prompt 编译规则
 
 ## 核心原则
 Prompt 不是一句话，而是一份可生产、可质检、可迭代的资产说明书。
@@ -1154,7 +1156,7 @@ Constraints
 - 禁止忽略版本号。
 - 禁止把不同资产塞进同一个混乱节点。
 - 禁止遗漏 Constraints。
-</code></pre></details><details id="file-18" class="skill-file" ><summary>rules/qa_loop.md</summary><p><a download href="rules/qa_loop.md">下载此文件</a></p><pre><code># 质检与重跑规则
+</code></pre></details><details class="skill-file" id="file-18"><summary>rules/qa_loop.md</summary><p><a download="qa_loop.md" href="rules/qa_loop.md">下载此文件</a></p><pre><code># 质检与重跑规则
 
 ## 质检目的
 不要只看图好不好看，要看关键设定是否符合。
@@ -1200,7 +1202,7 @@ v2：修正主要跑偏点
 v3：锁定参考图后稳定版
 vFinal：用户确认版
 ```
-</code></pre></details><details id="file-19" class="skill-file" ><summary>templates/character_sheet.md</summary><p><a download href="templates/character_sheet.md">下载此文件</a></p><pre><code># Template: Character Sheet / 人物设定图
+</code></pre></details><details class="skill-file" id="file-19"><summary>templates/character_sheet.md</summary><p><a download="character_sheet.md" href="templates/character_sheet.md">下载此文件</a></p><pre><code># Template: Character Sheet / 人物设定图
 
 ```text
 === GPT-Image Prompt - {project_name} {episode_or_scene} {character_name} 默认形态四视图人设图 v{version} ===
@@ -1233,7 +1235,7 @@ A character design reference sheet. **Vertical 9:16 aspect ratio. Maximum resolu
 
 【4 Panels】
 **Top-left panel — FRONT FACE CLOSE-UP**:
-Tight close-up of {character_name}&#x27;s face, framed from collarbone-line up to top of head. Subject facing camera directly. Face fully visible. Preserve: {face_key_features}.
+Tight close-up of {character_name}'s face, framed from collarbone-line up to top of head. Subject facing camera directly. Face fully visible. Preserve: {face_key_features}.
 
 **Top-right panel — SIDE FACE CLOSE-UP (PROFILE)**:
 Tight side profile close-up, framed from collarbone-line up to top of head. Subject facing camera-right. Profile silhouette clearly visible. Preserve: {side_profile_key_features}.
@@ -1282,11 +1284,11 @@ Maximum resolution output. Clean detail definition. Real physical costume cinema
 
 【Panel Labels】
 Small clean monospace sans-serif black text below each panel:
-- Top-left: &quot;FRONT FACE&quot;
-- Top-right: &quot;SIDE FACE&quot;
-- Bottom-left: &quot;BODY FRONT (NO FACE)&quot;
-- Bottom-right: &quot;BACK&quot;
-Title at top center of canvas: &quot;{english_title} — DEFAULT FORM CHARACTER SHEET&quot;
+- Top-left: "FRONT FACE"
+- Top-right: "SIDE FACE"
+- Bottom-left: "BODY FRONT (NO FACE)"
+- Bottom-right: "BACK"
+Title at top center of canvas: "{english_title} — DEFAULT FORM CHARACTER SHEET"
 
 【Constraints】
 {constraints}
@@ -1312,7 +1314,7 @@ reference_images: {reference_images}
    - {rerun_fix_2}
    - {rerun_fix_3}
 ```
-</code></pre></details><details id="file-20" class="skill-file" ><summary>templates/color_palette.md</summary><p><a download href="templates/color_palette.md">下载此文件</a></p><pre><code># Template: Color / Material DNA Sheet
+</code></pre></details><details class="skill-file" id="file-20"><summary>templates/color_palette.md</summary><p><a download="color_palette.md" href="templates/color_palette.md">下载此文件</a></p><pre><code># Template: Color / Material DNA Sheet
 
 ```text
 === GPT-Image Prompt - {project_name} {episode_or_scene} 色卡与材质DNA v{version} ===
@@ -1373,7 +1375,7 @@ node_group: 06_Color_And_Material_DNA
    - 是否无摄影质感
    - 是否可作为项目视觉规范
 ```
-</code></pre></details><details id="file-21" class="skill-file" ><summary>templates/creature_sheet.md</summary><p><a download href="templates/creature_sheet.md">下载此文件</a></p><pre><code># Template: Creature Sheet / 怪兽、生物、机械兽设定图
+</code></pre></details><details class="skill-file" id="file-21"><summary>templates/creature_sheet.md</summary><p><a download="creature_sheet.md" href="templates/creature_sheet.md">下载此文件</a></p><pre><code># Template: Creature Sheet / 怪兽、生物、机械兽设定图
 
 ```text
 === GPT-Image Prompt - {project_name} {episode_or_scene} {creature_name} 多视图设定图 v{version} ===
@@ -1450,11 +1452,11 @@ Maximum resolution output. Sharp clean details. Every structural seam, texture, 
 
 【Panel Labels】
 Small clean monospace sans-serif black text below each panel:
-- Top-left: &quot;SIDE&quot;
-- Top-right: &quot;FRONT&quot;
-- Bottom-left: &quot;TOP&quot;
-- Bottom-right: &quot;3/4 VIEW&quot;
-Title at top center: &quot;{english_title} — DESIGN SHEET&quot;
+- Top-left: "SIDE"
+- Top-right: "FRONT"
+- Bottom-left: "TOP"
+- Bottom-right: "3/4 VIEW"
+Title at top center: "{english_title} — DESIGN SHEET"
 
 【Constraints】
 {constraints}
@@ -1480,7 +1482,7 @@ reference_images: {reference_images}
    - {rerun_fix_2}
    - {rerun_fix_3}
 ```
-</code></pre></details><details id="file-22" class="skill-file" ><summary>templates/environment_sheet.md</summary><p><a download href="templates/environment_sheet.md">下载此文件</a></p><pre><code># Template: Environment Sheet / 场景环境设定图
+</code></pre></details><details class="skill-file" id="file-22"><summary>templates/environment_sheet.md</summary><p><a download="environment_sheet.md" href="templates/environment_sheet.md">下载此文件</a></p><pre><code># Template: Environment Sheet / 场景环境设定图
 
 ```text
 === GPT-Image Prompt - {project_name} {episode_or_scene} {environment_name} 场景设定图 v{version} ===
@@ -1554,7 +1556,7 @@ reference_images: {reference_images}
    - {rerun_fix_1}
    - {rerun_fix_2}
 ```
-</code></pre></details><details id="file-23" class="skill-file" ><summary>templates/prop_sheet.md</summary><p><a download href="templates/prop_sheet.md">下载此文件</a></p><pre><code># Template: Prop Sheet / 道具、武器、设备设定图
+</code></pre></details><details class="skill-file" id="file-23"><summary>templates/prop_sheet.md</summary><p><a download="prop_sheet.md" href="templates/prop_sheet.md">下载此文件</a></p><pre><code># Template: Prop Sheet / 道具、武器、设备设定图
 
 ```text
 === GPT-Image Prompt - {project_name} {episode_or_scene} {prop_name} 道具设定图 v{version} ===
@@ -1640,7 +1642,7 @@ reference_images: {reference_images}
    - {rerun_fix_1}
    - {rerun_fix_2}
 ```
-</code></pre></details><details id="file-24" class="skill-file" ><summary>templates/storyboard_grid.md</summary><p><a download href="templates/storyboard_grid.md">下载此文件</a></p><pre><code># Template: Storyboard Grid / 九宫格分镜
+</code></pre></details><details class="skill-file" id="file-24"><summary>templates/storyboard_grid.md</summary><p><a download="storyboard_grid.md" href="templates/storyboard_grid.md">下载此文件</a></p><pre><code># Template: Storyboard Grid / 九宫格分镜
 
 ```text
 === GPT-Image Prompt - {project_name} {episode_or_scene} 九宫格分镜 v{version} ===
@@ -1704,7 +1706,7 @@ reference_images: {reference_images}
    - {rerun_fix_1}
    - {rerun_fix_2}
 ```
-</code></pre></details><details id="file-25" class="skill-file" ><summary>templates/vehicle_sheet.md</summary><p><a download href="templates/vehicle_sheet.md">下载此文件</a></p><pre><code># Template: Vehicle Sheet / 载具设定图
+</code></pre></details><details class="skill-file" id="file-25"><summary>templates/vehicle_sheet.md</summary><p><a download="vehicle_sheet.md" href="templates/vehicle_sheet.md">下载此文件</a></p><pre><code># Template: Vehicle Sheet / 载具设定图
 
 ```text
 === GPT-Image Prompt - {project_name} {episode_or_scene} {vehicle_name} 载具设定图 v{version} ===
@@ -1783,7 +1785,7 @@ reference_images: {reference_images}
    - {rerun_fix_1}
    - {rerun_fix_2}
 ```
-</code></pre></details><details id="file-26" class="skill-file" ><summary>templates/video_prompt.md</summary><p><a download href="templates/video_prompt.md">下载此文件</a></p><pre><code># Template: Video Prompt / 视频生成提示词
+</code></pre></details><details class="skill-file" id="file-26"><summary>templates/video_prompt.md</summary><p><a download="video_prompt.md" href="templates/video_prompt.md">下载此文件</a></p><pre><code># Template: Video Prompt / 视频生成提示词
 
 ```text
 === Video Prompt - {project_name} {episode_or_scene} {segment_name} v{version} ===
@@ -1860,7 +1862,7 @@ assets:
     template: templates/character_sheet.md
     libtv_node_group: 01_Character_Assets
     required_views: [FRONT_FACE, SIDE_FACE, BODY_FRONT_NO_FACE, BACK]
-    aspect_ratio: &quot;9:16&quot;
+    aspect_ratio: "9:16"
     prompt_status: 本次提供v1
     qa_risk: [身份漂移, 灰夹克改变, 包带与肩部接触错误]
   - asset_id: CHR_002
@@ -1871,7 +1873,7 @@ assets:
     template: templates/character_sheet.md
     libtv_node_group: 01_Character_Assets
     required_views: [FRONT_FACE, SIDE_FACE, BODY_FRONT_NO_FACE, BACK]
-    aspect_ratio: &quot;9:16&quot;
+    aspect_ratio: "9:16"
     prompt_status: 已拆解；本次人物Prompt选取CHR_001
     qa_risk: [年龄感漂移, 靛蓝变鲜蓝, 皮肤过度磨平]
   - asset_id: ENV_001
@@ -1882,7 +1884,7 @@ assets:
     template: templates/environment_sheet.md
     libtv_node_group: 05_Environment_Assets
     required_views: [室内朝门口的主空间广角]
-    aspect_ratio: &quot;16:9&quot;
+    aspect_ratio: "16:9"
     prompt_status: 本次提供v1
     qa_risk: [门桌位置改变, 座位被遮挡, 灯光照射范围失真]
   - asset_id: PRP_001
@@ -1893,7 +1895,7 @@ assets:
     template: templates/prop_sheet.md
     libtv_node_group: 03_Prop_Assets
     required_views: [FRONT, SIDE, BACK, STRAP_DETAIL]
-    aspect_ratio: &quot;16:9&quot;
+    aspect_ratio: "16:9"
     prompt_status: 本次提供v1
     qa_risk: [包带断开, 尺寸漂移, 放下后形变不符合布料重量]
   - asset_id: PRP_002
@@ -1904,7 +1906,7 @@ assets:
     template: templates/prop_sheet.md
     libtv_node_group: 03_Prop_Assets
     required_views: [FRONT, SIDE, WICK_DETAIL]
-    aspect_ratio: &quot;16:9&quot;
+    aspect_ratio: "16:9"
     prompt_status: 已拆解
     qa_risk: [变成电灯, 灯焰漂浮, 灯位变化造成光向矛盾]
   - asset_id: PRP_003
@@ -1915,7 +1917,7 @@ assets:
     template: templates/prop_sheet.md
     libtv_node_group: 03_Prop_Assets
     required_views: [THREE_QUARTER, TOP, LEG_DETAIL]
-    aspect_ratio: &quot;16:9&quot;
+    aspect_ratio: "16:9"
     prompt_status: 已拆解
     qa_risk: [桌腿数量错误, 比例改变, 桌面阻碍人物落座]
   - asset_id: PRP_004
@@ -1926,7 +1928,7 @@ assets:
     template: templates/prop_sheet.md
     libtv_node_group: 03_Prop_Assets
     required_views: [FRONT, SIDE, BACK]
-    aspect_ratio: &quot;16:9&quot;
+    aspect_ratio: "16:9"
     prompt_status: 已拆解
     qa_risk: [数量改变, 椅背结构漂移, 角色与椅面接触错误]
   - asset_id: DNA_001
@@ -1937,7 +1939,7 @@ assets:
     template: templates/color_palette.md
     libtv_node_group: 06_Color_And_Material_DNA
     required_views: [色彩与材质文字规范]
-    aspect_ratio: &quot;16:9&quot;
+    aspect_ratio: "16:9"
     prompt_status: 本次以Project_Profile文字提供
     qa_risk: [暖光过度染黄, 雨夜全黑, 材质变塑料]
 ```

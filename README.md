@@ -12,7 +12,7 @@
 
 ## 在线与下载
 
-[在线资料库](https://a13537608986-cyber.github.io/aigc-skill-tutorial-library/) · [完整离线包（约 1.12 GB）](https://github.com/a13537608986-cyber/aigc-skill-tutorial-library/releases/download/archive-2026-10-15/skill-tutorial-library-full.zip) · [GitHub 仓库](https://github.com/a13537608986-cyber/aigc-skill-tutorial-library)
+[在线资料库](https://a13537608986-cyber.github.io/aigc-skill-tutorial-library/) · [完整离线包（约 1.12 GB）](download.html?asset=full-library) · [GitHub 仓库](https://github.com/a13537608986-cyber/aigc-skill-tutorial-library)
 
 线上包含 42 篇文档、13 份原包与解压文件、601 张图片及 6 个示例画布；95 个视频文件去重后作为 86 个 Releases 资源保存，教程中的播放和下载链接已接好。[在线资源映射](在线资源映射.json)保留视频原路径、下载地址与 SHA-256。
 
@@ -39,6 +39,10 @@
 核对原包成员后，确认 05、06、07、08、09 共 5 份原包自身缺少 11 个被引用文件，已逐项标明；原包保持不变，没有补造原作者未提供的文件。详见 [Skill 独立保存核对](Skill独立保存核对.json)。
 
 [下载全部13份Skill原包与正文离线合集](Skill%E5%8E%9F%E5%8C%85%E4%B8%8E%E6%AD%A3%E6%96%87%E5%90%88%E9%9B%86.zip)：解压后打开 `index.html`，可阅读正文、配套文件及原包缺件说明。
+
+## 2026-10-22 直接下载
+
+HTML资料页的文件链接会直接保存到本地，保留当前资料页。正文、Skill与媒体均使用已保存的归档副本，不从飞书临时导出。线上大文件由本仓库已上传的Release附件提供，浏览器下载时会访问附件CDN；不打开GitHub页面。完整离线包包含全部本地媒体与文档，可断网阅读。
 
 ## 2026-10-17 修复版与使用测试
 
